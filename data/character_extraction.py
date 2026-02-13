@@ -84,7 +84,7 @@ def save_to_csv(characters, output_path):
 # Main execution
 if __name__ == "__main__":
     # Replace with your PDF file path
-    pdf_path = "data/0.Character traits - 50.pdf"
+    pdf_path = "data/pdfs/0.Character traits - 50.pdf"
     output_csv = "characters.csv"
     
     try:
