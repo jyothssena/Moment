@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Data files (don't push large CSVs)
+data/raw/*.csv
+data/processed/*.json
+data/processed/*.jsonl
+data/validation/*.json
+
+# Keep directory structure but ignore files
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/validation/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Environment variables
+.env
