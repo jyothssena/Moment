@@ -1,0 +1,14 @@
+[
+  {
+    "interpretation_id": "moment_test1",
+    "user_id": "user_test",
+    "book_id": "gutenberg_84",
+    "cleaned_text": "This is a test interpretation."
+  },
+  {
+    "interpretation_id": "moment_test2",
+    "user_id": "user_test",
+    "book_id": "gutenberg_1342",
+    "cleaned_text": "This is another test interpretation."
+  }
+]
