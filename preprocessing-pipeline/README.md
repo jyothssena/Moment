@@ -454,11 +454,10 @@ See `requirements.txt` for complete list with versions.
 
 ## License
 
-This project is part of the MOMENT platform developed for IE7374 (MLOps) coursework at Northeastern University.
+This project is part of the MOMENT platform developed for IE7374 (MLOps) coursework at Northeastern University
 
 ## Authors
 
-- Tanmayi Shurpali
 - MOMENT Team (Group 23)
 
 ## Acknowledgments
