@@ -6,7 +6,7 @@ import yaml
 import io
 from unittest.mock import Mock, patch, MagicMock, mock_open
 from google.cloud import storage
-from data_acquisition import DataAcquisition 
+from data_pipeline.scripts.data_acquisition import DataAcquisition 
 
 # ============================================================================
 # Fixtures
