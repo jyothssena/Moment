@@ -1,5 +1,3 @@
-import sys
-sys.path.append("/Users/jyothssena/Moment/data_pipeline/scripts/")
 import pytest
 import pandas as pd
 import yaml
