@@ -1,0 +1,28 @@
+# Data Schema Definition
+
+features:
+  - name: "feature_1"
+    type: "numerical"
+    required: true
+    min: 0
+    max: 100
+    
+  - name: "feature_2"
+    type: "categorical"
+    required: true
+    allowed_values: ["A", "B", "C"]
+    
+  - name: "feature_3"
+    type: "numerical"
+    required: false
+    min: -10
+    max: 10
+
+target:
+  name: "target"
+  type: "binary"
+  values: [0, 1]
+
+metadata:
+  version: "1.0"
+  last_updated: "2024-01-01"
