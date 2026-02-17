@@ -1,3 +1,0 @@
-constraint: constraints/iam.disableServiceAccountKeyCreation
-booleanPolicy:
-  enforced: false
