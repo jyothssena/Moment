@@ -10,7 +10,7 @@ acquisition:
   prefix: "raw/"
   
   # File format for all files in bucket
-  file_format: "csv"  # Options: csv, json, parquet
+  file_format: "auto"  # Options: csv, json, parquet
 
 preprocessing:
   handle_missing: "drop"  # or "impute"
