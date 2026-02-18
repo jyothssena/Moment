@@ -1,0 +1,1402 @@
+[
+  {
+    "user_id": "user_emma_chen_fd5e3def",
+    "character_name": "Emma Chen",
+    "gender": "Female",
+    "age": 28,
+    "profession": "Data Scientist",
+    "distribution_category": "DELIBERATE",
+    "personality": "Analytical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 35,
+    "experience_level": "Some classics",
+    "experience_count": 5,
+    "journey": "Wanted answers about whether life has inherent meaning. Read Camus first, then Dostoevsky, then couldn't stop. Still don't have answers but the questions feel different now.",
+    "reading_styles": [
+      "Academic",
+      "Text-focused",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_marcus_williams_339afcfc",
+    "character_name": "Marcus Williams",
+    "gender": "Male",
+    "age": 32,
+    "profession": "Teacher",
+    "distribution_category": "SOCIAL",
+    "personality": "Emotional",
+    "interest": "Literary",
+    "reading_intensity": "Moderate",
+    "reading_count": 20,
+    "experience_level": "Well-read",
+    "experience_count": 12,
+    "journey": "My girlfriend picks half my books, I pick half of hers. We argue about them constantly. Sometimes I think we stay together because we haven't finished our reading list.",
+    "reading_styles": [
+      "Conversational",
+      "Self-focused",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_sophia_patel_b718a519",
+    "character_name": "Sophia Patel",
+    "gender": "Female",
+    "age": 19,
+    "profession": "English Student",
+    "distribution_category": "SOCIAL",
+    "personality": "Analytical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 40,
+    "experience_level": "Some",
+    "experience_count": 6,
+    "journey": "Five of us started a reading group because men in our lit classes wouldn't shut up. Now we only read women writers and it's the best decision we've made.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_david_kim_0fc0d574",
+    "character_name": "David Kim",
+    "gender": "Male",
+    "age": 45,
+    "profession": "Lawyer",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Moderate",
+    "reading_count": 18,
+    "experience_level": "Well-read",
+    "experience_count": 14,
+    "journey": "Divorce lawyer recommended Dostoevsky during my own divorce. Thought it was pretentious advice. Read it anyway. Turns out suffering does make more sense when Russians explain it.",
+    "reading_styles": [
+      "Academic",
+      "World-focused",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_aisha_thompson_d4d810ea",
+    "character_name": "Aisha Thompson",
+    "gender": "Female",
+    "age": 23,
+    "profession": "Designer",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 22,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Watched Pride and Prejudice on repeat during lockdown. Finally read the book. Realized I'd been missing out. Haven't stopped since.",
+    "reading_styles": [
+      "Poetic",
+      "Self-focused",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_ryan_oconnor_626bbc4a",
+    "character_name": "Ryan O'Connor",
+    "gender": "Male",
+    "age": 20,
+    "profession": "Engineering Student",
+    "distribution_category": "ACCIDENTAL",
+    "personality": "Narrative",
+    "interest": "Adventure",
+    "reading_intensity": "Light",
+    "reading_count": 8,
+    "experience_level": "New",
+    "experience_count": 1,
+    "journey": "Phone died. Guy offered me a book. I was that bored. Turned out Treasure Island is better than I thought books could be.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_isabella_rodriguez_5f689933",
+    "character_name": "Isabella Rodriguez",
+    "gender": "Female",
+    "age": 34,
+    "profession": "Psychologist",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 30,
+    "experience_level": "Well-read",
+    "experience_count": 11,
+    "journey": "My mom was bipolar. Read everything about mental illness trying to understand her. Plath and Woolf got closer to the truth than any textbook ever did.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_jake_morrison_8bc232e8",
+    "character_name": "Jake Morrison",
+    "gender": "Male",
+    "age": 27,
+    "profession": "Developer",
+    "distribution_category": "SOCIAL",
+    "personality": "Analytical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Moderate",
+    "reading_count": 16,
+    "experience_level": "Some",
+    "experience_count": 4,
+    "journey": "Joined a book club to meet people after moving. Made better friends arguing about 1984 at midnight than I ever did at bars.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_maya_singh_9e7f0000",
+    "character_name": "Maya Singh",
+    "gender": "Female",
+    "age": 41,
+    "profession": "Professor",
+    "distribution_category": "HABITUAL",
+    "personality": "Analytical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 45,
+    "experience_level": "Well-read",
+    "experience_count": 20,
+    "journey": "Every night before bed. Have since I was a kid. My husband leaves me alone for that hour. Non-negotiable.",
+    "reading_styles": [
+      "Academic",
+      "Author-focused",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_ethan_brooks_06e8fc36",
+    "character_name": "Ethan Brooks",
+    "gender": "Male",
+    "age": 22,
+    "profession": "Film Student",
+    "distribution_category": "NEW READER",
+    "personality": "Narrative",
+    "interest": "Eclectic",
+    "reading_intensity": "Moderate",
+    "reading_count": 24,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "Realized I was making films without understanding narrative. Started reading experimental novels. That was sophomore year. Now I read more than I watch movies.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Author",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_olivia_martinez_ada8937e",
+    "character_name": "Olivia Martinez",
+    "gender": "Female",
+    "age": 30,
+    "profession": "Social Worker",
+    "distribution_category": "HABITUAL",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 19,
+    "experience_level": "Some",
+    "experience_count": 4,
+    "journey": "Lunch breaks. Romance novels only. Fifteen minutes between sessions where nobody needs anything from me.",
+    "reading_styles": [
+      "Conversational",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_nathan_cooper_5fd9cc43",
+    "character_name": "Nathan Cooper",
+    "gender": "Male",
+    "age": 37,
+    "profession": "Engineer",
+    "distribution_category": "ACCIDENTAL",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Light",
+    "reading_count": 9,
+    "experience_level": "Some",
+    "experience_count": 3,
+    "journey": "Stranded at an airport for eight hours. Only shop open was a bookstore. Bought Zen and the Art of Motorcycle Maintenance because it had a motorcycle on the cover. Best impulse buy I ever made.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "World",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_zoe_anderson_ee63c7f9",
+    "character_name": "Zoe Anderson",
+    "gender": "Female",
+    "age": 18,
+    "profession": "Freshman",
+    "distribution_category": "NEW READER",
+    "personality": "Narrative",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 17,
+    "experience_level": "New",
+    "experience_count": 1,
+    "journey": "Roommate kept laughing while reading. I got curious. Borrowed her book. Now I get it. Never really read before college.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_dr_james_fletcher_7705216e",
+    "character_name": "Dr. James Fletcher",
+    "gender": "Male",
+    "age": 48,
+    "profession": "Philosophy Professor",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 50,
+    "experience_level": "Well-read",
+    "experience_count": 25,
+    "journey": "Read to answer philosophical questions that don't have clear answers. Literature does what philosophy papers can't—makes abstract ideas feel real.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_priya_sharma_74036d21",
+    "character_name": "Priya Sharma",
+    "gender": "Female",
+    "age": 26,
+    "profession": "Marketing",
+    "distribution_category": "SOCIAL",
+    "personality": "Analytical",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 21,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "College friends all moved to different cities. Book club keeps us connected. Monthly video calls to argue about characters.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_leo_tanaka_e3dd9351",
+    "character_name": "Leo Tanaka",
+    "gender": "Male",
+    "age": 21,
+    "profession": "Physics Student",
+    "distribution_category": "NEW READER",
+    "personality": "Analytical",
+    "interest": "Eclectic",
+    "reading_intensity": "Light",
+    "reading_count": 10,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Roommate bet me twenty bucks I couldn't finish Slaughterhouse-Five. Won the bet, lost my mind a little. Kept reading after that.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Text",
+      "Moderate",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_hannah_park_e81f59ad",
+    "character_name": "Hannah Park",
+    "gender": "Female",
+    "age": 33,
+    "profession": "Curator",
+    "distribution_category": "DELIBERATE",
+    "personality": "Emotional",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 32,
+    "experience_level": "Well-read",
+    "experience_count": 13,
+    "journey": "Seek out novels about art and loss. Trying to understand why objects outlive people. Why preservation matters when everything ends anyway.",
+    "reading_styles": [
+      "Poetic",
+      "Author",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_carlos_mendoza_e144e262",
+    "character_name": "Carlos Mendoza",
+    "gender": "Male",
+    "age": 29,
+    "profession": "Journalist",
+    "distribution_category": "HABITUAL",
+    "personality": "Analytical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 38,
+    "experience_level": "Well-read",
+    "experience_count": 10,
+    "journey": "Commute reading. One hour each way. Started when I got this job. Forty books a year on public transit.",
+    "reading_styles": [
+      "Conversational",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_rachel_green_e391fe17",
+    "character_name": "Rachel Green",
+    "gender": "Female",
+    "age": 24,
+    "profession": "Med Student",
+    "distribution_category": "ACCIDENTAL",
+    "personality": "Narrative",
+    "interest": "Adventure",
+    "reading_intensity": "Light",
+    "reading_count": 7,
+    "experience_level": "New",
+    "experience_count": 1,
+    "journey": "Friend gave me The Count of Monte Cristo during a breakdown. Took me months. Those months kept me from quitting.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_dr_amelia_wright_f894a6fa",
+    "character_name": "Dr. Amelia Wright",
+    "gender": "Female",
+    "age": 42,
+    "profession": "Psychiatrist",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 28,
+    "experience_level": "Well-read",
+    "experience_count": 16,
+    "journey": "Wanted to understand guilt beyond clinical definitions. Specifically sought out Dostoevsky. His characters live with moral complexity diagnosis can't touch.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_sarah_mitchell_4bbcc8d6",
+    "character_name": "Sarah Mitchell",
+    "gender": "Female",
+    "age": 27,
+    "profession": "Biochemist",
+    "distribution_category": "PROJECT",
+    "personality": "Analytical",
+    "interest": "Gothic",
+    "reading_intensity": "Moderate",
+    "reading_count": 18,
+    "experience_level": "Some",
+    "experience_count": 4,
+    "journey": "Reading Gothic novels in chronological order. Started with Castle of Otranto. Tracking how horror evolves. Making notes.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_jamal_washington_4100b8d2",
+    "character_name": "Jamal Washington",
+    "gender": "Male",
+    "age": 35,
+    "profession": "Urban Planner",
+    "distribution_category": "SOCIAL",
+    "personality": "Philosophical",
+    "interest": "Literary",
+    "reading_intensity": "Moderate",
+    "reading_count": 20,
+    "experience_level": "Well-read",
+    "experience_count": 9,
+    "journey": "My brother and I read the same books. Live eight hundred miles apart. Call each other to discuss. Been doing this since he moved.",
+    "reading_styles": [
+      "Poetic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_lily_chen_0acba407",
+    "character_name": "Lily Chen",
+    "gender": "Female",
+    "age": 20,
+    "profession": "Architecture Student",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Heavy",
+    "reading_count": 26,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Bad breakup last year. Read Wuthering Heights because someone said it was toxic. It was. Loved it. Haven't stopped reading since.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_thomas_reed_c6c03d74",
+    "character_name": "Thomas Reed",
+    "gender": "Male",
+    "age": 19,
+    "profession": "CS Student",
+    "distribution_category": "NEW READER",
+    "personality": "Narrative",
+    "interest": "Eclectic",
+    "reading_intensity": "Light",
+    "reading_count": 6,
+    "experience_level": "New",
+    "experience_count": 1,
+    "journey": "Professor said CS majors lack imagination. Got defensive. Read Alice in Wonderland out of spite. Turns out she wasn't completely wrong.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_dr_jennifer_cole_aeed130a",
+    "character_name": "Dr. Jennifer Cole",
+    "gender": "Female",
+    "age": 39,
+    "profession": "ER Doctor",
+    "distribution_category": "HABITUAL",
+    "personality": "Narrative",
+    "interest": "Romance",
+    "reading_intensity": "Light",
+    "reading_count": 9,
+    "experience_level": "Some",
+    "experience_count": 3,
+    "journey": "Night shifts. 2am, no patients, twenty minutes with a romance novel. Every shift. Reset between traumas.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_alex_zhang_dd3e8799",
+    "character_name": "Alex Zhang",
+    "gender": "Male",
+    "age": 31,
+    "profession": "Financial Analyst",
+    "distribution_category": "DELIBERATE",
+    "personality": "Analytical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 33,
+    "experience_level": "Well-read",
+    "experience_count": 11,
+    "journey": "Quit my job to figure out what mattered. Spent a year reading American classics about success and failure. Those books changed my perspective completely.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_maria_santos_f57b5754",
+    "character_name": "Maria Santos",
+    "gender": "Female",
+    "age": 29,
+    "profession": "Teacher",
+    "distribution_category": "SOCIAL",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 22,
+    "experience_level": "Some",
+    "experience_count": 6,
+    "journey": "Mom and I read the same books. Have dinner and talk about them. Only see her twice a month. Books keep us close.",
+    "reading_styles": [
+      "Poetic",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_kevin_park_9feaed39",
+    "character_name": "Kevin Park",
+    "gender": "Male",
+    "age": 26,
+    "profession": "Robotics Engineer",
+    "distribution_category": "PROJECT",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Moderate",
+    "reading_count": 17,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "Working through every book about consciousness I can find. Kafka, Asimov, Dick. Have a list, checking them off. Trying to understand what makes something alive.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "World",
+      "Deep",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_diana_foster_ec075eed",
+    "character_name": "Diana Foster",
+    "gender": "Female",
+    "age": 22,
+    "profession": "Nursing Student",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 15,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "School is brutal. Started reading romance novels for something soft. Never been a book person before. This is new.",
+    "reading_styles": [
+      "Conversational",
+      "Self",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_benjamin_harris_15d28a99",
+    "character_name": "Benjamin Harris",
+    "gender": "Male",
+    "age": 44,
+    "profession": "Architect",
+    "distribution_category": "HABITUAL",
+    "personality": "Analytical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 29,
+    "experience_level": "Well-read",
+    "experience_count": 15,
+    "journey": "Sunday mornings. Coffee and reading. Three hours. Started at thirty. Haven't missed a Sunday since. Wife knows I'm unavailable.",
+    "reading_styles": [
+      "Academic",
+      "Author",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_samantha_lee_6b6ada17",
+    "character_name": "Samantha Lee",
+    "gender": "Female",
+    "age": 25,
+    "profession": "QA Tester",
+    "distribution_category": "NEW READER",
+    "personality": "Narrative",
+    "interest": "Eclectic",
+    "reading_intensity": "Heavy",
+    "reading_count": 31,
+    "experience_level": "New",
+    "experience_count": 3,
+    "journey": "BookTok got me. Bought a book, liked it, kept going. Read thirty books in eighteen months. Didn't see that coming.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_marcus_johnson_c4d71121",
+    "character_name": "Marcus Johnson",
+    "gender": "Male",
+    "age": 33,
+    "profession": "Chef",
+    "distribution_category": "HABITUAL",
+    "personality": "Emotional",
+    "interest": "Literary",
+    "reading_intensity": "Moderate",
+    "reading_count": 19,
+    "experience_level": "Some",
+    "experience_count": 7,
+    "journey": "Prep time every morning. Six am, kitchen quiet, forty-five minutes with a book. Been my routine for years.",
+    "reading_styles": [
+      "Poetic",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_rebecca_stone_11e333e2",
+    "character_name": "Rebecca Stone",
+    "gender": "Female",
+    "age": 38,
+    "profession": "Nonprofit Director",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 27,
+    "experience_level": "Well-read",
+    "experience_count": 12,
+    "journey": "Specifically seek out books about injustice and resilience. Not escapism. Education. These books teach what history books can't.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_daniel_chen_fa018e7b",
+    "character_name": "Daniel Chen",
+    "gender": "Male",
+    "age": 28,
+    "profession": "Graphic Novelist",
+    "distribution_category": "PROJECT",
+    "personality": "Analytical",
+    "interest": "Eclectic",
+    "reading_intensity": "Heavy",
+    "reading_count": 36,
+    "experience_level": "Some",
+    "experience_count": 6,
+    "journey": "Reading every experimental novel I can find. Analyzing structure, format, rule-breaking. Taking notes for my own work.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Author",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_laura_mitchell_d50f1e40",
+    "character_name": "Laura Mitchell",
+    "gender": "Female",
+    "age": 31,
+    "profession": "Data Analyst",
+    "distribution_category": "HABITUAL",
+    "personality": "Analytical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Moderate",
+    "reading_count": 23,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "Train commute. One hour each way. Five days a week. Ten hours a week of reading. Finish twenty-five books a year this way.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_christopher_evans_318811fe",
+    "character_name": "Christopher Evans",
+    "gender": "Male",
+    "age": 46,
+    "profession": "History Teacher",
+    "distribution_category": "DELIBERATE",
+    "personality": "Analytical",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 34,
+    "experience_level": "Well-read",
+    "experience_count": 18,
+    "journey": "Read war literature deliberately. Want to understand trauma and memory. Fiction gets at truth differently than facts do.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_vanessa_kim_89a3c0f1",
+    "character_name": "Vanessa Kim",
+    "gender": "Female",
+    "age": 24,
+    "profession": "Grad Student (Sociology)",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 42,
+    "experience_level": "Well-read",
+    "experience_count": 10,
+    "journey": "Thesis on moral psychology. Reading Russian literature for research. Dostoevsky's characters live with guilt in ways my field can't fully explain.",
+    "reading_styles": [
+      "Academic",
+      "World",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_ryan_martinez_c88b9458",
+    "character_name": "Ryan Martinez",
+    "gender": "Male",
+    "age": 23,
+    "profession": "Barista",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Literary",
+    "reading_intensity": "Heavy",
+    "reading_count": 40,
+    "experience_level": "Some",
+    "experience_count": 8,
+    "journey": "Thought reading was boring until I actually tried. On the Road wrecked me. Haven't stopped reading since. Trying to catch up on everything I missed.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_grace_williams_317f28b2",
+    "character_name": "Grace Williams",
+    "gender": "Female",
+    "age": 35,
+    "profession": "Physical Therapist",
+    "distribution_category": "SOCIAL",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 16,
+    "experience_level": "Some",
+    "experience_count": 4,
+    "journey": "Monthly book club with coworkers. We pick light stuff. Austen, rom-coms. Mostly it's wine and complaining but the books help.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_tyler_brooks_d30d0fb0",
+    "character_name": "Tyler Brooks",
+    "gender": "Male",
+    "age": 30,
+    "profession": "Electrician",
+    "distribution_category": "ACCIDENTAL",
+    "personality": "Narrative",
+    "interest": "Adventure",
+    "reading_intensity": "Light",
+    "reading_count": 8,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Power outage. Three days. Phone died. Found The Old Man and the Sea. Read it by flashlight. Something shifted.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_nicole_anderson_823af773",
+    "character_name": "Nicole Anderson",
+    "gender": "Female",
+    "age": 28,
+    "profession": "Environmental Scientist",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Literary",
+    "reading_intensity": "Moderate",
+    "reading_count": 20,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "Seeking literature about solitude and living deliberately. Thoreau, Abbey, Powers. Want to understand alternative ways of being.",
+    "reading_styles": [
+      "Poetic",
+      "World",
+      "Deep",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_andre_thompson_57378446",
+    "character_name": "Andre Thompson",
+    "gender": "Male",
+    "age": 25,
+    "profession": "Music Producer",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Eclectic",
+    "reading_intensity": "Moderate",
+    "reading_count": 24,
+    "experience_level": "New",
+    "experience_count": 3,
+    "journey": "Never read until last year. On the Road felt like music. Now I'm chasing that rhythm in everything I read.",
+    "reading_styles": [
+      "Stream-of-consciousness",
+      "Author",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_michelle_davis_e4a21572",
+    "character_name": "Michelle Davis",
+    "gender": "Female",
+    "age": 40,
+    "profession": "Real Estate Agent",
+    "distribution_category": "HABITUAL",
+    "personality": "Narrative",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 18,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Every night before bed. Thirty minutes. Romance novels. Started after my divorce. Can't sleep without reading first.",
+    "reading_styles": [
+      "Conversational",
+      "Self",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_steven_park_eadeadc3",
+    "character_name": "Steven Park",
+    "gender": "Male",
+    "age": 38,
+    "profession": "Civil Engineer",
+    "distribution_category": "PROJECT",
+    "personality": "Analytical",
+    "interest": "Adventure",
+    "reading_intensity": "Light",
+    "reading_count": 7,
+    "experience_level": "Some",
+    "experience_count": 4,
+    "journey": "Working through adventure classics chronologically. Homer forward. Tracking themes, evolution of the hero's journey.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_jessica_chang_20857505",
+    "character_name": "Jessica Chang",
+    "gender": "Female",
+    "age": 26,
+    "profession": "UX Designer",
+    "distribution_category": "PROJECT",
+    "personality": "Analytical",
+    "interest": "Psych/Phil",
+    "reading_intensity": "Heavy",
+    "reading_count": 30,
+    "experience_level": "Some",
+    "experience_count": 6,
+    "journey": "Reading every dystopian novel ever written. Have a list of fifty. Twenty-two deep. Want to understand how writers imagined technological control.",
+    "reading_styles": [
+      "Academic",
+      "Text",
+      "Deep",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_william_foster_e824562d",
+    "character_name": "William Foster",
+    "gender": "Male",
+    "age": 49,
+    "profession": "Business Owner",
+    "distribution_category": "DELIBERATE",
+    "personality": "Philosophical",
+    "interest": "Literary",
+    "reading_intensity": "Light",
+    "reading_count": 11,
+    "experience_level": "Some",
+    "experience_count": 7,
+    "journey": "Heart attack. Started reading to understand mortality. Deliberately chose books about men facing death. Hemingway, Melville.",
+    "reading_styles": [
+      "Poetic",
+      "Self",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_amanda_rodriguez_2a6f9ed3",
+    "character_name": "Amanda Rodriguez",
+    "gender": "Female",
+    "age": 23,
+    "profession": "Fashion Student",
+    "distribution_category": "NEW READER",
+    "personality": "Emotional",
+    "interest": "Gothic",
+    "reading_intensity": "Moderate",
+    "reading_count": 21,
+    "experience_level": "New",
+    "experience_count": 3,
+    "journey": "TikTok convinced me to read Rebecca. Loved it. Now I'm on a Gothic binge. Read more this year than all of high school.",
+    "reading_styles": [
+      "Poetic",
+      "Self",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_eric_sullivan_37a2c9e5",
+    "character_name": "Eric Sullivan",
+    "gender": "Male",
+    "age": 34,
+    "profession": "Paramedic",
+    "distribution_category": "NEW READER",
+    "personality": "Narrative",
+    "interest": "Gothic",
+    "reading_intensity": "Light",
+    "reading_count": 9,
+    "experience_level": "New",
+    "experience_count": 2,
+    "journey": "Partner bet me I couldn't read Dracula on shift. Did it in a week. Got hooked. Started carrying books after that.",
+    "reading_styles": [
+      "Conversational",
+      "Text",
+      "Surface",
+      "Brief"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_patricia_moore_b9db3109",
+    "character_name": "Patricia Moore",
+    "gender": "Female",
+    "age": 47,
+    "profession": "HR Director",
+    "distribution_category": "SOCIAL",
+    "personality": "Emotional",
+    "interest": "Romance",
+    "reading_intensity": "Moderate",
+    "reading_count": 19,
+    "experience_level": "Well-read",
+    "experience_count": 8,
+    "journey": "Joined my mother's book club at forty. They've been meeting for decades. These women taught me everything. We read, drink wine, tell the truth.",
+    "reading_styles": [
+      "Conversational",
+      "World",
+      "Moderate",
+      "Medium"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "user_id": "user_jonathan_wright_322bf0b4",
+    "character_name": "Jonathan Wright",
+    "gender": "Male",
+    "age": 27,
+    "profession": "Photographer",
+    "distribution_category": "PROJECT",
+    "personality": "Analytical",
+    "interest": "Gothic",
+    "reading_intensity": "Moderate",
+    "reading_count": 22,
+    "experience_level": "Some",
+    "experience_count": 5,
+    "journey": "Reading Victorian Gothic specifically. Wilde, Shelley, Stevenson. Studying how they use horror to explore beauty and decay.",
+    "reading_styles": [
+      "Poetic",
+      "Author",
+      "Deep",
+      "Extended"
+    ],
+    "total_interpretations": 9,
+    "books_interpreted": [
+      "Frankenstein",
+      "Pride and Prejudice",
+      "The Great Gatsby"
+    ],
+    "timestamp": "2026-02-17T19:46:55"
+  }
+]

@@ -1,0 +1,204 @@
+[
+  {
+    "book_id": "gutenberg_84",
+    "passage_id": "gutenberg_84_passage_1",
+    "book_title": "Frankenstein",
+    "book_author": "Mary Wollstonecraft Shelley",
+    "chapter_number": "Unknown",
+    "passage_title": "C",
+    "passage_number": 1,
+    "cleaned_passage_text": "It was on a dreary night of November that I beheld the accomplishment of my toils. With an anxiety that almost\namounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless\nthing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my\ncandle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the\ncreature open; it breathed hard, and a convulsive motion agitated its limbs. How can I describe my emotions at this\ncatastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His\nlimbs were in proportion, and I had selected his features as beautiful. Beautiful!---Great God! His yellow skin\nscarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of\na pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed\nalmost of the same colour as the dun white sockets in which they were set, his shrivelled complexion and straight\nblack lips.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 203,
+      "char_count": 954,
+      "sentence_count": 17,
+      "avg_word_length": 4.56,
+      "avg_sentence_length": 11.94,
+      "readability_score": 49.55
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_84",
+    "passage_id": "gutenberg_84_passage_2",
+    "book_title": "Frankenstein",
+    "book_author": "Mary Wollstonecraft Shelley",
+    "chapter_number": "Unknown",
+    "passage_title": "V",
+    "passage_number": 2,
+    "cleaned_passage_text": "Such were the professor's words---rather let me say such the words of fate---enounced to destroy me. As he went\non I felt as if my soul were grappling with a palpable enemy; one by one the various keys were touched which\nformed the mechanism of my being; chord after chord was sounded, and soon my mind was filled with one thought,\none conception, one purpose. So much has been done, exclaimed the soul of Frankenstein---more, far more, will I\nachieve; treading in the steps already marked, I will pioneer a new way, explore unknown powers, and unfold to the\nworld the deepest mysteries of creation. I closed not my eyes that night. My internal being was in a state of\ninsurrection and turmoil; I felt that order would thence arise, but I had no power to produce it. By degrees, after the\nmorning's dawn, sleep came. I awoke, and my yesternight's thoughts were as a dream.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 156,
+      "char_count": 717,
+      "sentence_count": 14,
+      "avg_word_length": 4.37,
+      "avg_sentence_length": 11.14,
+      "readability_score": 69.25
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_84",
+    "passage_id": "gutenberg_84_passage_3",
+    "book_title": "Frankenstein",
+    "book_author": "Mary Wollstonecraft Shelley",
+    "chapter_number": "Unknown",
+    "passage_title": "W",
+    "passage_number": 3,
+    "cleaned_passage_text": "I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon\nmy cheeks, which braces my nerves and fills me with delight. Do you understand this feeling? This breeze, which\nhas travelled from the regions towards which I am advancing, gives me a foretaste of those icy climes. Inspirited by\nthis wind of promise, my daydreams become more fervent and vivid. I try in vain to be persuaded that the pole is the\nseat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight. There,\nMargaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour.\nThere---for with your leave, my sister, I will put some trust in preceding navigators---there snow and frost are\nbanished; and, sailing over a calm sea, we may be wafted to a land surpassing in wonders and in beauty every\nregion hitherto discovered on the habitable globe.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 171,
+      "char_count": 800,
+      "sentence_count": 14,
+      "avg_word_length": 4.51,
+      "avg_sentence_length": 12.21,
+      "readability_score": 56.87
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_1342",
+    "passage_id": "gutenberg_1342_passage_1",
+    "book_title": "Pride and Prejudice",
+    "book_author": "Jane Austen",
+    "chapter_number": "Unknown",
+    "passage_title": "O",
+    "passage_number": 1,
+    "cleaned_passage_text": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in\nwant of a wife. However little known the feelings or views of such a man may be on his first entering a\nneighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered as the\nrightful property of some one or other of their daughters.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 71,
+      "char_count": 308,
+      "sentence_count": 5,
+      "avg_word_length": 4.25,
+      "avg_sentence_length": 14.2,
+      "readability_score": 51.65
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_1342",
+    "passage_id": "gutenberg_1342_passage_2",
+    "book_title": "Pride and Prejudice",
+    "book_author": "Jane Austen",
+    "chapter_number": "Unknown",
+    "passage_title": "D",
+    "passage_number": 2,
+    "cleaned_passage_text": "While settling this point, she was suddenly roused by the sound of the door-bell, and her spirits were a little fluttered\nby the idea of its being Colonel Fitzwilliam himself, who had once before called late in the evening, and might now\ncome to inquire particularly after her. But this idea was soon banished, and her spirits were very differently affected,\nwhen, to her utter amazement, she saw Mr. Darcy walk into the room. In an hurried manner he immediately began\nan enquiry after her health, imputing his visit to a wish of hearing that she were better. She answered him with cold\ncivility. He sat down for a few moments, and then getting up, walked about the room. Elizabeth was surprised, but\nsaid not a word. After a silence of several minutes, he came towards her in an agitated manner, and thus began: 'In\nvain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I\nadmire and love you.' He spoke well; but there were feelings besides those of the heart to be detailed, and he was\nnot more eloquent on the subject of tenderness than of pride. His sense of her inferiority--of its being a\ndegradation--of the family obstacles which judgment had always opposed to inclination, were dwelt on with a\nwarmth which seemed due to the consequence he was wounding, but was very unlikely to recommend his suit.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 244,
+      "char_count": 1127,
+      "sentence_count": 23,
+      "avg_word_length": 4.46,
+      "avg_sentence_length": 10.61,
+      "readability_score": 63.31
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_1342",
+    "passage_id": "gutenberg_1342_passage_3",
+    "book_title": "Pride and Prejudice",
+    "book_author": "Jane Austen",
+    "chapter_number": "Unknown",
+    "passage_title": "L",
+    "passage_number": 3,
+    "cleaned_passage_text": "Elizabeth's spirits soon rising to playfulness again, she wanted Mr. Darcy to account for his having ever fallen in\nlove with her. 'How could you begin?' said she. 'I can comprehend your going on charmingly, when you had once\nmade a beginning; but what could set you off in the first place?' 'I cannot fix on the hour, or the spot, or the look, or\nthe words, which laid the foundation. It is too long ago. I was in the middle before I knew that I had begun.' 'My\nbeauty you had early withstood, and as for my manners--my behaviour to you was at least always bordering on the\nuncivil, and I never spoke to you without rather wishing to give you pain than not. Now be sincere; did you admire me\nfor my impertinence?' 'For the liveliness of your mind, I did.' 'You may as well call it impertinence at once. It was very\nlittle less. The fact is, that you were sick of civility, of deference, of officious attention. You were disgusted with the\nwomen who were always speaking, and looking, and thinking for your approbation alone. I roused, and interested\nyou, because I was so unlike them.'",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 200,
+      "char_count": 887,
+      "sentence_count": 20,
+      "avg_word_length": 4.19,
+      "avg_sentence_length": 10.0,
+      "readability_score": 74.02
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_1",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott (Francis Scott) Fitzgerald",
+    "chapter_number": "Chapter 1 (End)",
+    "passage_title": "T",
+    "passage_number": 1,
+    "cleaned_passage_text": "But I didn't call to him, for he gave a sudden intimation that he was content to be alone--he\nstretched out his arms toward the dark water in a curious way, and, far as I was from him, I\ncould have sworn he was trembling. Involuntarily I glanced seaward--and distinguished\nnothing except a single green light, minute and far away, that might have been the end of a\ndock. When I looked once more for Gatsby he had vanished, and I was alone again in the\nunquiet darkness.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 88,
+      "char_count": 382,
+      "sentence_count": 8,
+      "avg_word_length": 4.17,
+      "avg_sentence_length": 11.0,
+      "readability_score": 59.78
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_2",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott (Francis Scott) Fitzgerald",
+    "chapter_number": "Chapter 7",
+    "passage_title": "\"",
+    "passage_number": 2,
+    "cleaned_passage_text": "She's got an indiscreet voice,",
+    "is_valid": false,
+    "quality_score": 0.2,
+    "quality_issues": [
+      "too_short: 5 words (min: 20)",
+      "too_few_chars: 26 chars (min: 100)",
+      "wrong_language: detected 'nl' (expected: en)"
+    ],
+    "metrics": {
+      "word_count": 5,
+      "char_count": 26,
+      "sentence_count": 1,
+      "avg_word_length": 4.8,
+      "avg_sentence_length": 5.0,
+      "readability_score": 83.32
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  },
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_3",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott (Francis Scott) Fitzgerald",
+    "chapter_number": "Chapter 9 (Final Lines)",
+    "passage_title": "\"",
+    "passage_number": 3,
+    "cleaned_passage_text": "And as I sat there brooding on the old, unknown world, I thought of Gatsby's wonder when he\nfirst picked out the green light at the end of Daisy's dock. He had come a long way to this blue\nlawn, and his dream must have seemed so close that he could hardly fail to grasp it. He did\nnot know that it was already behind him, somewhere back in that vast obscurity beyond the\ncity, where the dark fields of the republic rolled on under the night.\nGatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us\nthen, but that's no matter--tomorrow we will run faster, stretch out our arms farther... And one fine\nmorning----\nSo we beat on, boats against the current, borne back ceaselessly into the past.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 138,
+      "char_count": 604,
+      "sentence_count": 13,
+      "avg_word_length": 4.18,
+      "avg_sentence_length": 10.62,
+      "readability_score": 74.37
+    },
+    "timestamp": "2026-02-17T19:46:55"
+  }
+]

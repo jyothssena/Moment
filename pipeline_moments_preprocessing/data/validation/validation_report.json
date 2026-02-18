@@ -1,0 +1,26 @@
+{
+  "pipeline": "MOMENT Preprocessing Pipeline",
+  "version": "1.0",
+  "processing_start": "2026-02-17T19:46:46",
+  "processing_end": "2026-02-17T19:46:56",
+  "interpretations": {
+    "total": 450,
+    "valid": 450,
+    "invalid": 0,
+    "validity_rate": 100.0
+  },
+  "passages": {
+    "total": 9,
+    "valid": 8
+  },
+  "users": {
+    "total": 50
+  },
+  "anomalies_detected": 11,
+  "issues_detected": {
+    "pii": 0,
+    "profanity": 0,
+    "spam": 0
+  },
+  "processing_timestamp": "2026-02-17T19:46:56"
+}

@@ -1,0 +1,76 @@
+# ============================================================
+# MOMENT Preprocessing Pipeline - Dependencies
+# IE7374 MLOps Coursework - Group 23
+#
+# Install all dependencies with:
+#   pip install -r requirements.txt
+#
+# Python version: 3.13+
+# ============================================================
+
+
+# ------------------------------------------------------------
+# CORE DATA PROCESSING
+# ------------------------------------------------------------
+pandas>=2.2.0          # reading CSV files (passages.csv, characters.csv) - 2.2+ supports Python 3.13
+numpy>=1.26.0          # numerical operations for anomaly detection (IQR, z-score)
+
+
+# ------------------------------------------------------------
+# TEXT PROCESSING & NLP
+# ------------------------------------------------------------
+nltk>=3.8.1            # tokenization, sentence splitting, stopwords
+langdetect>=1.0.9      # detecting if text is English (validation phase)
+
+
+# ------------------------------------------------------------
+# READABILITY METRICS
+# ------------------------------------------------------------
+textstat>=0.7.3        # Flesch Reading Ease score and other readability metrics
+
+
+# ------------------------------------------------------------
+# TEXT SIMILARITY (for duplicate detection in anomaly detection)
+# ------------------------------------------------------------
+scikit-learn>=1.4.0    # TF-IDF vectorizer + cosine similarity for near-duplicate detection
+
+
+# ------------------------------------------------------------
+# GUTENBERG API CALLS
+# ------------------------------------------------------------
+requests>=2.31.0       # HTTP calls to gutendex.com Gutenberg API
+
+
+# ------------------------------------------------------------
+# CONFIGURATION
+# ------------------------------------------------------------
+pyyaml>=6.0.1          # reading config/config.yaml
+
+
+# ------------------------------------------------------------
+# ENCODING DETECTION
+# ------------------------------------------------------------
+chardet>=5.2.0         # detect and fix text encoding issues during cleaning
+
+
+# ------------------------------------------------------------
+# UTILITIES
+# ------------------------------------------------------------
+python-dateutil>=2.8.2  # timestamp generation and formatting
+tqdm>=4.66.1            # progress bars when processing 450 records
+
+
+# ------------------------------------------------------------
+# AIRFLOW (for production DAG integration)
+# Install separately if needed - comment out for local dev
+# as Airflow has many heavy dependencies
+# ------------------------------------------------------------
+# apache-airflow==2.7.0
+
+
+# ------------------------------------------------------------
+# DEVELOPMENT & TESTING (optional but recommended)
+# ------------------------------------------------------------
+pytest>=7.4.0          # running unit tests in tests/ folder
+black>=23.7.0          # code formatting
+flake8>=6.1.0          # code linting

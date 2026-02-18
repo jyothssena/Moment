@@ -1,0 +1,281 @@
+# ============================================================
+# MOMENT Preprocessing Pipeline - Configuration File
+# IE7374 MLOps Coursework - Group 23
+#
+# PURPOSE: This file controls ALL settings for the pipeline.
+# No hardcoded values anywhere in the code - everything
+# is read from here. To move to production, only this file
+# needs to change, not the code itself.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# PATHS
+# All file paths are relative to the project root folder
+# (pipeline_moments_preprocessing/).
+# Change these if you move files around - code stays the same.
+# ------------------------------------------------------------
+paths:
+
+  # Input files - raw data that gets fed into the pipeline
+  raw_data:
+    interpretations: "data/raw/all_interpretations_450_FINAL_NO_BIAS.json"  # 450 reader interpretations
+    passages: "data/raw/passages.csv"                                        # 9 literary passages (3 per book)
+    characters: "data/raw/characters.csv"                                    # 50 character/reader profiles
+
+  # Output files - what the pipeline produces after preprocessing
+  processed_data:
+    moments: "data/processed/moments_processed.json"    # 450 cleaned interpretations
+    books: "data/processed/books_processed.json"        # 9 cleaned passages
+    users: "data/processed/users_processed.json"        # 50 cleaned user profiles
+
+  # Validation reports - quality summary after pipeline runs
+  validation:
+    report: "data/validation/validation_report.json"    # overall pipeline quality report
+
+
+# ------------------------------------------------------------
+# BOOK METADATA
+#
+# Maps each book title (as it appears in the raw JSON) to its
+# Gutenberg ID and author. This is our "config" strategy for
+# resolving book metadata without hitting the Gutenberg API.
+#
+# IMPORTANT: book_title must EXACTLY match the "book" field
+# in all_interpretations_450_FINAL_NO_BIAS.json, because that
+# is how we look up metadata during preprocessing.
+#
+# In production, this gets replaced by live Gutenberg API calls
+# (controlled by gutenberg.strategy below).
+# ------------------------------------------------------------
+books:
+  - book_title: "Frankenstein"          # must match JSON exactly
+    gutenberg_id: 84                    # Project Gutenberg numeric ID
+    book_id: "gutenberg_84"             # our internal ID format: gutenberg_{id}
+    author: "Mary Shelley"
+    passage_count: 3                    # how many passages we have for this book
+
+  - book_title: "Pride and Prejudice"   # must match JSON exactly
+    gutenberg_id: 1342
+    book_id: "gutenberg_1342"
+    author: "Jane Austen"
+    passage_count: 3
+
+  - book_title: "The Great Gatsby"      # must match JSON exactly
+    gutenberg_id: 64317
+    book_id: "gutenberg_64317"
+    author: "F. Scott Fitzgerald"
+    passage_count: 3
+
+
+# ------------------------------------------------------------
+# PASSAGE TITLE MAPPING
+#
+# passages.csv uses book_title "PRIDE & PREJUDICE" and "Unknown"
+# for Frankenstein, which don't match the interpretation JSON.
+# This mapping normalizes those mismatches so lookups work.
+# ------------------------------------------------------------
+passage_title_mapping:
+  "PRIDE & PREJUDICE": "Pride and Prejudice"   # normalize caps + ampersand
+  "Unknown": "Frankenstein"                     # passages.csv has Unknown for Frankenstein
+
+
+# ------------------------------------------------------------
+# ID GENERATION
+#
+# All IDs in the pipeline are deterministic - same input always
+# produces the same ID. This is important for:
+# - DVC reproducibility (re-running produces identical output)
+# - Airflow idempotency (safe to re-run failed tasks)
+# - Deduplication (same record = same ID every time)
+# ------------------------------------------------------------
+id_generation:
+  user_prefix: "user"                # user IDs:           user_emma_chen_a1b2c3d4
+  interpretation_prefix: "moment"   # interpretation IDs: moment_a1b2c3d4
+  passage_prefix: "passage"         # passage IDs:        gutenberg_84_passage_1
+  hash_length: 8                     # how many characters of the hash to include in IDs
+
+
+# ------------------------------------------------------------
+# TEXT CLEANING
+#
+# Controls what text transformations are applied during Phase 2.
+# Each flag can be turned on/off independently.
+# Applied to BOTH interpretations and passage text.
+# ------------------------------------------------------------
+text_cleaning:
+  remove_extra_whitespace: true   # collapse multiple spaces/newlines into one
+  normalize_unicode: true         # normalize accented chars (é → e) and special symbols
+  fix_encoding: true              # fix mojibake (â€™ → ', â€" → —)
+  fix_smart_quotes: true          # replace "curly quotes" with "straight quotes"
+  fix_dashes: true                # normalize em-dash (—) and en-dash (–) to standard dash
+  remove_urls: false              # keep false: interpretations may legitimately reference URLs
+  remove_emails: true             # remove email addresses (PII risk)
+  lowercase: false                # keep false: preserve original casing for readability analysis
+
+
+# ------------------------------------------------------------
+# TEXT VALIDATION
+#
+# Rules for what counts as a valid record.
+# Separate thresholds for interpretations vs passages because
+# passages are longer literary texts and need different rules.
+# Records that fail validation are flagged (is_valid: false)
+# but NOT removed - they stay in output for transparency.
+# ------------------------------------------------------------
+validation:
+
+  # Rules for the 450 reader interpretations
+  interpretations:
+    min_words: 10             # interpretations shorter than this are too brief
+    max_words: 600            # interpretations longer than this are suspiciously long
+    min_chars: 50             # minimum character count
+    max_chars: 4000           # maximum character count
+    quality_threshold: 0.5    # minimum quality score (0.0 to 1.0) to be considered valid
+    language: "en"            # expected language - flag non-English text
+
+  # Rules for the 9 literary passages
+  passages:
+    min_words: 20             # passages should be at least a sentence or two
+    max_words: 1000           # passages are longer than interpretations
+    min_chars: 100
+    max_chars: 6000
+    quality_threshold: 0.6    # passages held to slightly higher standard
+    language: "en"
+
+
+# ------------------------------------------------------------
+# ISSUE DETECTION
+#
+# Scans for specific problems in text beyond basic validation.
+# Results stored in detected_issues field of output JSON.
+# Flagged records are NOT removed - just marked for review.
+# ------------------------------------------------------------
+issue_detection:
+
+  # PII = Personally Identifiable Information
+  # We check for these even though data is synthesized,
+  # because in production real users will submit text
+  pii:
+    check_emails: true          # regex pattern for email addresses
+    check_phone_numbers: true   # US phone number formats (xxx-xxx-xxxx etc)
+    check_ssn: true             # Social Security Number patterns
+    check_credit_cards: true    # credit card number patterns
+
+  # Profanity detection
+  profanity:
+    enabled: true
+    ratio_threshold: 0.30       # flag if more than 30% of words are profane
+
+  # Spam detection - catches low quality or bot-like text
+  spam:
+    enabled: false # set to true to enable spam detection (currently high false positives)
+    caps_threshold: 0.50              # flag if >50% of characters are uppercase (SHOUTING)
+    punctuation_threshold: 0.10       # flag if >10% of characters are punctuation marks
+    repetitive_chars: 4               # flag if the same character appears 4+ times in a row (e.g. "aaaa")
+    repetitive_words_threshold: 0.30  # flag if any single word makes up >30% of the text
+
+
+# ------------------------------------------------------------
+# ANOMALY DETECTION
+#
+# Flags records that are statistically unusual compared to
+# the rest of the dataset. Unlike validation (rule-based),
+# anomaly detection is statistics-based.
+#
+# This runs AFTER cleaning and validation (Phase 2.5).
+# Results stored in anomalies field of output JSON.
+# ------------------------------------------------------------
+anomaly_detection:
+  enabled: true   # set to false to skip this phase entirely
+
+  # Word count outliers
+  # IQR method: calculates Q1, Q3, and IQR of all word counts,
+  # then flags anything below Q1 - 1.5*IQR or above Q3 + 1.5*IQR
+  word_count:
+    method: "iqr"           # interquartile range - robust to skewed distributions
+    iqr_multiplier: 1.5     # standard multiplier (1.5 = mild outlier, 3.0 = extreme)
+
+  # Readability score outliers
+  # Z-score method: flags records more than N standard deviations from mean
+  readability:
+    method: "zscore"
+    zscore_threshold: 2.5   # flag if readability is 2.5+ std deviations from mean
+
+  # Near-duplicate detection
+  # Catches copy-pasted or near-identical interpretations
+  duplicate:
+    enabled: true
+    similarity_threshold: 0.85    # flag if 85%+ similar to any other interpretation
+
+  # Style vs experience mismatch
+  # Flags when a reader's writing style doesn't match their stated experience level
+  # e.g. a NEW READER writing at PhD level, or a Well-read writing at grade school level
+  style_mismatch:
+    enabled: true
+    new_reader_readability_ceiling: 70    # Flesch score: >70 = easy/accessible writing
+    well_read_readability_floor: 30       # Flesch score: <30 = very complex writing
+    # Flesch Reading Ease: 100=very easy, 0=very hard
+    # New readers expected to write more accessibly (higher score)
+    # Well-read readers may write more complexly (lower score)
+
+
+# ------------------------------------------------------------
+# METRICS CALCULATION
+#
+# Controls which text metrics are computed for each record.
+# All metrics stored in the metrics field of output JSON.
+# Turn off any you don't need to speed up processing.
+# ------------------------------------------------------------
+metrics:
+  calculate_readability: true         # Flesch Reading Ease score (0-100)
+  calculate_word_count: true          # total word count
+  calculate_char_count: true          # character count excluding whitespace
+  calculate_sentence_count: true      # number of sentences
+  calculate_avg_word_length: true     # average characters per word
+  calculate_avg_sentence_length: true # average words per sentence
+
+
+# ------------------------------------------------------------
+# GUTENBERG LOOKUP
+#
+# Controls how we resolve book metadata (author, title, ID).
+#
+# strategy: "config" - use the books section above (Assignment 1)
+# strategy: "api"    - hit the Gutenberg API live (production)
+#
+# To go to production: change strategy to "api" - nothing else
+# in the codebase needs to change.
+# ------------------------------------------------------------
+gutenberg:
+  strategy: "api"                          # "config" for now, "api" for production
+  api_base_url: "https://gutendex.com/books"  # Gutenberg REST API endpoint
+  cache_results: true                         # cache API responses to avoid repeat calls
+  timeout_seconds: 10                         # API call timeout
+
+
+# ------------------------------------------------------------
+# OUTPUT
+#
+# Controls how the processed JSON files are written.
+# ------------------------------------------------------------
+output:
+  indent: 2               # pretty-print JSON with 2-space indentation
+  ensure_ascii: false     # allow unicode characters (e.g. accented letters, em-dashes)
+  include_timestamp: true # add processing timestamp to every record
+  timestamp_format: "%Y-%m-%dT%H:%M:%S"  # ISO 8601 format e.g. 2026-02-17T10:30:00
+
+
+# ------------------------------------------------------------
+# LOGGING
+#
+# Controls pipeline logging behavior.
+# In production, set log_to_file: true to persist logs.
+# DEBUG level shows every record processed.
+# INFO level shows phase summaries only.
+# ------------------------------------------------------------
+logging:
+  level: "INFO"           # DEBUG = verbose, INFO = summaries, WARNING/ERROR = problems only
+  log_to_file: false      # set true in production to write logs to disk
+  log_file: "data/validation/pipeline.log"
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
