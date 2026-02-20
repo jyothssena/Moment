@@ -5,7 +5,6 @@ File: test_bias_detection.py
 Tests all functions in bias_detection.py with edge cases and validation
 Uses actual data files for integration testing
 """
-
 import pytest
 import pandas as pd
 import json
@@ -13,16 +12,7 @@ import os
 import tempfile
 import shutil
 from unittest.mock import patch, MagicMock
-from bias_detection import load_data, run_analysis
-
-# ============================================================
-# TEST CONFIGURATION
-# ============================================================
-
-# Paths to actual test files
-ACTUAL_INTERPRETATIONS_FILE = r'C:\Users\csk23\Documents\Zanthosh\Northeastern\3rd Sem\MLops\Project\2.DATA PIPELINE\Bias Detetection\all_interpretations_450_FINAL_NO_BIAS.json'
-ACTUAL_CHARACTERS_FILE = r'C:\Users\csk23\Documents\Zanthosh\Northeastern\3rd Sem\MLops\Project\2.DATA PIPELINE\Bias Detetection\characters.csv'
-
+from data_pipeline.scripts.bias_detection import load_data, run_analysis
 
 # ============================================================
 # FIXTURES - Sample Data for Testing
@@ -106,6 +96,67 @@ def temp_csv_file(sample_characters_data, tmp_path):
     return str(csv_file)
 
 
+
+@pytest.fixture
+def full_scale_interpretations_data():
+    """
+    Create a full-scale interpretations dataset: 50 characters x 3 books x 3 passages = 450 records.
+    Mirrors the shape of the actual production data.
+    """
+    books = ['Frankenstein', 'Pride and Prejudice', 'The Great Gatsby']
+    passages = ['passage_1', 'passage_2', 'passage_3']
+    data = []
+    for i in range(1, 51):
+        for book in books:
+            for passage in passages:
+                data.append({
+                    "character_name": f"Char_{i:02d}",
+                    "book": book,
+                    "passage": passage,
+                    "interpretation": f"Test interpretation for {book} passage {passage} " * 5,
+                    "word_count": 70
+                })
+    return data
+
+
+@pytest.fixture
+
+def full_scale_characters_data():
+    """
+    Create a full-scale characters dataset: 50 characters with balanced
+    gender, age, distribution type, and personality distributions.
+    """
+    genders = ['Female', 'Male'] * 25
+    ages = [22, 28, 30, 35, 40, 45, 50, 55, 25, 38] * 5  # mix of age groups
+    # Distribute as evenly as possible across 50 characters
+    dist_cats   = (['Casual'] * 17 + ['Voracious'] * 17 + ['Moderate'] * 16)
+    personalities = (['Empathetic'] * 17 + ['Analytical'] * 17 + ['Adventurous'] * 16)
+
+    return pd.DataFrame({
+        'Name': [f"Char_{i:02d}" for i in range(1, 51)],
+        'Age': ages,
+        'Gender': genders,
+        'Distribution_Category': dist_cats,
+        'Personality': personalities
+    })
+
+
+@pytest.fixture
+def full_scale_json_file(full_scale_interpretations_data, tmp_path):
+    """Write full-scale interpretations to a temp JSON file"""
+    json_file = tmp_path / "full_interpretations.json"
+    with open(json_file, 'w', encoding='utf-8') as f:
+        json.dump(full_scale_interpretations_data, f)
+    return str(json_file)
+
+
+@pytest.fixture
+def full_scale_csv_file(full_scale_characters_data, tmp_path):
+    """Write full-scale characters to a temp CSV file"""
+    csv_file = tmp_path / "full_characters.csv"
+    full_scale_characters_data.to_csv(csv_file, index=False)
+    return str(csv_file)
+
 @pytest.fixture
 def balanced_test_dataset():
     """Create a perfectly balanced dataset for testing bias thresholds"""
@@ -167,8 +218,8 @@ class TestDataLoading:
     
     def test_load_data_with_mock_files(self, temp_json_file, temp_csv_file):
         """Test load_data function with mock files"""
-        with patch('bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
-             patch('bias_detection.CHARACTERS_FILE', temp_csv_file):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', temp_csv_file):
             
             df = load_data()
             
@@ -179,8 +230,8 @@ class TestDataLoading:
     
     def test_load_data_creates_age_groups(self, temp_json_file, temp_csv_file):
         """Test that age groups are created correctly"""
-        with patch('bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
-             patch('bias_detection.CHARACTERS_FILE', temp_csv_file):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', temp_csv_file):
             
             df = load_data()
             
@@ -199,14 +250,14 @@ class TestDataLoading:
     
     def test_load_data_handles_missing_json_file(self):
         """Test error handling when JSON file is missing"""
-        with patch('bias_detection.INTERPRETATIONS_FILE', 'nonexistent_file.json'):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', 'nonexistent_file.json'):
             df = load_data()
             assert df is None, "Should return None when file is missing"
     
     def test_load_data_handles_missing_csv_file(self, temp_json_file):
         """Test error handling when CSV file is missing"""
-        with patch('bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
-             patch('bias_detection.CHARACTERS_FILE', 'nonexistent_file.csv'):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', temp_json_file), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', 'nonexistent_file.csv'):
             df = load_data()
             assert df is None, "Should return None when CSV is missing"
     
@@ -231,9 +282,8 @@ class TestDataLoading:
         with open(json_file, 'w') as f:
             json.dump(interp_data, f)
         char_data.to_csv(csv_file, index=False)
-        
-        with patch('bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
-             patch('bias_detection.CHARACTERS_FILE', str(csv_file)):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', str(csv_file)):
             df = load_data()
             
             assert df is not None
@@ -389,52 +439,45 @@ class TestBiasDetectionLogic:
 # TEST CLASS 4: Integration Tests with Actual Data
 # ============================================================
 
-class TestIntegrationWithActualData:
-    """Integration tests using actual data files (if they exist)"""
-    
-    @pytest.mark.skipif(not os.path.exists(ACTUAL_INTERPRETATIONS_FILE), 
-                        reason="Actual interpretations file not found")
-    def test_load_actual_interpretations_file(self):
-        """Test loading the actual interpretations file"""
-        df = pd.read_json(ACTUAL_INTERPRETATIONS_FILE)
-        
+
+class TestIntegrationWithFixtureData:
+    """
+    Integration tests that mirror production data shape and expectations,
+    using fixture-created files instead of local paths.
+    """
+
+    def test_load_full_scale_interpretations(self, full_scale_json_file):
+        """Fixture-created interpretations file should have 450 records"""
+        df = pd.read_json(full_scale_json_file)
         assert len(df) == 450, "Should have 450 interpretations"
-        assert 'character_name' in df.columns
-        assert 'book' in df.columns
-        assert 'interpretation' in df.columns
-        assert 'word_count' in df.columns
-    
-    @pytest.mark.skipif(not os.path.exists(ACTUAL_CHARACTERS_FILE), 
-                        reason="Actual characters file not found")
-    def test_load_actual_characters_file(self):
-        """Test loading the actual characters file"""
-        df = pd.read_csv(ACTUAL_CHARACTERS_FILE)
-        
+        for col in ('character_name', 'book', 'interpretation', 'word_count'):
+            assert col in df.columns
+
+    def test_load_full_scale_characters(self, full_scale_csv_file):
+        """Fixture-created characters file should have 50 characters"""
+        df = pd.read_csv(full_scale_csv_file)
         assert len(df) == 50, "Should have 50 characters"
-        assert 'Name' in df.columns
-        assert 'Age' in df.columns
-        assert 'Gender' in df.columns
-        assert 'Distribution_Category' in df.columns
-        assert 'Personality' in df.columns
-    
-    @pytest.mark.skipif(not (os.path.exists(ACTUAL_INTERPRETATIONS_FILE) and 
-                             os.path.exists(ACTUAL_CHARACTERS_FILE)), 
-                        reason="Actual data files not found")
-    def test_full_pipeline_with_actual_data(self):
-        """Test complete pipeline with actual data files"""
-        df = load_data()
-        
-        assert df is not None, "Should successfully load data"
-        assert len(df) == 450, "Should have 450 records after merge"
-        
-        results = run_analysis(df)
-        
-        # Check expected results based on your bias report
-        assert results['gender']['max_dev'] < 10, "Gender should be balanced"
-        assert results['reader_type']['max_dev'] < 10, "Reader type should be balanced"
-        assert results['personality']['max_dev'] < 10, "Personality should be balanced"
-        assert results['book']['assessment'] == 'PERFECT', "Books should be perfectly distributed"
-        assert results['character']['assessment'] == 'PERFECT', "Characters should be perfectly represented"
+        for col in ('Name', 'Age', 'Gender', 'Distribution_Category', 'Personality'):
+            assert col in df.columns
+
+    def test_full_pipeline_with_fixture_data(self, full_scale_json_file, full_scale_csv_file):
+        """Test complete pipeline using fixture-generated full-scale data"""
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', full_scale_json_file), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', full_scale_csv_file):
+
+            df = load_data()
+
+            assert df is not None, "Should successfully load data"
+            assert len(df) == 450, "Should have 450 records after merge"
+
+            results = run_analysis(df)
+
+            assert results['gender']['max_dev'] < 10,      "Gender should be balanced"
+            assert results['reader_type']['max_dev'] < 10, "Reader type should be balanced"
+            assert results['personality']['max_dev'] < 10, "Personality should be balanced"
+            assert results['book']['assessment'] == 'PERFECT',      "Books should be perfectly distributed"
+            assert results['character']['assessment'] == 'PERFECT', "Characters should be perfectly represented"
+
 
 
 # ============================================================
@@ -481,9 +524,8 @@ class TestEdgeCases:
         with open(json_file, 'w') as f:
             json.dump(interp_data, f)
         char_data.to_csv(csv_file, index=False)
-        
-        with patch('bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
-             patch('bias_detection.CHARACTERS_FILE', str(csv_file)):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', str(csv_file)):
             df = load_data()
             
             assert len(df) == 1, "Should handle single record"
@@ -513,9 +555,8 @@ class TestEdgeCases:
         with open(json_file, 'w') as f:
             json.dump(interp_data, f)
         char_data.to_csv(csv_file, index=False)
-        
-        with patch('bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
-             patch('bias_detection.CHARACTERS_FILE', str(csv_file)):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', str(csv_file)):
             
             # Should either return None or handle gracefully
             try:
@@ -550,9 +591,8 @@ class TestEdgeCases:
         with open(json_file, 'w') as f:
             json.dump(interp_data, f)
         char_data.to_csv(csv_file, index=False)
-        
-        with patch('bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
-             patch('bias_detection.CHARACTERS_FILE', str(csv_file)):
+        with patch('data_pipeline.scripts.bias_detection.INTERPRETATIONS_FILE', str(json_file)), \
+             patch('data_pipeline.scripts.bias_detection.CHARACTERS_FILE', str(csv_file)):
             df = load_data()
             
             # Both interpretations should get the same character data
