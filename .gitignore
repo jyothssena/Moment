@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Pytest & coverage
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files (if you don't want raw data in git)
+data/*.csv
+data/*.json
+data/*.xlsx
+
+# Results/outputs
+bias_results/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/*.pid
