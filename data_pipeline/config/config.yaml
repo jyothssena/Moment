@@ -1,0 +1,54 @@
+# Data Pipeline Configuration
+
+pipeline:
+  name: "data_pipeline"
+  version: "1.0.0"
+  description: "MLOps Data Pipeline for Moment"
+
+acquisition:
+  source_bucket: "moment_data"
+  prefix: "raw/"
+  
+  # File format for all files in bucket
+  file_format: "auto"  # Options: csv, json, parquet
+
+preprocessing:
+  handle_missing: "drop"  # or "impute"
+  normalization: true
+  encoding: "onehot"  # or "label"
+  
+validation:
+  schema_path: "data_pipeline/config/schema.yaml"
+  anomaly_thresholds:
+    missing_values: 0.1  # 10% threshold
+    outlier_std: 3.0
+  
+bias_detection:
+  enabled: true
+  slice_features:
+    - "age_group"
+    - "gender"
+    - "location"
+  fairness_threshold: 0.1  # 10% disparity threshold
+
+alerts:
+  email:
+    enabled: false
+    recipients:
+      - "your-email@example.com"
+  slack:
+    enabled: false
+    webhook_url: "${SLACK_WEBHOOK_URL}"
+
+airflow:
+  schedule_interval: "@daily"
+  retries: 3
+  retry_delay_minutes: 5
+  email_on_failure: true
+  email_on_retry: false
+
+dvc:
+  remote: "myremote"
+  storage:
+    type: "s3"  # or "gs", "local"
+    bucket: "your-bucket-name"
