@@ -1,28 +1,85 @@
-# Data Pipeline Configuration
+# ============================================================
+# MOMENT Data Pipeline - Unified Configuration
+# ============================================================
 
+# --- Pipeline Metadata ---
 pipeline:
-  name: "data_pipeline"
+  name: "moment_preprocessing_pipeline"
   version: "1.0.0"
-  description: "MLOps Data Pipeline for Moment"
+  description: "MLOps Data Pipeline for MOMENT Reading Platform"
 
+# --- File Paths ---
+paths:
+  raw:
+    interpretations: "data/raw/all_interpretations_450_FINAL_NO_BIAS.json"
+    passages:        "data/raw/passages.csv"
+    characters:      "data/raw/characters.csv"
+  processed:
+    moments: "data/processed/moments_processed.json"
+    books:   "data/processed/books_processed.json"
+    users:   "data/processed/users_processed.json"
+
+# --- Data Acquisition ---
 acquisition:
   source_bucket: "moment_data"
   prefix: "raw/"
-  
-  # File format for all files in bucket
   file_format: "auto"  # Options: csv, json, parquet
 
+# --- Book Metadata (fallback if API is down) ---
+books:
+  - title: "Frankenstein"
+    gutenberg_id: 84
+    author: "Mary Shelley"
+  - title: "Pride and Prejudice"
+    gutenberg_id: 1342
+    author: "Jane Austen"
+  - title: "The Great Gatsby"
+    gutenberg_id: 64317
+    author: "F. Scott Fitzgerald"
+
+# Normalize mismatched titles in passages.csv
+title_map:
+  "PRIDE & PREJUDICE": "Pride and Prejudice"
+  "Unknown": "Frankenstein"
+
+# --- Gutenberg API ---
+gutenberg_api: "https://gutendex.com/books"
+gutenberg_timeout: 10
+
+# --- Preprocessing ---
 preprocessing:
   handle_missing: "drop"  # or "impute"
   normalization: true
-  encoding: "onehot"  # or "label"
-  
+  encoding: "onehot"      # or "label"
+
+# --- Text Validation ---
 validation:
   schema_path: "data_pipeline/config/schema.yaml"
+  min_words: 10
+  max_words: 600
+  min_chars: 50
+  quality_threshold: 0.5
   anomaly_thresholds:
-    missing_values: 0.1  # 10% threshold
+    missing_values: 0.1   # 10% threshold
     outlier_std: 3.0
-  
+
+# --- Issue Detection ---
+issues:
+  profanity_ratio_threshold: 0.90
+  caps_threshold: 0.90
+  punct_threshold: 0.90
+  repetitive_chars: 25
+  repetitive_words_threshold: 0.90
+
+# --- Anomaly Detection ---
+anomalies:
+  iqr_multiplier: 1.5
+  zscore_threshold: 2.5
+  similarity_threshold: 0.85
+  new_reader_ceiling: 70
+  well_read_floor: 30
+
+# --- Bias Detection ---
 bias_detection:
   enabled: true
   slice_features:
@@ -31,6 +88,22 @@ bias_detection:
     - "location"
   fairness_threshold: 0.1  # 10% disparity threshold
 
+# --- Airflow ---
+airflow:
+  schedule_interval: "@daily"
+  retries: 3
+  retry_delay_minutes: 5
+  email_on_failure: true
+  email_on_retry: false
+
+# --- DVC ---
+dvc:
+  remote: "myremote"
+  storage:
+    type: "s3"  # or "gs", "local"
+    bucket: "your-bucket-name"
+
+# --- Alerts ---
 alerts:
   email:
     enabled: false
@@ -40,15 +113,9 @@ alerts:
     enabled: false
     webhook_url: "${SLACK_WEBHOOK_URL}"
 
-airflow:
-  schedule_interval: "@daily"
-  retries: 3
-  retry_delay_minutes: 5
-  email_on_failure: true
-  email_on_retry: false
+# --- Output ---
+indent: 2
+timestamp_format: "%Y-%m-%dT%H:%M:%S"
 
-dvc:
-  remote: "myremote"
-  storage:
-    type: "s3"  # or "gs", "local"
-    bucket: "your-bucket-name"
+# --- Logging ---
+log_level: "INFO"
