@@ -46,35 +46,30 @@ class DataAcquisition:
         blob = bucket.blob(blob_path)
         blob_content = blob.download_as_bytes()
         
+        if file_format == 'auto':
+            if blob_path.endswith('.csv'):         file_format = 'csv'
+            elif blob_path.endswith('.parquet'):   file_format = 'parquet'
+            elif blob_path.endswith('.json'):      file_format = 'json'
+            else:
+                raise ValueError(f"Cannot auto-detect format for: {blob_path}")
+
         # Load into DataFrame based on format
         if file_format == 'csv':
             df = pd.read_csv(io.BytesIO(blob_content))
         elif file_format == 'parquet':
             df = pd.read_parquet(io.BytesIO(blob_content))
         elif file_format == 'json':
-            # Try different JSON formats
             try:
-                # Standard JSON array format: [{"key": "value"}, ...]
-                df = pd.read_json(io.BytesIO(blob_content), orient='records')
+                df = pd.read_json(io.BytesIO(blob_content))
             except ValueError:
-                try:
-                    # JSON lines format (newline-delimited): {"key": "value"}\n{"key": "value"}
-                    df = pd.read_json(io.BytesIO(blob_content), lines=True)
-                except ValueError:
-                    try:
-                        # Try without any orientation specified
-                        df = pd.read_json(io.BytesIO(blob_content))
-                    except Exception as e:
-                        logger.error(f"Failed to parse JSON from {blob_path}: {e}")
-                        raise ValueError(f"Could not parse JSON file {blob_path}. Check file format.")
+                df = pd.read_json(io.BytesIO(blob_content), lines=True)
         else:
             raise ValueError(f"Unsupported format: {file_format}")
-        
+                
         logger.info(f"Loaded {len(df)} rows from {blob_path}")
         return df
-    
     def read_all_blobs(self, bucket_name, prefix, file_format):
-        """Read all blobs and return as dictionary of DataFrames."""
+        """Read all blobs and combine into single DataFrame."""
         logger.info(f"Reading all blobs from bucket '{bucket_name}'")
         
         # Get all blob paths
@@ -83,25 +78,11 @@ class DataAcquisition:
         if not blob_paths:
             raise ValueError(f"No files found in bucket '{bucket_name}' with prefix '{prefix}'")
         
-        # Read each blob and store in dictionary with filename as key
+        # Read each blob and collect DataFrames
         dataframes_dict = {}
         for blob_path in blob_paths:
             try:
-                # Auto-detect file format from extension if file_format is 'auto'
-                if file_format == 'auto':
-                    if blob_path.endswith('.csv'):
-                        detected_format = 'csv'
-                    elif blob_path.endswith('.json'):
-                        detected_format = 'json'
-                    elif blob_path.endswith('.parquet'):
-                        detected_format = 'parquet'
-                    else:
-                        logger.warning(f"Cannot detect format for {blob_path}, skipping")
-                        continue
-                else:
-                    detected_format = file_format
-                
-                df = self.read_single_blob(bucket_name, blob_path, detected_format)
+                df = self.read_single_blob(bucket_name, blob_path, file_format)
                 # Use filename as key (without path)
                 filename = blob_path.split('/')[-1]
                 dataframes_dict[filename] = df
@@ -117,7 +98,6 @@ class DataAcquisition:
         logger.info(f"Total: {total_rows} rows from {len(dataframes_dict)} files")
         
         return dataframes_dict
-    
 
     def run(self):
         """Load all data from GCS bucket into memory."""
