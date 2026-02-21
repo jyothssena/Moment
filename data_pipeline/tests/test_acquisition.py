@@ -1,12 +1,9 @@
-import sys
-sys.path.append("/Users/jyothssena/Moment/data_pipeline/scripts/")
 import pytest
 import pandas as pd
 import yaml
 import io
-from unittest.mock import Mock, patch, MagicMock, mock_open
-from google.cloud import storage
-from data_acquisition import DataAcquisition 
+from unittest.mock import Mock, patch
+from data_pipeline.scripts.data_acquisition import DataAcquisition 
 
 # ============================================================================
 # Fixtures
@@ -58,7 +55,7 @@ def sample_parquet_data():
 @pytest.fixture
 def mock_storage_client():
     """Mock Google Cloud Storage client."""
-    with patch('data_acquisition.storage.Client') as mock_client:
+    with patch('data_pipeline.scripts.data_acquisition.storage.Client') as mock_client:
         yield mock_client
 
 
@@ -613,4 +610,4 @@ class TestIntegration:
 # ============================================================================
 
 if __name__ == "__main__":
-    pytest.main([__file__, "-v", "--cov=data_acquisition", "--cov-report=html"])
+    pytest.main([__file__, "-v", "--cov=data_pipeline.scripts.data_acquisition", "--cov-report=html"])
