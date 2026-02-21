@@ -1,0 +1,62 @@
+# MOMENT Preprocessing Pipeline Configuration
+# Used by: preprocessor.py, anomalies.py, run.py
+
+# ── Data paths ──
+paths:
+  raw:
+    interpretations: "data/all_interpretations_450_FINAL_NO_BIAS.json"
+    passages: "data/csvs/passages.csv"
+    characters: "data/csvs/characters.csv"
+  processed:
+    moments: "data/moments_processed.json"
+    books: "data/books_processed.json"
+    users: "data/users_processed.json"
+
+# ── Text validation thresholds ──
+validation:
+  min_words: 10
+  max_words: 600
+  min_chars: 50
+  quality_threshold: 0.5
+
+# ── Issue detection ──
+issues:
+  profanity_ratio_threshold: 0.05
+  caps_threshold: 0.5
+  punct_threshold: 0.3
+  repetitive_chars: 5
+  repetitive_words_threshold: 0.3
+
+# ── Anomaly detection ──
+anomalies:
+  iqr_multiplier: 1.5
+  zscore_threshold: 2.5
+  similarity_threshold: 0.85
+  new_reader_ceiling: 50
+  well_read_floor: 150
+
+# ── Book metadata ──
+books:
+  - title: "Frankenstein"
+    gutenberg_id: 84
+    author: "Mary Shelley"
+  - title: "Pride and Prejudice"
+    gutenberg_id: 1342
+    author: "Jane Austen"
+  - title: "The Great Gatsby"
+    gutenberg_id: 64317
+    author: "F. Scott Fitzgerald"
+
+gutenberg_api: "https://gutendex.com/books"
+gutenberg_timeout: 10
+
+# ── Title normalization ──
+title_map:
+  "Frankenstein; Or, The Modern Prometheus": "Frankenstein"
+  "Pride and Prejudice": "Pride and Prejudice"
+  "The Great Gatsby": "The Great Gatsby"
+
+# ── Output format ──
+timestamp_format: "%Y-%m-%dT%H:%M:%S"
+indent: 2
+log_level: "INFO"
