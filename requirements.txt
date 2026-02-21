@@ -1,0 +1,14 @@
+# MOMENT Preprocessing Pipeline - Dependencies
+# Install with: pip install -r requirements.txt
+# Python 3.8+
+
+pandas>=2.2.0          # reading CSV files
+numpy>=1.26.0          # numerical operations
+nltk>=3.8.1            # text processing
+langdetect>=1.0.9      # language detection
+textstat>=0.7.3        # Flesch readability score
+scikit-learn>=1.4.0    # TF-IDF + cosine similarity for duplicate detection
+requests>=2.31.0       # Gutenberg API calls
+pyyaml>=6.0.1          # reading config.yaml
+tqdm>=4.66.1           # progress bars
+pytest>=7.4.0          # running tests
