@@ -20,7 +20,7 @@ import yaml # type: ignore
 import argparse
 from datetime import datetime
 
-from pipeline.preprocessor import (
+from preprocessor import (
     read_raw_data,
     lookup_books,
     process_books,
@@ -28,7 +28,7 @@ from pipeline.preprocessor import (
     process_moments_pass1,
     write_outputs
 )
-from pipeline.anomalies import detect_anomalies
+from anomalies import detect_anomalies
 
 
 def load_config(config_path="config.yaml"):

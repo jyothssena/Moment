@@ -1,0 +1,27 @@
+# MOMENT DVC Pipeline
+# Mirrors the Airflow DAG for data versioning
+# Run: dvc repro
+
+stages:
+  bias_detection:
+    cmd: cd ${REPO_ROOT:-.} && python data_pipeline/scripts/bias_detection.py
+    deps:
+      - data/all_interpretations_450_FINAL_NO_BIAS.json
+      - data/csvs/characters.csv
+      - data_pipeline/scripts/bias_detection.py
+    outs:
+      - data/bias_results/bias_report_FINAL.md
+
+  preprocessing:
+    cmd: cd ${REPO_ROOT:-.} && python data_pipeline/scripts/run.py --config data_pipeline/config/preprocessing_config.yaml
+    deps:
+      - data/all_interpretations_450_FINAL_NO_BIAS.json
+      - data/csvs/passages.csv
+      - data/csvs/characters.csv
+      - data_pipeline/scripts/preprocessor.py
+      - data_pipeline/scripts/anomalies.py
+      - data_pipeline/config/preprocessing_config.yaml
+    outs:
+      - data/moments_processed.json
+      - data/books_processed.json
+      - data/users_processed.json
