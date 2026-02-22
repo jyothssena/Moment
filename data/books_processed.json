@@ -1,0 +1,72 @@
+[
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_1",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott Fitzgerald",
+    "chapter_number": "Chapter 1 (End)",
+    "passage_title": "T",
+    "passage_number": 1,
+    "cleaned_passage_text": "But I didn't call to him, for he gave a sudden intimation that he was content to be alone--he\nstretched out his arms toward the dark water in a curious way, and, far as I was from him, I\ncould have sworn he was trembling. Involuntarily I glanced seaward--and distinguished\nnothing except a single green light, minute and far away, that might have been the end of a\ndock. When I looked once more for Gatsby he had vanished, and I was alone again in the\nunquiet darkness.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 88,
+      "char_count": 382,
+      "sentence_count": 8,
+      "avg_word_length": 4.17,
+      "avg_sentence_length": 11.0,
+      "readability_score": 59.78
+    },
+    "timestamp": "2026-02-21T04:44:22"
+  },
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_2",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott Fitzgerald",
+    "chapter_number": "Chapter 7",
+    "passage_title": "\"",
+    "passage_number": 2,
+    "cleaned_passage_text": "She's got an indiscreet voice,",
+    "is_valid": false,
+    "quality_score": 0.2,
+    "quality_issues": [
+      "too_short: 5 words (min 10)",
+      "too_few_chars: 26",
+      "wrong_language: nl"
+    ],
+    "metrics": {
+      "word_count": 5,
+      "char_count": 26,
+      "sentence_count": 1,
+      "avg_word_length": 4.8,
+      "avg_sentence_length": 5.0,
+      "readability_score": 83.32
+    },
+    "timestamp": "2026-02-21T04:44:22"
+  },
+  {
+    "book_id": "gutenberg_64317",
+    "passage_id": "gutenberg_64317_passage_3",
+    "book_title": "The Great Gatsby",
+    "book_author": "F. Scott Fitzgerald",
+    "chapter_number": "Chapter 9 (Final Lines)",
+    "passage_title": "\"",
+    "passage_number": 3,
+    "cleaned_passage_text": "And as I sat there brooding on the old, unknown world, I thought of Gatsby's wonder when he\nfirst picked out the green light at the end of Daisy's dock. He had come a long way to this blue\nlawn, and his dream must have seemed so close that he could hardly fail to grasp it. He did\nnot know that it was already behind him, somewhere back in that vast obscurity beyond the\ncity, where the dark fields of the republic rolled on under the night.\nGatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us\nthen, but that's no matter--tomorrow we will run faster, stretch out our arms farther... And one fine\nmorning----\nSo we beat on, boats against the current, borne back ceaselessly into the past.",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "quality_issues": [],
+    "metrics": {
+      "word_count": 138,
+      "char_count": 604,
+      "sentence_count": 13,
+      "avg_word_length": 4.18,
+      "avg_sentence_length": 10.62,
+      "readability_score": 74.37
+    },
+    "timestamp": "2026-02-21T04:44:22"
+  }
+]

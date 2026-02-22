@@ -10,5 +10,6 @@ textstat>=0.7.3        # Flesch readability score
 scikit-learn>=1.4.0    # TF-IDF + cosine similarity for duplicate detection
 requests>=2.31.0       # Gutenberg API calls
 pyyaml>=6.0.1          # reading config.yaml
+google-cloud-storage>=2.14.0  # GCS data acquisition
 tqdm>=4.66.1           # progress bars
 pytest>=7.4.0          # running tests

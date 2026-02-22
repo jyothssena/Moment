@@ -1,4 +1,5 @@
 import logging
+import os
 import pandas as pd
 from datetime import datetime
 import yaml
@@ -22,8 +23,19 @@ class DataAcquisition:
             raise
 
         self.timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        self.storage_client = storage.Client()
+        self._storage_client = None  # Lazy init — only connect when needed
         self.dataframe = None
+
+    @property
+    def storage_client(self):
+        """Lazy-init GCS client so class works without credentials for fallback."""
+        if self._storage_client is None:
+            # Try project from config, then env var, then let GCS auto-detect
+            project = self.config.get('acquisition', {}).get('project_id') \
+                      or os.environ.get('GOOGLE_CLOUD_PROJECT') \
+                      or None
+            self._storage_client = storage.Client(project=project)
+        return self._storage_client
         
     def list_blobs(self, bucket_name, prefix=None):
         """List all blobs in a bucket with optional prefix."""
@@ -129,6 +141,61 @@ class DataAcquisition:
         if self.dataframes is None:
             raise ValueError("No data loaded. Run acquisition first.")
         return self.dataframes
+
+    def save_to_local(self, output_dir="data/raw"):
+        """
+        Save downloaded DataFrames to local disk so pipeline tasks can read them.
+
+        This is the bridge between GCS (cloud) and the pipeline (local):
+            GCS → run() loads to memory → save_to_local() writes to data/raw/
+            → bias_detection reads data/raw/
+            → preprocessor reads data/raw/
+            → writes to data/processed/
+
+        Args:
+            output_dir: Local directory to save files (default: data/raw/)
+        """
+        import os as _os
+        import json as _json
+
+        if self.dataframes is None:
+            raise ValueError("No data loaded. Call run() first.")
+
+        _os.makedirs(output_dir, exist_ok=True)
+
+        for filename, df in self.dataframes.items():
+            filepath = _os.path.join(output_dir, filename)
+
+            if filename.endswith('.csv'):
+                df.to_csv(filepath, index=False)
+            elif filename.endswith('.json'):
+                records = df.to_dict(orient='records')
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    _json.dump(records, f, indent=2, ensure_ascii=False)
+            elif filename.endswith('.parquet'):
+                df.to_parquet(filepath, index=False)
+
+            logger.info(f"  Saved {len(df)} rows → {filepath}")
+
+        logger.info(f"✅ All {len(self.dataframes)} files saved to {output_dir}/")
+        return output_dir
+
+
+if __name__ == "__main__":
+    """Standalone entry point for DVC pipeline."""
+    import argparse
+
+    parser = argparse.ArgumentParser(description="MOMENT Data Acquisition")
+    parser.add_argument("--config", default="data_pipeline/config/config.yaml", help="Path to config.yaml")
+    parser.add_argument("--output-dir", default="data/raw", help="Local output directory")
+    args = parser.parse_args()
+
+    acq = DataAcquisition(config_path=args.config)
+    metadata = acq.run()
+    acq.save_to_local(output_dir=args.output_dir)
+    logger.info(f"Done: {metadata['num_files']} files, {metadata['total_rows']} rows → {args.output_dir}/")
+
+
 '''
 def read_raw_files_from_gcs(bucket_name):
     """Reads the contents of all blobs from a GCS bucket."""

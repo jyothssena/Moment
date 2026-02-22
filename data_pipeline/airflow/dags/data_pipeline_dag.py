@@ -70,44 +70,47 @@ TEAM_EMAILS = [
 
 def task_acquire_data(**context):
     """
-    Task 1: Load data from GCS (Jyothssena's code).
-    Falls back to local file check if GCS unavailable.
+    Task 1: Download data from GCS → save to data/raw/
+    This is the FIRST step. All other tasks read from data/raw/.
+    Falls back to checking local files if GCS unavailable.
     """
     logger.info("=" * 55)
-    logger.info("  TASK 1: Data Acquisition")
+    logger.info("  TASK 1: Data Acquisition (GCS → data/raw/)")
     logger.info("=" * 55)
+
+    raw_dir = os.path.join(REPO_ROOT, 'data', 'raw')
 
     try:
         from data_acquisition import DataAcquisition
         acq = DataAcquisition(config_path=PIPELINE_CONFIG)
+
+        # Step 1: Download from GCS to memory
         metadata = acq.run()
-        dataframes = acq.get_dataframes()
 
-        dataframes_json = {
-            fname: df.to_json(orient='records')
-            for fname, df in dataframes.items()
-        }
-        context['task_instance'].xcom_push(key='dataframes', value=dataframes_json)
-        context['task_instance'].xcom_push(key='metadata', value=metadata)
+        # Step 2: Save to data/raw/ so other tasks can read files
+        acq.save_to_local(output_dir=raw_dir)
 
-        logger.info(f"✅ GCS acquisition: {metadata['num_files']} files, {metadata['total_rows']} rows")
+        logger.info(f"✅ GCS → data/raw/: {metadata['num_files']} files, {metadata['total_rows']} rows")
         return metadata
 
     except Exception as e:
-        logger.warning(f"GCS unavailable ({e}), verifying local files...")
+        logger.warning(f"GCS unavailable ({e}), checking if data/raw/ already has files...")
 
-        data_dir = os.path.join(REPO_ROOT, 'data')
-        checks = {
-            'interpretations': os.path.exists(os.path.join(data_dir, 'all_interpretations_450_FINAL_NO_BIAS.json')),
-            'passages': os.path.exists(os.path.join(data_dir, 'csvs', 'passages.csv')),
-            'characters': os.path.exists(os.path.join(data_dir, 'csvs', 'characters.csv')),
-        }
-        missing = [k for k, v in checks.items() if not v]
+        # Fallback: check if files already exist in data/raw/
+        required = [
+            'user_interpretations.json',
+            'user_data.csv',
+            'passage_details.csv',
+        ]
+        missing = [f for f in required if not os.path.exists(os.path.join(raw_dir, f))]
         if missing:
-            raise FileNotFoundError(f"Missing local data files: {missing}")
+            raise FileNotFoundError(
+                f"GCS failed and local files missing from {raw_dir}: {missing}\n"
+                f"Either fix GCS credentials or place files in data/raw/"
+            )
 
-        logger.info(f"✅ Local data verified: {checks}")
-        return {'source': 'local', 'files': checks}
+        logger.info(f"✅ Local data/raw/ verified — {len(required)} files present")
+        return {'source': 'local', 'raw_dir': raw_dir}
 
 
 def task_bias_detection(**context):
@@ -144,11 +147,12 @@ def task_bias_detection(**context):
 
 def task_preprocessing(**context):
     """
-    Task 3: Full preprocessing pipeline (Tanmayi's code).
-    read raw → lookup books → process books/users/moments → anomaly detection → write
+    Task 3: Preprocessing pipeline (Tanmayi's code).
+    READS FROM: data/raw/ (written by task_acquire_data)
+    WRITES TO:  data/processed/ (read by schema_stats and validation)
     """
     logger.info("=" * 55)
-    logger.info("  TASK 3: Preprocessing Pipeline")
+    logger.info("  TASK 3: Preprocessing (data/raw/ → data/processed/)")
     logger.info("=" * 55)
 
     import yaml
@@ -158,18 +162,24 @@ def task_preprocessing(**context):
     )
     from anomalies import detect_anomalies
 
-    # Load preprocessing config
-    with open(PREPROCESSING_CONFIG, 'r') as f:
+    # Load the unified config
+    with open(PIPELINE_CONFIG, 'r') as f:
         cfg = yaml.safe_load(f)
 
-    # Adjust paths relative to repo root
+    # Paths are relative — make them absolute from repo root
     for key in cfg['paths']['raw']:
-        cfg['paths']['raw'][key] = os.path.join(REPO_ROOT, cfg['paths']['raw'][key])
+        if not os.path.isabs(cfg['paths']['raw'][key]):
+            cfg['paths']['raw'][key] = os.path.join(REPO_ROOT, cfg['paths']['raw'][key])
     for key in cfg['paths']['processed']:
-        cfg['paths']['processed'][key] = os.path.join(REPO_ROOT, cfg['paths']['processed'][key])
+        if not os.path.isabs(cfg['paths']['processed'][key]):
+            cfg['paths']['processed'][key] = os.path.join(REPO_ROOT, cfg['paths']['processed'][key])
 
-    # Run pipeline steps
-    logger.info("Step 1/6: Reading raw data...")
+    # Ensure output directory exists
+    os.makedirs(os.path.join(REPO_ROOT, 'data', 'processed'), exist_ok=True)
+
+    # Run pipeline — each step passes data to the next IN MEMORY
+    # Only disk I/O happens at read_raw_data (input) and write_outputs (output)
+    logger.info("Step 1/6: Reading from data/raw/...")
     interpretations, passages, characters = read_raw_data(cfg)
 
     logger.info("Step 2/6: Looking up book metadata...")
@@ -185,13 +195,11 @@ def task_preprocessing(**context):
     moments = process_moments_pass1(interpretations, book_meta, cfg)
     moments = detect_anomalies(moments, characters, cfg)
 
-    logger.info("Step 6/6: Writing output files...")
-    # Ensure output dir exists
-    os.makedirs(os.path.dirname(cfg['paths']['processed']['moments']), exist_ok=True)
+    logger.info("Step 6/6: Writing to data/processed/...")
     write_outputs(moments, books, users, cfg)
 
     valid = sum(1 for m in moments if m.get('is_valid', False))
-    logger.info(f"✅ Preprocessing complete: {len(moments)} moments, {len(books)} books, {len(users)} users (valid: {valid})")
+    logger.info(f"✅ data/raw/ → data/processed/: {len(moments)} moments, {len(books)} books, {len(users)} users (valid: {valid})")
 
     return {'moments': len(moments), 'books': len(books), 'users': len(users), 'valid': valid}
 
@@ -199,21 +207,22 @@ def task_preprocessing(**context):
 def task_schema_stats(**context):
     """
     Task 4a: Generate schema and statistics.
-    Tries TFDV, falls back to basic pandas stats.
+    READS FROM: data/processed/ (written by preprocessing task)
+    WRITES TO:  data/reports/
     """
     logger.info("=" * 55)
-    logger.info("  TASK 4a: Schema & Statistics")
+    logger.info("  TASK 4a: Schema & Stats (data/processed/ → data/reports/)")
     logger.info("=" * 55)
 
     import pandas as pd
-    data_dir = os.path.join(REPO_ROOT, 'data')
-    reports_dir = os.path.join(data_dir, 'reports')
+    processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
+    reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
     os.makedirs(reports_dir, exist_ok=True)
 
     stats = {'generated_at': datetime.now().isoformat(), 'datasets': {}}
 
     for fname in ['moments_processed.json', 'books_processed.json', 'users_processed.json']:
-        fpath = os.path.join(data_dir, fname)
+        fpath = os.path.join(processed_dir, fname)
         if os.path.exists(fpath):
             df = pd.read_json(fpath)
             ds = {
@@ -247,14 +256,14 @@ def task_validation(**context):
     logger.info("=" * 55)
 
     import pandas as pd
-    data_dir = os.path.join(REPO_ROOT, 'data')
-    reports_dir = os.path.join(data_dir, 'reports')
+    processed_dir = os.path.join(REPO_ROOT, "data", "processed")
+    reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
     os.makedirs(reports_dir, exist_ok=True)
 
     results = {'timestamp': datetime.now().isoformat(), 'validations': {}, 'status': 'PASSED'}
 
     for fname in ['moments_processed.json', 'books_processed.json', 'users_processed.json']:
-        fpath = os.path.join(data_dir, fname)
+        fpath = os.path.join(processed_dir, fname)
         if not os.path.exists(fpath):
             results['validations'][fname] = {'status': 'MISSING'}
             results['status'] = 'FAILED'
@@ -284,6 +293,38 @@ def task_validation(**context):
 
     logger.info(f"✅ Validation: {results['status']}")
     return results
+
+
+def task_upload_to_gcs(**context):
+    """
+    Task 5: Upload processed data back to GCS.
+    Uploads data/processed/ → gs://moment_data/preprocessed/
+    """
+    logger.info("=" * 55)
+    logger.info("  TASK 5: Upload to GCS (data/processed/ → GCS)")
+    logger.info("=" * 55)
+
+    from google.cloud import storage as gcs_storage
+
+    processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
+    bucket_name = 'moment_data'
+    gcs_prefix = 'preprocessed/'
+
+    project = os.environ.get('GOOGLE_CLOUD_PROJECT', 'moment-486719')
+    client = gcs_storage.Client(project=project)
+    bucket = client.bucket(bucket_name)
+
+    uploaded = []
+    for fname in os.listdir(processed_dir):
+        fpath = os.path.join(processed_dir, fname)
+        if os.path.isfile(fpath):
+            blob = bucket.blob(f"{gcs_prefix}{fname}")
+            blob.upload_from_filename(fpath)
+            logger.info(f"  Uploaded {fname} → gs://{bucket_name}/{gcs_prefix}{fname}")
+            uploaded.append(fname)
+
+    logger.info(f"✅ Uploaded {len(uploaded)} files to gs://{bucket_name}/{gcs_prefix}")
+    return {'uploaded': uploaded, 'destination': f'gs://{bucket_name}/{gcs_prefix}'}
 
 
 def task_notify(**context):
@@ -346,7 +387,7 @@ default_args = {
 dag = DAG(
     'moment_data_pipeline',
     default_args=default_args,
-    description='MOMENT: acquire → bias → preprocess → [schema + validate] (parallel) → notify',
+    description='MOMENT: acquire → bias → preprocess → [schema + validate] (parallel) → upload → notify',
     schedule_interval=timedelta(days=1),
     catchup=False,
     max_active_runs=1,
@@ -359,11 +400,12 @@ bias     = PythonOperator(task_id='bias_detection',    python_callable=task_bias
 preproc  = PythonOperator(task_id='preprocessing',     python_callable=task_preprocessing,   provide_context=True, dag=dag)
 schema   = PythonOperator(task_id='schema_stats',      python_callable=task_schema_stats,    provide_context=True, dag=dag)
 validate = PythonOperator(task_id='validation',        python_callable=task_validation,      provide_context=True, dag=dag)
+upload   = PythonOperator(task_id='upload_to_gcs',     python_callable=task_upload_to_gcs,   provide_context=True, dag=dag)
 notify   = PythonOperator(task_id='notify',            python_callable=task_notify,          provide_context=True, trigger_rule=TriggerRule.ALL_DONE, dag=dag)
 
 # ── Flow ──
-# acquire → bias → preprocess → [schema + validate] (parallel) → notify
-acquire >> bias >> preproc >> [schema, validate] >> notify
+# acquire → bias → preprocess → [schema + validate] (parallel) → upload → notify
+acquire >> bias >> preproc >> [schema, validate] >> upload >> notify
 
 if __name__ == "__main__":
     print("✅ DAG valid")

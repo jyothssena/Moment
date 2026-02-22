@@ -16,6 +16,9 @@ x-airflow-common: &airflow-common
     PIPELINE_CONFIG: /opt/airflow/config/config.yaml
     PREPROCESSING_CONFIG: /opt/airflow/config/preprocessing_config.yaml
     REPO_ROOT: /opt/airflow/repo
+    # GCS credentials — service account key
+    GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/gcs-key.json
+    GOOGLE_CLOUD_PROJECT: moment-486719
   volumes:
     # DAG file
     - ./data_pipeline/airflow/dags:/opt/airflow/dags
@@ -31,6 +34,8 @@ x-airflow-common: &airflow-common
     - ./data_pipeline/tests:/opt/airflow/tests
     # Requirements
     - ./requirements.txt:/opt/airflow/requirements.txt
+    # GCS service account key — place your key as gcs-service-account.json in repo root
+    - ./gcs-service-account.json:/opt/airflow/gcs-key.json:ro
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:

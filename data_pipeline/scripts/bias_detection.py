@@ -8,10 +8,10 @@ import os
 from collections import Counter
 
 # ============================================================
-# CONFIGURATION
+# CONFIGURATION — reads from data/raw/ (where acquisition saves files)
 # ============================================================
-INTERPRETATIONS_FILE = r'data/all_interpretations_450_FINAL_NO_BIAS.json'
-CHARACTERS_FILE = r'data/csvs/characters.csv'
+INTERPRETATIONS_FILE = r'data/raw/user_interpretations.json'
+CHARACTERS_FILE = r'data/raw/user_data.csv'
 
 # ============================================================
 # LOAD DATA
@@ -377,11 +377,11 @@ def run_analysis(df):
     report.append("Threshold: >10% requires mitigation or justification\n")
     
     # Save
-    os.makedirs('data/bias_results', exist_ok=True)
-    with open('data/bias_results/bias_report_FINAL.md', 'w', encoding='utf-8') as f:
+    os.makedirs('data/reports', exist_ok=True)
+    with open('data/reports/bias_report_FINAL.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(report))
     
-    print(f"\n[OK] Report: data/bias_results/bias_report_FINAL.md")
+    print(f"\n[OK] Report: data/reports/bias_report_FINAL.md")
     
     return results
 
@@ -416,6 +416,6 @@ if __name__ == "__main__":
             results['character']['assessment'] == 'PERFECT'):
             print("\n[OK] DATASET APPROVED - Ready for Step 5")
         
-        print(f"\n[OK] Full report: data/bias_results/bias_report_FINAL.md")
+        print(f"\n[OK] Full report: data/reports/bias_report_FINAL.md")
     else:
         print("\n[ERROR] Failed")
