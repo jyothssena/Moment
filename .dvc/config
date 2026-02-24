@@ -1,0 +1,4 @@
+[core]
+    remote = gcs-remote
+['remote "gcs-remote"']
+    url = gs://moment_data/dvc-store

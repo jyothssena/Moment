@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-02-22T02:34:37.435243",
+  "validations": {
+    "moments_processed.json": {
+      "row_count": 450,
+      "null_count": 0,
+      "has_data": true,
+      "has_interpretation_id": true,
+      "has_is_valid": true,
+      "valid_count": 450,
+      "valid_rate": 1.0,
+      "status": "PASSED"
+    },
+    "books_processed.json": {
+      "row_count": 6,
+      "null_count": 0,
+      "has_data": true,
+      "status": "PASSED"
+    },
+    "users_processed.json": {
+      "row_count": 50,
+      "null_count": 0,
+      "has_data": true,
+      "status": "PASSED"
+    }
+  },
+  "status": "PASSED"
+}

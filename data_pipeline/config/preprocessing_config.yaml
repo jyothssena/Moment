@@ -5,8 +5,8 @@
 paths:
   raw:
     interpretations: "data/all_interpretations_450_FINAL_NO_BIAS.json"
-    passages: "data/csvs/passages.csv"
-    characters: "data/csvs/characters.csv"
+    passages: "data/raw/passages.csv"
+    characters: "data/raw/characters.csv"
   processed:
     moments: "data/moments_processed.json"
     books: "data/books_processed.json"

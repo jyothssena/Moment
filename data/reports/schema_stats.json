@@ -1,0 +1,239 @@
+{
+  "generated_at": "2026-02-22T02:34:37.434950",
+  "datasets": {
+    "moments_processed.json": {
+      "rows": 450,
+      "columns": 17,
+      "column_names": [
+        "interpretation_id",
+        "user_id",
+        "book_id",
+        "passage_id",
+        "book_title",
+        "passage_number",
+        "character_id",
+        "character_name",
+        "cleaned_interpretation",
+        "original_word_count",
+        "is_valid",
+        "quality_score",
+        "quality_issues",
+        "detected_issues",
+        "anomalies",
+        "metrics",
+        "timestamp"
+      ],
+      "null_counts": {
+        "interpretation_id": 0,
+        "user_id": 0,
+        "book_id": 0,
+        "passage_id": 0,
+        "book_title": 0,
+        "passage_number": 0,
+        "character_id": 0,
+        "character_name": 0,
+        "cleaned_interpretation": 0,
+        "original_word_count": 0,
+        "is_valid": 0,
+        "quality_score": 0,
+        "quality_issues": 0,
+        "detected_issues": 0,
+        "anomalies": 0,
+        "metrics": 0,
+        "timestamp": 0
+      },
+      "numeric_stats": {
+        "passage_number": {
+          "count": 450.0,
+          "mean": 2.0,
+          "std": 0.8174053141871969,
+          "min": 1.0,
+          "25%": 1.0,
+          "50%": 2.0,
+          "75%": 3.0,
+          "max": 3.0
+        },
+        "character_id": {
+          "count": 450.0,
+          "mean": 25.5,
+          "std": 14.44693076273475,
+          "min": 1.0,
+          "25%": 13.0,
+          "50%": 25.5,
+          "75%": 38.0,
+          "max": 50.0
+        },
+        "original_word_count": {
+          "count": 450.0,
+          "mean": 69.23333333333333,
+          "std": 25.3863904405315,
+          "min": 14.0,
+          "25%": 52.0,
+          "50%": 67.5,
+          "75%": 87.75,
+          "max": 130.0
+        },
+        "quality_score": {
+          "count": 450.0,
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "25%": 1.0,
+          "50%": 1.0,
+          "75%": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "books_processed.json": {
+      "rows": 6,
+      "columns": 13,
+      "column_names": [
+        "book_id",
+        "passage_id",
+        "book_title",
+        "book_author",
+        "chapter_number",
+        "passage_title",
+        "passage_number",
+        "cleaned_passage_text",
+        "is_valid",
+        "quality_score",
+        "quality_issues",
+        "metrics",
+        "timestamp"
+      ],
+      "null_counts": {
+        "book_id": 0,
+        "passage_id": 0,
+        "book_title": 0,
+        "book_author": 0,
+        "chapter_number": 0,
+        "passage_title": 0,
+        "passage_number": 0,
+        "cleaned_passage_text": 0,
+        "is_valid": 0,
+        "quality_score": 0,
+        "quality_issues": 0,
+        "metrics": 0,
+        "timestamp": 0
+      },
+      "numeric_stats": {
+        "chapter_number": {
+          "count": 6.0,
+          "mean": 4.333333333333333,
+          "std": 3.265986323710904,
+          "min": 1.0,
+          "25%": 1.5,
+          "50%": 4.0,
+          "75%": 6.5,
+          "max": 9.0
+        },
+        "passage_number": {
+          "count": 6.0,
+          "mean": 2.0,
+          "std": 0.8944271909999159,
+          "min": 1.0,
+          "25%": 1.25,
+          "50%": 2.0,
+          "75%": 2.75,
+          "max": 3.0
+        },
+        "quality_score": {
+          "count": 6.0,
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "25%": 1.0,
+          "50%": 1.0,
+          "75%": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "users_processed.json": {
+      "rows": 50,
+      "columns": 17,
+      "column_names": [
+        "user_id",
+        "character_name",
+        "gender",
+        "age",
+        "profession",
+        "distribution_category",
+        "personality",
+        "interest",
+        "reading_intensity",
+        "reading_count",
+        "experience_level",
+        "experience_count",
+        "journey",
+        "reading_styles",
+        "total_interpretations",
+        "books_interpreted",
+        "timestamp"
+      ],
+      "null_counts": {
+        "user_id": 0,
+        "character_name": 0,
+        "gender": 0,
+        "age": 0,
+        "profession": 0,
+        "distribution_category": 0,
+        "personality": 0,
+        "interest": 0,
+        "reading_intensity": 0,
+        "reading_count": 0,
+        "experience_level": 0,
+        "experience_count": 0,
+        "journey": 0,
+        "reading_styles": 0,
+        "total_interpretations": 0,
+        "books_interpreted": 0,
+        "timestamp": 0
+      },
+      "numeric_stats": {
+        "age": {
+          "count": 50.0,
+          "mean": 29.04,
+          "std": 9.940558026466674,
+          "min": 0.0,
+          "25%": 23.25,
+          "50%": 28.0,
+          "75%": 34.75,
+          "max": 49.0
+        },
+        "reading_count": {
+          "count": 50.0,
+          "mean": 20.92,
+          "std": 10.514984448832232,
+          "min": 0.0,
+          "25%": 15.25,
+          "50%": 20.0,
+          "75%": 28.75,
+          "max": 42.0
+        },
+        "experience_count": {
+          "count": 50.0,
+          "mean": 5.86,
+          "std": 4.440123182700118,
+          "min": 0.0,
+          "25%": 2.25,
+          "50%": 5.0,
+          "75%": 8.0,
+          "max": 18.0
+        },
+        "total_interpretations": {
+          "count": 50.0,
+          "mean": 9.0,
+          "std": 0.0,
+          "min": 9.0,
+          "25%": 9.0,
+          "50%": 9.0,
+          "75%": 9.0,
+          "max": 9.0
+        }
+      }
+    }
+  }
+}
