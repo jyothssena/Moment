@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-02-24T21:41:31.269885",
+  "timestamp": "2026-02-24T22:22:28.750772",
   "dataset": "books",
-  "total_records": 3,
+  "total_records": 6,
   "total_fields": 18,
   "field_names": [
     "book_id",
@@ -23,6 +23,8 @@
     "metrics_avg_sentence_length",
     "metrics_readability_score"
   ],
+  "schema_location": "/opt/airflow/repo/data/schemas/books_schema.pbtxt",
+  "anomalies": {},
   "numeric_fields": [
     "passage_number",
     "quality_score",
@@ -35,84 +37,84 @@
   ],
   "numeric_statistics": {
     "passage_number": {
-      "count": 3.0,
+      "count": 6.0,
       "mean": 2.0,
-      "std": 1.0,
+      "std": 0.8944271909999159,
       "min": 1.0,
-      "25%": 1.5,
+      "25%": 1.25,
       "50%": 2.0,
-      "75%": 2.5,
+      "75%": 2.75,
       "max": 3.0
     },
     "quality_score": {
-      "count": 3.0,
-      "mean": 0.7333333333333334,
-      "std": 0.46188021535170065,
-      "min": 0.2,
-      "25%": 0.6,
+      "count": 6.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "25%": 1.0,
       "50%": 1.0,
       "75%": 1.0,
       "max": 1.0
     },
     "metrics_word_count": {
-      "count": 3.0,
-      "mean": 77.0,
-      "std": 67.17886572427373,
-      "min": 5.0,
-      "25%": 46.5,
-      "50%": 88.0,
-      "75%": 113.0,
-      "max": 138.0
+      "count": 6.0,
+      "mean": 136.5,
+      "std": 52.43948893725033,
+      "min": 63.0,
+      "25%": 100.5,
+      "50%": 147.0,
+      "75%": 167.25,
+      "max": 203.0
     },
     "metrics_char_count": {
-      "count": 3.0,
-      "mean": 337.3333333333333,
-      "std": 291.5773196483796,
-      "min": 26.0,
-      "25%": 204.0,
-      "50%": 382.0,
-      "75%": 493.0,
-      "max": 604.0
+      "count": 6.0,
+      "mean": 626.1666666666666,
+      "std": 252.39129673320087,
+      "min": 293.0,
+      "25%": 438.75,
+      "50%": 661.0,
+      "75%": 781.25,
+      "max": 956.0
     },
     "metrics_sentence_count": {
-      "count": 3.0,
-      "mean": 7.333333333333333,
-      "std": 6.027713773341707,
-      "min": 1.0,
-      "25%": 4.5,
-      "50%": 8.0,
-      "75%": 10.5,
-      "max": 13.0
+      "count": 6.0,
+      "mean": 6.333333333333333,
+      "std": 1.632993161855452,
+      "min": 3.0,
+      "25%": 7.0,
+      "50%": 7.0,
+      "75%": 7.0,
+      "max": 7.0
     },
     "metrics_avg_word_length": {
-      "count": 3.0,
-      "mean": 4.383333333333333,
-      "std": 0.36087855759705834,
-      "min": 4.17,
-      "25%": 4.175,
-      "50%": 4.18,
-      "75%": 4.49,
-      "max": 4.8
+      "count": 6.0,
+      "mean": 4.319999999999999,
+      "std": 0.18676188047885997,
+      "min": 4.13,
+      "25%": 4.172499999999999,
+      "50%": 4.275,
+      "75%": 4.475,
+      "max": 4.56
     },
     "metrics_avg_sentence_length": {
-      "count": 3.0,
-      "mean": 8.873333333333333,
-      "std": 3.3597817389427744,
-      "min": 5.0,
-      "25%": 7.81,
-      "50%": 10.62,
-      "75%": 10.809999999999999,
-      "max": 11.0
+      "count": 6.0,
+      "mean": 22.293333333333333,
+      "std": 7.515926201518124,
+      "min": 9.0,
+      "25%": 20.355,
+      "50%": 23.36,
+      "75%": 27.8575,
+      "max": 29.33
     },
     "metrics_readability_score": {
-      "count": 3.0,
-      "mean": 72.49,
-      "std": 11.882074734658081,
-      "min": 59.78,
-      "25%": 67.075,
-      "50%": 74.37,
-      "75%": 78.845,
-      "max": 83.32
+      "count": 6.0,
+      "mean": 65.89333333333333,
+      "std": 12.671196733800114,
+      "min": 49.55,
+      "25%": 57.5975,
+      "50%": 64.515,
+      "75%": 75.5875,
+      "max": 82.21
     }
   },
   "categorical_fields": [
@@ -129,45 +131,44 @@
   ],
   "categorical_summary": {
     "book_id": {
-      "unique_values": 1,
+      "unique_values": 2,
       "most_common": "gutenberg_64317"
     },
     "passage_id": {
-      "unique_values": 3,
+      "unique_values": 6,
       "most_common": "gutenberg_64317_passage_1"
     },
     "book_title": {
-      "unique_values": 1,
-      "most_common": "The Great Gatsby"
+      "unique_values": 2,
+      "most_common": "Frankenstein"
     },
     "book_author": {
-      "unique_values": 1,
-      "most_common": "F. Scott Fitzgerald"
+      "unique_values": 2,
+      "most_common": "F. Scott (Francis Scott) Fitzgerald"
     },
     "chapter_number": {
-      "unique_values": 3,
-      "most_common": "Chapter 1 (End)"
+      "unique_values": 5,
+      "most_common": "1"
     },
     "passage_title": {
-      "unique_values": 2,
-      "most_common": "\""
+      "unique_values": 6,
+      "most_common": "Boats Against the Current"
     },
     "cleaned_passage_text": {
-      "unique_values": 3,
-      "most_common": "And as I sat there brooding on the old, unknown world, I thought of Gatsby's wonder when he\nfirst picked out the green light at the end of Daisy's dock. He had come a long way to this blue\nlawn, and his dream must have seemed so close that he could hardly fail to grasp it. He did\nnot know that it was already behind him, somewhere back in that vast obscurity beyond the\ncity, where the dark fields of the republic rolled on under the night.\nGatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us\nthen, but that's no matter--tomorrow we will run faster, stretch out our arms farther... And one fine\nmorning----\nSo we beat on, boats against the current, borne back ceaselessly into the past."
+      "unique_values": 6,
+      "most_common": "\"And as I sat there brooding on the old, unknown world, I thought of Gatsby's wonder when he first picked out the green light at the end of Daisy's dock. He had come a long way to this blue lawn, and his dream must have seemed so close that he could hardly fail to grasp it. He did not know that it was already behind him, somewhere back in that vast obscurity beyond the city, where the dark fields of the republic rolled on under the night. Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that's no matter--tomorrow we will run faster, stretch out our arms farther... And one fine morning. So we beat on, boats against the current, borne back ceaselessly into the past.\""
     },
     "is_valid": {
-      "unique_values": 2,
+      "unique_values": 1,
       "most_common": "True"
     },
     "quality_issues": {
-      "unique_values": 2,
+      "unique_values": 1,
       "most_common": ""
     },
     "timestamp": {
       "unique_values": 1,
-      "most_common": "2026-02-21T04:44:22"
+      "most_common": "2026-02-24T22:22:17"
     }
-  },
-  "schema_location": "/opt/airflow/data/schemas/books_schema.pbtxt"
+  }
 }

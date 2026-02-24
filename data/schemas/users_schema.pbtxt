@@ -340,11 +340,13 @@ string_domain {
 }
 string_domain {
   name: "gender"
+  value: ""
   value: "Female"
   value: "Male"
 }
 string_domain {
   name: "profession"
+  value: ""
   value: "Architect"
   value: "Architecture Student"
   value: "Barista"
@@ -380,11 +382,9 @@ string_domain {
   value: "Nonprofit Director"
   value: "Nursing Student"
   value: "Paramedic"
-  value: "Philosophy Professor"
   value: "Photographer"
   value: "Physical Therapist"
   value: "Physics Student"
-  value: "Professor"
   value: "Psychiatrist"
   value: "Psychologist"
   value: "QA Tester"
@@ -406,6 +406,7 @@ string_domain {
 }
 string_domain {
   name: "personality"
+  value: ""
   value: "Analytical"
   value: "Emotional"
   value: "Narrative"
@@ -413,6 +414,7 @@ string_domain {
 }
 string_domain {
   name: "interest"
+  value: ""
   value: "Adventure"
   value: "Eclectic"
   value: "Gothic"
@@ -422,12 +424,14 @@ string_domain {
 }
 string_domain {
   name: "reading_intensity"
+  value: ""
   value: "Heavy"
   value: "Light"
   value: "Moderate"
 }
 string_domain {
   name: "experience_level"
+  value: ""
   value: "New"
   value: "Some"
   value: "Some classics"
@@ -521,5 +525,5 @@ string_domain {
 }
 string_domain {
   name: "timestamp"
-  value: "2026-02-21T04:44:23"
+  value: "2026-02-24T22:22:19"
 }

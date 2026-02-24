@@ -377,11 +377,11 @@ def run_analysis(df):
     report.append("Threshold: >10% requires mitigation or justification\n")
     
     # Save
-    os.makedirs('bias_results', exist_ok=True)
-    with open('bias_results/bias_report_FINAL.md', 'w', encoding='utf-8') as f:
+    os.makedirs('data/bias_results', exist_ok=True)
+    with open('data/bias_results/bias_report_FINAL.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(report))
     
-    print(f"\n[OK] Report: bias_results/bias_report_FINAL.md")
+    print(f"\n[OK] Report: data/bias_results/bias_report_FINAL.md")
     
     return results
 

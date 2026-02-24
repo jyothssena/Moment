@@ -37,7 +37,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 73.86
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9c24aac5",
@@ -68,7 +68,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=82.3, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=82.3, ceiling=70)"
       ]
     },
     "metrics": {
@@ -79,7 +79,7 @@
       "avg_sentence_length": 7.12,
       "readability_score": 82.35
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7dfedfbf",
@@ -119,7 +119,7 @@
       "avg_sentence_length": 9.12,
       "readability_score": 66.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4e228371",
@@ -148,10 +148,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=66.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 76,
@@ -161,7 +159,7 @@
       "avg_sentence_length": 5.85,
       "readability_score": 66.21
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d89864d2",
@@ -190,10 +188,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 45,
@@ -203,7 +199,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 75.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8d150208",
@@ -232,10 +228,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -245,7 +239,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 76.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_259063f6",
@@ -274,10 +268,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=55.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 89,
@@ -287,7 +279,7 @@
       "avg_sentence_length": 5.93,
       "readability_score": 54.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_eed3ded2",
@@ -327,7 +319,7 @@
       "avg_sentence_length": 6.12,
       "readability_score": 73.69
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8bc2ba4b",
@@ -356,10 +348,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=56.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 112,
@@ -369,7 +359,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 56.49
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_59a87e5c",
@@ -398,10 +388,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=46.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 62,
@@ -411,7 +399,7 @@
       "avg_sentence_length": 6.89,
       "readability_score": 46.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dfe42653",
@@ -451,7 +439,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 69.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b20f4cf4",
@@ -491,7 +479,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 58.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_acb941c4",
@@ -520,10 +508,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=86.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 30,
@@ -533,7 +519,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 86.42
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f3f94942",
@@ -562,10 +548,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=50.7, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 120,
@@ -575,7 +559,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 50.67
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1609722f",
@@ -615,7 +599,7 @@
       "avg_sentence_length": 7.43,
       "readability_score": 64.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c612e90b",
@@ -644,10 +628,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=32.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 30,
@@ -657,7 +639,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 32.84
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f6c84247",
@@ -688,7 +670,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=85.5, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=85.5, ceiling=70)"
       ]
     },
     "metrics": {
@@ -699,7 +681,7 @@
       "avg_sentence_length": 4.81,
       "readability_score": 85.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_74838524",
@@ -728,10 +710,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=66.4, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 101,
@@ -741,7 +721,7 @@
       "avg_sentence_length": 6.73,
       "readability_score": 66.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3293f4fa",
@@ -770,10 +750,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=62.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 33,
@@ -783,7 +761,7 @@
       "avg_sentence_length": 8.25,
       "readability_score": 62.36
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_344146b4",
@@ -823,7 +801,7 @@
       "avg_sentence_length": 5.92,
       "readability_score": 49.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9bcc0783",
@@ -863,7 +841,7 @@
       "avg_sentence_length": 5.8,
       "readability_score": 37.11
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d0d00a60",
@@ -892,10 +870,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=67.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 85,
@@ -905,7 +881,7 @@
       "avg_sentence_length": 5.31,
       "readability_score": 67.82
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_095e242e",
@@ -934,10 +910,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 53,
@@ -947,7 +921,7 @@
       "avg_sentence_length": 8.83,
       "readability_score": 74.96
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_37c9c54f",
@@ -976,10 +950,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -989,7 +961,7 @@
       "avg_sentence_length": 8.33,
       "readability_score": 76.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_09709363",
@@ -1029,7 +1001,7 @@
       "avg_sentence_length": 7.4,
       "readability_score": 78.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_03b0a79f",
@@ -1058,10 +1030,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=59.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 114,
@@ -1071,7 +1041,7 @@
       "avg_sentence_length": 8.77,
       "readability_score": 59.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d5428b54",
@@ -1111,7 +1081,7 @@
       "avg_sentence_length": 7.22,
       "readability_score": 80.5
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_726bcfbd",
@@ -1151,7 +1121,7 @@
       "avg_sentence_length": 4.22,
       "readability_score": 46.6
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fe2e7b9c",
@@ -1180,10 +1150,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -1193,7 +1161,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 70.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_01798d1d",
@@ -1222,10 +1190,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=67.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 105,
@@ -1235,7 +1201,7 @@
       "avg_sentence_length": 6.18,
       "readability_score": 67.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_68bb33fd",
@@ -1264,10 +1230,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=67.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 54,
@@ -1277,7 +1241,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 67.67
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4b04f019",
@@ -1317,7 +1281,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 71.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ef866afc",
@@ -1346,10 +1310,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=52.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 90,
@@ -1359,7 +1321,7 @@
       "avg_sentence_length": 5.29,
       "readability_score": 52.61
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_46b9b3a2",
@@ -1399,7 +1361,7 @@
       "avg_sentence_length": 6.4,
       "readability_score": 47.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0d28b15b",
@@ -1439,7 +1401,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 43.48
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_11e85c89",
@@ -1470,7 +1432,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=72.4, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=72.4, ceiling=70)"
       ]
     },
     "metrics": {
@@ -1481,7 +1443,7 @@
       "avg_sentence_length": 5.76,
       "readability_score": 72.36
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0448c9ac",
@@ -1510,10 +1472,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=62.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 113,
@@ -1523,7 +1483,7 @@
       "avg_sentence_length": 7.53,
       "readability_score": 62.18
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_009e21e6",
@@ -1552,10 +1512,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 69,
@@ -1565,7 +1523,7 @@
       "avg_sentence_length": 7.67,
       "readability_score": 70.54
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_056750ee",
@@ -1605,7 +1563,7 @@
       "avg_sentence_length": 5.44,
       "readability_score": 74.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9c908b32",
@@ -1634,10 +1592,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=69.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 30,
@@ -1647,7 +1603,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 69.5
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a738467e",
@@ -1687,7 +1643,7 @@
       "avg_sentence_length": 5.06,
       "readability_score": 70.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d8760c34",
@@ -1716,10 +1672,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=65.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 47,
@@ -1729,7 +1683,7 @@
       "avg_sentence_length": 6.71,
       "readability_score": 65.02
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d39f2b72",
@@ -1758,10 +1712,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=87.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 31,
@@ -1771,7 +1723,7 @@
       "avg_sentence_length": 7.75,
       "readability_score": 87.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_51346757",
@@ -1811,7 +1763,7 @@
       "avg_sentence_length": 5.64,
       "readability_score": 64.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9914098a",
@@ -1851,7 +1803,7 @@
       "avg_sentence_length": 5.8,
       "readability_score": 42.92
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_263cb41d",
@@ -1891,7 +1843,7 @@
       "avg_sentence_length": 4.31,
       "readability_score": 71.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_362870f4",
@@ -1920,10 +1872,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=72.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 55,
@@ -1933,7 +1883,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 72.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d0113486",
@@ -1962,10 +1912,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=77.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 23,
@@ -1975,7 +1923,7 @@
       "avg_sentence_length": 4.6,
       "readability_score": 77.11
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_780ad994",
@@ -2006,7 +1954,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=77.6, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=77.6, ceiling=70)"
       ]
     },
     "metrics": {
@@ -2017,7 +1965,7 @@
       "avg_sentence_length": 6.11,
       "readability_score": 77.58
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3fd0dfbc",
@@ -2057,7 +2005,7 @@
       "avg_sentence_length": 5.06,
       "readability_score": 78.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fb5dd485",
@@ -2097,7 +2045,7 @@
       "avg_sentence_length": 7.64,
       "readability_score": 60.75
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_50f467a5",
@@ -2128,7 +2076,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=78.3, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=78.3, ceiling=70)"
       ]
     },
     "metrics": {
@@ -2139,7 +2087,7 @@
       "avg_sentence_length": 7.38,
       "readability_score": 78.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0fcba15c",
@@ -2179,7 +2127,7 @@
       "avg_sentence_length": 6.17,
       "readability_score": 59.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2b5f9bff",
@@ -2219,7 +2167,7 @@
       "avg_sentence_length": 6.36,
       "readability_score": 48.29
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_516f165d",
@@ -2248,10 +2196,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 49,
@@ -2261,7 +2207,7 @@
       "avg_sentence_length": 6.12,
       "readability_score": 66.64
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8774947f",
@@ -2290,10 +2236,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -2303,7 +2247,7 @@
       "avg_sentence_length": 8.67,
       "readability_score": 66.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fc3cf017",
@@ -2332,10 +2276,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=54.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 115,
@@ -2345,7 +2287,7 @@
       "avg_sentence_length": 8.21,
       "readability_score": 54.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_41545d9a",
@@ -2385,7 +2327,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 64.18
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4978a145",
@@ -2414,10 +2356,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=52.1, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 112,
@@ -2427,7 +2367,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 52.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_30f8ebb6",
@@ -2456,10 +2396,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=68.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 61,
@@ -2469,7 +2407,7 @@
       "avg_sentence_length": 6.78,
       "readability_score": 68.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ca050686",
@@ -2509,7 +2447,7 @@
       "avg_sentence_length": 7.86,
       "readability_score": 79.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_cd401dec",
@@ -2549,7 +2487,7 @@
       "avg_sentence_length": 6.55,
       "readability_score": 62.56
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5e383daa",
@@ -2578,10 +2516,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=59.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 31,
@@ -2591,7 +2527,7 @@
       "avg_sentence_length": 10.33,
       "readability_score": 59.9
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f2450df0",
@@ -2631,7 +2567,7 @@
       "avg_sentence_length": 7.12,
       "readability_score": 40.6
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fcac2d62",
@@ -2671,7 +2607,7 @@
       "avg_sentence_length": 8.5,
       "readability_score": 81.66
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_507a6ebf",
@@ -2700,10 +2636,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 38,
@@ -2713,7 +2647,7 @@
       "avg_sentence_length": 5.43,
       "readability_score": 75.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_54d30256",
@@ -2742,10 +2676,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=67.7, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 87,
@@ -2755,7 +2687,7 @@
       "avg_sentence_length": 6.21,
       "readability_score": 67.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_65d85ee6",
@@ -2786,7 +2718,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=82.0, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=82.0, ceiling=70)"
       ]
     },
     "metrics": {
@@ -2797,7 +2729,7 @@
       "avg_sentence_length": 5.41,
       "readability_score": 81.99
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5f16bada",
@@ -2826,10 +2758,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=58.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -2839,7 +2769,7 @@
       "avg_sentence_length": 13.5,
       "readability_score": 58.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8ed724ee",
@@ -2879,7 +2809,7 @@
       "avg_sentence_length": 5.75,
       "readability_score": 31.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4d6fb6ae",
@@ -2919,7 +2849,7 @@
       "avg_sentence_length": 7.57,
       "readability_score": 74.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c981d2fc",
@@ -2948,10 +2878,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=64.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 84,
@@ -2961,7 +2889,7 @@
       "avg_sentence_length": 6.46,
       "readability_score": 64.78
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_52818b25",
@@ -2990,10 +2918,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=71.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 57,
@@ -3003,7 +2929,7 @@
       "avg_sentence_length": 5.7,
       "readability_score": 71.03
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5fa9083f",
@@ -3032,10 +2958,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=68.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 22,
@@ -3045,7 +2969,7 @@
       "avg_sentence_length": 7.33,
       "readability_score": 68.77
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a6140127",
@@ -3085,7 +3009,7 @@
       "avg_sentence_length": 6.75,
       "readability_score": 68.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ce332541",
@@ -3125,7 +3049,7 @@
       "avg_sentence_length": 10.8,
       "readability_score": 47.22
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_36424f5d",
@@ -3165,7 +3089,7 @@
       "avg_sentence_length": 4.92,
       "readability_score": 63.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e4a380e3",
@@ -3205,7 +3129,7 @@
       "avg_sentence_length": 6.08,
       "readability_score": 59.75
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_073086df",
@@ -3234,10 +3158,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=83.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -3247,7 +3169,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 83.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_36da125b",
@@ -3276,10 +3198,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=57.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 120,
@@ -3289,7 +3209,7 @@
       "avg_sentence_length": 6.32,
       "readability_score": 57.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b687a9a3",
@@ -3318,10 +3238,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 48,
@@ -3331,7 +3249,7 @@
       "avg_sentence_length": 6.86,
       "readability_score": 61.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6907822c",
@@ -3371,7 +3289,7 @@
       "avg_sentence_length": 4.64,
       "readability_score": 54.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4c22b057",
@@ -3400,10 +3318,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=60.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 85,
@@ -3413,7 +3329,7 @@
       "avg_sentence_length": 5.67,
       "readability_score": 60.75
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_33213752",
@@ -3453,7 +3369,7 @@
       "avg_sentence_length": 6.56,
       "readability_score": 57.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8989d09f",
@@ -3493,7 +3409,7 @@
       "avg_sentence_length": 7.88,
       "readability_score": 67.24
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bb26cd1b",
@@ -3533,7 +3449,7 @@
       "avg_sentence_length": 5.47,
       "readability_score": 45.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9223be7d",
@@ -3573,7 +3489,7 @@
       "avg_sentence_length": 6.35,
       "readability_score": 46.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_01be6204",
@@ -3602,10 +3518,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=69.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 65,
@@ -3615,7 +3529,7 @@
       "avg_sentence_length": 5.42,
       "readability_score": 69.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_00d07c1c",
@@ -3655,7 +3569,7 @@
       "avg_sentence_length": 6.6,
       "readability_score": 78.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9ed90308",
@@ -3684,10 +3598,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -3697,7 +3609,7 @@
       "avg_sentence_length": 8.67,
       "readability_score": 69.99
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_39120c95",
@@ -3737,7 +3649,7 @@
       "avg_sentence_length": 4.93,
       "readability_score": 63.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f37f1b94",
@@ -3766,10 +3678,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 47,
@@ -3779,7 +3689,7 @@
       "avg_sentence_length": 4.7,
       "readability_score": 75.53
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_218dce28",
@@ -3808,10 +3718,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=60.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -3821,7 +3729,7 @@
       "avg_sentence_length": 5.4,
       "readability_score": 60.35
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5b7cdfd7",
@@ -3861,7 +3769,7 @@
       "avg_sentence_length": 4.83,
       "readability_score": 83.33
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_22538da9",
@@ -3901,7 +3809,7 @@
       "avg_sentence_length": 6.67,
       "readability_score": 49.81
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0b10d3f0",
@@ -3941,7 +3849,7 @@
       "avg_sentence_length": 4.33,
       "readability_score": 75.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_494098ae",
@@ -3970,10 +3878,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=52.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 47,
@@ -3983,7 +3889,7 @@
       "avg_sentence_length": 3.62,
       "readability_score": 52.42
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_11b4f263",
@@ -4012,10 +3918,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=72.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -4025,7 +3929,7 @@
       "avg_sentence_length": 5.6,
       "readability_score": 72.83
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f707b307",
@@ -4054,10 +3958,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=65.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 52,
@@ -4067,7 +3969,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 65.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1db2152f",
@@ -4107,7 +4009,7 @@
       "avg_sentence_length": 7.5,
       "readability_score": 57.15
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f7ab9866",
@@ -4147,7 +4049,7 @@
       "avg_sentence_length": 5.83,
       "readability_score": 54.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bb6c724d",
@@ -4178,7 +4080,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=75.8, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=75.8, ceiling=70)"
       ]
     },
     "metrics": {
@@ -4189,7 +4091,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 75.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b493e1e2",
@@ -4229,7 +4131,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 55.13
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_95bfb0ec",
@@ -4258,10 +4160,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 89,
@@ -4271,7 +4171,7 @@
       "avg_sentence_length": 5.93,
       "readability_score": 51.6
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0be08a49",
@@ -4300,10 +4200,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 49,
@@ -4313,7 +4211,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 81.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3ef30699",
@@ -4342,10 +4240,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=31.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -4355,7 +4251,7 @@
       "avg_sentence_length": 6.25,
       "readability_score": 31.29
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_93ce43cb",
@@ -4395,7 +4291,7 @@
       "avg_sentence_length": 6.83,
       "readability_score": 36.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bbd81002",
@@ -4435,7 +4331,7 @@
       "avg_sentence_length": 5.7,
       "readability_score": 63.68
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1a61950b",
@@ -4464,10 +4360,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 94,
@@ -4477,7 +4371,7 @@
       "avg_sentence_length": 4.48,
       "readability_score": 51.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1188518b",
@@ -4506,10 +4400,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=56.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 53,
@@ -4519,7 +4411,7 @@
       "avg_sentence_length": 6.62,
       "readability_score": 56.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_100046a8",
@@ -4559,7 +4451,7 @@
       "avg_sentence_length": 5.12,
       "readability_score": 56.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f1055901",
@@ -4599,7 +4491,7 @@
       "avg_sentence_length": 6.44,
       "readability_score": 73.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ea54c36b",
@@ -4628,10 +4520,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=71.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -4641,7 +4531,7 @@
       "avg_sentence_length": 4.67,
       "readability_score": 71.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_51862877",
@@ -4681,7 +4571,7 @@
       "avg_sentence_length": 5.8,
       "readability_score": 39.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b5cdd985",
@@ -4721,7 +4611,7 @@
       "avg_sentence_length": 6.57,
       "readability_score": 49.36
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_38c444ac",
@@ -4750,10 +4640,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=65.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 32,
@@ -4763,7 +4651,7 @@
       "avg_sentence_length": 5.33,
       "readability_score": 65.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d5808d47",
@@ -4792,10 +4680,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=64.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 96,
@@ -4805,7 +4691,7 @@
       "avg_sentence_length": 5.65,
       "readability_score": 64.15
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ad40dc6e",
@@ -4836,7 +4722,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=71.9, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=71.9, ceiling=70)"
       ]
     },
     "metrics": {
@@ -4847,7 +4733,7 @@
       "avg_sentence_length": 6.83,
       "readability_score": 71.93
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f1cf7718",
@@ -4876,10 +4762,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -4889,7 +4773,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 66.83
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_69bc9fcc",
@@ -4929,7 +4813,7 @@
       "avg_sentence_length": 5.75,
       "readability_score": 34.25
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8717134f",
@@ -4969,7 +4853,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 48.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d596fa5b",
@@ -4998,10 +4882,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=65.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 84,
@@ -5011,7 +4893,7 @@
       "avg_sentence_length": 5.25,
       "readability_score": 65.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_cecdc72e",
@@ -5040,10 +4922,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 52,
@@ -5053,7 +4933,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 76.28
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5a01e979",
@@ -5082,10 +4962,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -5095,7 +4973,7 @@
       "avg_sentence_length": 4.33,
       "readability_score": 61.64
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6d1f721f",
@@ -5135,7 +5013,7 @@
       "avg_sentence_length": 6.25,
       "readability_score": 41.44
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_585ca76d",
@@ -5164,10 +5042,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=55.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 98,
@@ -5177,7 +5053,7 @@
       "avg_sentence_length": 6.53,
       "readability_score": 55.02
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1ee4ad45",
@@ -5217,7 +5093,7 @@
       "avg_sentence_length": 6.33,
       "readability_score": 67.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_96e7f2d6",
@@ -5257,7 +5133,7 @@
       "avg_sentence_length": 5.33,
       "readability_score": 44.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8d052dce",
@@ -5286,10 +5162,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=55.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -5299,7 +5173,7 @@
       "avg_sentence_length": 5.2,
       "readability_score": 55.13
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e744ab46",
@@ -5328,10 +5202,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=52.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 114,
@@ -5341,7 +5213,7 @@
       "avg_sentence_length": 4.22,
       "readability_score": 52.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_24a833df",
@@ -5370,10 +5242,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 46,
@@ -5383,7 +5253,7 @@
       "avg_sentence_length": 9.2,
       "readability_score": 70.31
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_63e5fa3d",
@@ -5423,7 +5293,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 74.07
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dec9af53",
@@ -5452,10 +5322,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=54.8, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 78,
@@ -5465,7 +5333,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 54.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_01796067",
@@ -5505,7 +5373,7 @@
       "avg_sentence_length": 9.0,
       "readability_score": 48.64
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_49d9941b",
@@ -5545,7 +5413,7 @@
       "avg_sentence_length": 6.62,
       "readability_score": 47.11
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_356d9d1d",
@@ -5585,7 +5453,7 @@
       "avg_sentence_length": 5.56,
       "readability_score": 46.82
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_92ba8728",
@@ -5625,7 +5493,7 @@
       "avg_sentence_length": 7.08,
       "readability_score": 43.94
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9c13a5c5",
@@ -5654,10 +5522,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 59,
@@ -5667,7 +5533,7 @@
       "avg_sentence_length": 5.9,
       "readability_score": 73.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ca3d4f5e",
@@ -5707,7 +5573,7 @@
       "avg_sentence_length": 5.86,
       "readability_score": 63.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7ba46836",
@@ -5736,10 +5602,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=63.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -5749,7 +5613,7 @@
       "avg_sentence_length": 8.33,
       "readability_score": 63.02
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3d83af71",
@@ -5789,7 +5653,7 @@
       "avg_sentence_length": 6.09,
       "readability_score": 52.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6c9e7987",
@@ -5818,10 +5682,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=71.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 45,
@@ -5831,7 +5693,7 @@
       "avg_sentence_length": 5.62,
       "readability_score": 71.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_eadc91ca",
@@ -5860,10 +5722,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=41.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -5873,7 +5733,7 @@
       "avg_sentence_length": 4.67,
       "readability_score": 41.02
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_11732490",
@@ -5913,7 +5773,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 61.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_672fdcf9",
@@ -5953,7 +5813,7 @@
       "avg_sentence_length": 6.64,
       "readability_score": 36.57
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4beaa095",
@@ -5993,7 +5853,7 @@
       "avg_sentence_length": 6.13,
       "readability_score": 77.88
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3a34ffe8",
@@ -6022,10 +5882,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=56.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 54,
@@ -6035,7 +5893,7 @@
       "avg_sentence_length": 5.4,
       "readability_score": 56.61
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a0267d64",
@@ -6064,10 +5922,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -6077,7 +5933,7 @@
       "avg_sentence_length": 6.25,
       "readability_score": 73.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_254cd601",
@@ -6108,7 +5964,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=71.4, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=71.4, ceiling=70)"
       ]
     },
     "metrics": {
@@ -6119,7 +5975,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 71.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ce2fdb72",
@@ -6159,7 +6015,7 @@
       "avg_sentence_length": 4.35,
       "readability_score": 60.92
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_be7b6dea",
@@ -6199,7 +6055,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 25.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9457181e",
@@ -6230,7 +6086,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=72.9, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=72.9, ceiling=70)"
       ]
     },
     "metrics": {
@@ -6241,7 +6097,7 @@
       "avg_sentence_length": 6.71,
       "readability_score": 72.88
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2d5db280",
@@ -6281,7 +6137,7 @@
       "avg_sentence_length": 5.67,
       "readability_score": 66.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0ef5af4b",
@@ -6310,10 +6166,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=57.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 82,
@@ -6323,7 +6177,7 @@
       "avg_sentence_length": 5.47,
       "readability_score": 57.48
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_583ecb9c",
@@ -6352,10 +6206,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=57.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 39,
@@ -6365,7 +6217,7 @@
       "avg_sentence_length": 7.8,
       "readability_score": 57.92
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0bfc81bb",
@@ -6394,10 +6246,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 18,
@@ -6407,7 +6257,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 66.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d6de163c",
@@ -6447,7 +6297,7 @@
       "avg_sentence_length": 6.23,
       "readability_score": 44.36
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_37b44633",
@@ -6487,7 +6337,7 @@
       "avg_sentence_length": 4.67,
       "readability_score": 66.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_16063752",
@@ -6527,7 +6377,7 @@
       "avg_sentence_length": 6.08,
       "readability_score": 34.68
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a7e2af2e",
@@ -6556,10 +6406,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=49.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 50,
@@ -6569,7 +6417,7 @@
       "avg_sentence_length": 6.25,
       "readability_score": 49.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_beec2e9e",
@@ -6609,7 +6457,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 65.58
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e91a91d7",
@@ -6649,7 +6497,7 @@
       "avg_sentence_length": 4.7,
       "readability_score": 61.13
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6236c2ba",
@@ -6678,10 +6526,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 24,
@@ -6691,7 +6537,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 73.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6efa94c1",
@@ -6731,7 +6577,7 @@
       "avg_sentence_length": 5.21,
       "readability_score": 38.03
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_360889ae",
@@ -6771,7 +6617,7 @@
       "avg_sentence_length": 5.25,
       "readability_score": 59.75
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_64f152ec",
@@ -6800,10 +6646,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=51.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -6813,7 +6657,7 @@
       "avg_sentence_length": 4.67,
       "readability_score": 51.68
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_32e7ae7a",
@@ -6842,10 +6686,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=61.4, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 70,
@@ -6855,7 +6697,7 @@
       "avg_sentence_length": 4.38,
       "readability_score": 61.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_35464e93",
@@ -6884,10 +6726,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=53.1, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 71,
@@ -6897,7 +6737,7 @@
       "avg_sentence_length": 5.46,
       "readability_score": 53.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_018595cc",
@@ -6926,10 +6766,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 22,
@@ -6939,7 +6777,7 @@
       "avg_sentence_length": 4.4,
       "readability_score": 75.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_29a98bdb",
@@ -6979,7 +6817,7 @@
       "avg_sentence_length": 6.56,
       "readability_score": 41.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9e62d024",
@@ -7019,7 +6857,7 @@
       "avg_sentence_length": 4.5,
       "readability_score": 51.22
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0ebd001a",
@@ -7048,10 +6886,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=55.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 71,
@@ -7061,7 +6897,7 @@
       "avg_sentence_length": 4.73,
       "readability_score": 55.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2487c14e",
@@ -7090,10 +6926,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=54.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 42,
@@ -7103,7 +6937,7 @@
       "avg_sentence_length": 4.67,
       "readability_score": 54.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_94451eec",
@@ -7132,10 +6966,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=72.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 21,
@@ -7145,7 +6977,7 @@
       "avg_sentence_length": 4.2,
       "readability_score": 72.59
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d1345c51",
@@ -7185,7 +7017,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 66.66
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f77b4e4d",
@@ -7225,7 +7057,7 @@
       "avg_sentence_length": 5.86,
       "readability_score": 47.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0412183c",
@@ -7265,7 +7097,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 70.05
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0d9110ef",
@@ -7305,7 +7137,7 @@
       "avg_sentence_length": 4.91,
       "readability_score": 52.52
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_24cd738d",
@@ -7334,10 +7166,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=64.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 22,
@@ -7347,7 +7177,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 64.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_71b69d54",
@@ -7378,7 +7208,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=75.0, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=75.0, ceiling=70)"
       ]
     },
     "metrics": {
@@ -7389,7 +7219,7 @@
       "avg_sentence_length": 5.17,
       "readability_score": 74.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_147c4507",
@@ -7418,10 +7248,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=77.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 40,
@@ -7431,7 +7259,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 77.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bee3817f",
@@ -7471,7 +7299,7 @@
       "avg_sentence_length": 3.9,
       "readability_score": 62.35
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6ca5d00a",
@@ -7511,7 +7339,7 @@
       "avg_sentence_length": 4.79,
       "readability_score": 42.88
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c67f7b29",
@@ -7551,7 +7379,7 @@
       "avg_sentence_length": 5.2,
       "readability_score": 22.9
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a9cc9873",
@@ -7591,7 +7419,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 57.98
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5e33c64b",
@@ -7631,7 +7459,7 @@
       "avg_sentence_length": 4.28,
       "readability_score": 18.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0e9cbc26",
@@ -7671,7 +7499,7 @@
       "avg_sentence_length": 6.38,
       "readability_score": 44.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_61a17bed",
@@ -7700,10 +7528,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=71.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 52,
@@ -7713,7 +7539,7 @@
       "avg_sentence_length": 4.73,
       "readability_score": 71.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4f29e96b",
@@ -7753,7 +7579,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 73.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fa3ca807",
@@ -7782,10 +7608,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=79.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 20,
@@ -7795,7 +7619,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 79.09
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_21ad6248",
@@ -7835,7 +7659,7 @@
       "avg_sentence_length": 4.92,
       "readability_score": 40.09
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ec155730",
@@ -7864,10 +7688,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=54.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 34,
@@ -7877,7 +7699,7 @@
       "avg_sentence_length": 2.83,
       "readability_score": 54.28
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6cecfabb",
@@ -7906,10 +7728,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -7919,7 +7739,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 66.83
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e3ab73c3",
@@ -7959,7 +7779,7 @@
       "avg_sentence_length": 3.64,
       "readability_score": 37.21
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6376c97d",
@@ -7999,7 +7819,7 @@
       "avg_sentence_length": 5.25,
       "readability_score": 46.64
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_23ac2892",
@@ -8039,7 +7859,7 @@
       "avg_sentence_length": 4.39,
       "readability_score": 64.15
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5954ff6e",
@@ -8068,10 +7888,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=59.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 41,
@@ -8081,7 +7899,7 @@
       "avg_sentence_length": 4.56,
       "readability_score": 59.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2f4a8e7b",
@@ -8110,10 +7928,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=37.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 19,
@@ -8123,7 +7939,7 @@
       "avg_sentence_length": 3.8,
       "readability_score": 37.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ecb2c54f",
@@ -8152,10 +7968,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=62.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 43,
@@ -8165,7 +7979,7 @@
       "avg_sentence_length": 4.3,
       "readability_score": 62.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_084f51aa",
@@ -8205,7 +8019,7 @@
       "avg_sentence_length": 3.8,
       "readability_score": 53.96
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f7ee3f8b",
@@ -8245,7 +8059,7 @@
       "avg_sentence_length": 5.14,
       "readability_score": 66.24
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_45d43ddb",
@@ -8274,10 +8088,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=64.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 39,
@@ -8287,7 +8099,7 @@
       "avg_sentence_length": 4.88,
       "readability_score": 64.52
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c1ec315e",
@@ -8327,7 +8139,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 65.89
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d089329f",
@@ -8367,7 +8179,7 @@
       "avg_sentence_length": 4.53,
       "readability_score": 46.94
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c4ac335f",
@@ -8396,10 +8208,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=58.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 47,
@@ -8409,7 +8219,7 @@
       "avg_sentence_length": 4.7,
       "readability_score": 58.67
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3c14611b",
@@ -8438,10 +8248,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -8451,7 +8259,7 @@
       "avg_sentence_length": 6.5,
       "readability_score": 73.34
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d3728c04",
@@ -8491,7 +8299,7 @@
       "avg_sentence_length": 5.22,
       "readability_score": 43.72
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6dec3fe1",
@@ -8531,7 +8339,7 @@
       "avg_sentence_length": 6.57,
       "readability_score": 51.92
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_797af8bb",
@@ -8571,7 +8379,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 28.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_99e6584f",
@@ -8600,10 +8408,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=38.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 49,
@@ -8613,7 +8419,7 @@
       "avg_sentence_length": 5.44,
       "readability_score": 38.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fc768964",
@@ -8653,7 +8459,7 @@
       "avg_sentence_length": 5.57,
       "readability_score": 75.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2a07fa68",
@@ -8693,7 +8499,7 @@
       "avg_sentence_length": 4.83,
       "readability_score": 65.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bfe80578",
@@ -8722,10 +8528,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 28,
@@ -8735,7 +8539,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 70.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a6ff8963",
@@ -8775,7 +8579,7 @@
       "avg_sentence_length": 5.5,
       "readability_score": 47.58
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5152d258",
@@ -8815,7 +8619,7 @@
       "avg_sentence_length": 7.29,
       "readability_score": 68.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_78bccfa6",
@@ -8844,10 +8648,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=57.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -8857,7 +8659,7 @@
       "avg_sentence_length": 3.71,
       "readability_score": 57.07
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_74b4bf16",
@@ -8886,10 +8688,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=65.2, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 83,
@@ -8899,7 +8699,7 @@
       "avg_sentence_length": 4.88,
       "readability_score": 65.25
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_677773b2",
@@ -8928,10 +8728,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=53.4, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 88,
@@ -8941,7 +8739,7 @@
       "avg_sentence_length": 6.29,
       "readability_score": 53.37
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6abb5e17",
@@ -8970,10 +8768,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=91.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 31,
@@ -8983,7 +8779,7 @@
       "avg_sentence_length": 6.2,
       "readability_score": 91.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_33cc507e",
@@ -9023,7 +8819,7 @@
       "avg_sentence_length": 4.27,
       "readability_score": 25.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_00d21f47",
@@ -9063,7 +8859,7 @@
       "avg_sentence_length": 7.29,
       "readability_score": 77.05
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c72e5f5c",
@@ -9094,7 +8890,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=71.4, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=71.4, ceiling=70)"
       ]
     },
     "metrics": {
@@ -9105,7 +8901,7 @@
       "avg_sentence_length": 4.74,
       "readability_score": 71.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7f1ed415",
@@ -9134,10 +8930,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=84.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 40,
@@ -9147,7 +8941,7 @@
       "avg_sentence_length": 5.71,
       "readability_score": 84.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_632b4394",
@@ -9176,10 +8970,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=52.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 21,
@@ -9189,7 +8981,7 @@
       "avg_sentence_length": 4.2,
       "readability_score": 52.58
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c29b179b",
@@ -9229,7 +9021,7 @@
       "avg_sentence_length": 4.33,
       "readability_score": 71.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c6a3cd52",
@@ -9269,7 +9061,7 @@
       "avg_sentence_length": 5.8,
       "readability_score": 36.19
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_212750a9",
@@ -9309,7 +9101,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 64.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_38019a63",
@@ -9349,7 +9141,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 76.5
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bcf2ec2d",
@@ -9378,10 +9170,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=87.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -9391,7 +9181,7 @@
       "avg_sentence_length": 5.4,
       "readability_score": 87.18
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1b5a9397",
@@ -9420,10 +9210,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=60.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 102,
@@ -9433,7 +9221,7 @@
       "avg_sentence_length": 4.08,
       "readability_score": 60.59
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_746a7929",
@@ -9462,10 +9250,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 32,
@@ -9475,7 +9261,7 @@
       "avg_sentence_length": 4.57,
       "readability_score": 61.24
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e6533c95",
@@ -9517,7 +9303,7 @@
       "avg_sentence_length": 3.2,
       "readability_score": 56.22
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_200910e8",
@@ -9546,10 +9332,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 75,
@@ -9559,7 +9343,7 @@
       "avg_sentence_length": 4.41,
       "readability_score": 51.02
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ce118430",
@@ -9599,7 +9383,7 @@
       "avg_sentence_length": 4.62,
       "readability_score": 34.92
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f57e9cdb",
@@ -9639,7 +9423,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 57.94
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8174dc66",
@@ -9668,10 +9452,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 96,
@@ -9681,7 +9463,7 @@
       "avg_sentence_length": 6.0,
       "readability_score": 51.29
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0fc70c69",
@@ -9721,7 +9503,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 25.04
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d2ff47a7",
@@ -9750,10 +9532,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=69.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 57,
@@ -9763,7 +9543,7 @@
       "avg_sentence_length": 4.07,
       "readability_score": 68.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_67ed4b88",
@@ -9803,7 +9583,7 @@
       "avg_sentence_length": 4.71,
       "readability_score": 52.56
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d6aea6d5",
@@ -9832,10 +9612,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=78.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -9845,7 +9623,7 @@
       "avg_sentence_length": 6.75,
       "readability_score": 78.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_56c3df8f",
@@ -9885,7 +9663,7 @@
       "avg_sentence_length": 2.95,
       "readability_score": 45.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_09014773",
@@ -9914,10 +9692,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=70.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 44,
@@ -9927,7 +9703,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 70.57
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dd410467",
@@ -9956,10 +9732,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=83.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -9969,7 +9743,7 @@
       "avg_sentence_length": 3.86,
       "readability_score": 83.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_234622e6",
@@ -10009,7 +9783,7 @@
       "avg_sentence_length": 3.92,
       "readability_score": 53.93
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_83844932",
@@ -10049,7 +9823,7 @@
       "avg_sentence_length": 4.53,
       "readability_score": 38.83
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_28641dbb",
@@ -10091,7 +9865,7 @@
       "avg_sentence_length": 3.53,
       "readability_score": 58.34
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0357fbcd",
@@ -10120,10 +9894,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=41.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 42,
@@ -10133,7 +9905,7 @@
       "avg_sentence_length": 3.23,
       "readability_score": 41.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_08085490",
@@ -10162,10 +9934,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=57.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 20,
@@ -10175,7 +9945,7 @@
       "avg_sentence_length": 2.5,
       "readability_score": 57.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5df5dbe3",
@@ -10204,10 +9974,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=63.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 49,
@@ -10217,7 +9985,7 @@
       "avg_sentence_length": 5.44,
       "readability_score": 63.33
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a17a323c",
@@ -10257,7 +10025,7 @@
       "avg_sentence_length": 5.07,
       "readability_score": 41.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dce43545",
@@ -10297,7 +10065,7 @@
       "avg_sentence_length": 6.1,
       "readability_score": 46.01
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bff7333d",
@@ -10337,7 +10105,7 @@
       "avg_sentence_length": 3.8,
       "readability_score": 49.94
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b1ebb40b",
@@ -10377,7 +10145,7 @@
       "avg_sentence_length": 3.92,
       "readability_score": 30.53
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5f9c7dc4",
@@ -10417,7 +10185,7 @@
       "avg_sentence_length": 4.28,
       "readability_score": 29.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_07b45fa8",
@@ -10446,10 +10214,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 34,
@@ -10459,7 +10225,7 @@
       "avg_sentence_length": 3.78,
       "readability_score": 61.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8f581db8",
@@ -10488,10 +10254,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=100.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 16,
@@ -10501,7 +10265,7 @@
       "avg_sentence_length": 2.67,
       "readability_score": 100.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c395d8e5",
@@ -10541,7 +10305,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 16.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_115744b9",
@@ -10581,7 +10345,7 @@
       "avg_sentence_length": 5.33,
       "readability_score": 60.42
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_307e0d08",
@@ -10621,7 +10385,7 @@
       "avg_sentence_length": 5.79,
       "readability_score": 47.49
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8ecdcaa4",
@@ -10650,10 +10414,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=48.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 45,
@@ -10663,7 +10425,7 @@
       "avg_sentence_length": 3.46,
       "readability_score": 48.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_36da63bb",
@@ -10703,7 +10465,7 @@
       "avg_sentence_length": 3.78,
       "readability_score": 46.81
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3acb81fd",
@@ -10743,7 +10505,7 @@
       "avg_sentence_length": 4.3,
       "readability_score": 43.11
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_194da72d",
@@ -10772,10 +10534,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=84.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 22,
@@ -10785,7 +10545,7 @@
       "avg_sentence_length": 3.67,
       "readability_score": 84.03
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d2ca712e",
@@ -10827,7 +10587,7 @@
       "avg_sentence_length": 3.77,
       "readability_score": 4.48
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_48653960",
@@ -10867,7 +10627,7 @@
       "avg_sentence_length": 3.55,
       "readability_score": 70.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e0cf963f",
@@ -10896,10 +10656,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=64.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 24,
@@ -10909,7 +10667,7 @@
       "avg_sentence_length": 3.43,
       "readability_score": 64.49
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_aacc53d2",
@@ -10940,7 +10698,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=78.4, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=78.4, ceiling=70)"
       ]
     },
     "metrics": {
@@ -10951,7 +10709,7 @@
       "avg_sentence_length": 3.83,
       "readability_score": 78.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8719db69",
@@ -10991,7 +10749,7 @@
       "avg_sentence_length": 3.42,
       "readability_score": 44.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4148ed5b",
@@ -11020,10 +10778,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=80.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 21,
@@ -11033,7 +10789,7 @@
       "avg_sentence_length": 4.2,
       "readability_score": 80.65
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_adc5afa4",
@@ -11075,7 +10831,7 @@
       "avg_sentence_length": 3.33,
       "readability_score": 11.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8170e4f4",
@@ -11115,7 +10871,7 @@
       "avg_sentence_length": 3.5,
       "readability_score": 48.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_bc5b1f61",
@@ -11155,7 +10911,7 @@
       "avg_sentence_length": 3.14,
       "readability_score": 45.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e6a0c1c7",
@@ -11184,10 +10940,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=74.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 40,
@@ -11197,7 +10951,7 @@
       "avg_sentence_length": 3.64,
       "readability_score": 74.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5da682bd",
@@ -11226,10 +10980,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 19,
@@ -11239,7 +10991,7 @@
       "avg_sentence_length": 3.17,
       "readability_score": 81.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d51ce617",
@@ -11279,7 +11031,7 @@
       "avg_sentence_length": 3.67,
       "readability_score": 52.4
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6ec80508",
@@ -11319,7 +11071,7 @@
       "avg_sentence_length": 3.8,
       "readability_score": 27.53
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fbb6f4cf",
@@ -11359,7 +11111,7 @@
       "avg_sentence_length": 3.31,
       "readability_score": 86.49
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_00e48596",
@@ -11399,7 +11151,7 @@
       "avg_sentence_length": 3.8,
       "readability_score": 25.39
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4b04953d",
@@ -11428,10 +11180,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 20,
@@ -11441,7 +11191,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 81.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5532441d",
@@ -11470,10 +11220,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=59.1, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 85,
@@ -11483,7 +11231,7 @@
       "avg_sentence_length": 3.7,
       "readability_score": 59.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6fcaa7c3",
@@ -11512,10 +11260,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=86.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 38,
@@ -11525,7 +11271,7 @@
       "avg_sentence_length": 3.17,
       "readability_score": 86.25
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dc8ff968",
@@ -11565,7 +11311,7 @@
       "avg_sentence_length": 2.4,
       "readability_score": 62.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_10eaa98b",
@@ -11605,7 +11351,7 @@
       "avg_sentence_length": 2.73,
       "readability_score": 32.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_977c355e",
@@ -11645,7 +11391,7 @@
       "avg_sentence_length": 3.0,
       "readability_score": 35.07
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_611172c9",
@@ -11685,7 +11431,7 @@
       "avg_sentence_length": 4.0,
       "readability_score": 40.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3758b50f",
@@ -11725,7 +11471,7 @@
       "avg_sentence_length": 4.47,
       "readability_score": 48.68
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_827b1598",
@@ -11765,7 +11511,7 @@
       "avg_sentence_length": 3.72,
       "readability_score": 25.78
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_69a7e5c3",
@@ -11794,10 +11540,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 56,
@@ -11807,7 +11551,7 @@
       "avg_sentence_length": 4.31,
       "readability_score": 61.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7e086ecf",
@@ -11847,7 +11591,7 @@
       "avg_sentence_length": 3.11,
       "readability_score": 45.64
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_46ff7a2a",
@@ -11876,10 +11620,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=89.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 21,
@@ -11889,7 +11631,7 @@
       "avg_sentence_length": 3.5,
       "readability_score": 89.77
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b74a276a",
@@ -11929,7 +11671,7 @@
       "avg_sentence_length": 3.77,
       "readability_score": 66.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_23de7e61",
@@ -11958,10 +11700,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 35,
@@ -11971,7 +11711,7 @@
       "avg_sentence_length": 2.69,
       "readability_score": 76.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_cc67e388",
@@ -12000,10 +11740,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 22,
@@ -12013,7 +11751,7 @@
       "avg_sentence_length": 3.14,
       "readability_score": 75.47
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_31ff726b",
@@ -12053,7 +11791,7 @@
       "avg_sentence_length": 4.2,
       "readability_score": 34.91
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2a2d7b9e",
@@ -12095,7 +11833,7 @@
       "avg_sentence_length": 3.69,
       "readability_score": 0.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_56e46424",
@@ -12135,7 +11873,7 @@
       "avg_sentence_length": 3.35,
       "readability_score": 78.2
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1a39a728",
@@ -12164,10 +11902,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 42,
@@ -12177,7 +11913,7 @@
       "avg_sentence_length": 3.82,
       "readability_score": 66.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_edda2afc",
@@ -12206,10 +11942,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=66.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 19,
@@ -12219,7 +11953,7 @@
       "avg_sentence_length": 3.17,
       "readability_score": 66.83
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_dc5e460c",
@@ -12259,7 +11993,7 @@
       "avg_sentence_length": 3.64,
       "readability_score": 38.91
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_672a44c5",
@@ -12299,7 +12033,7 @@
       "avg_sentence_length": 3.63,
       "readability_score": 37.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_08d1fab8",
@@ -12339,7 +12073,7 @@
       "avg_sentence_length": 10.55,
       "readability_score": 42.25
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3308db21",
@@ -12370,7 +12104,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=73.5, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=73.5, ceiling=70)"
       ]
     },
     "metrics": {
@@ -12381,7 +12115,7 @@
       "avg_sentence_length": 12.5,
       "readability_score": 73.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9bbf3914",
@@ -12421,7 +12155,7 @@
       "avg_sentence_length": 12.6,
       "readability_score": 43.09
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6a9f1737",
@@ -12461,7 +12195,7 @@
       "avg_sentence_length": 7.57,
       "readability_score": 21.97
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fba93e04",
@@ -12490,10 +12224,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=69.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 70,
@@ -12503,7 +12235,7 @@
       "avg_sentence_length": 8.75,
       "readability_score": 69.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2e6845ce",
@@ -12532,10 +12264,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=61.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 77,
@@ -12545,7 +12275,7 @@
       "avg_sentence_length": 9.62,
       "readability_score": 61.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_20afa52f",
@@ -12585,7 +12315,7 @@
       "avg_sentence_length": 10.89,
       "readability_score": 44.19
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_30ce30bb",
@@ -12625,7 +12355,7 @@
       "avg_sentence_length": 7.0,
       "readability_score": 70.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_78fc9fb2",
@@ -12665,7 +12395,7 @@
       "avg_sentence_length": 12.33,
       "readability_score": 31.98
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a9a4ad5f",
@@ -12694,10 +12424,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=80.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 67,
@@ -12707,7 +12435,7 @@
       "avg_sentence_length": 6.09,
       "readability_score": 80.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_27442a93",
@@ -12747,7 +12475,7 @@
       "avg_sentence_length": 9.2,
       "readability_score": 70.6
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_29f050e8",
@@ -12787,7 +12515,7 @@
       "avg_sentence_length": 6.67,
       "readability_score": 47.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_77ed99a6",
@@ -12816,10 +12544,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=67.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 85,
@@ -12829,7 +12555,7 @@
       "avg_sentence_length": 12.14,
       "readability_score": 67.11
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8cb0c82b",
@@ -12871,7 +12597,7 @@
       "avg_sentence_length": 9.33,
       "readability_score": 0.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4b9dac73",
@@ -12911,7 +12637,7 @@
       "avg_sentence_length": 9.5,
       "readability_score": 56.93
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3f9a4790",
@@ -12940,10 +12666,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=47.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 77,
@@ -12953,7 +12677,7 @@
       "avg_sentence_length": 7.7,
       "readability_score": 47.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_adef3299",
@@ -12993,7 +12717,7 @@
       "avg_sentence_length": 8.25,
       "readability_score": 36.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fce6f80c",
@@ -13033,7 +12757,7 @@
       "avg_sentence_length": 4.22,
       "readability_score": 18.77
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1e667b8a",
@@ -13062,10 +12786,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=50.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 82,
@@ -13075,7 +12797,7 @@
       "avg_sentence_length": 11.71,
       "readability_score": 50.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_374481ef",
@@ -13117,7 +12839,7 @@
       "avg_sentence_length": 10.33,
       "readability_score": 9.86
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_919bf792",
@@ -13157,7 +12879,7 @@
       "avg_sentence_length": 10.0,
       "readability_score": 32.32
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_68795460",
@@ -13197,7 +12919,7 @@
       "avg_sentence_length": 6.89,
       "readability_score": 41.56
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e32b2a8b",
@@ -13226,10 +12948,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=59.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 72,
@@ -13239,7 +12959,7 @@
       "avg_sentence_length": 10.29,
       "readability_score": 59.44
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d0123923",
@@ -13268,10 +12988,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 77,
@@ -13281,7 +12999,7 @@
       "avg_sentence_length": 9.62,
       "readability_score": 73.71
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9aa4e3f8",
@@ -13321,7 +13039,7 @@
       "avg_sentence_length": 9.33,
       "readability_score": 70.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_84f7b8bb",
@@ -13350,10 +13068,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=55.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 101,
@@ -13363,7 +13079,7 @@
       "avg_sentence_length": 10.1,
       "readability_score": 54.98
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_febdebf3",
@@ -13403,7 +13119,7 @@
       "avg_sentence_length": 9.0,
       "readability_score": 82.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_cfb9afa3",
@@ -13443,7 +13159,7 @@
       "avg_sentence_length": 9.3,
       "readability_score": 71.72
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_64381fad",
@@ -13472,10 +13188,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=67.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 82,
@@ -13485,7 +13199,7 @@
       "avg_sentence_length": 13.67,
       "readability_score": 67.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8d60f55c",
@@ -13527,7 +13241,7 @@
       "avg_sentence_length": 13.14,
       "readability_score": 7.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fc298bff",
@@ -13556,10 +13270,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=68.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 80,
@@ -13569,7 +13281,7 @@
       "avg_sentence_length": 13.33,
       "readability_score": 68.52
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5d82566d",
@@ -13609,7 +13321,7 @@
       "avg_sentence_length": 6.6,
       "readability_score": 77.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_10e7e189",
@@ -13649,7 +13361,7 @@
       "avg_sentence_length": 11.78,
       "readability_score": 34.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_63297f81",
@@ -13689,7 +13401,7 @@
       "avg_sentence_length": 7.11,
       "readability_score": 58.6
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0f8cabeb",
@@ -13729,7 +13441,7 @@
       "avg_sentence_length": 12.0,
       "readability_score": 60.71
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f4eedb49",
@@ -13758,10 +13470,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=59.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 61,
@@ -13771,7 +13481,7 @@
       "avg_sentence_length": 8.71,
       "readability_score": 59.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d7563329",
@@ -13811,7 +13521,7 @@
       "avg_sentence_length": 11.22,
       "readability_score": 24.57
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_54c72136",
@@ -13840,10 +13550,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=79.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 71,
@@ -13853,7 +13561,7 @@
       "avg_sentence_length": 7.1,
       "readability_score": 79.67
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0a721139",
@@ -13893,7 +13601,7 @@
       "avg_sentence_length": 8.5,
       "readability_score": 46.43
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fcb5073b",
@@ -13922,10 +13630,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 20,
@@ -13935,7 +13641,7 @@
       "avg_sentence_length": 6.67,
       "readability_score": 81.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7f4798dc",
@@ -13975,7 +13681,7 @@
       "avg_sentence_length": 14.17,
       "readability_score": 36.19
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_43c8fb6f",
@@ -14004,10 +13710,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=74.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 51,
@@ -14017,7 +13721,7 @@
       "avg_sentence_length": 7.29,
       "readability_score": 74.29
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_557b787d",
@@ -14046,10 +13750,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=85.0, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 32,
@@ -14059,7 +13761,7 @@
       "avg_sentence_length": 10.67,
       "readability_score": 84.97
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c39955cd",
@@ -14099,7 +13801,7 @@
       "avg_sentence_length": 11.5,
       "readability_score": 30.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6a538de7",
@@ -14141,7 +13843,7 @@
       "avg_sentence_length": 12.0,
       "readability_score": 4.31
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5e51b65a",
@@ -14181,7 +13883,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 81.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e69ebe28",
@@ -14210,10 +13912,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=60.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 81,
@@ -14223,7 +13923,7 @@
       "avg_sentence_length": 10.12,
       "readability_score": 60.78
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f167f04a",
@@ -14252,10 +13952,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=56.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 27,
@@ -14265,7 +13963,7 @@
       "avg_sentence_length": 6.75,
       "readability_score": 56.7
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_90dac6e3",
@@ -14296,7 +13994,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=79.3, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=79.3, ceiling=70)"
       ]
     },
     "metrics": {
@@ -14307,7 +14005,7 @@
       "avg_sentence_length": 8.67,
       "readability_score": 79.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f2027fdd",
@@ -14347,7 +14045,7 @@
       "avg_sentence_length": 10.12,
       "readability_score": 29.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_44c0e84c",
@@ -14387,7 +14085,7 @@
       "avg_sentence_length": 11.1,
       "readability_score": 57.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a2aee1af",
@@ -14418,7 +14116,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=71.5, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=71.5, ceiling=70)"
       ]
     },
     "metrics": {
@@ -14429,7 +14127,7 @@
       "avg_sentence_length": 9.88,
       "readability_score": 71.52
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_71474007",
@@ -14469,7 +14167,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 62.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a9eae6f9",
@@ -14498,10 +14196,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=53.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 58,
@@ -14511,7 +14207,7 @@
       "avg_sentence_length": 5.8,
       "readability_score": 52.97
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_06660afd",
@@ -14540,10 +14236,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=88.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 76,
@@ -14553,7 +14247,7 @@
       "avg_sentence_length": 9.5,
       "readability_score": 88.1
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3b125319",
@@ -14582,10 +14276,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 75,
@@ -14595,7 +14287,7 @@
       "avg_sentence_length": 9.38,
       "readability_score": 81.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1947027d",
@@ -14635,7 +14327,7 @@
       "avg_sentence_length": 11.78,
       "readability_score": 28.07
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8c425671",
@@ -14675,7 +14367,7 @@
       "avg_sentence_length": 7.67,
       "readability_score": 85.03
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_88d70f55",
@@ -14715,7 +14407,7 @@
       "avg_sentence_length": 11.8,
       "readability_score": 22.79
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_038043ef",
@@ -14744,10 +14436,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 60,
@@ -14757,7 +14447,7 @@
       "avg_sentence_length": 7.5,
       "readability_score": 81.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_be85d0c6",
@@ -14797,7 +14487,7 @@
       "avg_sentence_length": 9.75,
       "readability_score": 85.18
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_59ad2325",
@@ -14837,7 +14527,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 59.21
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_80ad4317",
@@ -14866,10 +14556,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 83,
@@ -14879,7 +14567,7 @@
       "avg_sentence_length": 9.22,
       "readability_score": 76.18
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_556401c9",
@@ -14921,7 +14609,7 @@
       "avg_sentence_length": 6.1,
       "readability_score": 0.0
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_246acacc",
@@ -14961,7 +14649,7 @@
       "avg_sentence_length": 9.67,
       "readability_score": 61.37
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4a212971",
@@ -14990,10 +14678,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=68.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 80,
@@ -15003,7 +14689,7 @@
       "avg_sentence_length": 8.89,
       "readability_score": 68.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d8684d3e",
@@ -15032,10 +14718,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 97,
@@ -15045,7 +14729,7 @@
       "avg_sentence_length": 9.7,
       "readability_score": 51.34
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_94e920ae",
@@ -15074,10 +14758,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=58.1, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 52,
@@ -15087,7 +14769,7 @@
       "avg_sentence_length": 5.78,
       "readability_score": 58.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_01f4961f",
@@ -15116,10 +14798,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 86,
@@ -15129,7 +14809,7 @@
       "avg_sentence_length": 17.2,
       "readability_score": 73.3
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_55fc9e0e",
@@ -15169,7 +14849,7 @@
       "avg_sentence_length": 12.88,
       "readability_score": 20.27
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8c201057",
@@ -15209,7 +14889,7 @@
       "avg_sentence_length": 10.17,
       "readability_score": 49.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d3be29c4",
@@ -15238,10 +14918,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=62.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 70,
@@ -15251,7 +14929,7 @@
       "avg_sentence_length": 7.78,
       "readability_score": 62.59
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6547fbf5",
@@ -15280,10 +14958,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=84.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 67,
@@ -15293,7 +14969,7 @@
       "avg_sentence_length": 11.17,
       "readability_score": 84.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4430a412",
@@ -15322,10 +14998,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -15335,7 +15009,7 @@
       "avg_sentence_length": 8.78,
       "readability_score": 75.84
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_7a593d1a",
@@ -15375,7 +15049,7 @@
       "avg_sentence_length": 4.75,
       "readability_score": 89.09
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3200a47f",
@@ -15404,10 +15078,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=56.4, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 108,
@@ -15417,7 +15089,7 @@
       "avg_sentence_length": 7.2,
       "readability_score": 56.44
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_929eb5aa",
@@ -15457,7 +15129,7 @@
       "avg_sentence_length": 8.75,
       "readability_score": 83.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a046db49",
@@ -15497,7 +15169,7 @@
       "avg_sentence_length": 8.88,
       "readability_score": 40.54
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2bf1d9ea",
@@ -15526,10 +15198,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 84,
@@ -15539,7 +15209,7 @@
       "avg_sentence_length": 14.0,
       "readability_score": 75.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fecba017",
@@ -15579,7 +15249,7 @@
       "avg_sentence_length": 11.22,
       "readability_score": 39.65
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f932e24a",
@@ -15608,10 +15278,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=88.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 69,
@@ -15621,7 +15289,7 @@
       "avg_sentence_length": 9.86,
       "readability_score": 88.93
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a44ccab4",
@@ -15661,7 +15329,7 @@
       "avg_sentence_length": 5.2,
       "readability_score": 58.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9d092b00",
@@ -15701,7 +15369,7 @@
       "avg_sentence_length": 9.73,
       "readability_score": 30.73
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c13ab47b",
@@ -15741,7 +15409,7 @@
       "avg_sentence_length": 10.67,
       "readability_score": 63.82
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c09bad7a",
@@ -15781,7 +15449,7 @@
       "avg_sentence_length": 6.22,
       "readability_score": 62.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2966bf0f",
@@ -15810,10 +15478,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=50.5, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 62,
@@ -15823,7 +15489,7 @@
       "avg_sentence_length": 8.86,
       "readability_score": 50.48
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_f8540583",
@@ -15863,7 +15529,7 @@
       "avg_sentence_length": 8.67,
       "readability_score": 24.78
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_75695f2a",
@@ -15892,10 +15558,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=73.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 53,
@@ -15905,7 +15569,7 @@
       "avg_sentence_length": 10.6,
       "readability_score": 73.17
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_52fef6d9",
@@ -15945,7 +15609,7 @@
       "avg_sentence_length": 13.67,
       "readability_score": 77.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fa2006f8",
@@ -15974,10 +15638,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=81.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 17,
@@ -15987,7 +15649,7 @@
       "avg_sentence_length": 5.67,
       "readability_score": 81.65
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0904d0fc",
@@ -16027,7 +15689,7 @@
       "avg_sentence_length": 8.09,
       "readability_score": 49.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c0286f78",
@@ -16056,10 +15718,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=78.3, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 44,
@@ -16069,7 +15729,7 @@
       "avg_sentence_length": 7.33,
       "readability_score": 78.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_844252fb",
@@ -16098,10 +15758,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=84.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 26,
@@ -16111,7 +15769,7 @@
       "avg_sentence_length": 8.67,
       "readability_score": 84.15
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_86ba9977",
@@ -16151,7 +15809,7 @@
       "avg_sentence_length": 9.14,
       "readability_score": 46.86
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_26d6f853",
@@ -16191,7 +15849,7 @@
       "avg_sentence_length": 9.22,
       "readability_score": 22.16
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5ae1be9f",
@@ -16231,7 +15889,7 @@
       "avg_sentence_length": 10.4,
       "readability_score": 56.36
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3a70b910",
@@ -16260,10 +15918,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=67.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 80,
@@ -16273,7 +15929,7 @@
       "avg_sentence_length": 8.89,
       "readability_score": 67.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_9e03d6d4",
@@ -16302,10 +15958,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=52.8, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 13,
@@ -16315,7 +15969,7 @@
       "avg_sentence_length": 3.25,
       "readability_score": 52.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a4c0cff8",
@@ -16346,7 +16000,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=75.3, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=75.3, ceiling=70)"
       ]
     },
     "metrics": {
@@ -16357,7 +16011,7 @@
       "avg_sentence_length": 13.67,
       "readability_score": 75.35
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ee578c2c",
@@ -16397,7 +16051,7 @@
       "avg_sentence_length": 12.5,
       "readability_score": 36.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_efe19242",
@@ -16437,7 +16091,7 @@
       "avg_sentence_length": 13.0,
       "readability_score": 34.56
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_82fe9694",
@@ -16468,7 +16122,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=74.4, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=74.4, ceiling=70)"
       ]
     },
     "metrics": {
@@ -16479,7 +16133,7 @@
       "avg_sentence_length": 9.83,
       "readability_score": 74.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a4b82595",
@@ -16519,7 +16173,7 @@
       "avg_sentence_length": 7.44,
       "readability_score": 35.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_eefe680e",
@@ -16559,7 +16213,7 @@
       "avg_sentence_length": 10.0,
       "readability_score": 14.8
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e82418be",
@@ -16588,10 +16242,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 80,
@@ -16601,7 +16253,7 @@
       "avg_sentence_length": 11.43,
       "readability_score": 75.74
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_2014274f",
@@ -16630,10 +16282,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=74.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 75,
@@ -16643,7 +16293,7 @@
       "avg_sentence_length": 10.71,
       "readability_score": 74.14
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_25ad7ab1",
@@ -16683,7 +16333,7 @@
       "avg_sentence_length": 10.1,
       "readability_score": 24.87
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_11f69012",
@@ -16723,7 +16373,7 @@
       "avg_sentence_length": 8.8,
       "readability_score": 74.85
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_77568988",
@@ -16763,7 +16413,7 @@
       "avg_sentence_length": 10.18,
       "readability_score": 21.26
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1c9b57db",
@@ -16792,10 +16442,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=80.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -16805,7 +16453,7 @@
       "avg_sentence_length": 6.58,
       "readability_score": 80.21
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_51b44fb0",
@@ -16845,7 +16493,7 @@
       "avg_sentence_length": 6.2,
       "readability_score": 73.43
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a62a4db5",
@@ -16885,7 +16533,7 @@
       "avg_sentence_length": 6.29,
       "readability_score": 68.65
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b1e217d8",
@@ -16914,10 +16562,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=65.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 83,
@@ -16927,7 +16573,7 @@
       "avg_sentence_length": 13.83,
       "readability_score": 65.38
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c15a5825",
@@ -16969,7 +16615,7 @@
       "avg_sentence_length": 8.0,
       "readability_score": 8.37
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_4d96e3bc",
@@ -17009,7 +16655,7 @@
       "avg_sentence_length": 11.5,
       "readability_score": 75.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_a5d9577d",
@@ -17038,10 +16684,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=71.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -17051,7 +16695,7 @@
       "avg_sentence_length": 9.88,
       "readability_score": 71.16
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_31587127",
@@ -17080,10 +16724,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=57.6, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 101,
@@ -17093,7 +16735,7 @@
       "avg_sentence_length": 9.18,
       "readability_score": 57.63
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_fb5b1ff9",
@@ -17122,10 +16764,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=51.1, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 45,
@@ -17135,7 +16775,7 @@
       "avg_sentence_length": 7.5,
       "readability_score": 51.06
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d5f10646",
@@ -17164,10 +16804,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=60.7, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -17177,7 +16815,7 @@
       "avg_sentence_length": 13.17,
       "readability_score": 60.68
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ccda9a21",
@@ -17217,7 +16855,7 @@
       "avg_sentence_length": 12.44,
       "readability_score": 25.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5a20fcdf",
@@ -17257,7 +16895,7 @@
       "avg_sentence_length": 10.57,
       "readability_score": 65.78
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0381bbf4",
@@ -17286,10 +16924,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=61.3, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 58,
@@ -17299,7 +16935,7 @@
       "avg_sentence_length": 7.25,
       "readability_score": 61.31
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_002330fc",
@@ -17328,10 +16964,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 75,
@@ -17341,7 +16975,7 @@
       "avg_sentence_length": 8.33,
       "readability_score": 75.5
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_1131c091",
@@ -17370,10 +17004,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 75,
@@ -17383,7 +17015,7 @@
       "avg_sentence_length": 10.71,
       "readability_score": 75.43
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_208e1173",
@@ -17423,7 +17055,7 @@
       "avg_sentence_length": 8.6,
       "readability_score": 82.03
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_13e6c9ef",
@@ -17452,10 +17084,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=60.0, ceiling=50)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 109,
@@ -17465,7 +17095,7 @@
       "avg_sentence_length": 10.9,
       "readability_score": 59.95
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c7146d1f",
@@ -17505,7 +17135,7 @@
       "avg_sentence_length": 7.4,
       "readability_score": 85.41
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_221142ac",
@@ -17545,7 +17175,7 @@
       "avg_sentence_length": 9.89,
       "readability_score": 32.05
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_d4fede3c",
@@ -17574,10 +17204,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=77.6, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 83,
@@ -17587,7 +17215,7 @@
       "avg_sentence_length": 13.83,
       "readability_score": 77.62
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_e48f0354",
@@ -17627,7 +17255,7 @@
       "avg_sentence_length": 9.25,
       "readability_score": 46.54
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_730d7f14",
@@ -17656,10 +17284,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=64.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 86,
@@ -17669,7 +17295,7 @@
       "avg_sentence_length": 12.29,
       "readability_score": 64.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_51be2c4b",
@@ -17709,7 +17335,7 @@
       "avg_sentence_length": 7.8,
       "readability_score": 86.12
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_788e6cd0",
@@ -17749,7 +17375,7 @@
       "avg_sentence_length": 9.27,
       "readability_score": 30.71
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_81a76f5e",
@@ -17789,7 +17415,7 @@
       "avg_sentence_length": 5.56,
       "readability_score": 33.77
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_37b49b43",
@@ -17829,7 +17455,7 @@
       "avg_sentence_length": 10.67,
       "readability_score": 66.46
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_31a8f3e0",
@@ -17860,7 +17486,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=73.8, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=73.8, ceiling=70)"
       ]
     },
     "metrics": {
@@ -17871,7 +17497,7 @@
       "avg_sentence_length": 9.29,
       "readability_score": 73.76
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_c8966f8d",
@@ -17911,7 +17537,7 @@
       "avg_sentence_length": 9.82,
       "readability_score": 22.19
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_08eaf3b8",
@@ -17940,10 +17566,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=76.5, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -17953,7 +17577,7 @@
       "avg_sentence_length": 9.88,
       "readability_score": 76.51
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_47036b4d",
@@ -17993,7 +17617,7 @@
       "avg_sentence_length": 9.6,
       "readability_score": 81.86
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_ba42900f",
@@ -18022,10 +17646,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=90.1, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -18035,7 +17657,7 @@
       "avg_sentence_length": 6.25,
       "readability_score": 90.09
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_752de83b",
@@ -18075,7 +17697,7 @@
       "avg_sentence_length": 9.45,
       "readability_score": 34.55
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_3ffc98e0",
@@ -18104,10 +17726,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=75.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 58,
@@ -18117,7 +17737,7 @@
       "avg_sentence_length": 8.29,
       "readability_score": 75.9
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_5d0db21f",
@@ -18146,10 +17766,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=89.4, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 42,
@@ -18159,7 +17777,7 @@
       "avg_sentence_length": 10.5,
       "readability_score": 89.42
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_0abc9b37",
@@ -18199,7 +17817,7 @@
       "avg_sentence_length": 8.7,
       "readability_score": 41.45
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_15b9abf1",
@@ -18239,7 +17857,7 @@
       "avg_sentence_length": 11.33,
       "readability_score": 36.08
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_85a5a1df",
@@ -18279,7 +17897,7 @@
       "avg_sentence_length": 6.92,
       "readability_score": 67.31
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_6480cd05",
@@ -18308,10 +17926,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=72.2, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 79,
@@ -18321,7 +17937,7 @@
       "avg_sentence_length": 11.29,
       "readability_score": 72.23
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_b8e38515",
@@ -18350,10 +17966,8 @@
       "readability_outlier": false,
       "duplicate_risk": false,
       "duplicate_of": null,
-      "style_mismatch": true,
-      "anomaly_details": [
-        "style_mismatch: NEW READER with complex writing (readability=96.9, floor=150)"
-      ]
+      "style_mismatch": false,
+      "anomaly_details": []
     },
     "metrics": {
       "word_count": 25,
@@ -18363,7 +17977,7 @@
       "avg_sentence_length": 5.0,
       "readability_score": 96.86
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_753d9606",
@@ -18394,7 +18008,7 @@
       "duplicate_of": null,
       "style_mismatch": true,
       "anomaly_details": [
-        "style_mismatch: Well-read with simple writing (readability=77.0, ceiling=50)"
+        "style_mismatch: Well-read with simple writing (readability=77.0, ceiling=70)"
       ]
     },
     "metrics": {
@@ -18405,7 +18019,7 @@
       "avg_sentence_length": 9.5,
       "readability_score": 76.97
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   },
   {
     "interpretation_id": "moment_8daf23e8",
@@ -18445,6 +18059,6 @@
       "avg_sentence_length": 9.62,
       "readability_score": 45.44
     },
-    "timestamp": "2026-02-21T04:44:23"
+    "timestamp": "2026-02-24T22:22:19"
   }
 ]

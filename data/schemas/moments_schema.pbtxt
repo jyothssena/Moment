@@ -344,6 +344,7 @@ feature {
 feature {
   name: "anomalies_anomaly_details"
   type: BYTES
+  domain: "anomalies_anomaly_details"
   presence {
     min_fraction: 1.0
     min_count: 1
@@ -564,7 +565,7 @@ string_domain {
 }
 string_domain {
   name: "timestamp"
-  value: "2026-02-21T04:44:23"
+  value: "2026-02-24T22:22:19"
 }
 string_domain {
   name: "detected_issues_pii_types"
@@ -578,4 +579,36 @@ string_domain {
   name: "anomalies_duplicate_of"
   value: "moment_28641dbb"
   value: "moment_e6533c95"
+}
+string_domain {
+  name: "anomalies_anomaly_details"
+  value: "[\"duplicate_risk: 0.93 similarity with moment_28641dbb\"]"
+  value: "[\"duplicate_risk: 0.93 similarity with moment_e6533c95\"]"
+  value: "[\"readability_low: score=0.00, z=3.32\"]"
+  value: "[\"readability_low: score=11.74, z=2.66\"]"
+  value: "[\"readability_low: score=4.31, z=3.07\"]"
+  value: "[\"readability_low: score=4.48, z=3.06\"]"
+  value: "[\"readability_low: score=7.74, z=2.88\"]"
+  value: "[\"readability_low: score=8.37, z=2.85\"]"
+  value: "[\"readability_low: score=9.86, z=2.76\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=71.4, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=71.5, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=71.9, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=72.4, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=72.9, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=73.5, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=73.8, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=74.4, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=75.0, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=75.3, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=75.8, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=77.0, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=77.6, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=78.3, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=78.4, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=79.3, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=82.0, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=82.3, ceiling=70)\"]"
+  value: "[\"style_mismatch: Well-read with simple writing (readability=85.5, ceiling=70)\"]"
+  value: "[]"
 }

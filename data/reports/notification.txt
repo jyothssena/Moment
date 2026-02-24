@@ -1,12 +1,12 @@
 
-⚠️ MOMENT Data Pipeline – Complete
+✅ MOMENT Data Pipeline – Complete
 ==================================================
-Time: 2026-02-24 20:49:22
+Time: 2026-02-24 22:22:30
 
-Preprocessing: None
-Validation: N/A
+Preprocessing: {'moments': 450, 'books': 6, 'users': 50, 'valid': 450}
+Validation: PASSED
 GCS Upload: 0 files uploaded
-Failed Tasks: ['bias_detection']
+Failed Tasks: None
 
 Pipeline: acquire → bias → preprocess → [schema + validate] → upload → notify
 Team: MOMENT Group 23 | DADS7305 MLOps

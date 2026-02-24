@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T21:41:31.170786",
+  "timestamp": "2026-02-24T22:22:28.673675",
   "dataset": "moments",
   "total_records": 450,
   "total_fields": 32,
@@ -37,6 +37,8 @@
     "metrics_avg_sentence_length",
     "metrics_readability_score"
   ],
+  "schema_location": "/opt/airflow/repo/data/schemas/moments_schema.pbtxt",
+  "anomalies": {},
   "numeric_fields": [
     "passage_number",
     "character_id",
@@ -205,7 +207,70 @@
     "book_title": {
       "unique_values": 3,
       "most_common": "Frankenstein"
+    },
+    "character_name": {
+      "unique_values": 50,
+      "most_common": "Aisha Thompson"
+    },
+    "cleaned_interpretation": {
+      "unique_values": 450,
+      "most_common": "\"Accomplishment of my toils\" immediately followed by \"catastrophe.\" Success and failure in the same breath. That's the whole book right there.\n\nHe describes \"anxiety that almost amounted to agony\" before the creature even lives. Why is success painful? Because he knows this is wrong. His body's telling him to stop and he ignores it.\n\n\"Infinite pains and care I had endeavoured to form.\" Passive construction. \"Endeavoured to form\" not \"created\" or \"made.\" Distancing language. He's already separating himself from responsibility.\n\nYellow skin barely covering muscles and arteries. Sounds like he didn't finish properly. Like he rushed at the end and now he's disgusted by his own sloppy work. Blaming the creature for his failures."
+    },
+    "is_valid": {
+      "unique_values": 1,
+      "most_common": "True"
+    },
+    "quality_issues": {
+      "unique_values": 1,
+      "most_common": ""
+    },
+    "timestamp": {
+      "unique_values": 1,
+      "most_common": "2026-02-24T22:22:19"
+    },
+    "detected_issues_has_pii": {
+      "unique_values": 1,
+      "most_common": "False"
+    },
+    "detected_issues_pii_types": {
+      "unique_values": 1,
+      "most_common": "[]"
+    },
+    "detected_issues_has_profanity": {
+      "unique_values": 1,
+      "most_common": "False"
+    },
+    "detected_issues_is_spam": {
+      "unique_values": 1,
+      "most_common": "False"
+    },
+    "detected_issues_spam_reasons": {
+      "unique_values": 1,
+      "most_common": "[]"
+    },
+    "anomalies_word_count_outlier": {
+      "unique_values": 1,
+      "most_common": "False"
+    },
+    "anomalies_readability_outlier": {
+      "unique_values": 2,
+      "most_common": "False"
+    },
+    "anomalies_duplicate_risk": {
+      "unique_values": 2,
+      "most_common": "False"
+    },
+    "anomalies_duplicate_of": {
+      "unique_values": 2,
+      "most_common": "moment_28641dbb"
+    },
+    "anomalies_style_mismatch": {
+      "unique_values": 2,
+      "most_common": "False"
+    },
+    "anomalies_anomaly_details": {
+      "unique_values": 29,
+      "most_common": "[]"
     }
-  },
-  "schema_location": "/opt/airflow/data/schemas/moments_schema.pbtxt"
+  }
 }
