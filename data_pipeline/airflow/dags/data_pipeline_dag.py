@@ -356,60 +356,34 @@ def task_preprocessing(**context):
     return {'moments': len(moments), 'books': len(books), 'users': len(users), 'valid': valid}
 
 
-@log_task_execution("Schema & Statistics")
+@log_task_execution("Schema & Statistics (TFDV)")
 def task_schema_stats(**context):
-    """Task 4a: Generate schema and statistics."""
-    logger.info("📊 INFO: Generating schema and statistics")
-    
-    import pandas as pd
+    """Task 4a: Generate schema, statistics, and anomaly detection using TFDV."""
+    logger.info("📊 INFO: Generating schema and statistics with TFDV")
+
+    from generate_schema_stats import run_schema_stats
+
     processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
     reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
     os.makedirs(reports_dir, exist_ok=True)
-    
-    logger.debug(f"🔍 DEBUG: Processed directory: {processed_dir}")
-    logger.debug(f"🔍 DEBUG: Reports directory: {reports_dir}")
 
-    stats = {'generated_at': datetime.now().isoformat(), 'datasets': {}}
+    results = run_schema_stats(processed_dir, reports_dir)
 
-    for fname in ['moments_processed.json', 'books_processed.json', 'users_processed.json']:
-        fpath = os.path.join(processed_dir, fname)
-        
-        if not os.path.exists(fpath):
-            logger.warning(f"⚠️  WARNING: File not found: {fname}")
-            logger.warning(f"   Skipping statistics for this dataset")
-            continue
-        
-        logger.debug(f"🔍 DEBUG: Processing {fname}")
-        df = pd.read_json(fpath)
-        
-        ds = {
-            'rows': len(df),
-            'columns': len(df.columns),
-            'column_names': list(df.columns),
-            'null_counts': df.isnull().sum().to_dict(),
-        }
-        
-        # Numeric stats
-        numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
-        if numeric_cols:
-            ds['numeric_stats'] = df[numeric_cols].describe().to_dict()
-        
-        stats['datasets'][fname] = ds
-        logger.info(f"   {fname}: {len(df)} rows, {len(df.columns)} cols")
-        
-        # WARNING: Check for data quality issues
-        null_total = df.isnull().sum().sum()
-        if null_total > 0:
-            logger.warning(f"⚠️  WARNING: {fname} has {null_total} null values")
+    for name, summary in results.get('datasets', {}).items():
+        if 'error' in summary:
+            logger.error(f"❌ ERROR: {name} failed: {summary['error']}")
+        else:
+            anomalies = summary.get('anomalies', {})
+            logger.info(f"   {name}: {summary['total_records']} records, {summary['total_fields']} fields")
+            if anomalies:
+                logger.warning(f"⚠️  WARNING: {name} has {len(anomalies)} anomalies")
+                for feat, desc in anomalies.items():
+                    logger.warning(f"     - {feat}: {desc}")
 
-    stats_path = os.path.join(reports_dir, 'schema_stats.json')
-    with open(stats_path, 'w', encoding='utf-8') as f:
-        json.dump(stats, f, indent=2, default=str)
+    logger.info(f"✅ INFO: TFDV schema stats complete")
+    logger.info(f"   Analyzed {len(results.get('datasets', {}))} datasets")
 
-    logger.info(f"✅ INFO: Schema stats saved")
-    logger.info(f"   Analyzed {len(stats['datasets'])} datasets")
-    
-    return stats
+    return results
 
 
 @log_task_execution("Data Validation")

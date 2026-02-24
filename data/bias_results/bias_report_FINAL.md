@@ -1,6 +1,6 @@
 # BIAS DETECTION REPORT - MOMENT PROJECT
 
-Date: 2026-02-21
+Date: 2026-02-24
 
 Analyst: Santhosh Chandrasekar
 
@@ -11,16 +11,18 @@ Dataset: 450 interpretations, 50 characters, 3 books
 
 ## 1. Age Distribution
 
-Max Deviation: 19.0%
+Max Deviation: 24.0%
 
 
-- 18-24 (Gen Z): 117 (26.0%) Dev: +1.0%
+- 18-24 (Gen Z): 117 (26.0%) Dev: +6.0%
 
-- 25-34 (Millennial): 198 (44.0%) Dev: +19.0%
+- 25-34 (Millennial): 198 (44.0%) Dev: +24.0%
 
-- 35-44 (Gen X/Mill): 90 (20.0%) Dev: -5.0%
+- 35-44 (Gen X/Mill): 81 (18.0%) Dev: -2.0%
 
-- 45+ (Gen X/Boom): 45 (10.0%) Dev: -15.0%
+- 45+ (Gen X/Boom): 36 (8.0%) Dev: -12.0%
+
+- Unknown: 18 (4.0%) Dev: -16.0%
 
 
 ### INTENTIONAL DESIGN - Realistic Demographics
@@ -40,12 +42,12 @@ DECISION: NO MITIGATION (Intentional realistic modeling)
 
 ## 2. Gender
 
-Assessment: BALANCED (2.0%)
+Assessment: BALANCED (4.0%)
 
 
-- Female: 234 (52.0%)
+- Female: 225 (50.0%)
 
-- Male: 216 (48.0%)
+- Male: 207 (46.0%)
 
 
 ## 3. Reader Type
@@ -68,16 +70,16 @@ Assessment: BALANCED (8.7%)
 
 ## 4. Personality
 
-Assessment: BALANCED (7.0%)
+Assessment: BALANCED (5.0%)
 
 
-- Analytical: 144 (32.0%)
+- Analytical: 135 (30.0%)
 
 - Emotional: 117 (26.0%)
 
 - Narrative: 90 (20.0%)
 
-- Philosophical: 99 (22.0%)
+- Philosophical: 90 (20.0%)
 
 
 ## 5. Book Distribution
@@ -121,8 +123,9 @@ book_title          Frankenstein  Pride and Prejudice  The Great Gatsby
 age_group                                                              
 18-24 (Gen Z)                 39                   39                39
 25-34 (Millennial)            66                   66                66
-35-44 (Gen X/Mill)            30                   30                30
-45+ (Gen X/Boom)              15                   15                15
+35-44 (Gen X/Mill)            27                   27                27
+45+ (Gen X/Boom)              12                   12                12
+Unknown                        6                    6                 6
 ```
 
 Percentages:
@@ -133,6 +136,7 @@ age_group
 25-34 (Millennial)          33.3                 33.3              33.3
 35-44 (Gen X/Mill)          33.3                 33.3              33.3
 45+ (Gen X/Boom)            33.3                 33.3              33.3
+Unknown                     33.3                 33.3              33.3
 ```
 
 Finding: All ages read all books equally (33.3%).
@@ -143,8 +147,8 @@ Finding: All ages read all books equally (33.3%).
 ```
 book_title  Frankenstein  Pride and Prejudice  The Great Gatsby
 Gender                                                         
-Female                78                   78                78
-Male                  72                   72                72
+Female                75                   75                75
+Male                  69                   69                69
 ```
 
 
@@ -153,10 +157,10 @@ Male                  72                   72                72
 ```
 book_title     Frankenstein  Pride and Prejudice  The Great Gatsby
 Personality                                                       
-Analytical               48                   48                48
+Analytical               45                   45                45
 Emotional                39                   39                39
 Narrative                30                   30                30
-Philosophical            33                   33                33
+Philosophical            30                   30                30
 ```
 
 
@@ -167,8 +171,8 @@ Philosophical            33                   33                33
 age_group                            
 18-24 (Gen Z)         117  60.2  22.7
 25-34 (Millennial)    198  69.2  24.2
-35-44 (Gen X/Mill)     90  74.2  29.2
-45+ (Gen X/Boom)       45  82.7  20.4
+35-44 (Gen X/Mill)     81  70.0  27.3
+45+ (Gen X/Boom)       36  79.0  18.1
 ```
 
 Finding: No age-based length bias (<20% variance).
@@ -179,8 +183,8 @@ Finding: No age-based length bias (<20% variance).
 ```
         count  mean   std
 Gender                   
-Female    234  69.5  25.6
-Male      216  69.0  25.2
+Female    225  67.8  24.5
+Male      207  67.7  24.5
 ```
 
 
@@ -189,10 +193,10 @@ Male      216  69.0  25.2
 ```
                count  mean   std
 Personality                     
-Analytical       144  79.5  23.0
+Analytical       135  77.3  21.8
 Emotional        117  59.7  15.9
 Narrative         90  44.1  18.9
-Philosophical     99  88.4  18.5
+Philosophical     90  87.5  17.9
 ```
 
 Note: Expected variance (Analytical writes more).
@@ -205,13 +209,13 @@ Note: Expected variance (Analytical writes more).
 
 ### Findings:
 
-- Age: 19.0% deviation - INTENTIONAL (realistic demographics)
+- Age: 24.0% deviation - INTENTIONAL (realistic demographics)
 
-- Gender: 2.0% deviation - BALANCED
+- Gender: 4.0% deviation - BALANCED
 
 - Reader Type: 8.7% deviation - BALANCED
 
-- Personality: 7.0% deviation - BALANCED
+- Personality: 5.0% deviation - BALANCED
 
 - Books: PERFECT (150 each)
 
