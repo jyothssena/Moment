@@ -1,0 +1,57 @@
+import json
+
+def get_closest_for_user(filepath: str, user_id: str, top_n: int = None) -> list[dict]:
+    """
+    Returns all entries involving `user_id` (in either user_a or user_b),
+    sorted by similarity descending.
+
+    Args:
+        filepath: Path to the JSON file (list of records).
+        user_id:  The user identifier to filter by.
+        top_n:    If set, return only the top N results.
+    """
+    with open(filepath) as f:
+        data = json.load(f)
+
+    matches = [
+        entry for entry in data
+        if entry.get("user_a") == user_id or entry.get("user_b") == user_id
+    ]
+
+    matches.sort(key=lambda x: x.get("similarity", 0), reverse=True)
+
+    if top_n is not None:
+        matches = matches[:top_n]
+
+    return matches
+
+
+def print_table(matches: list[dict], user_id: str) -> None:
+    """Prints a summary table of the results."""
+    print(f"\nTop matches for: {user_id}")
+    print(f"{'#':<4} {'Other User':<40} {'Book':<20} {'Similarity':>10} {'Relationship':<15}")
+    print("-" * 95)
+
+    for i, entry in enumerate(matches, 1):
+        other = entry["user_b"] if entry["user_a"] == user_id else entry["user_a"]
+        book  = entry.get("book_id", "")
+        sim   = entry.get("similarity", 0)
+        rel   = entry.get("relationship", "")
+        print(f"{i:<4} {other:<40} {book:<20} {sim:>10.4f} {rel:<15}")
+
+
+# --- Usage ---
+
+if __name__ == "__main__":
+    FILE    = "/Users/jyothssena/Downloads/all_pairs_scored.json"   # ← path to your file
+    USER    = "user_emma_chen_fd5e3def"
+    TOP_N   = 20                 # ← set to None for all results
+
+    matches = get_closest_for_user(FILE, USER, top_n=TOP_N)
+
+    # Summary table
+    print_table(matches, USER)
+
+    # Full JSON output
+    print("\n--- Full JSON ---")
+    print(json.dumps(matches, indent=2))
