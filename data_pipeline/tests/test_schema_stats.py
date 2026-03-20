@@ -1,9 +1,16 @@
 import unittest
 import json
 import os
+import sys
+import pytest
 import pandas as pd
-import tensorflow_data_validation as tfdv
 from pathlib import Path
+
+if sys.platform == "darwin":
+    pytest.skip("TFDV not available on macOS Apple Silicon", allow_module_level=True)
+
+import tensorflow_data_validation as tfdv
+
 
 # ============================================================================
 # PATH RESOLUTION
