@@ -105,10 +105,18 @@ for the agent — a finding worth addressing in future prompt iterations by
 providing clearer criteria for what makes a contradiction match generative 
 rather than simply incompatible.
 
+![WhatsApp Image 2026-03-22 at 2 38 47 PM](https://github.com/user-attachments/assets/ef24f46e-0a95-4a97-a0bb-c2b323d75f36)
+
+![WhatsApp Image 2026-03-22 at 2 39 06 PM](https://github.com/user-attachments/assets/594a49db-8d27-413f-b6e5-9c108add08a2)
+
+<img width="800" height="500" alt="match_type_distribution" src="https://github.com/user-attachments/assets/c2fc1992-b366-4111-ac6b-8c3b5e0f1bf9" />
+
+<img width="900" height="500" alt="confidence_distribution" src="https://github.com/user-attachments/assets/b5177485-e6f1-4a33-be69-a0b543ff70b4" />
+
+<img width="800" height="500" alt="confidence_boxplot" src="https://github.com/user-attachments/assets/dadb5a70-33f5-4146-8992-1f2220332050" />
+
 ---
 
 ## Next Experiment
 
-Planned run with `similarity_threshold = 0.75` and `faiss_top_k = 15` to 
-evaluate whether loosening retrieval surfaces genuine no_match cases and 
-improves contradiction recall.
+Ran different models sing different techniques and saved the results.
