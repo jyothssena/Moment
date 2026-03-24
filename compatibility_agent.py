@@ -15,154 +15,194 @@ from tools import (
     count_new_moments,
     log_compatibility_run,
     extract_json,
-    COMPAT_TOOLS,
 )
-from profile_agent import (
+from decomposing_agent import (
     _gemini_client,
     _GEMINI_MODEL,
     _get_response_text,
-    run_profile_agent,
+    run_decomposer,
+    DECOMPOSITIONS_FILE
 )
-
-# ── Constants ─────────────────────────────────────────────────────────────────
-
-CONFIDENCE_THRESHOLD  = 0.75  # Pass 1 result accepted as-is above this
-CONFIDENCE_FLOOR      = 0.50  # Pass 1 results below this are discarded immediately
+from aggregator import aggregate
 
 # ── Compatibility Agent ───────────────────────────────────────────────────────
 
 _COMPAT_SYSTEM_PROMPT = textwrap.dedent("""
-    You are the Compatibility Investigator for Moment, a platform that matches
-    readers of the same book based on how they intellectually engage with it.
+You are the Moment Compatibility Scorer for Momento.
+You will be given two decomposed reader profiles — sub-claims with
+weights and emotional modes already assigned — along with the
+original moment text for each reader.
+Use the original moment texts as context when scoring matched pairs,
+especially when judging whether positions point in the same direction
+(Think Q2) or whether readers share the same emotional experience
+(Feel Q4). The decomposed sub-claims define the structure.
+The original texts provide the interpretive framing.
+Map sub-claims across readers, then score each matched pair.
+Output only the final JSON — no preamble, no markdown fences.
 
-    You will be given:
-    - One moment (annotation) from User A
-    - One moment (annotation) from User B
-    - The book_id being compared
-    - Optionally: full reader portraits for both users (provided when the
-      initial moment-based assessment yields low confidence)
-      
-    DIMENSIONS
-    THINK (how_they_read + interpretive_lens + central_preoccupation):
+════════════════════════════════════════════════════════════
+STEP 1 — MAP USING THREE GATES
+════════════════════════════════════════════════════════════
 
-    resonance:     same level of text, compatible frameworks, aligned position
-    contradiction: same level and framework, opposing positions on the same question
-    divergence:    different levels OR incommensurable frameworks
+For each sub-claim in A, find the best candidate in B.
+All three gates must pass for a match.
 
-    FEEL (what_moves_them + emotional_mode + self_referential):
+GATE 1 — Shared subject
+Both sub-claims make a claim about the same specific subject?
+(same character, same named aspect, same event in the passage)
 
-    resonance:     similar emotional triggers, compatible emotional modes
-    contradiction: prosecutorial paired with empathetic-victim
-    divergence:    different triggers OR one self-referential and one not
+AUTOMATIC YES: if both reference the same specific phrase from
+the passage text — different angles on the same phrase are Gate 2
+and Gate 3 questions, not different subjects.
 
-    Your job is to investigate whether these two readers would have a meaningful
-    intellectual connection. Use get_user_interpretations to examine their actual
-    moments for this specific book before forming any verdict.
-    
-    Reasoning steps — follow in order:
-    1. Read both portraits carefully. Are they fundamentally incompatible?
-       If yes, set verdict to "no_match" and stop.
+Note: character evasion ≠ authorial choice even if both about language
+Note: pre-creation moment ≠ post-creation moment even if same character
+YES → Gate 2   |   NO → UNMATCHED
 
-    2. If portraits are provided, use them to deepen your assessment —
-       situate each moment within the broader reading style and thematic
-       tendencies described in the portrait.
+GATE 2 — Shared textual anchor
+At least one applies:
+  a. Both reference the same quoted phrase from the passage
+  b. Both describe the same specific moment or event in the passage
+     (same action, same beat — even if described in different words
+     or anchored to different passage phrases)
+  c. Both sub-claims respond to the same specific character behaviour
+     or authorial choice AND make claims that could directly agree or
+     disagree with each other.
+     Note: "same character" alone is not sufficient for 2c — must be
+     the same specific behaviour or action of that character.
+     Passes: both about whether Victor's reaction to the creature was
+     justified (same action, opposing verdicts possible).
+     Fails: one about Victor's language, one about Victor's emotional
+     state — different aspects, not the same behaviour.
+YES → Gate 3   |   NO → UNMATCHED
 
-    3. Determine the nature of the connection:
-       - resonance: similar emotional and intellectual stance toward the book
-       - contradiction: opposite sides of the same dynamic (e.g. one identifies with
-         character A, the other with character B in the same conflict)
-       - divergence: genuinely different interpretive frameworks that could
-         produce productive tension
-       - no_match: no meaningful basis for connection
+GATE 3 — Meaningful comparison
+Formulate: "Is it true that [A's claim]?"
+Would B's claim answer YES or NO?
+YES or NO → MATCHED   |   Irrelevant → UNMATCHED
 
-    4. Assign a confidence score (0.0–1.0) reflecting how strongly the evidence
-       supports your verdict.
+Each sub-claim can only be matched once.
+Any B sub-claim not claimed by a matched A sub-claim → UNMATCHED.
 
-    5. Write an insight — 2-3 sentences a real user would see. Be specific.
-       Reference the actual moments or portrait details. Do not be generic.
-       Set to null if verdict is no_match.
+════════════════════════════════════════════════════════════
+STEP 2 — SCORE EACH MATCHED PAIR
+════════════════════════════════════════════════════════════
 
-    Return ONLY a raw JSON object — no markdown fences, no preamble.
-    Keys: verdict, confidence, reasoning, insight.
+For each matched pair, answer 5 Think questions then 5 Feel questions.
+Each YES or NO maps to 1R or 1C as specified.
+score = points / 5  (D = 0.0 for matched pairs)
+
+THINK QUESTIONS:
+  Q1. Same subject? Always YES for matched pairs → 1R
+  Q2. Positions same direction? YES=1R  NO=1C
+  Q3. Interpretive lenses compatible? YES=1R  NO=1C
+  Q4. Conclusions mutually exclusive? YES=1C  NO=1R
+  Q5. Would A agree with B's conclusion? YES=1R  NO=1C
+
+FEEL QUESTIONS:
+  Q1. Same emotional subject? Always YES for matched pairs → 1R
+  Q2. Same emotional mode TYPE? Compare the assigned modes —
+      same label → YES (1R)  |  different labels → NO (1C)
+  Q3. Same specific trigger? YES=1R  NO=1C
+  Q4. Same emotional experience? YES=1R  NO=1C
+  Q5. Would A recognise B's response as valid? YES=1R  NO=1C
+
+For UNMATCHED sub-claims:
+  think: R=0.0  C=0.0  D=1.0
+  feel:  R=0.0  C=0.0  D=1.0
+
+════════════════════════════════════════════════════════════
+GATE CONFIDENCE — assign for every matched pair
+════════════════════════════════════════════════════════════
+
+You must assign gate_confidence for every matched pair.
+  1.00 = both gates passed clearly
+  0.75 = one gate required interpretation
+  0.50 = borderline match
+  If zero matched pairs → omit gate_confidence entirely.
+
+════════════════════════════════════════════════════════════
+OUTPUT — return ONLY this JSON, no preamble, no markdown fences
+════════════════════════════════════════════════════════════
+
+{
+  "passage_id": "<passage identifier>",
+  "matched_pairs": [
+    {
+      "a_id": "<sub-claim id from A>",
+      "b_id": "<sub-claim id from B>",
+      "weight_a": <float>,
+      "weight_b": <float>,
+      "gate_confidence": <1.00|0.75|0.50>,
+      "think": {"R": <float>, "C": <float>, "D": 0.0},
+      "feel":  {"R": <float>, "C": <float>, "D": 0.0}
+    }
+  ],
+  "unmatched_a": ["<sub-claim id>"],
+  "unmatched_b": ["<sub-claim id>"]
+}
 """)
 
+_SCORER_REQUIRED_KEYS = {"matched_pairs", "unmatched_a", "unmatched_b"}
 
-_COMPAT_REQUIRED_KEYS = {"think_dimension", "feel_dimension",
-                         "verdict", "confidence", "reasoning", "insight"}
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def _ensure_portrait(user_id: str) -> dict:
+def _get_or_run_decomposition(user_id: str, passage_id: str, book_id: str, moment_text: str) -> dict:
     """
-    Return a portrait for user_id. Uses cached portrait if fresh
-    (fewer than 3 new moments since last update), otherwise rebuilds.
+    Return cached decomposition for this user+passage+book if it exists,
+    otherwise run the decomposer and return the result.
     """
-    existing = get_user_profile(user_id)
-    if existing:
-        return existing
-    return run_profile_agent(user_id)
+    data = _read_json_file(DECOMPOSITIONS_FILE,[]) or []
+    cached = next(
+        (d for d in data
+         if d["user_id"] == user_id
+         and d["passage_id"] == passage_id
+         and d.get("book_id") == book_id),
+        None
+    )
+    if cached:
+        print(f"[CompatAgent] using cached decomposition for {user_id} / {passage_id} / {book_id}")
+        return cached
+    return run_decomposer(user_id, passage_id, book_id, moment_text)
 
-
-def _build_prompt(user_a_id: str,
-                  user_b_id: str,
-                  book_id: str,
-                  moment_a: dict,
-                  moment_b: dict,
-                  portrait_a: dict | None = None,
-                  portrait_b: dict | None = None) -> str:
-    """Construct the investigation prompt, optionally including portraits."""
-    portrait_section = ""
-    if portrait_a and portrait_b:
-        portrait_section = textwrap.dedent(f"""
-        The initial moment-only assessment had low confidence.
-        Use the full reader portraits below to deepen your judgement.
-
-        Portrait A:
-        {json.dumps(portrait_a, indent=2)}
-
-        Portrait B:
-        {json.dumps(portrait_b, indent=2)}
-        """)
-
+def _build_scorer_prompt(decomp_a: dict, decomp_b: dict) -> str:
+    """Build the user-turn message for the scorer from two decompositions."""
     return textwrap.dedent(f"""
-        Investigate compatibility between these two readers for book_id: {book_id}.
+        Reader A:
+        {json.dumps(decomp_a, indent=2)}
 
-        User A ID: {user_a_id}
-        Moment A:
-        {json.dumps(moment_a, indent=2)}
+        Reader B:
+        {json.dumps(decomp_b, indent=2)}
 
-        User B ID: {user_b_id}
-        Moment B:
-        {json.dumps(moment_b, indent=2)}
-        {portrait_section}
-        Follow the reasoning steps in your instructions.
+        Map and score these two decomposed moments.
         Return a raw JSON object.
     """)
 
 
-def _call_agent(prompt: str) -> dict:
-    """Send a prompt to the compatibility agent and return the parsed result."""
-    chat = _gemini_client.chats.create(
+def _call_scorer(prompt: str) -> dict:
+    """Send decomposed profiles to the scorer and return parsed result."""
+    response = _gemini_client.models.generate_content(
         model=_GEMINI_MODEL,
         config=types.GenerateContentConfig(
-            tools=COMPAT_TOOLS,
-            temperature=0.2,
             system_instruction=_COMPAT_SYSTEM_PROMPT,
-        )
+            temperature=0.1,
+        ),
+        contents=prompt,
     )
-    response = chat.send_message(prompt)
-    result   = extract_json(_get_response_text(response))
+    result = extract_json(_get_response_text(response))
 
     if "error" in result:
-        print(f"[CompatAgent] JSON extraction failed. raw={response.text[:200]}")
-        return {"error": "invalid JSON from Compatibility Agent",
-                "raw": response.text}
+        raw = _get_response_text(response) or ""
+        print(f"[CompatAgent] JSON extraction failed. raw={raw[:200]}")
+        return {"error": "invalid JSON from Compatibility Scorer", "raw": raw}
 
-    missing = _COMPAT_REQUIRED_KEYS - result.keys()
+    missing = _SCORER_REQUIRED_KEYS - result.keys()
     if missing:
         print(f"[CompatAgent] incomplete result, missing keys: {missing}")
         result["error"] = f"incomplete result, missing: {missing}"
 
     return result
+
 
 
 # ── Agent ─────────────────────────────────────────────────────────────────────
@@ -173,145 +213,106 @@ def run_compatibility_agent(user_a_id: str,
                              moment_a: dict,
                              moment_b: dict) -> dict:
     """
-    Evaluate intellectual compatibility between two readers of the same book.
+    Evaluate compatibility between two readers on the same passage.
 
-    Pass 1 — moments only. If confidence < CONFIDENCE_THRESHOLD, fetches both
-    reader portraits and runs a second, deeper Pass 2.
+    Decomposes each moment (or uses cache), scores matched pairs,
+    then aggregates into final R/C/D percentages + confidence.
 
-    Args:
-        user_a_id: ID of the first user.
-        user_b_id: ID of the second user.
-        book_id:   The book being compared.
-        moment_a:  A single moment/annotation dict for user A.
-        moment_b:  A single moment/annotation dict for user B.
-
-    Returns a dict with keys: verdict, confidence, reasoning, insight,
-    user_a, user_b, book_id, timestamp, and pass (1 or 2).
+    Returns a dict with keys: think, feel, dominant_think, dominant_feel,
+    verdict, confidence, user_a, user_b, book_id, timestamp.
     """
     print(f"[CompatAgent] evaluating {user_a_id} × {user_b_id} on book={book_id}")
 
-    # ── Pass 1: moments only ──────────────────────────────────────────────────
-    print(f"[CompatAgent] Pass 1 — moments only")
-    prompt_1 = _build_prompt(user_a_id, user_b_id, book_id, moment_a, moment_b)
-    result   = _call_agent(prompt_1)
-    passes   = 1
+    passage_id   = moment_a.get("passage_id", moment_b.get("passage_id", "unknown"))
+    moment_a_txt = moment_a.get("interpretation", moment_a.get("text", ""))
+    moment_b_txt = moment_b.get("interpretation", moment_b.get("text", ""))
 
-    if "error" not in result:
-        confidence = result.get("confidence", 0.0)
-        print(f"[CompatAgent] Pass 1 confidence={confidence}")
+    # ── Decompose ─────────────────────────────────────────────────────────────
+    decomp_a = _get_or_run_decomposition(user_a_id, passage_id, book_id, moment_a_txt)
+    decomp_b = _get_or_run_decomposition(user_b_id, passage_id, book_id, moment_b_txt)
 
-        # ── Early exit: discard pairs below the floor ─────────────────────────
-        if confidence < CONFIDENCE_FLOOR:
-            print(f"[CompatAgent] confidence {confidence} < floor {CONFIDENCE_FLOOR} "
-                  f"— discarding without Pass 2")
-            result["verdict"] = "no_match"
-            result["pass"]    = 1
+    if "error" in decomp_a or "error" in decomp_b:
+        failed = user_a_id if "error" in decomp_a else user_b_id
+        print(f"[CompatAgent] decomposition failed for {failed}")
+        return {"error": f"decomposition failed for {failed}",
+                "user_a": user_a_id, "user_b": user_b_id}
 
-        # ── Pass 2: augment with portraits for mid-range confidence ───────────
-        elif confidence < CONFIDENCE_THRESHOLD:
-            print(f"[CompatAgent] confidence {confidence} in [{CONFIDENCE_FLOOR}, {CONFIDENCE_THRESHOLD}) "
-                  f"— fetching portraits for Pass 2")
-            portrait_a = _ensure_portrait(user_a_id)
-            portrait_b = _ensure_portrait(user_b_id)
+    results = []
+    existing = _get_existing_compat_run(user_a_id, user_b_id, book_id,passage_id)
+    if existing:
+        route = route_compatibility_result(existing)
+        existing["route"] = route
+        print(f"  {user_b_id} [cached] verdict={existing.get('verdict')} "
+                  f"confidence={existing.get('confidence')}")
+        if route != "discard":
+            results.append(existing)
+        return results
+        
+    # ── Score ─────────────────────────────────────────────────────────────────
+    prompt  = _build_scorer_prompt(decomp_a, decomp_b)
+    scoring = _call_scorer(prompt)
+    _save_scoring(user_a_id, user_b_id, passage_id, scoring)
 
-            if "error" not in portrait_a and "error" not in portrait_b:
-                prompt_2 = _build_prompt(
-                    user_a_id, user_b_id, book_id,
-                    moment_a, moment_b,
-                    portrait_a, portrait_b,
-                )
-                result = _call_agent(prompt_2)
-                passes = 2
-                print(f"[CompatAgent] Pass 2 confidence={result.get('confidence')}")
-            else:
-                failed = user_a_id if "error" in portrait_a else user_b_id
-                print(f"[CompatAgent] portrait fetch failed for {failed}, "
-                      f"keeping Pass 1 result")
+    if "error" in scoring:
+        return {"error": scoring["error"],
+                "user_a": user_a_id, "user_b": user_b_id}
+
+    # ── Aggregate (pure Python) ───────────────────────────────────────────────
+    # wrap the two separate decompositions into the shape aggregate() expects
+    combined_decomp = {
+        "reader_a": decomp_a,
+        "reader_b": decomp_b,
+    }
+    result = aggregate(combined_decomp, scoring)
+    print(f"[CompatAgent] confidence={result.get('confidence', 0.0)}")
 
     # ── Attach metadata and log ───────────────────────────────────────────────
     result["user_a"]    = user_a_id
     result["user_b"]    = user_b_id
     result["book_id"]   = book_id
-    result["pass"]      = passes
     result["timestamp"] = datetime.utcnow().isoformat()
 
     log_compatibility_run({
-        "user_a":           user_a_id,
-        "user_b":           user_b_id,
-        "book_id":          book_id,
-        "moment_a":       moment_a,
-        "moment_b":       moment_b,
-        "think_dimension":  result.get("think_dimension"),
-        "feel_dimension":   result.get("feel_dimension"),
-        "verdict":          result.get("verdict"),
-        "confidence":       result.get("confidence"),
-        "reasoning":        result.get("reasoning"),
-        "insight":          result.get("insight"),
-        "timestamp":        result["timestamp"],
+        "user_a":          user_a_id,
+        "user_b":          user_b_id,
+        "book_id":         book_id,
+        "passage_id":      passage_id,
+        "think":           result.get("think"),
+        "feel":            result.get("feel"),
+        "dominant_think":  result.get("dominant_think"),
+        "dominant_feel":   result.get("dominant_feel"),
+        "verdict":         result.get("verdict"),
+        "confidence":      result.get("confidence"),
+        "timestamp":       result["timestamp"],
     })
 
-
     print(
-        f"[CompatAgent] verdict={result.get('verdict')} "
+        f"[CompatAgent] dominant_think={result.get('dominant_think')} "
+        f"dominant_feel={result.get('dominant_feel')} "
         f"confidence={result.get('confidence')} "
-        f"pass={passes} "
         f"for {user_a_id} × {user_b_id}"
     )
+    
     return result
 
 
 # ── Uncertainty Router ────────────────────────────────────────────────────────
 
 def route_compatibility_result(result: dict) -> str:
-    """
-    Decide what to do with a compatibility verdict.
-
-    Returns one of:
-      "display"     — high confidence match, show to users
-      "deep_review" — low confidence or uncertain, flag for review
-      "discard"     — no match or agent error
-    """
     if "error" in result:
         return "discard"
-
-    verdict    = result.get("verdict")
-    confidence = result.get("confidence", 0.0)
-
-    if verdict == "no_match":
-        return "discard"
-
-    if verdict == "uncertain":
-        return "deep_review"
-
-    if confidence >= CONFIDENCE_THRESHOLD:
-        return "display"
-
-    if confidence >= 0.5:
-        return "deep_review"
-
-    return "discard"
+    return "display"
 
 
-# ── Backwards compatibility aliases ──────────────────────────────────────────
-
-run_compatibility_agent_v1 = run_compatibility_agent
-run_compatibility_agent_v2 = run_compatibility_agent
-
-
-# ── Entrypoint ────────────────────────────────────────────────────────────────
+# ── Existing run cache ────────────────────────────────────────────────────────
 
 def _get_existing_compat_run(user_a_id: str,
                               user_b_id: str,
-                              book_id: str) -> dict | None:
-    """
-    Return the most recent logged compatibility run for this pair and book,
-    or None if it doesn't exist yet.
-    Checks both orderings (A×B and B×A) since the pair is symmetric.
-    """
-    runs = _read_json_file(COMPAT_LOG_FILE, [])
+                              book_id: str,passage_id: str) -> dict | None:
+    runs = _read_json_file(COMPAT_LOG_FILE,[]) or []
     matches = [
         r for r in runs
-        if r.get("book_id") == book_id
+        if r.get("book_id") == book_id and r.get("passage_id") == passage_id
         and (
             (r.get("user_a") == user_a_id and r.get("user_b") == user_b_id)
             or
@@ -323,36 +324,23 @@ def _get_existing_compat_run(user_a_id: str,
     return sorted(matches, key=lambda r: r.get("timestamp", ""), reverse=True)[0]
 
 
+# ── Batch runner ──────────────────────────────────────────────────────────────
+
 def run_compatibility_for_all(user_a_id: str,
                                book_id: str,
+                               passage_id: str,
                                moments_map: dict[str, dict]) -> list[dict]:
-    """
-    Run the compatibility agent between user_a_id and every other user
-    in moments_map for the given book.
-
-    Args:
-        user_a_id:   The anchor user.
-        book_id:     The book being compared.
-        moments_map: Dict mapping user_id → moment dict. Must include
-                     user_a_id and all candidate user IDs.
-                     e.g. {"user_a": {...}, "user_b": {...}, "user_c": {...}}
-
-    Returns a list of results sorted by confidence descending,
-    filtered to display/deep_review only (no_match discarded).
-    """
     moment_a    = moments_map.get(user_a_id)
     other_users = [uid for uid in moments_map if uid != user_a_id]
 
     if not moment_a:
         print(f"[main] no moment provided for anchor user {user_a_id}")
         return []
-
     if not other_users:
         print(f"[main] no other users found in moments_map for book_id={book_id}")
         return []
 
     print(f"[main] found {len(other_users)} other readers of {book_id}")
-    print(f"[main] running compatibility for {user_a_id} against all\n")
 
     results = []
     for user_b_id in other_users:
@@ -361,94 +349,104 @@ def run_compatibility_for_all(user_a_id: str,
             print(f"  {user_b_id} — skipped (no moment provided)")
             continue
 
-        existing = _get_existing_compat_run(user_a_id, user_b_id, book_id)
+        existing = _get_existing_compat_run(user_a_id, user_b_id, book_id,passage_id)
         if existing:
-            print(f"  {user_b_id}")
-            print(f"    [cached] verdict={existing.get('verdict')}  "
-                  f"confidence={existing.get('confidence')}")
             route = route_compatibility_result(existing)
             existing["route"] = route
+            print(f"  {user_b_id} [cached] verdict={existing.get('verdict')} "
+                  f"confidence={existing.get('confidence')}")
             if route != "discard":
                 results.append(existing)
             continue
 
-        result = run_compatibility_agent(user_a_id, user_b_id, book_id,moment_a,moment_b)
-        route  = route_compatibility_result(result)
+        result        = run_compatibility_agent(user_a_id, user_b_id, book_id, moment_a, moment_b)
+        route         = route_compatibility_result(result)
         result["route"] = route
 
-        print(f"  {user_b_id}")
-        print(f"    verdict={result.get('verdict')}  "
-              f"think={result.get('think_dimension')}  "
-              f"feel={result.get('feel_dimension')}  "
-              f"confidence={result.get('confidence')}  "
-              f"route={route}")
-        if route != "discard":
-            print(f"    insight: {result.get('insight')}")
-        print()
+        print(f"  {user_b_id} — dominant_think={result.get('dominant_think')} "
+              f"dominant_feel={result.get('dominant_feel')} "
+              f"confidence={result.get('confidence')} route={route}")
 
         if route != "discard":
             results.append(result)
 
-
     results.sort(key=lambda r: r.get("confidence", 0.0), reverse=True)
+    print(f"\n── Match pool for {user_a_id}: {len(results)} / {len(other_users)} ──")
 
-    print(f"── Match pool for {user_a_id} ───────────────────────────────")
-    print(f"   {len(results)} matches from {len(other_users)} candidates\n")
-    for r in results:
-        print(f"  [{r['route'].upper()}] {r['user_b']} "
-              f"— {r['verdict']} "
-              f"(think={r.get('think_dimension')} "
-              f"feel={r.get('feel_dimension')} "
-              f"conf={r.get('confidence')})")
-        print(f"    {r.get('insight')}\n")
-
+    _save_compatibility_results(user_a_id, book_id, results)
     return results
 
 
+COMPAT_RESULTS_FILE = "data/processed/compatibility_results.json"
+SCORING_FILE        = "data/processed/scoring_runs.json"
+
+
+def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict) -> None:
+    """Upsert raw scorer output keyed by user_a + user_b + passage_id."""
+    data = _read_json_file(SCORING_FILE,[]) or []
+    key  = (user_a_id, user_b_id, passage_id)
+    data = [
+        d for d in data
+        if (d["user_a_id"], d["user_b_id"], d["passage_id"]) != key
+    ]
+    data.append({
+        "user_a_id":  user_a_id,
+        "user_b_id":  user_b_id,
+        "passage_id": passage_id,
+        "timestamp":  datetime.utcnow().isoformat(),
+        "scoring":    scoring,
+    })
+    _write_json_file(SCORING_FILE, data)
+    print(f"[CompatAgent] scoring saved for {user_a_id} × {user_b_id} / {passage_id}")
+
+def _save_compatibility_results(user_a_id: str, book_id: str, results: list[dict]) -> None:
+    """Upsert batch results for this anchor user + book into compatibility_results.json."""
+    data = _read_json_file(COMPAT_RESULTS_FILE,[]) or []
+
+    # remove any previous batch for this anchor + book
+    data = [
+        d for d in data
+        if not (d.get("user_a_id") == user_a_id and d.get("book_id") == book_id)
+    ]
+    data.append({
+        "user_a_id": user_a_id,
+        "book_id":   book_id,
+        "timestamp": datetime.utcnow().isoformat(),
+        "results":   results,
+    })
+    _write_json_file(COMPAT_RESULTS_FILE, data)
+    print(f"[main] saved {len(results)} results to {COMPAT_RESULTS_FILE}")
+
+
+# ── Entrypoint ────────────────────────────────────────────────────────────────
+
 if __name__ == "__main__":
-    USER_A  = "user_emma_chen_fd5e3def"
-    BOOK_ID = "gutenberg_1342"
+    with open("interpretations_10_users.json") as f:
+        moments = json.load(f)
 
-    # Caller is responsible for selecting and passing in one moment per user.
-    moments_map = {
-        "user_emma_chen_fd5e3def": {
-            "user_id": "user_emma_chen_fd5e3def",
-            "book_id": BOOK_ID,
-            "text": "...",
-            "timestamp": "2024-01-01T00:00:00"
-        },
-        # add other users here
-    }
+    PASSAGE_IDS=['passage_1','passage_2','passage_3']
+    BOOKS       = ["Frankenstein","Pride and Prejudice","The Great Gatsby"]
+    for BOOK in BOOKS:
+        for PASSAGE_ID in PASSAGE_IDS:
+            moments_map = {}
+            for m in moments:
+                uid = m["character_name"]
+                if m["passage_id"] == PASSAGE_ID and uid not in moments_map:
+                    moments_map[uid] = m
 
-    matches = run_compatibility_for_all(USER_A, BOOK_ID, moments_map)
+            users = list(moments_map.keys())
+            checked = set()
 
-    print("\n── Full results (JSON) ──────────────────────────")
-    print(json.dumps(matches, indent=2))
-    
-    
-with open("data/processed/frankenstein_all_passages_final.json") as f:
-    moments = json.load(f)
+            for i, user_a in enumerate(users):
+                for user_b in users[i+1:]:
+                    pair = (user_a, user_b)
+                    if pair in checked:
+                        continue
+                    checked.add(pair)
 
-ANCHOR_USER = "Emma Chen"
-PASSAGE_ID  = "passage_1"
-BOOK_ID     = 1
+                    print(f"\n── {user_a} × {user_b} ──")
+                    moment_a = moments_map[user_a]
+                    moment_b = moments_map[user_b]
 
-# find emma's moment for this passage
-anchor_moment = next(
-    (m for m in moments
-     if m["character_name"] == ANCHOR_USER and m["passage_id"] == PASSAGE_ID),
-    None
-)
-
-if not anchor_moment:
-    raise ValueError(f"No moment found for {ANCHOR_USER} on {PASSAGE_ID}")
-
-# build moments_map: one moment per user for this passage
-# if a user has multiple moments on the same passage, takes the first
-moments_map = {ANCHOR_USER: anchor_moment}
-for m in moments:
-    uid = m["user_id"]
-    if m["passage_id"] == PASSAGE_ID and uid not in moments_map and m['user_id']!=ANCHOR_USER:
-        moments_map[uid] = m
-
-results = run_compatibility_for_all(ANCHOR_USER, BOOK_ID, moments_map)
+                    result = run_compatibility_agent(user_a, user_b, BOOK, moment_a, moment_b)
+                    print(json.dumps(result, indent=2))

@@ -118,6 +118,7 @@ $RECYCLE.BIN/
 *.env
 secrets.yaml
 credentials.yaml
+key.json
 
 
 # ------------------------------------------------------------
