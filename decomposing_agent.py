@@ -1,7 +1,7 @@
 import os
 import json
-import google.generativeai as genai
-from google.generativeai import types
+from google import genai
+from google.genai import types # type: ignore
 
 from tools import extract_json, _read_json_file, _write_json_file
 
@@ -12,7 +12,7 @@ DECOMPOSITIONS_FILE = "data/processed/decompositions.json"
 _api_key = os.environ.get("GEMINI_API_KEY_MOMENT")
 if not _api_key:
     try:
-        from dotenv import load_dotenv
+        from dotenv import load_dotenv # type: ignore
         load_dotenv()
         _api_key = os.environ.get("GEMINI_API_KEY_MOMENT")
     except ImportError:
