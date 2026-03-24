@@ -15,12 +15,18 @@ this interface file does not need to change.
 """
 
 from datetime import datetime
-from decomposing_agent import run_decomposer
-from compatibility_agent import (
-    run_compatibility_agent,
-    run_compatibility_for_all,
-)
 
+def _get_run_decomposer():
+    from decomposing_agent import run_decomposer
+    return run_decomposer
+
+def _get_run_compatibility_agent():
+    from compatibility_agent import run_compatibility_agent
+    return run_compatibility_agent
+
+def _get_run_compatibility_for_all():
+    from compatibility_agent import run_compatibility_for_all
+    return run_compatibility_for_all
 
 # ── 1. Decompose a single moment ─────────────────────────────────────────────
 
@@ -55,7 +61,7 @@ def decompose_moment(
     }
     On failure: {"error": str, "user_id": str}
     """
-    return run_decomposer(
+    return _get_run_decomposer()(
         user_id=user_id,
         passage_id=passage_id,
         book_id=book_id,
@@ -106,7 +112,7 @@ def run_compatibility_pipeline(
     moment_a = {**moment_a, "passage_id": passage_id}
     moment_b = {**moment_b, "passage_id": passage_id}
 
-    result = run_compatibility_agent(
+    result = _get_run_compatibility_agent()(
         user_a_id=user_a,
         user_b_id=user_b,
         book_id=book,
@@ -149,7 +155,7 @@ def run_batch_compatibility(
     List of result dicts sorted by confidence descending,
     with "route" key attached. Same shape as run_compatibility_pipeline().
     """
-    return run_compatibility_for_all(
+    return _get_run_compatibility_for_all()(
         user_a_id=user_a_id,
         book_id=book_id,
         passage_id=passage_id,
@@ -167,7 +173,7 @@ def health_check() -> dict:
     return {
         "status": "ok",
         "interface_version": "2.0.0",
-        "stub_mode": False,
+        "stub_mode": True,
         "agents": {
             "decomposer":   "decomposing_agent.run_decomposer",
             "scorer":       "compatibility_agent.run_compatibility_agent",
