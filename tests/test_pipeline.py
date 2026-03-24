@@ -26,7 +26,7 @@ from model_interface import (
     run_compatibility_pipeline,
     health_check,
 )
-from aggregate import aggregate # type: ignore
+from aggregator import aggregate
 from validate_model import (
     validate_output_schema,
     validate_rcd_sums,
