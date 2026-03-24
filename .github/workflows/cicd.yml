@@ -1,10 +1,5 @@
 name: Momento — CI/CD Pipeline
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Triggers
-# ─────────────────────────────────────────────────────────────────────────────
-# Runs on every push/PR that touches model-related code.
-# Paths filter avoids triggering on doc-only or frontend-only changes.
 on:
   workflow_dispatch:
   push:
@@ -13,8 +8,8 @@ on:
       - "model_interface.py"
       - "aggregate.py"
       - "aggregator.py"
-      - "compatibility_agent.py"      
-      - "decomposing_agent.py" 
+      - "compatibility_agent.py"
+      - "decomposing_agent.py"
       - "validate_model.py"
       - "bias_detection.py"
       - "rollback.py"
@@ -34,7 +29,6 @@ env:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 1 — CI: Tests
-# Requirement 1: Trigger model training/validation on new code push.
 # ─────────────────────────────────────────────────────────────────────────────
 jobs:
   test:
@@ -73,8 +67,6 @@ jobs:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 2 — CI: Validation + Bias Detection
-# Requirements 2 & 3: Validate model outputs; detect bias across slices.
-# Runs on stub data until model_interface.py is replaced with real model.
 # ─────────────────────────────────────────────────────────────────────────────
   validate:
     name: "2 · Validate & Bias Check"
@@ -93,18 +85,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run model inference on validation set
-        # Runs the full pipeline: decompose → score → aggregate
-        # Uses model_interface.py → decomposing_agent + compatibility_agent
         run: python run_validation_set.py --output validation_results.json
         env:
           GEMINI_API_KEY_MOMENT: ${{ secrets.GEMINI_API_KEY_MOMENT }}
 
       - name: Validate model outputs
-        # Exits 1 and blocks pipeline if thresholds not met (Requirement 2)
         run: python validate_model.py validation_results.json
 
       - name: Detect model bias
-        # Exits 1 and blocks pipeline if bias gap >= BIAS_BLOCK_THRESHOLD (Requirement 3)
         run: python bias_detection.py validation_results.json
 
       - name: Notify on validation failure
@@ -135,8 +123,6 @@ jobs:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 3 — CD: Build & Push Docker Images
-# Requirement 4: Push to GCP Artifact Registry after validation passes.
-# Only runs on main branch (not PRs).
 # ─────────────────────────────────────────────────────────────────────────────
   build-and-push:
     name: "3 · Build & Push to Registry"
@@ -167,7 +153,6 @@ jobs:
             -f Dockerfile .
 
       - name: Build Compatibility Agent image
-        # Full pipeline: decompose → score → aggregate
         run: |
           docker build \
             --build-arg GIT_SHA=${{ github.sha }} \
@@ -176,7 +161,6 @@ jobs:
             -f Dockerfile .
 
       - name: Build Profile Agent image
-        # Batch runner: anchor user vs all others on a passage
         run: |
           docker build \
             --build-arg GIT_SHA=${{ github.sha }} \
@@ -205,7 +189,6 @@ jobs:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 4 — CD: Rollback Check
-# Requirement 6: Compare new model metrics vs baseline. Rollback if regressed.
 # ─────────────────────────────────────────────────────────────────────────────
   rollback-check:
     name: "4 · Rollback Check"
@@ -215,6 +198,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -233,32 +224,24 @@ jobs:
         run: |
           python -c "
           import json
-          from validate_model import compute_validation_metrics, run_validation_gate
-          from rollback import save_metrics_baseline
-
+          from validate_model import compute_validation_metrics
           with open('validation_results.json') as f:
               data = json.load(f)
           results = data if isinstance(data, list) else data.get('pairs', [])
           metrics = compute_validation_metrics(results)
-
           with open('new_metrics.json', 'w') as f:
               json.dump(metrics, f, indent=2)
           print('New metrics:', json.dumps(metrics, indent=2))
           "
 
       - name: Fetch baseline metrics from GCS
-        # Downloads the metrics from the currently deployed model
-        # If none exist (first deploy), creates an empty baseline
         run: |
           gcloud storage cp gs://${{ secrets.GCS_BUCKET }}/metrics_baseline.json . \
             || echo '{}' > metrics_baseline.json
-        env:
-          CLOUDSDK_CORE_PROJECT: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Run rollback check
         id: rollback
         run: python rollback.py new_metrics.json metrics_baseline.json
-        # Exits 1 if rollback should be triggered
 
       - name: Trigger rollback — re-tag previous image as production
         if: failure() && steps.rollback.outcome == 'failure'
@@ -285,8 +268,6 @@ jobs:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 5 — CD: Deploy to Vertex AI
-# Requirement 4: Deploy both agents to Vertex AI Agent Engine.
-# Only runs if rollback check passed.
 # ─────────────────────────────────────────────────────────────────────────────
   deploy:
     name: "5 · Deploy to Vertex AI"
@@ -302,21 +283,44 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Vertex AI SDK
-        run: pip install google-cloud-aiplatform[agent_engines,adk]
+        run: pip install -r requirements.txt && pip install google-cloud-aiplatform[agent_engines,adk]
+
+      - name: Download validation results
+        uses: actions/download-artifact@v4
+        with:
+          name: validation-results-${{ github.sha }}
+
+      - name: Compute new metrics
+        run: |
+          python -c "
+          import json
+          from validate_model import compute_validation_metrics
+          with open('validation_results.json') as f:
+              data = json.load(f)
+          results = data if isinstance(data, list) else data.get('pairs', [])
+          metrics = compute_validation_metrics(results)
+          with open('new_metrics.json', 'w') as f:
+              json.dump(metrics, f, indent=2)
+          "
 
       - name: Deploy agents to Vertex AI Agent Engine
-        # Deploys: DecomposeAgentApp, CompatibilityAgentApp, ProfileAgentApp
         run: python deploy.py
         env:
-          GCP_PROJECT_ID:       ${{ secrets.GCP_PROJECT_ID }}
-          GCP_REGION:           ${{ secrets.GCP_REGION }}
-          GCS_BUCKET:           ${{ secrets.GCS_BUCKET }}
+          GCP_PROJECT_ID:        ${{ secrets.GCP_PROJECT_ID }}
+          GCP_REGION:            ${{ secrets.GCP_REGION }}
+          GCS_BUCKET:            ${{ secrets.GCS_BUCKET }}
           GEMINI_API_KEY_MOMENT: ${{ secrets.GEMINI_API_KEY_MOMENT }}
 
       - name: Tag all deployed images as production-stable
