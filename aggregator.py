@@ -1,4 +1,4 @@
-def aggregate(decomp: dict, scoring: dict) -> dict:
+def aggregate(decomp: dict, scoring: dict, wc_a: int = None, wc_b: int = None) -> dict:
     """
     decomp  — output of Prompt 1 (subclaims + weights)
     scoring — output of Prompt 2 (matched pairs + unmatched ids)
@@ -49,8 +49,10 @@ def aggregate(decomp: dict, scoring: dict) -> dict:
 
     # ── STEP 5: confidence ───────────────────────────────────────────────────
 
-    wc_a = sum(len(s["claim"].split()) for s in decomp["reader_a"]["subclaims"])
-    wc_b = sum(len(s["claim"].split()) for s in decomp["reader_b"]["subclaims"])
+    if wc_a is None:
+        wc_a = sum(len(s["claim"].split()) for s in decomp["reader_a"]["subclaims"])
+    if wc_b is None:
+        wc_b = sum(len(s["claim"].split()) for s in decomp["reader_b"]["subclaims"])
     depth = min(wc_a, wc_b) / max(wc_a, wc_b)
 
     n_a = len(subclaims_a)

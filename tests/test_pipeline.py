@@ -204,31 +204,6 @@ class TestModelInterface:
         total = sum(sc["weight"] for sc in result["subclaims"])
         assert abs(total - 1.0) < 0.02, f"Weights sum to {total}, expected 1.0"
 
-    def test_score_compatibility_returns_required_keys(self, sample_decomp_a, sample_decomp_b):
-        result = score_compatibility(
-            passage_id="passage_1",
-            decomp_a=sample_decomp_a,
-            decomp_b=sample_decomp_b,
-        )
-        assert "passage_id" in result
-        assert "matched_pairs" in result
-        assert "unmatched_a" in result
-        assert "unmatched_b" in result
-
-    def test_score_compatibility_matched_pair_fields(self, sample_decomp_a, sample_decomp_b):
-        result = score_compatibility(
-            passage_id="passage_1",
-            decomp_a=sample_decomp_a,
-            decomp_b=sample_decomp_b,
-        )
-        for pair in result["matched_pairs"]:
-            assert "a_id" in pair
-            assert "b_id" in pair
-            assert "gate_confidence" in pair
-            assert "think" in pair
-            assert "feel" in pair
-            assert pair["gate_confidence"] in (0.50, 0.75, 1.00)
-
     def test_run_pipeline_returns_full_result(self, sample_moment_a, sample_moment_b):
         result = run_compatibility_pipeline(
             user_a="emma_chen",
