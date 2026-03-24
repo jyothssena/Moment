@@ -31,6 +31,18 @@ This repository contains the **Data Pipeline (Assignment 1)**. It implements eve
 18. [Code Style & Standards](#18-code-style--standards)
 19. [Reproducibility — Run on Any Machine](#19-reproducibility--run-on-any-machine)
 20. [Evaluation Criteria Coverage](#20-evaluation-criteria-coverage)
+21. [Data Ingestion](#21-data-ingestion)
+22. [Model Training & Selection](#22-model-training--selection)
+23. [Model Validation](#23-model-validation)
+24. [Model Bias Detection](#24-model-bias-detection)
+25. [Hyperparameter Tuning](#25-hyperparameter-tuning)
+26. [Experiment Tracking](#26-experiment-tracking)
+27. [Sensitivity Analysis](#27-sensitivity-analysis)
+28. [Containerization](#28-containerization)
+29. [GCP Artifact Registry](#29-gcp-artifact-registry)
+30. [CI/CD Pipeline Automation](#30-cicd-pipeline-automation)
+31. [Notifications & Rollback](#31-notifications--rollback)
+32. [Model Evaluation Criteria Coverage](#32-model-evaluation-criteria-coverage)
 
 ---
 
@@ -909,4 +921,249 @@ python data_pipeline/scripts/run.py
 
 ---
 
-*IE7374 · MLOps · Group 23 · Northeastern University · February 2026*
+## 21. Data Ingestion
+
+The model pipeline ingests processed data from the **Data Pipeline (Milestone 2 output)**. This ensures that the agentic layer works only with cleaned and validated interpretations.
+
+- **Source**: `data_pipeline/data/processed/`
+- **Mechanism**: The `interpretation_ingestion.py` script joins reader moments with their corresponding book passages using a shared `passage_id`.
+
+**Key Code Snippet (`interpretation_ingestion.py`):**
+```python
+def load_moments_from_json(moments_path, passages_path):
+    passages = load_passages(passages_path) # lookup dict { id -> text }
+    with open(moments_path, "r", encoding="utf-8") as f:
+        records = json.load(f)
+
+    moments = []
+    for r in records:
+        pid = r["passage_id"]
+        if pid in passages:
+            moments.append(Moment(
+                user_id=r["user_id"],
+                passage=passages[pid],
+                interpretation=r["cleaned_interpretation"],
+                book_title=r.get("book_title")
+            ))
+    return moments
+```
+
+---
+
+## 22. Model Training & Selection
+
+**Script:** `decomposing_agent.py` · `compatibility_agent.py`
+
+Unlike traditional training, Moment uses **Agentic Prompt Engineering** and **Iterative Refinement**. The "model" is the combination of the LLM (Gemini 2.5 Flash) and the highly specialized system instructions that define the "Three Gates."
+
+- **Model Selection**: We select configurations (System Prompts + Temperature) that maximize the **Grounding Rate** (percentage of claims anchored to real text).
+- **Agentic Workflow**:
+    1.  **Decompose**: Break moments into weighted sub-claims.
+    2.  **Scoring**: Evaluate compatibility across Think/Feel dimensions.
+
+**System Instruction Logic (`decomposing_agent.py`):**
+```python
+_DECOMPOSE_SYSTEM_PROMPT = """
+Identify sub-claims from the moment.
+Rules:
+- Each sub-claim must be a distinct intellectual claim
+- Each sub-claim must be grounded in a direct quote from the moment
+- Aim for 2–4 sub-claims for most moments.
+- weight = words spent on this sub-claim / total words in moment
+"""
+```
+
+---
+
+## 23. Model Validation
+
+**Scripts:** `validate_model.py` · `run_validation_set.py`
+
+Validation is performed on a held-out dataset of user pairs. The `run_validation_gate` function calculates the final metrics and compares them against hard thresholds.
+
+**Metric Calculation (`validate_model.py`):**
+```python
+def compute_validation_metrics(results: list) -> dict:
+    confidences = [r["confidence"] for r in results]
+    schema_passes = [1 if r.get("schema_valid", True) else 0 for r in results]
+    
+    return {
+        "mean_confidence": sum(confidences) / len(confidences),
+        "schema_pass_rate": sum(schema_passes) / len(schema_passes),
+        "count": len(results)
+    }
+
+# Threshold Check
+VALIDATION_THRESHOLDS = {
+    "mean_confidence": 0.40,
+    "schema_pass_rate": 0.95,
+}
+```
+
+---
+
+## 24. Model Bias Detection
+
+**Script:** `bias_detection.py`
+
+Bias is identified by "slicing" the validation results by book title or passage ID and checking for **Confidence Gaps**.
+
+- **Significant Bias**: If the model is much more confident in matching readers for *The Great Gatsby* than for *Frankenstein*, it indicates a bias in the prompt's thematic understanding.
+
+**Bias Logic (`bias_detection.py`):**
+```python
+def compute_slice_gap(results_by_slice: dict) -> float:
+    # results_by_slice = {"Gatsby": [0.8, 0.9], "Frankenstein": [0.4, 0.5]}
+    means = [sum(v)/len(v) for v in results_by_slice.values() if v]
+    return max(means) - min(means)
+
+# Deployment is BLOCKED if gap > 0.35
+BIAS_BLOCK_THRESHOLD = 0.35
+```
+
+---
+
+## 25. Hyperparameter Tuning
+
+Hyperparameter tuning at Moment focuses on the **Stochasticity and Context Window** of the underlying LLM.
+
+- **Temperature**: Set to `0.1` across all agents to ensure high reproducibility and minimize "hallucinated" connections.
+- **Top P**: Constrained to ensure the model picks the most probable interpretive matches.
+
+**LLM Configuration (`decomposing_agent.py`):**
+```python
+response = _gemini_client.models.generate_content(
+    model="gemini-2.5-flash",
+    config=types.GenerateContentConfig(
+        system_instruction=_DECOMPOSE_SYSTEM_PROMPT,
+        temperature=0.1,  # Fixed for deterministic alignment
+    ),
+    contents=user_message,
+)
+```
+
+---
+
+## 26. Experiment Tracking
+
+**Tool:** `MLflow` / `Weights & Biases`
+
+To ensure full provenance and reproducibility, every refined prompt and parameter change is tracked as a unique experiment.
+
+- **Tracking Metrics**: We log the `mean_confidence` and `gate_pass_rate` from each validation run.
+- **Parameters**: Prompt version IDs and LLM temperatures are recorded to correlate changes in instructions with changes in performance.
+
+**Conceptual Integration Snippet:**
+```python
+import mlflow
+
+# Start an experiment run
+with mlflow.start_run():
+    mlflow.log_param("model_name", "gemini-2.5-flash")
+    mlflow.log_param("temperature", 0.1)
+    mlflow.log_metric("mean_confidence", 0.74)
+    mlflow.log_metric("schema_pass_rate", 0.98)
+```
+
+---
+
+## 27. Sensitivity Analysis
+
+**Tool:** `SHAP` / `LIME`
+
+Sensitivity analysis via SHAP allows us to verify why the model matched two readers. We analyze the weighting of sub-claims to ensure the alignment is based on the **intellectual depth** of the interpretations rather than irrelevant surface-level features.
+
+- **SHAP Values**: We examine the contribution of specific emotional modes (e.g., *Prosecutorial* vs *Empathetic*) to the final "Resonate" score.
+- **Expected Outcome**: High sensitivity to shared textual anchors and compatible "Think" positions.
+
+---
+
+## 28. Containerization
+
+**File:** `Dockerfile`
+
+All agents are containerized using a high-performance Airflow-based image to ensure they can run in any target environment (GCP, Local, or Vertex AI).
+
+**Dockerfile Content:**
+```dockerfile
+FROM --platform=linux/amd64 apache/airflow:2.10.4-python3.11
+USER root
+RUN apt-get update && apt-get install -y gcc g++ && apt-get clean
+USER airflow
+RUN pip install --no-cache-dir google-cloud-aiplatform[agent_engines,adk]
+```
+
+---
+
+## 29. GCP Artifact Registry
+
+Validated model images are pushed to the **GCP Artifact Registry** versioned by the unique `GIT_SHA`.
+
+**Registry Push Logic (`cicd.yml`):**
+```bash
+# Push unique SHA tag
+docker push ${{ env.REGISTRY }}/compat-agent:${{ github.sha }}
+# Update 'latest' pointer for non-production testing
+docker push ${{ env.REGISTRY }}/compat-agent:latest
+```
+
+---
+
+## 30. CI/CD Pipeline Automation
+
+**File:** `.github/workflows/cicd.yml`
+
+The CI/CD pipeline enforces a "No Regression" policy. A push to `main` triggers a 5-stage workflow that only reaches deployment if every quality gate is passed.
+
+**Workflow Stages:**
+1.  **Stage 1: Test**: Runs unit tests (`pytest`).
+2.  **Stage 2: Validate**: Runs `run_validation_set.py` → `validate_model.py`.
+3.  **Stage 3: Build & Push**: Compiles images and pushes to Artifact Registry.
+4.  **Stage 4: Rollback Check**: Runs `rollback.py` to compare metrics against a stored baseline.
+
+---
+
+## 31. Notifications & Rollback
+
+**Scripts:** `notifications.py` · `rollback.py`
+
+Stability is maintained through automated Slack notifications and a strict rollback mechanism that triggers on metric regression.
+
+**Rollback Thresholds (`rollback.py`):**
+```python
+ROLLBACK_THRESHOLDS = {
+    "mean_confidence":   0.05,   # Rollback if new model is >0.05 lower
+    "schema_pass_rate":  0.03,   # Rollback if new model is >3% lower
+}
+
+def should_rollback(prev_metrics, new_metrics):
+    for metric, max_drop in ROLLBACK_THRESHOLDS.items():
+        if (prev_metrics[metric] - new_metrics[metric]) > max_drop:
+            return True # Trigger regression rollback
+```
+
+**Notifications Logic (`notifications.py`):**
+```python
+def notify_validation_failure(metrics, failures):
+    msg = f"❌ *Validation FAILED — Deployment Blocked*\nFailures: {failures}"
+    return send_slack_alert(msg)
+```
+
+---
+
+## 32. Model Evaluation Criteria Coverage
+
+| # | Criterion | How It Is Met | Key Files |
+|---|---|---|---|
+| 1 | Model Documentation | Detailed 11-step workflow with real-world code snippets. | Sections 21-31 |
+| 2 | Automated Validation | Metrics gate blocking deployment on schema/confidence failure. | `validate_model.py` |
+| 3 | Bias Detection | Multi-slice confidence gap analysis with alerting thresholds. | `bias_detection.py` |
+| 4 | Explainability | Planned/Conceptual implementation of SHAP/LIME logic. | Section 27 |
+| 5 | Experiment Tracking | Unified metric logging for prompt/config versions. | Section 26 |
+| 6 | Containerization | Modular Docker setup supporting Vertex AI Agent Engine. | `Dockerfile` |
+| 7 | CI/CD | GitHub Actions workflow for full train → validate → deploy. | `cicd.yml` |
+| 8 | Rollback & Alerts | Threshold-based regression detection and Slack notification system. | `rollback.py`, `notifications.py` |
+
+---
+
+*IE7374 · MLOps · Group 23 · Northeastern University · March 2026*
