@@ -13,5 +13,4 @@ pyyaml>=6.0.1          # reading config.yaml
 google-cloud-storage>=2.14.0  # GCS data acquisition
 tqdm>=4.66.1           # progress bars
 pytest>=7.4.0          # running tests
-google-generativeai>=0.8.0
 google-genai>=0.3.0
