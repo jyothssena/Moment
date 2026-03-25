@@ -44,18 +44,23 @@ This repository contains the **Data Pipeline (Assignment 1)**. It implements eve
 31. [Notifications & Rollback](#31-notifications--rollback)
 32. [Model Evaluation Criteria Coverage](#32-model-evaluation-criteria-coverage)
 
+
 ---
 
-## 1. RepositorOrganised following the folder structure from the assignment guidelines, modelled after production open-source Python projects such as [scikit-learn](https://github.com/scikit-learn/scikit-learn).
+## 1. Repository Structure
 
+Organised following the folder structure from the assignment guidelines, modelled after production open-source Python projects such as [scikit-learn](https://github.com/scikit-learn/scikit-learn).
 ```
 Moment/                                      ← Project Root
+│
+├── .dvc/                                    ← DVC configuration
+├── .github/workflows/                       ← GitHub Actions CI/CD (cicd.yml, config.yaml)
 │
 ├── data_pipeline/                           ← Main pipeline directory
 │   ├── airflow/
 │   │   └── dags/                            ← Airflow DAGs
-│   │       ├── data_pipeline_dag.py         ← Main pipeline DAG (moment_data_pipeline)
-│   │       └── tests_dag.py                 ← Tests DAG (moment_pipeline_tests)
+│   │       ├── data_pipeline_dag.py         ← Main pipeline DAG
+│   │       └── tests_dag.py                 ← Tests DAG
 │   ├── config/                              ← Global & stage-specific config
 │   ├── scripts/                             ← Individual pipeline stages (Stages 1-9)
 │   ├── tests/                               ← Pipeline unit tests
@@ -63,17 +68,17 @@ Moment/                                      ← Project Root
 │
 ├── data/                                    ← Central data repository
 │   ├── raw/                                 ← Source PDFs and raw JSON/CSV
+│   │   ├── pdfs/                            ← 9 source book PDFs
+│   │   └── csvs_jsons/                      ← Intermediate synthetic data
 │   ├── processed/                           ← DVC-tracked processed data
-│   ├── reports/                             ← TFDV & Bias reports
+│   ├── reports/                             ← TFDV, Bias, and Anomaly reports
 │   ├── schemas/                             ← TFDV schema definitions
-│   ├── bias_results/                        ← Slicing analysis outputs
-│   ├── character_extraction.py              ← Persona extraction script
-│   └── data_extraction.py                   ← Synthetic data generator
+│   └── bias_results/                        ← Slicing analysis outputs
 │
-├── models/
-│   └── training.py                          ← Model training logic
+├── models/                                  ← Model-related logic
+│   └── training.py                          ← Training scripts
 │
-├── tests/                                   ← Integration and system tests
+├── docs/                                    ← Visual documentation (screenshots)
 │
 ├── decomposing_agent.py                     ← Agent: Interpretation decomposition
 ├── compatibility_agent.py                   ← Agent: Reader compatibility matching
@@ -91,20 +96,12 @@ Moment/                                      ← Project Root
 ├── tools.py                                 ← General utility functions
 ├── bias_detection.py                        ← Root-level bias analysis
 │
-├── .dvc/                                    ← DVC configuration
-├── .github/workflows/                       ← GitHub Actions CI/CD
-├── docker-compose.yaml                      ← Airflow & Database orchestration
-├── Dockerfile                               ← Custom Airflow/ML image
-├── dvc.yaml                                 ← DVC pipeline definitions
-├── conftest.py                              ← Shared test fixtures
-└── requirements.txt                         ← Environment dependencies
-```
-� .gitignore
 ├── conftest.py                              ← Root pytest config & shared fixtures
 ├── docker-compose.yaml                      ← Airflow + postgres (Docker)
 ├── Dockerfile                               ← Custom Airflow image with TFDV
 ├── dvc.yaml                                 ← DVC pipeline stage definitions
-├── gcs-service-account.json                 ← GCS credentials (NOT committed — see Step 3b)
+├── gcs-service-account.json                 ← GCS credentials (NOT committed)
+├── .gitignore                               ← Git exclusion rules
 └── requirements.txt                         ← All dependencies, version-pinned
 ```
 
