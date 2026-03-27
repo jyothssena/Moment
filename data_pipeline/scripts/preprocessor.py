@@ -621,7 +621,12 @@ def process_moments_pass1(interpretations, book_meta, cfg):
 # ============================================================
 
 def write_outputs(moments, books, users, cfg):
-    """Write all 3 processed JSON files to data/processed/."""
+    """
+    Write all 3 processed JSON files to data/processed/
+    AND upsert the same records into BigQuery processed tables.
+
+    Local JSON files remain the authoritative fallback — BQ write is additive.
+    """
     os.makedirs("data/processed", exist_ok=True)
     paths = cfg["paths"]["processed"]
     indent = cfg.get("indent", 2)
@@ -634,3 +639,15 @@ def write_outputs(moments, books, users, cfg):
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=indent, ensure_ascii=False, default=str)
         logger.info(f"Wrote {len(data)} {label} records → {path}")
+
+    # ── Write processed data to BigQuery ─────────────────────────────────
+    # Runs after local write so local JSON is always safe if BQ fails.
+    try:
+        from bq_loader import write_processed_to_bq
+        success = write_processed_to_bq(moments, books, users)
+        if success:
+            logger.info("Processed data written to BigQuery (moment_processed dataset)")
+        else:
+            logger.warning("BigQuery processed write failed — local JSON files intact")
+    except Exception as exc:
+        logger.warning(f"BigQuery processed write skipped: {exc}")

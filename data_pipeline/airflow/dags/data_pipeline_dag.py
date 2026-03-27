@@ -168,52 +168,107 @@ logger.debug(f"   REPO_ROOT: {REPO_ROOT}")
 
 @log_task_execution("Data Acquisition")
 def task_acquire_data(**context):
-    """Task 1: Download data from GCS → save to data/raw/"""
-    logger.info("📥 INFO: Attempting to acquire data from GCS")
-    
+    """
+    Task 1: Acquire raw data.
+
+    Priority order:
+      1. BigQuery staging tables (moment_raw.*) — fastest, no file I/O
+      2. GCS download → save to data/raw/ + upload to BQ staging
+      3. Local data/raw/ fallback (already present from previous run)
+
+    The BQ path is used when staging tables are populated (normal operation).
+    The GCS path runs on first-time setup or when BQ tables are empty/missing.
+    """
+    logger.info("📥 INFO: Attempting to acquire data")
+
     raw_dir = os.path.join(REPO_ROOT, 'data', 'raw')
-    logger.debug(f"🔍 DEBUG: Raw data directory: {raw_dir}")
-    
+    os.makedirs(raw_dir, exist_ok=True)
+
+    # ── Path 1: Try BigQuery staging tables ──────────────────────────────
+    logger.info("   Checking BigQuery staging tables (moment_raw)...")
+    try:
+        from bq_loader import load_raw_from_bq
+        bq_data = load_raw_from_bq()
+
+        # BQ data is valid if all three tables have rows
+        if (bq_data.get('interpretations') and
+                bq_data.get('passages') and
+                bq_data.get('user_data')):
+
+            import json as _json
+            # Write BQ data to local raw/ so preprocessor can read as normal
+            with open(os.path.join(raw_dir, 'user_interpretations.json'), 'w', encoding='utf-8') as f:
+                _json.dump(bq_data['interpretations'], f, indent=2, ensure_ascii=False)
+            import pandas as _pd
+            _pd.DataFrame(bq_data['passages']).to_csv(
+                os.path.join(raw_dir, 'passage_details.csv'), index=False)
+            _pd.DataFrame(bq_data['user_data']).to_csv(
+                os.path.join(raw_dir, 'user_data.csv'), index=False)
+
+            total_rows = (len(bq_data['interpretations']) +
+                          len(bq_data['passages']) +
+                          len(bq_data['user_data']))
+            logger.info(f"✅ INFO: Data loaded from BigQuery staging tables")
+            logger.info(f"   interpretations={len(bq_data['interpretations'])}, "
+                        f"passages={len(bq_data['passages'])}, "
+                        f"user_data={len(bq_data['user_data'])}")
+
+            if len(bq_data['interpretations']) < 100:
+                logger.warning(f"⚠️  WARNING: Low interpretation count from BQ: "
+                                f"{len(bq_data['interpretations'])}")
+
+            return {
+                'source':     'bigquery',
+                'num_files':  3,
+                'total_rows': total_rows,
+                'files':      ['user_interpretations.json', 'passage_details.csv', 'user_data.csv'],
+                'raw_dir':    raw_dir,
+            }
+        else:
+            missing = [k for k, v in bq_data.items() if not v]
+            logger.warning(f"⚠️  WARNING: BQ staging tables empty or missing: {missing}")
+            logger.info("   Falling through to GCS download...")
+
+    except Exception as e:
+        logger.warning(f"⚠️  WARNING: BigQuery read failed ({type(e).__name__}) — trying GCS...")
+
+    # ── Path 2: GCS download (original behaviour) ─────────────────────────
     try:
         from data_acquisition import DataAcquisition
-        
+
         logger.debug(f"🔍 DEBUG: Loading DataAcquisition with config: {PIPELINE_CONFIG}")
         acq = DataAcquisition(config_path=PIPELINE_CONFIG)
         metadata = acq.run()
-        
-        # Save to local
+
+        # save_to_local also calls upload_raw_to_bq() inside bq_loader
         acq.save_to_local(output_dir=raw_dir)
-        
-        num_files = metadata.get('num_files', 0)
+
+        num_files  = metadata.get('num_files', 0)
         total_rows = metadata.get('total_rows', 0)
-        
-        logger.info(f"✅ INFO: GCS → data/raw/ successful")
+
+        logger.info(f"✅ INFO: GCS → data/raw/ + BigQuery staging successful")
         logger.info(f"   Files: {num_files}, Rows: {total_rows}")
-        
+
         if total_rows < 100:
-            logger.warning(f"⚠️  WARNING: Low row count: {total_rows}")
-            logger.warning(f"   Expected more data for production pipeline")
-        
-        return metadata
+            logger.warning(f"⚠️  WARNING: Low row count from GCS: {total_rows}")
+
+        return {**metadata, 'source': 'gcs'}
 
     except Exception as e:
         logger.warning(f"⚠️  WARNING: GCS unavailable - {type(e).__name__}")
         logger.info("   Falling back to local file verification...")
 
-        # Check if files already exist
-        required = ['user_interpretations.json', 'user_data.csv', 'passage_details.csv']
-        missing = [f for f in required if not os.path.exists(os.path.join(raw_dir, f))]
-        
-        if missing:
-            logger.error(f"❌ ERROR: Missing local files in {raw_dir}: {missing}")
-            logger.error(f"   Either fix GCS credentials or place files in data/raw/")
-            raise FileNotFoundError(f"Missing: {missing}")
+    # ── Path 3: Local fallback ────────────────────────────────────────────
+    required = ['user_interpretations.json', 'user_data.csv', 'passage_details.csv']
+    missing  = [f for f in required if not os.path.exists(os.path.join(raw_dir, f))]
 
-        logger.info(f"✅ INFO: Local data/raw/ verified – {len(required)} files present")
-        for fname in required:
-            logger.debug(f"🔍 DEBUG: Found {fname}")
-        
-        return {'source': 'local', 'raw_dir': raw_dir}
+    if missing:
+        logger.error(f"❌ ERROR: Missing local files in {raw_dir}: {missing}")
+        logger.error(f"   Fix GCS credentials or place files in data/raw/")
+        raise FileNotFoundError(f"Missing: {missing}")
+
+    logger.info(f"✅ INFO: Local data/raw/ verified — {len(required)} files present")
+    return {'source': 'local', 'raw_dir': raw_dir}
 
 
 @log_task_execution("Bias Detection")
@@ -460,52 +515,110 @@ def task_validation(**context):
     return results
 
 
-@log_task_execution("Upload to GCS")
+@log_task_execution("Upload to GCS + BigQuery")
 def task_upload_to_gcs(**context):
-    """Task 5: Upload processed data back to GCS."""
-    logger.info("✓ INFO: Uploading processed data to GCS")
-    
-    from google.cloud import storage as gcs_storage
+    """
+    Task 5: Upload processed data to GCS (JSON backup) AND to BigQuery.
+
+    Two parallel destinations:
+      A) GCS  — gs://moment_data/preprocessed/  (JSON files, existing behaviour)
+      B) BQ   — moment-486719.moment_processed.*  (queryable tables, new)
+
+    Both succeed/fail independently — one failure does not block the other.
+    The BigQuery write via bq_loader.write_processed_to_bq() is the primary
+    destination; GCS acts as a durable JSON backup.
+    """
+    logger.info("✓ INFO: Uploading processed data to GCS + BigQuery")
 
     processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
-    bucket_name = 'moment_data'
-    gcs_prefix = 'preprocessed/'
-    
-    logger.info(f"   Source: {processed_dir}")
-    logger.info(f"   Destination: gs://{bucket_name}/{gcs_prefix}")
-    logger.debug(f"🔍 DEBUG: Listing files in {processed_dir}")
+    bucket_name   = 'moment_data'
+    gcs_prefix    = 'preprocessed/'
 
-    project = os.environ.get('GOOGLE_CLOUD_PROJECT', 'moment-486719')
-    
+    logger.info(f"   Source: {processed_dir}")
+    logger.info(f"   GCS destination:       gs://{bucket_name}/{gcs_prefix}")
+    logger.info(f"   BigQuery destination:  moment-486719.moment_processed.*")
+
+    result: dict = {'gcs': {}, 'bigquery': {}}
+
+    # ── A) GCS upload (existing behaviour, unchanged) ────────────────────
     try:
-        client = gcs_storage.Client(project=project)
-        bucket = client.bucket(bucket_name)
-        
+        from google.cloud import storage as gcs_storage
+        project = os.environ.get('GOOGLE_CLOUD_PROJECT', 'moment-486719')
+        client  = gcs_storage.Client(project=project)
+        bucket  = client.bucket(bucket_name)
+
         uploaded = []
         for fname in os.listdir(processed_dir):
             fpath = os.path.join(processed_dir, fname)
             if os.path.isfile(fpath):
                 file_size_mb = os.path.getsize(fpath) / (1024 * 1024)
-                logger.debug(f"🔍 DEBUG: Uploading {fname} ({file_size_mb:.2f} MB)")
-                
                 if file_size_mb > 50:
-                    logger.warning(f"⚠️  WARNING: Large file upload: {fname} ({file_size_mb:.2f} MB)")
-                    logger.warning(f"   This may take significant time")
-                
+                    logger.warning(f"⚠️  WARNING: Large file: {fname} ({file_size_mb:.2f} MB)")
                 blob = bucket.blob(f"{gcs_prefix}{fname}")
                 blob.upload_from_filename(fpath)
-                logger.info(f"   Uploaded {fname} → gs://{bucket_name}/{gcs_prefix}{fname}")
+                logger.info(f"   GCS ✓  {fname} → gs://{bucket_name}/{gcs_prefix}{fname}")
                 uploaded.append(fname)
 
-        logger.info(f"✅ INFO: Uploaded {len(uploaded)} files to GCS")
-        return {'uploaded': uploaded, 'destination': f'gs://{bucket_name}/{gcs_prefix}'}
-        
+        logger.info(f"✅ INFO: GCS upload complete — {len(uploaded)} files")
+        result['gcs'] = {'uploaded': uploaded, 'destination': f'gs://{bucket_name}/{gcs_prefix}'}
+
     except Exception as e:
-        logger.error(f"❌ ERROR: GCS upload failed: {type(e).__name__}")
-        logger.error(f"   {str(e)}")
-        logger.warning(f"⚠️  WARNING: Continuing pipeline despite upload failure")
-        logger.warning(f"   Processed data remains in {processed_dir}")
-        return {'uploaded': [], 'error': str(e)}
+        logger.error(f"❌ ERROR: GCS upload failed: {type(e).__name__}: {str(e)}")
+        logger.warning("   Processed data remains in data/processed/ — pipeline continues")
+        result['gcs'] = {'uploaded': [], 'error': str(e)}
+
+    # ── B) BigQuery upload (new) ─────────────────────────────────────────
+    # Read the processed JSON files (just written by preprocessing) and
+    # load them into BigQuery processed tables. bq_loader handles flattening
+    # and schema autodetect.
+    try:
+        import json as _json
+        from bq_loader import write_processed_to_bq
+
+        moments_path = os.path.join(processed_dir, 'moments_processed.json')
+        books_path   = os.path.join(processed_dir, 'books_processed.json')
+        users_path   = os.path.join(processed_dir, 'users_processed.json')
+
+        moments, books, users = [], [], []
+
+        if os.path.exists(moments_path):
+            with open(moments_path, encoding='utf-8') as f:
+                moments = _json.load(f)
+        if os.path.exists(books_path):
+            with open(books_path, encoding='utf-8') as f:
+                books = _json.load(f)
+        if os.path.exists(users_path):
+            with open(users_path, encoding='utf-8') as f:
+                users = _json.load(f)
+
+        logger.info(f"   BQ writing: {len(moments)} moments, {len(books)} books, {len(users)} users")
+        bq_success = write_processed_to_bq(moments, books, users)
+
+        if bq_success:
+            logger.info(
+                f"✅ INFO: BigQuery upload complete — "
+                f"moment_processed.moments ({len(moments)} rows), "
+                f"moment_processed.books ({len(books)} rows), "
+                f"moment_processed.users ({len(users)} rows)"
+            )
+            result['bigquery'] = {
+                'status':  'success',
+                'moments': len(moments),
+                'books':   len(books),
+                'users':   len(users),
+                'dataset': 'moment-486719.moment_processed',
+            }
+        else:
+            logger.warning("⚠️  WARNING: BigQuery upload failed — GCS backup intact")
+            result['bigquery'] = {'status': 'failed'}
+
+    except Exception as e:
+        logger.error(f"❌ ERROR: BigQuery upload task failed: {type(e).__name__}: {str(e)}")
+        result['bigquery'] = {'status': 'error', 'error': str(e)}
+
+    logger.info(f"   Upload task complete — GCS: {result['gcs'].get('uploaded', [])}, "
+                f"BQ: {result['bigquery'].get('status', 'skipped')}")
+    return result
 
 
 @log_task_execution("Pipeline Notification")
@@ -569,6 +682,52 @@ Team: MOMENT Group 23 | DADS7305 MLOps
         logger.info("✅ INFO: Email notification sent")
     except Exception as e:
         logger.debug(f"🔍 DEBUG: Email not sent (expected in dev): {type(e).__name__}")
+
+    # ── Write pipeline run report to BigQuery ─────────────────────────────
+    # Stores per-run metrics in moment_reports.pipeline_runs for trend analysis.
+    try:
+        import json as _json
+        from bq_loader import upload_reports_to_bq
+
+        run_id = datetime.now().strftime('%Y%m%d_%H%M%S')
+
+        # Load reports generated earlier in this run
+        reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
+        schema_stats, validation_report = None, None
+
+        schema_path = os.path.join(reports_dir, 'schema_stats.json')
+        if os.path.exists(schema_path):
+            with open(schema_path, encoding='utf-8') as f:
+                schema_stats = _json.load(f)
+
+        val_path = os.path.join(reports_dir, 'validation_report.json')
+        if os.path.exists(val_path):
+            with open(val_path, encoding='utf-8') as f:
+                validation_report = _json.load(f)
+
+        # Rebuild anomaly summary from preprocessing XCom result
+        anomaly_summary = None
+        if isinstance(preprocess, dict):
+            anomaly_summary = {
+                'word_count_outliers':  preprocess.get('anomalies_wc', None),
+                'readability_outliers': preprocess.get('anomalies_read', None),
+                'duplicates':           preprocess.get('anomalies_dup', None),
+                'style_mismatches':     preprocess.get('anomalies_style', None),
+            }
+
+        bq_report_ok = upload_reports_to_bq(
+            run_id=run_id,
+            schema_stats=schema_stats,
+            validation_report=validation_report,
+            bias_results=isinstance(bias, dict) and bias or None,
+            anomaly_summary=anomaly_summary,
+        )
+        if bq_report_ok:
+            logger.info(f"✅ INFO: Pipeline run report written to BigQuery (run_id={run_id})")
+        else:
+            logger.warning("⚠️  WARNING: BigQuery report write failed — notification.txt intact")
+    except Exception as e:
+        logger.debug(f"🔍 DEBUG: BigQuery report write skipped: {type(e).__name__}: {e}")
 
     return {'status': 'sent', 'failed_tasks': failed_tasks}
 

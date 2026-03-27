@@ -26,6 +26,28 @@ acquisition:
   prefix: "raw/"
   file_format: "auto"  # Options: csv, json, parquet
 
+# --- BigQuery ---
+bigquery:
+  project_id: "moment-486719"
+  location: "US"
+  datasets:
+    raw:       "moment_raw"        # staging tables (raw inputs from GCS)
+    processed: "moment_processed"  # ML-ready processed tables
+    reports:   "moment_reports"    # per-run pipeline quality reports
+  tables:
+    # Raw staging
+    raw_interpretations: "interpretations"
+    raw_passages:        "passages"
+    raw_user_data:       "user_data"
+    # Processed
+    processed_moments:   "moments"
+    processed_books:     "books"
+    processed_users:     "users"
+    # Reports
+    pipeline_runs:       "pipeline_runs"
+  write_disposition: "WRITE_TRUNCATE"  # WRITE_TRUNCATE = full refresh per run
+                                        # WRITE_APPEND   = incremental loads
+
 # --- Book Metadata (fallback if API is down) ---
 books:
   - title: "Frankenstein"
