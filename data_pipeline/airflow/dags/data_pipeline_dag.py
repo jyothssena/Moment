@@ -20,8 +20,8 @@ DAG Author: Heet Patel | Enhanced Logging: Greta | Group 23 | DADS7305 MLOps
 """
 
 from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.operators.python import PythonOperator # type: ignore
+from airflow.utils.trigger_rule import TriggerRule # type: ignore
 from datetime import datetime, timedelta
 import sys
 import os
@@ -175,14 +175,14 @@ def task_acquire_data(**context):
     logger.debug(f"🔍 DEBUG: Raw data directory: {raw_dir}")
     
     try:
-        from data_acquisition import DataAcquisition
+        from bq_loader import BQLoader # type: ignore
         
-        logger.debug(f"🔍 DEBUG: Loading DataAcquisition with config: {PIPELINE_CONFIG}")
-        acq = DataAcquisition(config_path=PIPELINE_CONFIG)
+        logger.debug(f"🔍 DEBUG: Loading BQLoader with config: {PIPELINE_CONFIG}")
+        acq = BQLoader(config_path=PIPELINE_CONFIG)
         metadata = acq.run()
         
         # Save to local
-        acq.save_to_local(output_dir=raw_dir)
+        #acq.save_to_local(output_dir=raw_dir)
         
         num_files = metadata.get('num_files', 0)
         total_rows = metadata.get('total_rows', 0)
@@ -271,12 +271,12 @@ def task_preprocessing(**context):
     logger.info("INFO: Running full preprocessing pipeline")
     logger.info("   Flow: read → lookup → process → anomalies → write")
     
-    import yaml
-    from preprocessor import (
+    import yaml # type: ignore
+    from preprocessor import ( # type: ignore
         read_raw_data, lookup_books, process_books,
         process_users, process_moments_pass1, write_outputs
     )
-    from anomalies import detect_anomalies
+    from anomalies import detect_anomalies # type: ignore
 
     # Load config
     logger.debug(f"🔍 DEBUG: Loading config from {PIPELINE_CONFIG}")
@@ -361,7 +361,7 @@ def task_schema_stats(**context):
     """Task 4a: Generate schema, statistics, and anomaly detection using TFDV."""
     logger.info("📊 INFO: Generating schema and statistics with TFDV")
 
-    from generate_schema_stats import run_schema_stats
+    from generate_schema_stats import run_schema_stats # type: ignore
 
     processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
     reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
@@ -391,7 +391,7 @@ def task_validation(**context):
     """Task 4b: Validate processed data quality."""
     logger.info("✓ INFO: Starting data validation checks")
     
-    import pandas as pd
+    import pandas as pd # type: ignore
     processed_dir = os.path.join(REPO_ROOT, "data", "processed")
     reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
     os.makedirs(reports_dir, exist_ok=True)
@@ -564,7 +564,7 @@ Team: MOMENT Group 23 | DADS7305 MLOps
 
     # Try email
     try:
-        from utils import send_email_alert
+        from utils import send_email_alert # type: ignore
         send_email_alert("MOMENT Pipeline Complete", body, TEAM_EMAILS)
         logger.info("✅ INFO: Email notification sent")
     except Exception as e:

@@ -8,8 +8,8 @@ Author: Heet Patel | Group 23 | DADS7305 MLOps
 """
 
 from airflow import DAG
-from airflow.operators.bash import BashOperator
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.operators.bash import BashOperator # type: ignore
+from airflow.utils.trigger_rule import TriggerRule # type: ignore
 from datetime import datetime, timedelta
 
 

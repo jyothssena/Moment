@@ -1,0 +1,8 @@
+import json
+
+with open("interpretations_train.json", "r") as f:
+    data = json.load(f)  # loads the array
+
+with open("converted_interpretations_train.json.jsonl", "w") as f:
+    for record in data:
+        f.write(json.dumps(record) + "\n")
