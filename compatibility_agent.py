@@ -8,8 +8,6 @@ from google.genai import types # type: ignore
 
 from tools import (
     COMPAT_LOG_FILE,
-    _read_json_file,
-    _write_json_file,
     get_user_interpretations,
     get_user_profile,
     count_new_moments,
@@ -20,10 +18,17 @@ from decomposing_agent import (
     _gemini_client,
     _GEMINI_MODEL,
     _get_response_text,
-    run_decomposer,
-    DECOMPOSITIONS_FILE
+    run_decomposer
 )
 from aggregator import aggregate
+
+from bq_loader import (
+    get_bq_client,
+    load_raw_from_bq,
+    write_processed_to_bq,
+    PROC_DATASET,
+)
+bq_client = get_bq_client()
 
 # ── Compatibility Agent ───────────────────────────────────────────────────────
 
@@ -152,7 +157,7 @@ def _get_or_run_decomposition(user_id: str, passage_id: str, book_id: str, momen
     Return cached decomposition for this user+passage+book if it exists,
     otherwise run the decomposer and return the result.
     """
-    data = _read_json_file(DECOMPOSITIONS_FILE,[]) or []
+    data = load_raw_from_bq(bq_client, PROC_DATASET, "decompositions") or []
     cached = next(
         (d for d in data
          if d["user_id"] == user_id
@@ -163,7 +168,7 @@ def _get_or_run_decomposition(user_id: str, passage_id: str, book_id: str, momen
     if cached:
         print(f"[CompatAgent] using cached decomposition for {user_id} / {passage_id} / {book_id}")
         return cached
-    return run_decomposer(user_id, passage_id, book_id, moment_text)
+    return run_decomposer(user_id, passage_id, book_id, moment_text,moment_id)
 
 def _build_scorer_prompt(decomp_a: dict, decomp_b: dict) -> str:
     """Build the user-turn message for the scorer from two decompositions."""
@@ -309,7 +314,7 @@ def route_compatibility_result(result: dict) -> str:
 def _get_existing_compat_run(user_a_id: str,
                               user_b_id: str,
                               book_id: str,passage_id: str) -> dict | None:
-    runs = _read_json_file(COMPAT_LOG_FILE,[]) or []
+    runs = load_raw_from_bq(bq_client, PROC_DATASET, "compatibility_logs") or []
     matches = [
         r for r in runs
         if r.get("book_id") == book_id and r.get("passage_id") == passage_id
@@ -324,66 +329,9 @@ def _get_existing_compat_run(user_a_id: str,
     return sorted(matches, key=lambda r: r.get("timestamp", ""), reverse=True)[0]
 
 
-# ── Batch runner ──────────────────────────────────────────────────────────────
-
-def run_compatibility_for_all(user_a_id: str,
-                               book_id: str,
-                               passage_id: str,
-                               moments_map: dict[str, dict]) -> list[dict]:
-    moment_a    = moments_map.get(user_a_id)
-    other_users = [uid for uid in moments_map if uid != user_a_id]
-
-    if not moment_a:
-        print(f"[main] no moment provided for anchor user {user_a_id}")
-        return []
-    if not other_users:
-        print(f"[main] no other users found in moments_map for book_id={book_id}")
-        return []
-
-    print(f"[main] found {len(other_users)} other readers of {book_id}")
-
-    results = []
-    for user_b_id in other_users:
-        moment_b = moments_map.get(user_b_id)
-        if not moment_b:
-            print(f"  {user_b_id} — skipped (no moment provided)")
-            continue
-
-        existing = _get_existing_compat_run(user_a_id, user_b_id, book_id,passage_id)
-        if existing:
-            route = route_compatibility_result(existing)
-            existing["route"] = route
-            print(f"  {user_b_id} [cached] verdict={existing.get('verdict')} "
-                  f"confidence={existing.get('confidence')}")
-            if route != "discard":
-                results.append(existing)
-            continue
-
-        result        = run_compatibility_agent(user_a_id, user_b_id, book_id, moment_a, moment_b)
-        route         = route_compatibility_result(result)
-        result["route"] = route
-
-        print(f"  {user_b_id} — dominant_think={result.get('dominant_think')} "
-              f"dominant_feel={result.get('dominant_feel')} "
-              f"confidence={result.get('confidence')} route={route}")
-
-        if route != "discard":
-            results.append(result)
-
-    results.sort(key=lambda r: r.get("confidence", 0.0), reverse=True)
-    print(f"\n── Match pool for {user_a_id}: {len(results)} / {len(other_users)} ──")
-
-    _save_compatibility_results(user_a_id, book_id, results)
-    return results
-
-
-COMPAT_RESULTS_FILE = "data/processed/compatibility_results.json"
-SCORING_FILE        = "data/processed/scoring_runs.json"
-
-
 def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict) -> None:
     """Upsert raw scorer output keyed by user_a + user_b + passage_id."""
-    data = _read_json_file(SCORING_FILE,[]) or []
+    data = load_raw_from_bq(bq_client, PROC_DATASET, "scoring_runs") or []
     key  = (user_a_id, user_b_id, passage_id)
     data = [
         d for d in data
@@ -396,12 +344,12 @@ def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict
         "timestamp":  datetime.utcnow().isoformat(),
         "scoring":    scoring,
     })
-    _write_json_file(SCORING_FILE, data)
+    write_processed_to_bq(bq_client, data, "scoring_runs")
     print(f"[CompatAgent] scoring saved for {user_a_id} × {user_b_id} / {passage_id}")
 
 def _save_compatibility_results(user_a_id: str, book_id: str, results: list[dict]) -> None:
     """Upsert batch results for this anchor user + book into compatibility_results.json."""
-    data = _read_json_file(COMPAT_RESULTS_FILE,[]) or []
+    data = load_raw_from_bq(bq_client, PROC_DATASET, "compatibility_results") or []
 
     # remove any previous batch for this anchor + book
     data = [
@@ -414,15 +362,14 @@ def _save_compatibility_results(user_a_id: str, book_id: str, results: list[dict
         "timestamp": datetime.utcnow().isoformat(),
         "results":   results,
     })
-    _write_json_file(COMPAT_RESULTS_FILE, data)
-    print(f"[main] saved {len(results)} results to {COMPAT_RESULTS_FILE}")
+    write_processed_to_bq(bq_client, data, "compatibility_results")
+    print(f"[main] saved {len(results)} results to BQ compatibility_results")
 
 
 # ── Entrypoint ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    with open("interpretations_10_users.json") as f:
-        moments = json.load(f)
+    moments = load_raw_from_bq(bq_client, PROC_DATASET, "moments")
 
     PASSAGE_IDS=['passage_1','passage_2','passage_3']
     BOOKS       = ["Frankenstein","Pride and Prejudice","The Great Gatsby"]

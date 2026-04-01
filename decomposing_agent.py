@@ -5,7 +5,14 @@ from google.genai import types # type: ignore
 
 from tools import extract_json, _read_json_file, _write_json_file
 
-DECOMPOSITIONS_FILE = "data/processed/decompositions.json"
+from bq_loader import (
+    get_bq_client,
+    load_raw_from_bq,
+    write_processed_to_bq,
+    PROC_DATASET,
+)
+bq_client = get_bq_client()
+
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
@@ -131,7 +138,7 @@ _SUBCLAIM_REQUIRED_KEYS  = {"id", "claim", "quote", "weight", "emotional_mode"}
 
 # ── Main function ─────────────────────────────────────────────────────────────
 
-def run_decomposer(user_id: str, passage_id: str, book_id: str, moment_text: str) -> dict:
+def run_decomposer(record: dict) -> dict:
     """
     Decompose a single reader moment into weighted sub-claims with emotional modes.
 
@@ -143,12 +150,13 @@ def run_decomposer(user_id: str, passage_id: str, book_id: str, moment_text: str
     Returns:
         decomposition dict on success, {"error": ..., "user_id": user_id} on failure
     """
-    print(f"[Decomposer] running for user_id={user_id}, passage_id={passage_id}")
+    print(f"[Decomposer] running for user_id={record['user_id']}, passage_id={record['passage_id']}")
     user_message = (
-        f"user_id: {user_id}\n"
-        f"passage_id: {passage_id}\n\n"
-        f"book_id: {book_id}\n\n"
-        f"Moment:\n{moment_text}"
+        f"moment_id: {record['moment_id']}"
+        f"user_id: {record['user_id']}\n"
+        f"passage_id: {record['passage_id']}\n\n"
+        f"book_id: {record['book_id']}\n\n"
+        f"Moment:\n{record['moment_text']}"
     )
     response = _gemini_client.models.generate_content(
         model=_GEMINI_MODEL,
@@ -163,43 +171,27 @@ def run_decomposer(user_id: str, passage_id: str, book_id: str, moment_text: str
     result   = extract_json(raw_text)
     if "error" in result:
         print(f"[Decomposer] JSON extraction failed. raw={raw_text[:200] if raw_text else 'None'}")
-        return {"error": "invalid JSON from Decomposer", "raw": raw_text, "user_id": user_id}
+        return {"error": "invalid JSON from Decomposer", "raw": raw_text, "moment_id": record['moment_id']}
 
     missing = _DECOMPOSE_REQUIRED_KEYS - result.keys()
     if missing:
         print(f"[Decomposer] incomplete output, missing keys: {missing}")
-        return {"error": f"incomplete decomposition, missing: {missing}", "raw": result, "user_id": user_id}
+        return {"error": f"incomplete decomposition, missing: {missing}", "raw": result, "moment_id": record['moment_id']}
 
     for i, sc in enumerate(result.get("subclaims", [])):
         missing_sc = _SUBCLAIM_REQUIRED_KEYS - sc.keys()
         if missing_sc:
             print(f"[Decomposer] subclaim {i} missing keys: {missing_sc}")
-            return {"error": f"subclaim {i} missing: {missing_sc}", "raw": result, "user_id": user_id}
+            return {"error": f"subclaim {i} missing: {missing_sc}", "raw": result, "moment_id": record['moment_id']}
 
     weights = [sc["weight"] for sc in result["subclaims"]]
     if abs(sum(weights) - 1.0) > 0.02:
         print(f"[Decomposer] weights do not sum to 1.0: {weights}")
-        return {"error": f"subclaim weights sum to {sum(weights):.2f}", "raw": result, "user_id": user_id}
+        return {"error": f"subclaim weights sum to {sum(weights):.2f}", "raw": result, "moment_id": record['moment_id']}
 
     print(f"[Decomposer] decomposition ready: {len(result['subclaims'])} subclaims")
-    _save_decomposition(result)
+    #_save_decomposition(result)
     return result
-
-
-def _save_decomposition(result: dict) -> None:
-    """Upsert decomposition into decompositions.json keyed by user_id + passage_id."""
-    data = _read_json_file(DECOMPOSITIONS_FILE,[]) or []
-    key  = (result["user_id"], result["passage_id"])
-
-    # replace existing entry for same user+passage, otherwise append
-    updated = [d for d in data if (d["user_id"], d["passage_id"]) != key]
-    updated.append(result)
-
-    _write_json_file(DECOMPOSITIONS_FILE, updated)
-    print(f"[Decomposer] saved to {DECOMPOSITIONS_FILE}")
-
-
-# ── Helper (mirrors agent.py) ─────────────────────────────────────────────────
 
 def _get_response_text(response) -> str | None:
     try:
@@ -212,3 +204,13 @@ def _get_response_text(response) -> str | None:
         return "\n".join(texts) if texts else None
     except Exception:
         return None
+    
+def run_decomposer_for_file(timestamp_start: str,timestamp_end: str):
+   data= load_raw_from_bq(bq_client,PROC_DATASET,"moments")
+   decompositions=load_raw_from_bq(bq_client,PROC_DATASET,"decompositions")
+   filtered_data = [d for d in data if timestamp_start <= d["timestamp"] <= timestamp_end]
+   for record in filtered_data:
+       result=run_decomposer(record)
+       decompositions.append(result)
+   write_processed_to_bq(bq_client,result, "decompositions")
+    

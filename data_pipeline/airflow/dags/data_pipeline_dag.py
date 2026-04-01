@@ -1,133 +1,65 @@
 """
-MOMENT Data Pipeline DAG - MULTI-LEVEL LOGGING VERSION
-=======================================================
-Enhanced with INFO, WARNING, ERROR, DEBUG logging levels.
+MOMENT Data Pipeline DAG - BIGQUERY INTERMEDIATE STORE VERSION
+==============================================================
+Data flows entirely through BigQuery staging tables — no local disk,
+no GCS intermediate files.
+
+BQ layout:
+    moment-486719.moments_staging_{run_id}.interpretations_raw
+    moment-486719.moments_staging_{run_id}.passage_details_new
+    moment-486719.moments_staging_{run_id}.user_details_new
+    moment-486719.moments_staging_{run_id}.moments_processed
+    moment-486719.moments_staging_{run_id}.books_processed
+    moment-486719.moments_staging_{run_id}.users_processed
+
+Final destination (unchanged):
+    moment-486719.new_moments_processed.*
+
+XCom usage: tasks push/pull only BQ table IDs (tiny strings), never raw records.
 
 Flow:
     acquire → bias_detection → preprocessing → [schema_stats, validation] → upload → notify
-                                              (parallel)
-
-Scripts (by team member):
-    bq_loader.py            – Jyothssena (BigQuery data loading)
-    bias_detection.py       – Santhosh   (demographic bias analysis)
-    preprocessor.py         – Tanmayi    (text cleaning, validation, metrics, anomalies)
-    anomalies.py            – Tanmayi    (batch anomaly detection)
-    validation.py           – Jyothssena (schema validation)
-    generate_schema_stats.py – Team      (TFDV schema & statistics)
-    utils.py                – Team       (email/slack alerts)
-
-DAG Author: Heet Patel | Enhanced Logging: Greta | Group 23 | DADS7305 MLOps
+                                               (parallel)
 """
 
 from airflow import DAG
-from airflow.operators.python import PythonOperator # type: ignore
-from airflow.utils.trigger_rule import TriggerRule # type: ignore
+from airflow.operators.python import PythonOperator
+from airflow.utils.trigger_rule import TriggerRule
 from datetime import datetime, timedelta
-import sys
-import os
-import json
-import logging
+import sys, os, json, logging
 from functools import wraps
+import pandas as pd 
 
 # ════════════════════════════════════════════════════════════════
-#  MULTI-LEVEL LOGGING CONFIGURATION
+#  LOGGING
 # ════════════════════════════════════════════════════════════════
 
 logger = logging.getLogger('airflow.task')
 
-# Configure logging directory
 LOGS_DIR = os.environ.get('LOGS_DIR', '/opt/airflow/logs')
 os.makedirs(LOGS_DIR, exist_ok=True)
 
-# Create separate handlers for each log level
-info_handler = logging.FileHandler(os.path.join(LOGS_DIR, 'team_pipeline_INFO.log'))
-info_handler.setLevel(logging.INFO)
-info_handler.addFilter(lambda record: record.levelno == logging.INFO)
+def _make_handler(path, level, filter_fn=None):
+    h = logging.FileHandler(path)
+    h.setLevel(level)
+    if filter_fn:
+        h.addFilter(filter_fn)
+    h.setFormatter(logging.Formatter(
+        '%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    ))
+    return h
 
-warning_handler = logging.FileHandler(os.path.join(LOGS_DIR, 'team_pipeline_WARNING.log'))
-warning_handler.setLevel(logging.WARNING)
-warning_handler.addFilter(lambda record: record.levelno == logging.WARNING)
-
-error_handler = logging.FileHandler(os.path.join(LOGS_DIR, 'team_pipeline_ERROR.log'))
-error_handler.setLevel(logging.ERROR)
-error_handler.addFilter(lambda record: record.levelno >= logging.ERROR)
-
-all_handler = logging.FileHandler(os.path.join(LOGS_DIR, 'team_pipeline_ALL.log'))
-all_handler.setLevel(logging.DEBUG)
-
-# Formatter
-formatter = logging.Formatter(
-    '%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-for handler in [info_handler, warning_handler, error_handler, all_handler]:
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
-
-logger.info("=" * 70)
-logger.info("🔧 MOMENT Team Pipeline - Multi-Level Logging Initialized")
-logger.info("   Log Files: team_pipeline_INFO.log, WARNING.log, ERROR.log, ALL.log")
-logger.info("=" * 70)
+logger.addHandler(_make_handler(os.path.join(LOGS_DIR, 'pipeline_INFO.log'),    logging.INFO,    lambda r: r.levelno == logging.INFO))
+logger.addHandler(_make_handler(os.path.join(LOGS_DIR, 'pipeline_WARNING.log'), logging.WARNING, lambda r: r.levelno == logging.WARNING))
+logger.addHandler(_make_handler(os.path.join(LOGS_DIR, 'pipeline_ERROR.log'),   logging.ERROR))
+logger.addHandler(_make_handler(os.path.join(LOGS_DIR, 'pipeline_ALL.log'),     logging.DEBUG))
 
 
 # ════════════════════════════════════════════════════════════════
-#  MULTI-LEVEL LOGGING DECORATOR
+#  CONFIG
 # ════════════════════════════════════════════════════════════════
 
-def log_task_execution(task_name):
-    """Enhanced decorator with INFO, WARNING, ERROR, DEBUG logging."""
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            start_time = datetime.now()
-            
-            logger.debug(f"🔍 DEBUG: Entering {task_name}")
-            logger.info("=" * 70)
-            logger.info(f"🚀 INFO: Starting task: {task_name}")
-            logger.info(f"   Start time: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
-            logger.info("=" * 70)
-            
-            try:
-                result = func(*args, **kwargs)
-                end_time = datetime.now()
-                duration = (end_time - start_time).total_seconds()
-                
-                # WARNING: Check for slow execution
-                if duration > 300:
-                    logger.warning(f"⚠️  WARNING: {task_name} took {duration:.1f}s (>5min threshold)")
-                    logger.warning(f"   Consider optimizing this task")
-                
-                logger.info("=" * 70)
-                logger.info(f"✅ INFO: Task completed: {task_name}")
-                logger.info(f"   Duration: {duration:.2f}s ({duration/60:.2f}min)")
-                if result and isinstance(result, dict):
-                    logger.info(f"   Result summary: {list(result.keys())}")
-                logger.info("=" * 70)
-                logger.debug(f"🔍 DEBUG: Exiting {task_name} successfully")
-                
-                return result
-                
-            except Exception as e:
-                end_time = datetime.now()
-                duration = (end_time - start_time).total_seconds()
-                
-                logger.error("=" * 70)
-                logger.error(f"❌ ERROR: Task failed: {task_name}")
-                logger.error(f"   Error: {type(e).__name__}: {str(e)}")
-                logger.error(f"   Duration before failure: {duration:.2f}s")
-                logger.error("=" * 70)
-                
-                if isinstance(e, (MemoryError, SystemError)):
-                    logger.critical(f"🚨 CRITICAL: System error in {task_name}!")
-                
-                logger.exception("Full traceback:")
-                raise
-                
-        return wrapper
-    return decorator
-
-
-# ─── Path setup for imports ───
 SCRIPTS_DIR = os.environ.get(
     'SCRIPTS_DIR',
     os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'scripts')
@@ -138,15 +70,13 @@ PIPELINE_CONFIG = os.environ.get(
     'PIPELINE_CONFIG',
     os.path.join(os.path.dirname(SCRIPTS_DIR), 'config', 'config.yaml')
 )
-PREPROCESSING_CONFIG = os.environ.get(
-    'PREPROCESSING_CONFIG',
-    os.path.join(os.path.dirname(SCRIPTS_DIR), 'config', 'preprocessing_config.yaml')
-)
-
 REPO_ROOT = os.environ.get(
     'REPO_ROOT',
     os.path.dirname(os.path.dirname(SCRIPTS_DIR))
 )
+
+BQ_PROJECT       = os.environ.get('GOOGLE_CLOUD_PROJECT', '')
+BQ_FINAL_DATASET = 'new_moments_processed'   # unchanged final destination
 
 TEAM_EMAILS = [
     'chandrasekar.s@northeastern.edu',
@@ -157,466 +87,521 @@ TEAM_EMAILS = [
     'wang.gre@northeastern.edu',
 ]
 
-logger.debug(f"🔍 DEBUG: Configuration loaded")
-logger.debug(f"   SCRIPTS_DIR: {SCRIPTS_DIR}")
-logger.debug(f"   REPO_ROOT: {REPO_ROOT}")
+
+# ════════════════════════════════════════════════════════════════
+#  BIGQUERY HELPERS
+# ════════════════════════════════════════════════════════════════
+
+def _bq_client():
+    from google.cloud import bigquery
+    return bigquery.Client(project=BQ_PROJECT)
+
+def staging_dataset(run_id: str) -> str:
+    """
+    Sanitize run_id into a valid BQ dataset name.
+    Airflow run_ids look like 'scheduled__2026-03-30T00:00:00+00:00' —
+    BQ dataset names allow only letters, digits, underscores.
+    """
+    safe = run_id.replace('-', '_').replace(':', '_').replace('+', '_').replace('.', '_').replace('T', '_')
+    return f"moments_staging_{safe}"[:1024]  # BQ dataset name max 1024 chars
+
+def bq_table_id(run_id: str, table: str) -> str:
+    return f"{BQ_PROJECT}.{staging_dataset(run_id)}.{table}"
+
+def ensure_staging_dataset(run_id: str):
+    """Create the per-run staging dataset if it doesn't exist."""
+    from google.cloud import bigquery
+    client = _bq_client()
+    ds_id  = f"{BQ_PROJECT}.{staging_dataset(run_id)}"
+    ds     = bigquery.Dataset(ds_id)
+    ds.location = "US"
+    client.create_dataset(ds, exists_ok=True)
+    logger.debug(f"Staging dataset ready: {ds_id}")
+
+def bq_write(df, table_id: str):
+    """Write a DataFrame to a BQ table (overwrite). No local file."""
+    from google.cloud import bigquery
+    job = _bq_client().load_table_from_dataframe(
+        df, table_id,
+        job_config=bigquery.LoadJobConfig(
+            write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+            autodetect=True,
+        )
+    )
+    job.result()
+    logger.debug(f"Wrote {len(df)} rows → {table_id}")
+
+def bq_read(table_id: str):
+    """Read a BQ table into a DataFrame. No local file."""
+    import pandas as pd
+    df = _bq_client().query(f"SELECT * FROM `{table_id}`").to_dataframe()
+    logger.debug(f"Read {len(df)} rows ← {table_id}")
+    return df
+
+def bq_copy_table(src_table_id: str, dst_table_id: str):
+    """Server-side BQ table copy — no data leaves BigQuery."""
+    from google.cloud import bigquery
+    client = _bq_client()
+    job = client.copy_table(
+        src_table_id, dst_table_id,
+        job_config=bigquery.CopyJobConfig(
+            write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE
+        )
+    )
+    job.result()
+    logger.debug(f"Copied {src_table_id} → {dst_table_id}")
 
 
 # ════════════════════════════════════════════════════════════════
-#  TASK FUNCTIONS WITH MULTI-LEVEL LOGGING
+#  DECORATOR
+# ════════════════════════════════════════════════════════════════
+
+def log_task_execution(task_name):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            start = datetime.now()
+            logger.info("=" * 70)
+            logger.info(f"🚀 Starting task: {task_name}  [{start:%Y-%m-%d %H:%M:%S}]")
+            try:
+                result = func(*args, **kwargs)
+                dur = (datetime.now() - start).total_seconds()
+                if dur > 300:
+                    logger.warning(f"⚠️  {task_name} took {dur:.1f}s (>5 min)")
+                logger.info(f"✅ Completed: {task_name}  [{dur:.2f}s]")
+                logger.info("=" * 70)
+                return result
+            except Exception as e:
+                dur = (datetime.now() - start).total_seconds()
+                logger.error(f"❌ Failed: {task_name} — {type(e).__name__}: {e}  [{dur:.2f}s]")
+                if isinstance(e, (MemoryError, SystemError)):
+                    logger.critical(f"🚨 CRITICAL system error in {task_name}")
+                logger.exception("Full traceback:")
+                raise
+        return wrapper
+    return decorator
+
+
+# ════════════════════════════════════════════════════════════════
+#  TASK 1 — ACQUIRE
+#  BQLoader already reads from BQ into DataFrames.
+#  We write those DataFrames into a run-scoped staging dataset
+#  so downstream tasks can query them independently.
+#  XCom out: dict of { table_name: full BQ table ID }
 # ════════════════════════════════════════════════════════════════
 
 @log_task_execution("Data Acquisition")
 def task_acquire_data(**context):
-    """Task 1: Read raw data from BigQuery → save to data/raw/"""
-    logger.info("📥 INFO: Attempting to acquire data from BigQuery")
+    run_id = context['run_id']
+    logger.info(f"📥 Acquiring data from BigQuery  [run={run_id}]")
 
-    raw_dir = os.path.join(REPO_ROOT, 'data', 'raw')
-    logger.debug(f"🔍 DEBUG: Raw data directory: {raw_dir}")
+    from bq_loader import BQLoader  # type: ignore
 
-    try:
-        from bq_loader import BQLoader # type: ignore
+    # Load source tables
+    acq = BQLoader(config_path=PIPELINE_CONFIG)
+    metadata = acq.run()
+    dfs = acq.get_dataframes()  # dict[str, pd.DataFrame]
 
-        logger.debug(f"🔍 DEBUG: Loading BQLoader with config: {PIPELINE_CONFIG}")
-        acq = BQLoader(config_path=PIPELINE_CONFIG)
-        metadata = acq.run()
+    total_rows = metadata.get('total_rows', 0)
+    if total_rows < 100:
+        logger.warning(f"⚠️  Low row count from BigQuery: {total_rows}")
 
-        # Save to local so downstream tasks can read from data/raw/
-        acq.save_to_local(output_dir=raw_dir)
+    # Write each DataFrame into the run-scoped staging dataset
+    ensure_staging_dataset(run_id)
+    raw_table_ids = {}
+    for table_name, df in dfs.items():
+        tid = bq_table_id(run_id, table_name)
+        bq_write(df, tid)
+        raw_table_ids[table_name] = tid
+        logger.info(f"   ✓ {table_name}: {len(df)} rows → {tid}")
 
-        num_files  = metadata.get('num_files', 0)
-        total_rows = metadata.get('total_rows', 0)
+    logger.info(f"✅ Acquisition complete — {len(raw_table_ids)} tables staged in BQ")
+    context['task_instance'].xcom_push(key='raw_table_ids', value=raw_table_ids)
+    return metadata
 
-        logger.info(f"✅ INFO: BigQuery → data/raw/ successful")
-        logger.info(f"   Tables: {num_files}, Rows: {total_rows}")
 
-        if total_rows < 100:
-            logger.warning(f"⚠️  WARNING: Low row count: {total_rows}")
-            logger.warning(f"   Expected more data for production pipeline")
-
-        return metadata
-
-    except Exception as e:
-        logger.warning(f"⚠️  WARNING: BigQuery unavailable - {type(e).__name__}")
-        logger.info("   Falling back to local file verification...")
-
-        # Check if files already exist locally
-        required = ['interpretations_raw.json', 'passage_details_new.json', 'user_details_new.json']
-        missing  = [f for f in required if not os.path.exists(os.path.join(raw_dir, f))]
-
-        if missing:
-            logger.error(f"❌ ERROR: Missing local files in {raw_dir}: {missing}")
-            logger.error(f"   Either fix BigQuery credentials or place files in data/raw/")
-            raise FileNotFoundError(f"Missing: {missing}")
-
-        logger.info(f"✅ INFO: Local data/raw/ verified - {len(required)} files present")
-        return {'source': 'local', 'raw_dir': raw_dir}
-
+# ════════════════════════════════════════════════════════════════
+#  TASK 2 — BIAS DETECTION
+#  Reads raw staging tables from BQ, runs analysis in-memory.
+#  XCom out: bias results dict (small — safe for XCom default)
+# ════════════════════════════════════════════════════════════════
 
 @log_task_execution("Bias Detection")
 def task_bias_detection(**context):
-    """Task 2: Bias detection on raw data (Santhosh's code)."""
-    logger.info("⚖️ INFO: Analyzing demographic bias in dataset")
-    
+    ti     = context['task_instance']
+    run_id = context['run_id']
+    raw_ids = ti.xcom_pull(task_ids='acquire_data', key='raw_table_ids')
+    logger.info(f"raw_ids received: {raw_ids}")
+    logger.info(f"⚖️  Bias analysis  [run={run_id}]")
+
+    df = bq_read(raw_ids['interpretations_train'])
+    logger.info(f"   Loaded {len(df)} records from {raw_ids['interpretations_train']}")
+    char_df = bq_read(raw_ids['user_details_new'])
+    df = df.merge(char_df, left_on='character_name', right_on='Name', how='left')
+    logger.info(f"[OK] Merged: {len(df)} records")
+    df = df.rename(columns={'book': 'book_title'})
+    age_groups = []
+    for age_val in df['Age']:
+        if pd.isna(age_val):
+            age_groups.append("Unknown")
+        else:
+            try:
+                a = int(age_val)
+                if a < 25: age_groups.append("18-24 (Gen Z)")
+                elif a < 35: age_groups.append("25-34 (Millennial)")
+                elif a < 45: age_groups.append("35-44 (Gen X/Mill)")
+                else: age_groups.append("45+ (Gen X/Boom)")
+            except:
+                age_groups.append("Unknown")
+        
+    df['age_group'] = age_groups
     original_dir = os.getcwd()
-    logger.debug(f"🔍 DEBUG: Changing to repo root: {REPO_ROOT}")
     os.chdir(REPO_ROOT)
-
     try:
-        from bias_detection import load_data, run_analysis
-
-        logger.debug("🔍 DEBUG: Loading data for bias analysis")
-        df = load_data()
-        
-        if df is None:
-            logger.error("❌ ERROR: Failed to load data for bias detection")
-            raise RuntimeError("Could not load data for bias detection")
-        
-        logger.info(f"   Loaded {len(df)} records for analysis")
-        
+        from bias_detection import run_analysis  # type: ignore
         results = run_analysis(df)
-        
-        # Check bias levels
-        age_dev    = results['age']['max_dev']
-        gender_dev = results['gender']['max_dev']
-        
-        logger.info(f"✅ INFO: Bias detection complete")
-        logger.info(f"   Age deviation: {age_dev:.1f}% (intentional)")
-        logger.info(f"   Gender deviation: {gender_dev:.1f}%")
-        logger.info(f"   Book distribution: {results['book']['assessment']}")
-        
-        if gender_dev > 20:
-            logger.warning(f"⚠️  WARNING: High gender bias: {gender_dev:.1f}%")
-            logger.warning(f"   Consider data balancing strategies")
-        
-        if age_dev > 30:
-            logger.warning(f"⚠️  WARNING: Significant age bias: {age_dev:.1f}%")
-        
-        logger.debug(f"🔍 DEBUG: Full bias results: {json.dumps(results, indent=2, default=str)}")
-        
-        return results
-
     finally:
         os.chdir(original_dir)
-        logger.debug(f"🔍 DEBUG: Restored working directory")
 
+    age_dev    = results['age']['max_dev']
+    gender_dev = results['gender']['max_dev']
+    logger.info(f"✅ Bias detection complete — age_dev={age_dev:.1f}%  gender_dev={gender_dev:.1f}%")
+    if gender_dev > 20:
+        logger.warning(f"⚠️  High gender bias: {gender_dev:.1f}%")
+    if age_dev > 30:
+        logger.warning(f"⚠️  Significant age bias: {age_dev:.1f}%")
+
+    return results  # small dict, fine for XCom
+
+
+# ════════════════════════════════════════════════════════════════
+#  TASK 3 — PREPROCESSING
+#  Reads raw staging tables, processes in-memory,
+#  writes processed DataFrames back into staging dataset.
+#  XCom out: dict of { "moments": BQ table ID, "books": ..., "users": ... }
+# ════════════════════════════════════════════════════════════════
 
 @log_task_execution("Preprocessing Pipeline")
 def task_preprocessing(**context):
-    """Task 3: Preprocessing (data/raw/ → data/processed/)"""
-    logger.info("INFO: Running full preprocessing pipeline")
-    logger.info("   Flow: read → lookup → process → anomalies → write")
-    
-    import yaml # type: ignore
-    from preprocessor import ( # type: ignore
-        read_raw_data, lookup_books, process_books,
-        process_users, process_moments_pass1, write_outputs
-    )
-    from anomalies import detect_anomalies # type: ignore
+    import yaml  # type: ignore
+    ti      = context['task_instance']
+    run_id  = context['run_id']
+    raw_ids = ti.xcom_pull(task_ids='acquire_data', key='raw_table_ids')
 
-    logger.debug(f"🔍 DEBUG: Loading config from {PIPELINE_CONFIG}")
+    logger.info(f"🔧 Preprocessing  [run={run_id}]")
+
     with open(PIPELINE_CONFIG, 'r') as f:
         cfg = yaml.safe_load(f)
 
-    # Adjust paths
-    for key in cfg['paths']['raw']:
-        if not os.path.isabs(cfg['paths']['raw'][key]):
-            cfg['paths']['raw'][key] = os.path.join(REPO_ROOT, cfg['paths']['raw'][key])
-    for key in cfg['paths']['processed']:
-        if not os.path.isabs(cfg['paths']['processed'][key]):
-            cfg['paths']['processed'][key] = os.path.join(REPO_ROOT, cfg['paths']['processed'][key])
+    from preprocessor import lookup_books, process_books, process_users, process_moments_pass1  # type: ignore
+    from anomalies import detect_anomalies  # type: ignore
+    import pandas as pd
 
-    os.makedirs(os.path.join(REPO_ROOT, 'data', 'processed'), exist_ok=True)
+    # ── Read raw records from BQ staging ──
+    logger.info("Step 1/5: Reading raw staging tables from BQ")
+    interp_df  = bq_read(raw_ids['interpretations_train'])
+    passage_df = bq_read(raw_ids['passage_details_new'])
+    char_df    = bq_read(raw_ids['user_details_new'])
 
-    logger.info("Step 1/6: Reading from data/raw/")
-    interpretations, passages, characters = read_raw_data(cfg)
-    logger.info(f"   Loaded: {len(interpretations)} interpretations, {len(passages)} passages, {len(characters)} characters")
-    
-    if len(interpretations) == 0:
-        logger.error("❌ ERROR: No interpretations loaded")
+    # Convert to the list-of-dicts format your preprocessor expects
+    interpretations = interp_df.to_dict('records')
+    passages        = passage_df.to_dict('records')
+    characters      = char_df.to_dict('records')
+
+    logger.info(f"   interpretations={len(interpretations)}, passages={len(passages)}, characters={len(characters)}")
+
+    if not interpretations:
         raise ValueError("Empty interpretations dataset")
-    
     if len(interpretations) < 100:
-        logger.warning(f"⚠️  WARNING: Low interpretation count: {len(interpretations)}")
+        logger.warning(f"⚠️  Low interpretation count: {len(interpretations)}")
 
-    logger.info("Step 2/6: Looking up book metadata")
+    # ── Process in-memory (unchanged logic) ──
+    logger.info("Step 2/5: Book metadata lookup")
     book_meta = lookup_books(cfg)
-    logger.info(f"   Found {len(book_meta)} books")
 
-    logger.info("Step 3/6: Processing passages into books")
+    logger.info("Step 3/5: Processing passages → books")
     books = process_books(passages, book_meta, cfg)
-    logger.info(f"   Processed {len(books)} book records")
 
-    logger.info("Step 4/6: Processing user profiles")
+    logger.info("Step 4/5: Processing users")
     users = process_users(characters, interpretations, cfg)
-    logger.info(f"   Processed {len(users)} user profiles")
-    
     if len(users) < 5:
-        logger.warning(f"⚠️  WARNING: Very few users: {len(users)}")
+        logger.warning(f"⚠️  Very few users: {len(users)}")
 
-    logger.info("Step 5/6: Processing moments and detecting anomalies")
+    logger.info("Step 5/5: Moments + anomaly detection")
     moments = process_moments_pass1(interpretations, book_meta, cfg)
-    logger.info(f"   Initial moments: {len(moments)}")
-    
     moments = detect_anomalies(moments, characters, cfg)
     valid   = sum(1 for m in moments if m.get('is_valid', False))
     invalid = len(moments) - valid
-    
-    logger.info(f"   After anomaly detection: {valid} valid, {invalid} invalid")
-    
-    if invalid > 0:
-        invalid_pct = (invalid / len(moments)) * 100
-        logger.warning(f"⚠️  WARNING: {invalid} invalid moments ({invalid_pct:.1f}%)")
-        if invalid_pct > 20:
-            logger.error(f"❌ ERROR: High invalid rate: {invalid_pct:.1f}%")
+    if invalid / max(len(moments), 1) > 0.20:
+        logger.error(f"❌ High invalid rate: {invalid/len(moments):.1%}")
+    elif invalid:
+        logger.warning(f"⚠️  {invalid} invalid moments ({invalid/len(moments):.1%})")
 
-    logger.info("Step 6/6: Writing to data/processed/")
-    write_outputs(moments, books, users, cfg)
-    
-    logger.info(f"✅ INFO: Preprocessing complete")
-    logger.info(f"   Moments: {len(moments)}, Books: {len(books)}, Users: {len(users)}")
+    # ── Write processed records into BQ staging ──
+    processed_ids = {
+        'moments': bq_table_id(run_id, 'moments_processed'),
+        'books':   bq_table_id(run_id, 'books_processed'),
+        'users':   bq_table_id(run_id, 'users_processed'),
+    }
+    bq_write(pd.DataFrame(moments), processed_ids['moments'])
+    bq_write(pd.DataFrame(books),   processed_ids['books'])
+    bq_write(pd.DataFrame(users),   processed_ids['users'])
 
+    for name, tid in processed_ids.items():
+        logger.info(f"   ✓ {name} → {tid}")
+
+    logger.info(f"✅ Preprocessing complete — moments={len(moments)}, books={len(books)}, users={len(users)}, valid={valid}")
+    ti.xcom_push(key='processed_table_ids', value=processed_ids)
     return {'moments': len(moments), 'books': len(books), 'users': len(users), 'valid': valid}
 
 
+# ════════════════════════════════════════════════════════════════
+#  TASK 4a — SCHEMA & STATS (TFDV)
+#  Reads processed staging tables, runs TFDV in-memory.
+#  Writes stats/schema back to BQ as JSON records (no local files).
+# ════════════════════════════════════════════════════════════════
+
 @log_task_execution("Schema & Statistics (TFDV)")
 def task_schema_stats(**context):
-    """Task 4a: Generate schema, statistics, and anomaly detection using TFDV."""
-    logger.info("📊 INFO: Generating schema and statistics with TFDV")
+    import pandas as pd
+    ti   = context['task_instance']
+    run_id = context['run_id']
+    proc_ids = ti.xcom_pull(task_ids='preprocessing', key='processed_table_ids')
 
-    from generate_schema_stats import run_schema_stats # type: ignore
+    logger.info(f"📊 TFDV schema + stats  [run={run_id}]")
 
-    processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
-    reports_dir   = os.path.join(REPO_ROOT, 'data', 'reports')
-    os.makedirs(reports_dir, exist_ok=True)
+    import tensorflow_data_validation as tfdv  # type: ignore
 
-    results = run_schema_stats(processed_dir, reports_dir)
+    results = {'datasets': {}}
+    schema_rows = []  # we'll write these back to BQ
 
-    for name, summary in results.get('datasets', {}).items():
-        if 'error' in summary:
-            logger.error(f"❌ ERROR: {name} failed: {summary['error']}")
-        else:
-            anomalies = summary.get('anomalies', {})
-            logger.info(f"   {name}: {summary['total_records']} records, {summary['total_fields']} fields")
-            if anomalies:
-                logger.warning(f"⚠️  WARNING: {name} has {len(anomalies)} anomalies")
-                for feat, desc in anomalies.items():
-                    logger.warning(f"     - {feat}: {desc}")
+    for name, tid in proc_ids.items():
+        try:
+            df     = bq_read(tid)
+            stats  = tfdv.generate_statistics_from_dataframe(df)
+            schema = tfdv.infer_schema(stats)
+            anomalies = tfdv.validate_statistics(stats, schema)
 
-    logger.info(f"✅ INFO: TFDV schema stats complete")
+            anom_dict = {f.name: f.description for f in anomalies.anomaly_info.values()}
+            summary   = {
+                'total_records': len(df),
+                'total_fields':  len(df.columns),
+                'anomalies':     anom_dict,
+            }
+            results['datasets'][name] = summary
+
+            # Store serialised schema as a BQ row for lineage
+            schema_rows.append({
+                'dataset':   name,
+                'run_id':    run_id,
+                'schema_pb': schema.SerializeToString().hex(),  # hex-encode bytes for BQ STRING
+                'anomalies': json.dumps(anom_dict),
+                'recorded_at': datetime.now().isoformat(),
+            })
+
+            if anom_dict:
+                logger.warning(f"⚠️  {name}: {len(anom_dict)} TFDV anomalies")
+                for feat, desc in anom_dict.items():
+                    logger.warning(f"     {feat}: {desc}")
+            else:
+                logger.info(f"   {name}: {len(df)} records, {len(df.columns)} fields — no anomalies")
+
+        except Exception as e:
+            logger.error(f"❌ {name} TFDV failed: {e}")
+            results['datasets'][name] = {'error': str(e)}
+
+    # Persist schemas to BQ staging for lineage (no local write)
+    if schema_rows:
+        import pandas as pd
+        schema_tid = bq_table_id(run_id, 'tfdv_schemas')
+        bq_write(pd.DataFrame(schema_rows), schema_tid)
+        logger.info(f"   Schemas → {schema_tid}")
+
+    logger.info("✅ TFDV complete")
     return results
 
 
+# ════════════════════════════════════════════════════════════════
+#  TASK 4b — VALIDATION
+#  Reads processed staging tables, validates in-memory,
+#  writes validation report back to BQ.
+# ════════════════════════════════════════════════════════════════
+
 @log_task_execution("Data Validation")
 def task_validation(**context):
-    """Task 4b: Validate processed data quality."""
-    logger.info("✓ INFO: Starting data validation checks")
-    
-    import pandas as pd # type: ignore
-    processed_dir = os.path.join(REPO_ROOT, "data", "processed")
-    reports_dir   = os.path.join(REPO_ROOT, 'data', 'reports')
-    os.makedirs(reports_dir, exist_ok=True)
+    import pandas as pd
+    ti       = context['task_instance']
+    run_id   = context['run_id']
+    proc_ids = ti.xcom_pull(task_ids='preprocessing', key='processed_table_ids')
+
+    logger.info(f"✓ Data validation  [run={run_id}]")
 
     results = {'timestamp': datetime.now().isoformat(), 'validations': {}, 'status': 'PASSED'}
 
-    for fname in ['moments_processed.json', 'books_processed.json', 'users_processed.json']:
-        fpath = os.path.join(processed_dir, fname)
-        
-        if not os.path.exists(fpath):
-            logger.error(f"❌ ERROR: Missing file for validation: {fname}")
+    NAME_MAP = {
+        'moments_processed.json': 'moments',
+        'books_processed.json':   'books',
+        'users_processed.json':   'users',
+    }
+
+    for fname, key in NAME_MAP.items():
+        if key not in proc_ids:
+            logger.error(f"❌ BQ table ID missing for {key}")
             results['validations'][fname] = {'status': 'MISSING'}
             results['status'] = 'FAILED'
             continue
 
-        logger.debug(f"🔍 DEBUG: Validating {fname}")
-        df = pd.read_json(fpath)
-        
+        df = bq_read(proc_ids[key])
         checks = {
             'row_count':  len(df),
             'null_count': int(df.isnull().sum().sum()),
             'has_data':   len(df) > 0,
         }
 
-        if fname == 'moments_processed.json':
+        if key == 'moments':
             checks['has_interpretation_id'] = 'interpretation_id' in df.columns
             checks['has_is_valid']           = 'is_valid' in df.columns
-            
             if 'is_valid' in df.columns:
                 checks['valid_count'] = int(df['is_valid'].sum())
                 checks['valid_rate']  = round(float(df['is_valid'].mean()), 3)
-                
                 if checks['valid_rate'] < 0.8:
-                    logger.warning(f"⚠️  WARNING: Low validation rate: {checks['valid_rate']:.1%}")
+                    logger.warning(f"⚠️  Low valid rate: {checks['valid_rate']:.1%}")
 
         if not checks['has_data']:
             checks['status'] = 'FAILED'
-            logger.error(f"❌ ERROR: {fname} has no data")
+            logger.error(f"❌ {fname} has no data")
         elif checks['null_count'] > 0:
             checks['status'] = 'WARNING'
-            logger.warning(f"⚠️  WARNING: {fname} has {checks['null_count']} null values")
+            logger.warning(f"⚠️  {fname}: {checks['null_count']} null values")
         else:
             checks['status'] = 'PASSED'
             logger.info(f"   {fname}: PASSED ({checks['row_count']} rows, 0 nulls)")
-        
+
         results['validations'][fname] = checks
 
-    if any(v['status'] == 'FAILED' for v in results['validations'].values()):
+    statuses = [v['status'] for v in results['validations'].values()]
+    if 'FAILED' in statuses:
         results['status'] = 'FAILED'
-        logger.error("❌ ERROR: Validation FAILED - critical issues found")
-    elif any(v['status'] == 'WARNING' for v in results['validations'].values()):
+        logger.error("❌ Validation FAILED")
+    elif 'WARNING' in statuses:
         results['status'] = 'WARNING'
-        logger.warning("⚠️  WARNING: Validation passed with warnings")
+        logger.warning("⚠️  Validation passed with warnings")
     else:
-        logger.info("✅ INFO: All validation checks PASSED")
+        logger.info("✅ All validation checks PASSED")
 
-    validation_path = os.path.join(reports_dir, 'validation_report.json')
-    with open(validation_path, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2, default=str)
-
-    logger.info(f"   Report saved: {validation_path}")
-    return results
-
-
-@log_task_execution("Upload to GCS and BigQuery")
-def task_upload_to_gcs(**context):
-    """Task 5: Upload processed data to both GCS and BigQuery (new_moments_processed)."""
-    logger.info("✓ INFO: Uploading processed data to GCS and BigQuery")
-
-    from google.cloud import storage as gcs_storage
-    from google.cloud import bigquery
-    import pandas as pd # type: ignore
-
-    processed_dir = os.path.join(REPO_ROOT, 'data', 'processed')
-    bucket_name   = 'moment_data'
-    gcs_prefix    = 'preprocessed/'
-    project       = os.environ.get('GOOGLE_CLOUD_PROJECT', 'moment-486719')
-    bq_dataset    = 'new_moments_processed'
-
-    # Map processed filename → BQ table name (tables created automatically on first run)
-    BQ_TABLE_MAP = {
-        'moments_processed.json': 'moments_processed',
-        'users_processed.json':   'users_processed',
-        'books_processed.json':   'books_processed',
-    }
-
-    logger.info(f"   Source   : {processed_dir}")
-    logger.info(f"   GCS dest : gs://{bucket_name}/{gcs_prefix}")
-    logger.info(f"   BQ dest  : {project}.{bq_dataset}")
-
-    results = {
-        'gcs_uploaded': [],
-        'bq_uploaded':  [],
-        'gcs_errors':   [],
-        'bq_errors':    [],
-    }
-
-    # ── 1. GCS upload (unchanged) ─────────────────────────────────
-    logger.info("📤 INFO: Starting GCS upload...")
-    try:
-        gcs_client = gcs_storage.Client(project=project)
-        bucket     = gcs_client.bucket(bucket_name)
-
-        for fname in os.listdir(processed_dir):
-            fpath = os.path.join(processed_dir, fname)
-            if not os.path.isfile(fpath):
-                continue
-
-            file_size_mb = os.path.getsize(fpath) / (1024 * 1024)
-            logger.debug(f"🔍 DEBUG: Uploading {fname} ({file_size_mb:.2f} MB) to GCS")
-
-            if file_size_mb > 50:
-                logger.warning(f"⚠️  WARNING: Large file: {fname} ({file_size_mb:.2f} MB)")
-
-            try:
-                blob = bucket.blob(f"{gcs_prefix}{fname}")
-                blob.upload_from_filename(fpath)
-                logger.info(f"   ✓ GCS: {fname} → gs://{bucket_name}/{gcs_prefix}{fname}")
-                results['gcs_uploaded'].append(fname)
-            except Exception as e:
-                logger.error(f"❌ ERROR: GCS upload failed for {fname}: {e}")
-                results['gcs_errors'].append(fname)
-
-        logger.info(f"✅ INFO: GCS upload complete - {len(results['gcs_uploaded'])} files")
-
-    except Exception as e:
-        logger.error(f"❌ ERROR: GCS client failed: {type(e).__name__}: {e}")
-        logger.warning("⚠️  WARNING: Skipping GCS upload, continuing to BQ")
-
-    # ── 2. BigQuery upload (new) ──────────────────────────────────
-    logger.info("📤 INFO: Starting BigQuery upload...")
-    try:
-        bq_client = bigquery.Client(project=project)
-
-        for fname, table_name in BQ_TABLE_MAP.items():
-            fpath = os.path.join(processed_dir, fname)
-
-            if not os.path.exists(fpath):
-                logger.warning(f"⚠️  WARNING: {fname} not found, skipping BQ upload")
-                continue
-
-            table_id = f"{project}.{bq_dataset}.{table_name}"
-            logger.debug(f"🔍 DEBUG: Loading {fname} → {table_id}")
-
-            try:
-                with open(fpath, 'r', encoding='utf-8') as f:
-                    records = json.load(f)
-
-                df        = pd.DataFrame(records)
-                load_job  = bq_client.load_table_from_dataframe(
-                    df, table_id,
-                    job_config=bigquery.LoadJobConfig(
-                        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
-                        autodetect=True,  # creates table + schema on first run
-                    )
-                )
-                load_job.result()  # wait for completion
-
-                logger.info(f"   ✓ BQ: {fname} → {table_id} ({len(df)} rows)")
-                results['bq_uploaded'].append(fname)
-
-            except Exception as e:
-                logger.error(f"❌ ERROR: BQ upload failed for {fname}: {type(e).__name__}: {e}")
-                results['bq_errors'].append(fname)
-
-        logger.info(f"✅ INFO: BQ upload complete - {len(results['bq_uploaded'])} tables")
-
-    except Exception as e:
-        logger.error(f"❌ ERROR: BigQuery client failed: {type(e).__name__}: {e}")
-        logger.warning("⚠️  WARNING: BQ upload failed, GCS data is still intact")
-
-    # ── Summary ───────────────────────────────────────────────────
-    logger.info("=" * 70)
-    logger.info(f"   GCS uploaded : {results['gcs_uploaded']}")
-    logger.info(f"   BQ uploaded  : {results['bq_uploaded']}")
-    if results['gcs_errors']:
-        logger.warning(f"⚠️  GCS errors  : {results['gcs_errors']}")
-    if results['bq_errors']:
-        logger.warning(f"⚠️  BQ errors   : {results['bq_errors']}")
-    logger.info("=" * 70)
+    # Write report to BQ staging (no local file)
+    report_tid = bq_table_id(run_id, 'validation_report')
+    bq_write(
+        pd.DataFrame([{
+            'run_id':     run_id,
+            'status':     results['status'],
+            'timestamp':  results['timestamp'],
+            'detail':     json.dumps(results['validations'], default=str),
+        }]),
+        report_tid
+    )
+    logger.info(f"   Report → {report_tid}")
 
     return results
 
+
+# ════════════════════════════════════════════════════════════════
+#  TASK 5 — UPLOAD TO FINAL BIGQUERY DATASET
+#  Server-side BQ table copy: staging → new_moments_processed.
+#  Nothing leaves BigQuery.
+# ════════════════════════════════════════════════════════════════
+
+@log_task_execution("Upload to Final BigQuery Dataset")
+def task_upload_to_bq(**context):
+    ti       = context['task_instance']
+    run_id   = context['run_id']
+    proc_ids = ti.xcom_pull(task_ids='preprocessing', key='processed_table_ids')
+
+    logger.info(f"📤 Copying staging → {BQ_FINAL_DATASET}  [run={run_id}]")
+
+    FINAL_TABLE_MAP = {
+        'moments': 'moments_processed',
+        'books':   'books_processed',
+        'users':   'users_processed',
+    }
+
+    results = {'copied': [], 'errors': []}
+
+    for key, final_table in FINAL_TABLE_MAP.items():
+        if key not in proc_ids:
+            logger.warning(f"⚠️  Skipping {key} — table ID not found in XCom")
+            continue
+
+        src = proc_ids[key]
+        dst = f"{BQ_PROJECT}.{BQ_FINAL_DATASET}.{final_table}"
+
+        try:
+            bq_copy_table(src, dst)
+            logger.info(f"   ✓ {src}  →  {dst}")
+            results['copied'].append(final_table)
+        except Exception as e:
+            logger.error(f"❌ Copy failed for {key}: {type(e).__name__}: {e}")
+            results['errors'].append(final_table)
+
+    logger.info(f"✅ Upload complete — {len(results['copied'])} tables copied to {BQ_FINAL_DATASET}")
+    if results['errors']:
+        logger.warning(f"⚠️  Errors: {results['errors']}")
+
+    return results
+
+
+# ════════════════════════════════════════════════════════════════
+#  TASK 6 — NOTIFY
+# ════════════════════════════════════════════════════════════════
 
 @log_task_execution("Pipeline Notification")
 def task_notify(**context):
-    """Task 6: Pipeline notification. Runs on ALL_DONE."""
-    logger.info("INFO: Preparing pipeline completion notification")
-    
-    ti         = context.get('task_instance')
-    preprocess = ti.xcom_pull(task_ids='preprocessing') if ti else {}
-    validation = ti.xcom_pull(task_ids='validation') if ti else {}
-    upload     = ti.xcom_pull(task_ids='upload_to_gcs') if ti else {}
-    
-    logger.debug(f"🔍 DEBUG: Preprocessing result: {preprocess}")
-    logger.debug(f"🔍 DEBUG: Validation result: {validation}")
-    logger.debug(f"🔍 DEBUG: Upload result: {upload}")
+    ti         = context['task_instance']
+    run_id     = context['run_id']
+    preprocess = ti.xcom_pull(task_ids='preprocessing')  or {}
+    validation = ti.xcom_pull(task_ids='validation')     or {}
+    upload     = ti.xcom_pull(task_ids='upload_to_bq')   or {}
 
-    dag_run      = ti.dag_run if ti else None
-    failed_tasks = []
-    if dag_run:
-        failed_tasks = [t.task_id for t in dag_run.get_task_instances() if t.state == 'failed']
-        if failed_tasks:
-            logger.warning(f"⚠️  WARNING: {len(failed_tasks)} tasks failed")
-            for task_id in failed_tasks:
-                logger.warning(f"   - Failed: {task_id}")
+    dag_run      = ti.dag_run
+    failed_tasks = [t.task_id for t in dag_run.get_task_instances() if t.state == 'failed'] if dag_run else []
+    if failed_tasks:
+        logger.warning(f"⚠️  {len(failed_tasks)} tasks failed: {failed_tasks}")
 
-    reports_dir = os.path.join(REPO_ROOT, 'data', 'reports')
-    os.makedirs(reports_dir, exist_ok=True)
-
-    status_emoji      = "✅" if not failed_tasks else "⚠️"
-    validation_status = validation.get('status', 'N/A') if isinstance(validation, dict) else 'N/A'
-    gcs_count         = len(upload.get('gcs_uploaded', [])) if isinstance(upload, dict) else 0
-    bq_count          = len(upload.get('bq_uploaded', []))  if isinstance(upload, dict) else 0
+    status_emoji = "✅" if not failed_tasks else "⚠️"
+    staging_ds   = f"{BQ_PROJECT}.{staging_dataset(run_id)}"
 
     body = f"""
 {status_emoji} MOMENT Data Pipeline - Complete
 {'='*50}
-Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Run ID:     {run_id}
+Time:       {datetime.now():%Y-%m-%d %H:%M:%S}
 
-Preprocessing: {preprocess}
-Validation: {validation_status}
-GCS Upload: {gcs_count} files uploaded
-BQ Upload:  {bq_count} tables uploaded → new_moments_processed
-Failed Tasks: {failed_tasks if failed_tasks else 'None'}
+Preprocessing:  {preprocess}
+Validation:     {validation.get('status', 'N/A')}
+BQ copied:      {len(upload.get('copied', []))} tables → {BQ_FINAL_DATASET}
+Failed tasks:   {failed_tasks or 'None'}
 
-Pipeline: acquire (BQ) → bias → preprocess → [schema + validate] → upload (GCS + BQ) → notify
+Staging data:   {staging_ds}.*
+Final data:     {BQ_PROJECT}.{BQ_FINAL_DATASET}.*
+
+Pipeline: acquire → bias → preprocess → [schema + validate] → upload → notify
 Team: MOMENT Group 23 | DADS7305 MLOps
 """
     logger.info(body)
 
-    notification_path = os.path.join(reports_dir, 'notification.txt')
-    with open(notification_path, 'w', encoding='utf-8') as f:
-        f.write(body)
-    
-    logger.info(f"   Notification saved: {notification_path}")
-    logger.info(f"   Recipients: {len(TEAM_EMAILS)} team members")
+    # Write notification to BQ staging
+    import pandas as pd
+    bq_write(
+        pd.DataFrame([{'run_id': run_id, 'body': body, 'failed_tasks': json.dumps(failed_tasks)}]),
+        bq_table_id(run_id, 'notification')
+    )
 
     try:
-        from utils import send_email_alert # type: ignore
+        from utils import send_email_alert  # type: ignore
         send_email_alert("MOMENT Pipeline Complete", body, TEAM_EMAILS)
-        logger.info("✅ INFO: Email notification sent")
+        logger.info("✅ Email sent")
     except Exception as e:
-        logger.debug(f"🔍 DEBUG: Email not sent (expected in dev): {type(e).__name__}")
+        logger.debug(f"Email not sent (expected in dev): {type(e).__name__}")
 
     return {'status': 'sent', 'failed_tasks': failed_tasks}
 
@@ -626,46 +611,33 @@ Team: MOMENT Group 23 | DADS7305 MLOps
 # ════════════════════════════════════════════════════════════════
 
 default_args = {
-    'owner': 'moment-group23',
-    'depends_on_past': False,
-    'start_date': datetime(2025, 2, 10),
-    'email': TEAM_EMAILS,
-    'email_on_failure': True,
-    'email_on_retry': False,
-    'retries': 2,
-    'retry_delay': timedelta(minutes=2),
+    'owner':             'moment-group23',
+    'depends_on_past':   False,
+    'start_date':        datetime(2025, 2, 10),
+    'email':             TEAM_EMAILS,
+    'email_on_failure':  True,
+    'email_on_retry':    False,
+    'retries':           2,
+    'retry_delay':       timedelta(minutes=2),
     'execution_timeout': timedelta(minutes=30),
 }
 
 dag = DAG(
-    'moment_team_pipeline_MULTILEVEL',
+    'moment_team_pipeline_BQ',
     default_args=default_args,
-    description='MULTI-LEVEL LOGGING - MOMENT: acquire (BQ) → bias → preprocess → [schema + validate] → upload (GCS + BQ) → notify',
+    description='BigQuery intermediate store — no local writes, no GCS intermediates',
     schedule_interval=timedelta(days=1),
     catchup=False,
     max_active_runs=1,
-    tags=['moment', 'mlops', 'data-pipeline', 'group23', 'MULTILEVEL', 'TEAM'],
+    tags=['moment', 'mlops', 'data-pipeline', 'group23', 'BQ'],
 )
 
-logger.info("INFO: Initializing MOMENT Team Pipeline DAG (MULTILEVEL)")
-logger.info(f"   Schedule: Daily")
-logger.debug(f"🔍 DEBUG: Repo root: {REPO_ROOT}")
-
-# ─── Task Definitions ───
 acquire  = PythonOperator(task_id='acquire_data',   python_callable=task_acquire_data,   provide_context=True, dag=dag)
 bias     = PythonOperator(task_id='bias_detection', python_callable=task_bias_detection, provide_context=True, dag=dag)
 preproc  = PythonOperator(task_id='preprocessing',  python_callable=task_preprocessing,  provide_context=True, dag=dag)
 schema   = PythonOperator(task_id='schema_stats',   python_callable=task_schema_stats,   provide_context=True, dag=dag)
 validate = PythonOperator(task_id='validation',     python_callable=task_validation,     provide_context=True, dag=dag)
-upload   = PythonOperator(task_id='upload_to_gcs',  python_callable=task_upload_to_gcs,  provide_context=True, dag=dag)
+upload   = PythonOperator(task_id='upload_to_bq',   python_callable=task_upload_to_bq,   provide_context=True, dag=dag)
 notify   = PythonOperator(task_id='notify',         python_callable=task_notify,         provide_context=True, trigger_rule=TriggerRule.ALL_DONE, dag=dag)
 
-# ─── Task Dependencies ───
 acquire >> bias >> preproc >> [schema, validate] >> upload >> notify
-
-logger.info("✅ INFO: DAG configured with 7 tasks in pipeline flow")
-
-if __name__ == "__main__":
-    print("✅ DAG valid - MOMENT Team Pipeline (MULTILEVEL)")
-    for t in dag.tasks:
-        print(f"  {t.task_id} → {[d.task_id for d in t.downstream_list]}")
