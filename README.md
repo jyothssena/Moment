@@ -1,4 +1,4 @@
-# Moment — Data Pipeline
+# Moment 
 
 > **Read. Moments. Worth. Sharing.**
 > IE7374 · MLOps · Group 23 · Northeastern University
