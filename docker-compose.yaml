@@ -19,7 +19,7 @@ x-airflow-common: &airflow-common
     REPO_ROOT: /opt/airflow/repo
     # GCS credentials — service account key
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/gcs-key.json
-    GEMINI_API_KEY_MOMENT: AIzaSyCkgyr6b5pdOuxPQhGrrqgWpwow3YK7-I0
+    GEMINI_API_KEY_MOMENT: 
     GOOGLE_CLOUD_PROJECT: moment-486719
   volumes:
     # DAG file
