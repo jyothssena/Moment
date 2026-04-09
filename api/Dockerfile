@@ -40,6 +40,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
 COPY models/aggregator.py              .
 COPY models/decomposing_agent.py       .
 COPY models/compatibility_agent.py     .
+COPY models/bradley_terry.py           .
 
 # From cicd_pipeline/
 COPY cicd_pipeline/model_interface.py  .

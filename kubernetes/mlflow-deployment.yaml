@@ -1,0 +1,102 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlflow
+  namespace: moment
+  labels:
+    app: mlflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlflow
+  strategy:
+    type: Recreate   # SQLite backend — single writer
+  template:
+    metadata:
+      labels:
+        app: mlflow
+    spec:
+      serviceAccountName: moment-ksa   # Workload Identity → reads/writes GCS for artifacts
+
+      containers:
+        - name: mlflow
+          image: python:3.11-slim
+          command:
+            - sh
+            - -c
+            - |
+              pip install mlflow google-cloud-storage --quiet
+              mlflow server \
+                --host 0.0.0.0 \
+                --port 5000 \
+                --backend-store-uri sqlite:////mlflow/mlflow.db \
+                --default-artifact-root gs://$(GCS_BUCKET)/mlflow-artifacts \
+                --serve-artifacts
+          ports:
+            - name: http
+              containerPort: 5000
+
+          env:
+            - name: GCS_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: moment-config
+                  key: GCS_BUCKET
+            # Workload Identity provides GCS credentials automatically
+            - name: GOOGLE_CLOUD_PROJECT
+              valueFrom:
+                configMapKeyRef:
+                  name: moment-config
+                  key: GCP_PROJECT_ID
+
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 15
+
+          volumeMounts:
+            - name: mlflow-data
+              mountPath: /mlflow
+
+      volumes:
+        - name: mlflow-data
+          persistentVolumeClaim:
+            claimName: mlflow-data-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlflow-service
+  namespace: moment
+  labels:
+    app: mlflow
+spec:
+  type: ClusterIP
+  selector:
+    app: mlflow
+  ports:
+    - name: http
+      protocol: TCP
+      port: 5000
+      targetPort: 5000

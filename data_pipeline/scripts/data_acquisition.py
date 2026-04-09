@@ -178,19 +178,6 @@ class DataAcquisition:
             logger.info(f"  Saved {len(df)} rows → {filepath}")
 
         logger.info(f"✅ All {len(self.dataframes)} files saved to {output_dir}/")
-
-        # ── Upload raw DataFrames to BigQuery staging tables ──────────────
-        # This runs after local save so local JSON is always the safe fallback.
-        try:
-            from bq_loader import upload_raw_to_bq
-            success = upload_raw_to_bq(self.dataframes)
-            if success:
-                logger.info("✅ Raw data uploaded to BigQuery staging tables")
-            else:
-                logger.warning("⚠️  BigQuery raw upload failed — local files intact")
-        except Exception as exc:
-            logger.warning(f"⚠️  BigQuery raw upload skipped: {exc}")
-
         return output_dir
 
 
