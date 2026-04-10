@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Maya Singh",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Shelley deliberately keeps the 'instruments of life' vague because her primary concern is not the science itself, but the consequences of attempting something that should not have been done.",
+      "quote": "\"Instruments of life\" is deliberately vague. Shelley doesn't care about the science. She cares about what happens when you succeed at something you shouldn't have attempted.",
+      "weight": 0.2,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The setting details like November rain, a dying candle, and the late hour function as an obvious pathetic fallacy, signaling a warning and nature's mourning for the impending event.",
+      "quote": "November, rain, dying candle, 1am. Everything screams warning. The pathetic fallacy is obvious\u2014nature itself is mourning what's about to happen.",
+      "weight": 0.2,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "3",
+      "claim": "Victor's immediate use of 'wretch' after describing 'infinite pains and care' reveals that his efforts were not for the being he created, but for his own achievement and ambition.",
+      "quote": "Victor's use of \"wretch\" immediately after \"infinite pains and care\" is fascinating. The care wasn't for the being. It was for the achievement. He nurtured his own ambition, not the life he was creating.",
+      "weight": 0.3,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "Victor's repetition and subsequent contradiction of 'Beautiful' indicates his attempt to convince himself that his creation was right, despite an underlying awareness of the truth.",
+      "quote": "\"Beautiful\" repeated then contradicted. He's trying to convince himself he did this right. But he knows.",
+      "weight": 0.16,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "5",
+      "claim": "The exclamation marks in 'Beautiful!\u2014Great God!' highlight the real-time shattering of Victor's denial.",
+      "quote": "The exclamation marks give it away\u2014\"Beautiful!\u2014Great God!\" That's denial shattering in real time.",
+      "weight": 0.14,
+      "emotional_mode": "aesthetic"
+    }
+  ]
+}

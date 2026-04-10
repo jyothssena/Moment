@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Isabella Rodriguez",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Victor's initial reaction of \"Catastrophe\" is a projection of his own capabilities and fears, not a reaction to the creature itself.",
+      "quote": "\"Catastrophe\" before the creature does anything. He's not reacting to the creature\u2014he's reacting to himself. What he's capable of. That's projection.",
+      "weight": 0.226,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The creature's initial movements are natural for a newborn, not aggressive, and Victor misinterprets them as monstrous to justify his own flight.",
+      "quote": "Breathing hard, convulsive motion. That's not aggression. That's a newborn figuring out a body. Victor needs it to be monstrous to justify running.",
+      "weight": 0.261,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "3",
+      "claim": "This dynamic of rejecting the real for an imagined ideal is a common pattern, particularly in parenting, which destroys the ability to love what is actually present.",
+      "quote": "See this with parents all the time. Imagine perfect child, reject real one. The fantasy destroys your ability to love what's actually there.",
+      "weight": 0.252,
+      "emotional_mode": "self-referential"
+    },
+    {
+      "id": "4",
+      "claim": "Victor's fear transforms the creature's ambiguous gestures, like reaching out for connection, into threats, illustrating how fear creates monsters.",
+      "quote": "Hand reaching out later. Probably wanting connection. Victor's fear made it a threat. We create monsters by being terrified of ambiguous gestures.",
+      "weight": 0.261,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

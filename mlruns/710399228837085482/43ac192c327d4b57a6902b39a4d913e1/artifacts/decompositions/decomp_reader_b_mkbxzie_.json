@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Ryan O'Connor",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The character (Guy) holds an initial belief that the Arctic will be incredible.",
+      "quote": "Guy thinks the Arctic is going to be incredible.",
+      "weight": 0.194,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader highlights \"Perpetual splendour\" as an example of the character's grand and optimistic vision.",
+      "quote": "\"Perpetual splendour.\"",
+      "weight": 0.1,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "3",
+      "claim": "The phrase \"Wind of promise\" further emphasizes the character's hopeful and positive outlook on the Arctic.",
+      "quote": "\"Wind of promise.\"",
+      "weight": 0.1,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "4",
+      "claim": "The reader concedes that the visual aspect of the Arctic, as perceived by the character, is likely accurate.",
+      "quote": "He's probably not wrong about what it looks like.",
+      "weight": 0.242,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "5",
+      "claim": "The reader poses a fundamental question about the true value and cost of the Arctic experience beyond its superficial appearance.",
+      "quote": "Whether it's worth the rest of it \u2014 that's the actual question.",
+      "weight": 0.364,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

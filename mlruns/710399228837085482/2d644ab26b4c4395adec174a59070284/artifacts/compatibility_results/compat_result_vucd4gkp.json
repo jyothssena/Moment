@@ -1,0 +1,21 @@
+{
+  "user_a": "Aisha Thompson",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 32,
+    "C": 0,
+    "D": 68
+  },
+  "feel": {
+    "R": 19,
+    "C": 13,
+    "D": 68
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.84,
+  "timestamp": "2026-03-24T12:41:37.036325"
+}

@@ -1,0 +1,21 @@
+{
+  "user_a": "Ryan O'Connor",
+  "user_b": "Isabella Rodriguez",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 47,
+    "C": 20,
+    "D": 33
+  },
+  "feel": {
+    "R": 41,
+    "C": 27,
+    "D": 32
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "resonate",
+  "verdict": null,
+  "confidence": 0.69,
+  "timestamp": "2026-03-24T06:04:30.794108"
+}

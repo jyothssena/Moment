@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Ryan O'Connor",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader observes Victor's progression from being consumed by the lecture, to sleeplessness, to morning doubt, and his decision to continue.",
+      "quote": "Professor lectures, Victor gets consumed. Can't sleep. Morning arrives with doubt. He keeps going.",
+      "weight": 0.28,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader highlights the passage's description of Victor's internal struggle as his \"Soul grappling with a palpable enemy.\"",
+      "quote": "\"Soul grappling with a palpable enemy.\"",
+      "weight": 0.11,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "3",
+      "claim": "The reader highlights the passage's description of Victor's morning thoughts as \"Yesternight's thoughts were as a dream.\"",
+      "quote": "\"Yesternight's thoughts were as a dream.\"",
+      "weight": 0.11,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "4",
+      "claim": "The reader questions if Victor's decision to continue despite morning doubt is actually incorrect, defining morning doubt as fear.",
+      "quote": "I'm not sure that's the wrong call actually. Morning doubt is just fear.",
+      "weight": 0.25,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "5",
+      "claim": "The reader suggests that the \"3am version of yourself\" might possess knowledge that the \"morning version\" does not.",
+      "quote": "Sometimes the 3am version of yourself knows something the morning version doesn't.",
+      "weight": 0.25,
+      "emotional_mode": "self-referential"
+    }
+  ]
+}

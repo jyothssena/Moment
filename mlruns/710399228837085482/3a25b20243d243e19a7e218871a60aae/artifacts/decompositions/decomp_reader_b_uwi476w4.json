@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Jake Morrison",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The phrase \"Words of fate enounced to destroy me\" is often mocked by people for being overly dramatic.",
+      "quote": "\"Words of fate enounced to destroy me.\" People mock this. It's dramatic.",
+      "weight": 0.18,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The word \"fate\" is appropriate when an experience, characterized by \"one thought, one conception, one purpose,\" feels inescapable from within, rather than implying destiny.",
+      "quote": "But when something lands on you that hard \u2014 \"one thought, one conception, one purpose\" \u2014 fate is actually the right word for it. Not because it was destiny. Because it felt inescapable from inside.",
+      "weight": 0.6,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "Frankenstein's obsession was not a deliberate choice but an event that happened to him, a crucial distinction often overlooked by readers.",
+      "quote": "The obsession wasn't a choice he made. It was something that happened to him. That's the difference most readers miss.",
+      "weight": 0.22,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

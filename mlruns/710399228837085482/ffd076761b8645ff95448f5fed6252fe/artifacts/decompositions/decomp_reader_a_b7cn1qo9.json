@@ -1,0 +1,35 @@
+{
+  "book_id": "Pride and Prejudice",
+  "passage_id": "passage_1",
+  "user_id": "Emma Chen",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Victor immediately labels his creation a \"catastrophe\" even before it has done anything harmful, simply because it opened its eyes.",
+      "quote": "He says \"catastrophe\" before anything bad happens. Just... think about that. The creature opened its eyes. That's it. Victor's already calling it disaster.",
+      "weight": 0.25,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "2",
+      "claim": "Victor's mind is breaking due to the contradictory reality of his creation, as evidenced by his simultaneous exclamations of \"Beautiful!\u2014Great God!\". He cannot reconcile the creature's existence with his expectations.",
+      "quote": "\"Beautiful!\u2014Great God!\" Right next to each other. His brain's breaking. He built this with specific features and now he can't handle that it's real.",
+      "weight": 0.25,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "Victor fixates on a single negative detail, the creature's yellow eye, to reduce its entire being to a gross feature and avoid acknowledging it as alive.",
+      "quote": "That yellow eye. Why does he fixate on that one detail? Reducing the whole being to one gross feature so he doesn't have to see it as alive.",
+      "weight": 0.25,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "Victor misinterprets the creature's innocent, newborn-like gestures as a threat, thereby creating the 'monster' through his own flawed perception.",
+      "quote": "The creature reaches for him later. Newborns do that. But Victor sees threat. He created the monster by interpreting everything wrong.",
+      "weight": 0.25,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

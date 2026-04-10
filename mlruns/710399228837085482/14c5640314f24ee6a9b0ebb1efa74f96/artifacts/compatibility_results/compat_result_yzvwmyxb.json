@@ -1,0 +1,21 @@
+{
+  "user_a": "Sophia Patel",
+  "user_b": "Aisha Thompson",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 52,
+    "C": 0,
+    "D": 48
+  },
+  "feel": {
+    "R": 52,
+    "C": 0,
+    "D": 48
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "resonate",
+  "verdict": null,
+  "confidence": 0.73,
+  "timestamp": "2026-03-24T05:57:37.844269"
+}

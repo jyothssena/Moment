@@ -1,0 +1,21 @@
+{
+  "user_a": "Marcus Williams",
+  "user_b": "Ryan O'Connor",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 17,
+    "C": 0,
+    "D": 83
+  },
+  "feel": {
+    "R": 17,
+    "C": 0,
+    "D": 83
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.51,
+  "timestamp": "2026-03-24T05:55:40.142699"
+}

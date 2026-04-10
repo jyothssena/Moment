@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "David Kim",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader interprets Walton's statement \"I try in vain to be persuaded that the pole is the seat of frost and desolation\" as an admission of willful ignorance, a rejection of truth for fantasy, which is denial rather than courage.",
+      "quote": "`I try in vain to be persuaded that the pole is the seat of frost and desolation.` He's admitting willful ignorance. Knows the truth, rejects it, chooses fantasy. That's not courage. That's denial.",
+      "weight": 0.351,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "2",
+      "claim": "The reader identifies Walton's preference for imagination over reality, exemplified by \"Ever presents itself to my imagination as the region of beauty,\" as a shared flaw with Victor, where both characters choose the imagined over the real.",
+      "quote": "`Ever presents itself to my imagination as the region of beauty.` Imagination versus reality. He's choosing imagination. That's Walton's flaw and Victor's flaw. Both prefer the imagined version over the real.",
+      "weight": 0.34,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The phrase \"Perpetual splendour\" is seen as part of a \"Paradise myth\" where explorers mistakenly believe they are finding Eden but instead encounter death.",
+      "quote": "`Perpetual splendour.` Paradise myth. Every explorer thinks they're finding Eden. They find death instead.",
+      "weight": 0.175,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "The reader concludes that Walton perfectly mirrors Victor in their shared pursuit of glory, isolation, and ultimate doom.",
+      "quote": "Walton mirrors Victor perfectly. Both chasing glory. Both alone. Both doomed.",
+      "weight": 0.134,
+      "emotional_mode": "observational"
+    }
+  ]
+}

@@ -1,0 +1,2942 @@
+[
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Marcus Williams",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 70,
+      "C": 0,
+      "D": 30
+    },
+    "feel": {
+      "R": 30,
+      "C": 40,
+      "D": 30
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.85,
+    "timestamp": "2026-03-24T05:29:03.691599"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 45,
+      "C": 0,
+      "D": 55
+    },
+    "feel": {
+      "R": -1,
+      "C": 46,
+      "D": 55
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.73,
+    "timestamp": "2026-03-24T05:29:28.276141"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 45,
+      "C": 0,
+      "D": 55
+    },
+    "feel": {
+      "R": 60,
+      "C": -15,
+      "D": 55
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.76,
+    "timestamp": "2026-03-24T05:29:59.094871"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 31,
+      "C": 0,
+      "D": 69
+    },
+    "feel": {
+      "R": 19,
+      "C": 12,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T05:30:39.446860"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 139,
+      "C": -61,
+      "D": 22
+    },
+    "feel": {
+      "R": 109,
+      "C": -31,
+      "D": 22
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.75,
+    "timestamp": "2026-03-24T05:31:12.001054"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 28,
+      "C": 0,
+      "D": 72
+    },
+    "feel": {
+      "R": 17,
+      "C": 11,
+      "D": 72
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.78,
+    "timestamp": "2026-03-24T05:31:42.233737"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 4,
+      "C": 16,
+      "D": 80
+    },
+    "feel": {
+      "R": 12,
+      "C": 8,
+      "D": 80
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T05:32:03.822188"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 41,
+      "C": 0,
+      "D": 59
+    },
+    "feel": {
+      "R": 24,
+      "C": 16,
+      "D": 60
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.58,
+    "timestamp": "2026-03-24T05:32:39.824925"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 11,
+      "C": 25,
+      "D": 64
+    },
+    "feel": {
+      "R": 29,
+      "C": 7,
+      "D": 64
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.76,
+    "timestamp": "2026-03-24T05:33:37.173236"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 53,
+      "C": 0,
+      "D": 47
+    },
+    "feel": {
+      "R": -52,
+      "C": 105,
+      "D": 47
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.81,
+    "timestamp": "2026-03-24T05:33:50.691727"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 26,
+      "C": 0,
+      "D": 74
+    },
+    "feel": {
+      "R": 11,
+      "C": 16,
+      "D": 73
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T05:34:12.417112"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 28,
+      "C": 0,
+      "D": 72
+    },
+    "feel": {
+      "R": 17,
+      "C": 11,
+      "D": 72
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.76,
+    "timestamp": "2026-03-24T05:34:31.796683"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "feel": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:34:48.827969"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 23,
+      "C": 8,
+      "D": 69
+    },
+    "feel": {
+      "R": 16,
+      "C": 15,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.76,
+    "timestamp": "2026-03-24T05:35:13.969735"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 12,
+      "C": 0,
+      "D": 88
+    },
+    "feel": {
+      "R": 7,
+      "C": 5,
+      "D": 88
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.55,
+    "timestamp": "2026-03-24T05:35:32.002896"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 30,
+      "C": 0,
+      "D": 70
+    },
+    "feel": {
+      "R": 26,
+      "C": 3,
+      "D": 71
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.64,
+    "timestamp": "2026-03-24T05:36:03.824533"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 17,
+      "C": 0,
+      "D": 83
+    },
+    "feel": {
+      "R": 17,
+      "C": 0,
+      "D": 83
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T05:36:17.565253"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 31,
+      "C": 0,
+      "D": 69
+    },
+    "feel": {
+      "R": 19,
+      "C": 12,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T05:36:38.322249"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 43,
+      "C": 0,
+      "D": 57
+    },
+    "feel": {
+      "R": -7,
+      "C": 50,
+      "D": 57
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.75,
+    "timestamp": "2026-03-24T05:37:10.825339"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 19,
+      "C": 27,
+      "D": 54
+    },
+    "feel": {
+      "R": 28,
+      "C": 19,
+      "D": 53
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.76,
+    "timestamp": "2026-03-24T05:37:29.392728"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 41,
+      "C": 0,
+      "D": 59
+    },
+    "feel": {
+      "R": 3,
+      "C": 38,
+      "D": 59
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T05:37:52.962713"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 6,
+      "C": 26,
+      "D": 68
+    },
+    "feel": {
+      "R": 13,
+      "C": 19,
+      "D": 68
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.67,
+    "timestamp": "2026-03-24T05:38:04.565155"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 66,
+      "C": 0,
+      "D": 34
+    },
+    "feel": {
+      "R": -26,
+      "C": 92,
+      "D": 34
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T05:38:35.754662"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 25,
+      "C": 18,
+      "D": 57
+    },
+    "feel": {
+      "R": 21,
+      "C": 22,
+      "D": 57
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.73,
+    "timestamp": "2026-03-24T05:39:00.612375"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 11,
+      "C": 0,
+      "D": 89
+    },
+    "feel": {
+      "R": 11,
+      "C": 0,
+      "D": 89
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.61,
+    "timestamp": "2026-03-24T05:39:18.229637"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 10,
+      "C": 15,
+      "D": 75
+    },
+    "feel": {
+      "R": 8,
+      "C": 17,
+      "D": 75
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T05:39:38.497476"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 12,
+      "C": 0,
+      "D": 88
+    },
+    "feel": {
+      "R": 12,
+      "C": 0,
+      "D": 88
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T05:39:50.521899"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 24,
+      "C": 14,
+      "D": 62
+    },
+    "feel": {
+      "R": 16,
+      "C": 22,
+      "D": 62
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T05:40:08.756955"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 11,
+      "C": 0,
+      "D": 89
+    },
+    "feel": {
+      "R": 7,
+      "C": 5,
+      "D": 88
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T05:40:25.716025"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 15,
+      "C": 0,
+      "D": 85
+    },
+    "feel": {
+      "R": 12,
+      "C": 4,
+      "D": 84
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T05:40:50.182835"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 5,
+      "C": 22,
+      "D": 73
+    },
+    "feel": {
+      "R": 9,
+      "C": 19,
+      "D": 72
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T05:41:07.080545"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 30,
+      "C": 0,
+      "D": 70
+    },
+    "feel": {
+      "R": -2,
+      "C": 32,
+      "D": 70
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T05:41:32.883378"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 4,
+      "C": 16,
+      "D": 80
+    },
+    "feel": {
+      "R": 8,
+      "C": 12,
+      "D": 80
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.63,
+    "timestamp": "2026-03-24T05:41:47.198331"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 34,
+      "C": 0,
+      "D": 66
+    },
+    "feel": {
+      "R": -7,
+      "C": 41,
+      "D": 66
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.64,
+    "timestamp": "2026-03-24T05:42:14.540687"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 37,
+      "C": 0,
+      "D": 63
+    },
+    "feel": {
+      "R": 18,
+      "C": 19,
+      "D": 63
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T05:42:36.453781"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": -31,
+      "C": 62,
+      "D": 69
+    },
+    "feel": {
+      "R": -31,
+      "C": 62,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T05:42:52.742041"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 39,
+      "C": 10,
+      "D": 51
+    },
+    "feel": {
+      "R": 39,
+      "C": 10,
+      "D": 51
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.81,
+    "timestamp": "2026-03-24T05:43:12.746092"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 8,
+      "C": 12,
+      "D": 80
+    },
+    "feel": {
+      "R": 8,
+      "C": 12,
+      "D": 80
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.49,
+    "timestamp": "2026-03-24T05:43:30.565551"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 24,
+      "C": 6,
+      "D": 70
+    },
+    "feel": {
+      "R": 19,
+      "C": 12,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.63,
+    "timestamp": "2026-03-24T05:43:49.671666"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 3,
+      "C": 13,
+      "D": 84
+    },
+    "feel": {
+      "R": 7,
+      "C": 10,
+      "D": 83
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T05:43:59.169401"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 13,
+      "C": 0,
+      "D": 87
+    },
+    "feel": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:44:20.807909"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 3,
+      "C": 10,
+      "D": 87
+    },
+    "feel": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.66,
+    "timestamp": "2026-03-24T05:44:32.165105"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "feel": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.29,
+    "timestamp": "2026-03-24T05:44:46.448076"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 41,
+      "C": 0,
+      "D": 59
+    },
+    "feel": {
+      "R": 41,
+      "C": 0,
+      "D": 59
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.64,
+    "timestamp": "2026-03-24T05:45:05.746287"
+  },
+  {
+    "user_a": "Maya Singh",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 7,
+      "C": 2,
+      "D": 91
+    },
+    "feel": {
+      "R": 9,
+      "C": 0,
+      "D": 91
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.5,
+    "timestamp": "2026-03-24T05:45:49.399225"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Marcus Williams",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 8,
+      "C": 0,
+      "D": 92
+    },
+    "feel": {
+      "R": 5,
+      "C": 3,
+      "D": 92
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T05:46:26.712802"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 16,
+      "C": 0,
+      "D": 84
+    },
+    "feel": {
+      "R": 9,
+      "C": 6,
+      "D": 85
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T05:46:49.748685"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 90,
+      "C": 0,
+      "D": 10
+    },
+    "feel": {
+      "R": 3,
+      "C": 87,
+      "D": 10
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.87,
+    "timestamp": "2026-03-24T05:47:27.104219"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 78,
+      "C": 0,
+      "D": 22
+    },
+    "feel": {
+      "R": 47,
+      "C": 31,
+      "D": 22
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.83,
+    "timestamp": "2026-03-24T05:48:01.585059"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "feel": {
+      "R": 5,
+      "C": 8,
+      "D": 87
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:52:31.636924"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 26,
+      "C": 6,
+      "D": 68
+    },
+    "feel": {
+      "R": 26,
+      "C": 6,
+      "D": 68
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.7,
+    "timestamp": "2026-03-24T05:53:06.221305"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 32,
+      "C": 12,
+      "D": 56
+    },
+    "feel": {
+      "R": 22,
+      "C": 22,
+      "D": 56
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T05:53:38.063346"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 30,
+      "C": 0,
+      "D": 70
+    },
+    "feel": {
+      "R": -2,
+      "C": 32,
+      "D": 70
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T05:54:09.287363"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 3,
+      "C": 12,
+      "D": 85
+    },
+    "feel": {
+      "R": 6,
+      "C": 9,
+      "D": 85
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T05:54:30.887847"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 38,
+      "C": 0,
+      "D": 62
+    },
+    "feel": {
+      "R": 26,
+      "C": 12,
+      "D": 62
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.78,
+    "timestamp": "2026-03-24T05:54:48.720000"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 36,
+      "C": 0,
+      "D": 64
+    },
+    "feel": {
+      "R": 22,
+      "C": 14,
+      "D": 64
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T05:55:06.851921"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 41,
+      "C": 0,
+      "D": 59
+    },
+    "feel": {
+      "R": 37,
+      "C": 4,
+      "D": 59
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.78,
+    "timestamp": "2026-03-24T05:55:22.417503"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 17,
+      "C": 0,
+      "D": 83
+    },
+    "feel": {
+      "R": 17,
+      "C": 0,
+      "D": 83
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.51,
+    "timestamp": "2026-03-24T05:55:40.142699"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 25,
+      "C": 0,
+      "D": 75
+    },
+    "feel": {
+      "R": 25,
+      "C": 0,
+      "D": 75
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.61,
+    "timestamp": "2026-03-24T05:55:57.763107"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 55,
+      "C": 0,
+      "D": 45
+    },
+    "feel": {
+      "R": 111,
+      "C": -56,
+      "D": 45
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.87,
+    "timestamp": "2026-03-24T05:56:20.240819"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 18,
+      "C": 0,
+      "D": 82
+    },
+    "feel": {
+      "R": 36,
+      "C": 54,
+      "D": 10
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:56:47.727205"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "feel": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.39,
+    "timestamp": "2026-03-24T05:57:06.486423"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 13,
+      "C": 0,
+      "D": 87
+    },
+    "feel": {
+      "R": 8,
+      "C": 5,
+      "D": 87
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T05:57:23.786243"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 52,
+      "C": 0,
+      "D": 48
+    },
+    "feel": {
+      "R": 52,
+      "C": 0,
+      "D": 48
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.73,
+    "timestamp": "2026-03-24T05:57:37.844269"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 75,
+      "C": 0,
+      "D": 25
+    },
+    "feel": {
+      "R": 30,
+      "C": 45,
+      "D": 25
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:58:12.836951"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 39,
+      "C": 0,
+      "D": 61
+    },
+    "feel": {
+      "R": 4,
+      "C": 35,
+      "D": 61
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T05:58:29.230075"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 53,
+      "C": 0,
+      "D": 47
+    },
+    "feel": {
+      "R": 28,
+      "C": 25,
+      "D": 47
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T05:58:47.762245"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 4,
+      "C": 14,
+      "D": 82
+    },
+    "feel": {
+      "R": 4,
+      "C": 14,
+      "D": 82
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T05:59:07.312859"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 19,
+      "C": 0,
+      "D": 81
+    },
+    "feel": {
+      "R": 58,
+      "C": 39,
+      "D": 3
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.7,
+    "timestamp": "2026-03-24T05:59:17.042363"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 22,
+      "C": 10,
+      "D": 68
+    },
+    "feel": {
+      "R": 16,
+      "C": 16,
+      "D": 68
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T05:59:56.067720"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 65,
+      "C": 43,
+      "D": -8
+    },
+    "feel": {
+      "R": 51,
+      "C": 58,
+      "D": -9
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T06:00:18.056698"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 27,
+      "C": 11,
+      "D": 62
+    },
+    "feel": {
+      "R": 19,
+      "C": 19,
+      "D": 62
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T06:00:49.922801"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 15,
+      "C": 23,
+      "D": 62
+    },
+    "feel": {
+      "R": 15,
+      "C": 23,
+      "D": 62
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.66,
+    "timestamp": "2026-03-24T06:01:22.789660"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 31,
+      "C": 0,
+      "D": 69
+    },
+    "feel": {
+      "R": -31,
+      "C": 62,
+      "D": 69
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T06:01:44.494795"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 6,
+      "C": 8,
+      "D": 86
+    },
+    "feel": {
+      "R": 6,
+      "C": 8,
+      "D": 86
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T06:02:07.031814"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 61,
+      "C": 0,
+      "D": 39
+    },
+    "feel": {
+      "R": -11,
+      "C": 72,
+      "D": 39
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T06:02:38.373051"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 64,
+      "C": 0,
+      "D": 36
+    },
+    "feel": {
+      "R": 125,
+      "C": -61,
+      "D": 36
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.64,
+    "timestamp": "2026-03-24T06:03:01.493361"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 44,
+      "C": 0,
+      "D": 56
+    },
+    "feel": {
+      "R": -21,
+      "C": 65,
+      "D": 56
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.78,
+    "timestamp": "2026-03-24T06:03:22.111367"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 18,
+      "C": 0,
+      "D": 82
+    },
+    "feel": {
+      "R": 4,
+      "C": 15,
+      "D": 81
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.5,
+    "timestamp": "2026-03-24T06:03:44.531829"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 24,
+      "C": 0,
+      "D": 76
+    },
+    "feel": {
+      "R": 15,
+      "C": 10,
+      "D": 75
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.66,
+    "timestamp": "2026-03-24T06:04:02.715519"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 47,
+      "C": 20,
+      "D": 33
+    },
+    "feel": {
+      "R": 41,
+      "C": 27,
+      "D": 32
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T06:04:30.794108"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 67,
+      "C": -38,
+      "D": 71
+    },
+    "feel": {
+      "R": 38,
+      "C": -9,
+      "D": 71
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.66,
+    "timestamp": "2026-03-24T06:04:50.059679"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 6,
+      "C": 9,
+      "D": 85
+    },
+    "feel": {
+      "R": 9,
+      "C": 6,
+      "D": 85
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T06:05:12.543512"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 7,
+      "C": 17,
+      "D": 76
+    },
+    "feel": {
+      "R": 7,
+      "C": 17,
+      "D": 76
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T06:05:28.952132"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 36,
+      "C": 0,
+      "D": 64
+    },
+    "feel": {
+      "R": -36,
+      "C": 72,
+      "D": 64
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.61,
+    "timestamp": "2026-03-24T06:05:45.901983"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 6,
+      "C": 0,
+      "D": 94
+    },
+    "feel": {
+      "R": 4,
+      "C": 3,
+      "D": 93
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.63,
+    "timestamp": "2026-03-24T06:06:05.015551"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 12,
+      "C": 27,
+      "D": 61
+    },
+    "feel": {
+      "R": 78,
+      "C": -39,
+      "D": 61
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T06:06:23.739397"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 9,
+      "C": 34,
+      "D": 57
+    },
+    "feel": {
+      "R": 13,
+      "C": 30,
+      "D": 57
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.65,
+    "timestamp": "2026-03-24T06:06:48.238781"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": 14,
+      "C": 0,
+      "D": 86
+    },
+    "feel": {
+      "R": 6,
+      "C": 8,
+      "D": 86
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.67,
+    "timestamp": "2026-03-24T06:07:05.822204"
+  },
+  {
+    "user_a": "Maya Singh",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_2",
+    "think": {
+      "R": -33,
+      "C": 74,
+      "D": 59
+    },
+    "feel": {
+      "R": -8,
+      "C": 49,
+      "D": 59
+    },
+    "dominant_think": "contradict",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T06:07:30.293806"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Marcus Williams",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 11,
+      "C": 0,
+      "D": 89
+    },
+    "feel": {
+      "R": 7,
+      "C": 4,
+      "D": 89
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.56,
+    "timestamp": "2026-03-24T06:08:06.262151"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 44,
+      "C": 0,
+      "D": 56
+    },
+    "feel": {
+      "R": 26,
+      "C": 17,
+      "D": 57
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.87,
+    "timestamp": "2026-03-24T06:08:41.684780"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 70,
+      "C": 0,
+      "D": 30
+    },
+    "feel": {
+      "R": -8,
+      "C": 78,
+      "D": 30
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.79,
+    "timestamp": "2026-03-24T06:09:15.684798"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 7,
+      "C": 28,
+      "D": 65
+    },
+    "feel": {
+      "R": 14,
+      "C": 21,
+      "D": 65
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T06:09:38.534293"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 33,
+      "C": 42,
+      "D": 25
+    },
+    "feel": {
+      "R": 12,
+      "C": 63,
+      "D": 25
+    },
+    "dominant_think": "contradict",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.87,
+    "timestamp": "2026-03-24T06:10:17.645940"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 55,
+      "C": 0,
+      "D": 45
+    },
+    "feel": {
+      "R": 43,
+      "C": 11,
+      "D": 46
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.88,
+    "timestamp": "2026-03-24T06:10:52.974262"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 123,
+      "C": -58,
+      "D": 35
+    },
+    "feel": {
+      "R": -86,
+      "C": 151,
+      "D": 35
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.81,
+    "timestamp": "2026-03-24T06:11:26.040740"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 60,
+      "C": 0,
+      "D": 40
+    },
+    "feel": {
+      "R": -60,
+      "C": 120,
+      "D": 40
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.85,
+    "timestamp": "2026-03-24T06:12:02.021082"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 6,
+      "C": 23,
+      "D": 71
+    },
+    "feel": {
+      "R": 12,
+      "C": 18,
+      "D": 70
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.8,
+    "timestamp": "2026-03-24T06:12:31.075430"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 10,
+      "C": 0,
+      "D": 90
+    },
+    "feel": {
+      "R": 6,
+      "C": 4,
+      "D": 90
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.56,
+    "timestamp": "2026-03-24T06:12:50.539251"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 20,
+      "C": 0,
+      "D": 80
+    },
+    "feel": {
+      "R": 51,
+      "C": 49,
+      "D": 0
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.64,
+    "timestamp": "2026-03-24T06:13:10.495556"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 10,
+      "C": 2,
+      "D": 88
+    },
+    "feel": {
+      "R": 7,
+      "C": 5,
+      "D": 88
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T06:13:32.964272"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 4,
+      "C": 1,
+      "D": 95
+    },
+    "feel": {
+      "R": 4,
+      "C": 1,
+      "D": 95
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.56,
+    "timestamp": "2026-03-24T06:13:50.926121"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 16,
+      "C": 0,
+      "D": 84
+    },
+    "feel": {
+      "R": 10,
+      "C": 6,
+      "D": 84
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T06:14:08.044845"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "feel": {
+      "R": 0,
+      "C": 0,
+      "D": 100
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.45,
+    "timestamp": "2026-03-24T06:14:19.826647"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 11,
+      "C": 0,
+      "D": 89
+    },
+    "feel": {
+      "R": 7,
+      "C": 4,
+      "D": 89
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T06:14:39.495533"
+  },
+  {
+    "user_a": "Marcus Williams",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 14,
+      "C": 5,
+      "D": 81
+    },
+    "feel": {
+      "R": 13,
+      "C": 5,
+      "D": 82
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T06:14:56.788269"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "David Kim",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 17,
+      "C": 19,
+      "D": 64
+    },
+    "feel": {
+      "R": 21,
+      "C": 14,
+      "D": 65
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T06:15:16.474834"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": -7,
+      "C": 44,
+      "D": 63
+    },
+    "feel": {
+      "R": -52,
+      "C": 89,
+      "D": 63
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T06:15:39.248774"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 5,
+      "C": 0,
+      "D": 95
+    },
+    "feel": {
+      "R": 3,
+      "C": 2,
+      "D": 95
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.66,
+    "timestamp": "2026-03-24T06:16:05.715813"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 2,
+      "C": 9,
+      "D": 89
+    },
+    "feel": {
+      "R": 5,
+      "C": 7,
+      "D": 88
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T06:16:18.875746"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Marcus Williams",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 70,
+      "C": 0,
+      "D": 30
+    },
+    "feel": {
+      "R": 30,
+      "C": 40,
+      "D": 30
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.85,
+    "timestamp": "2026-03-24T12:27:06.102868"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Sophia Patel",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 46,
+      "C": 0,
+      "D": 54
+    },
+    "feel": {
+      "R": -46,
+      "C": 92,
+      "D": 54
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.73,
+    "timestamp": "2026-03-24T12:27:22.868284"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 33,
+      "C": 8,
+      "D": 59
+    },
+    "feel": {
+      "R": 21,
+      "C": 21,
+      "D": 58
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.73,
+    "timestamp": "2026-03-24T12:32:25.928227"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 22,
+      "C": 6,
+      "D": 72
+    },
+    "feel": {
+      "R": 19,
+      "C": 9,
+      "D": 72
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.75,
+    "timestamp": "2026-03-24T12:37:21.861215"
+  },
+  {
+    "user_a": "Sophia Patel",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 29,
+      "C": 35,
+      "D": 36
+    },
+    "feel": {
+      "R": -42,
+      "C": 106,
+      "D": 36
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.89,
+    "timestamp": "2026-03-24T12:37:44.050069"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Aisha Thompson",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 30,
+      "C": 23,
+      "D": 47
+    },
+    "feel": {
+      "R": 30,
+      "C": 23,
+      "D": 47
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.62,
+    "timestamp": "2026-03-24T12:38:00.771537"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 30,
+      "C": 0,
+      "D": 70
+    },
+    "feel": {
+      "R": 27,
+      "C": 3,
+      "D": 70
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.59,
+    "timestamp": "2026-03-24T12:38:29.251862"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 36,
+      "C": 0,
+      "D": 64
+    },
+    "feel": {
+      "R": 36,
+      "C": 0,
+      "D": 64
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.74,
+    "timestamp": "2026-03-24T12:38:41.839383"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 34,
+      "C": 49,
+      "D": 17
+    },
+    "feel": {
+      "R": 41,
+      "C": 42,
+      "D": 17
+    },
+    "dominant_think": "contradict",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.77,
+    "timestamp": "2026-03-24T12:39:16.154244"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 59,
+      "C": 0,
+      "D": 41
+    },
+    "feel": {
+      "R": -9,
+      "C": 68,
+      "D": 41
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.84,
+    "timestamp": "2026-03-24T12:39:51.651841"
+  },
+  {
+    "user_a": "David Kim",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 9,
+      "C": 28,
+      "D": 63
+    },
+    "feel": {
+      "R": 26,
+      "C": 12,
+      "D": 62
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T12:40:04.780467"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ryan O'Connor",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 26,
+      "C": 0,
+      "D": 74
+    },
+    "feel": {
+      "R": 14,
+      "C": 12,
+      "D": 74
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T12:40:42.773558"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 60,
+      "C": 19,
+      "D": 21
+    },
+    "feel": {
+      "R": 45,
+      "C": 34,
+      "D": 21
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.78,
+    "timestamp": "2026-03-24T12:41:11.876817"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 32,
+      "C": 0,
+      "D": 68
+    },
+    "feel": {
+      "R": 19,
+      "C": 13,
+      "D": 68
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.84,
+    "timestamp": "2026-03-24T12:41:37.036325"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 4,
+      "C": 15,
+      "D": 81
+    },
+    "feel": {
+      "R": 8,
+      "C": 11,
+      "D": 81
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.58,
+    "timestamp": "2026-03-24T12:42:00.802687"
+  },
+  {
+    "user_a": "Aisha Thompson",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 47,
+      "C": 26,
+      "D": 27
+    },
+    "feel": {
+      "R": 35,
+      "C": 38,
+      "D": 27
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.79,
+    "timestamp": "2026-03-24T12:42:21.388732"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Isabella Rodriguez",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 27,
+      "C": 0,
+      "D": 73
+    },
+    "feel": {
+      "R": 18,
+      "C": 9,
+      "D": 73
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.72,
+    "timestamp": "2026-03-24T12:42:48.110471"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 78,
+      "C": 0,
+      "D": 22
+    },
+    "feel": {
+      "R": 65,
+      "C": 13,
+      "D": 22
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "resonate",
+    "verdict": null,
+    "confidence": 0.71,
+    "timestamp": "2026-03-24T12:43:07.491918"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 29,
+      "C": 0,
+      "D": 71
+    },
+    "feel": {
+      "R": 15,
+      "C": 14,
+      "D": 71
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.69,
+    "timestamp": "2026-03-24T12:43:33.576028"
+  },
+  {
+    "user_a": "Ryan O'Connor",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 56,
+      "C": 0,
+      "D": 44
+    },
+    "feel": {
+      "R": 44,
+      "C": 11,
+      "D": 45
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.75,
+    "timestamp": "2026-03-24T12:43:50.956444"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Jake Morrison",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 17,
+      "C": 9,
+      "D": 74
+    },
+    "feel": {
+      "R": 7,
+      "C": 18,
+      "D": 75
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.68,
+    "timestamp": "2026-03-24T12:44:22.348872"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 51,
+      "C": 0,
+      "D": 49
+    },
+    "feel": {
+      "R": 43,
+      "C": 8,
+      "D": 49
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.82,
+    "timestamp": "2026-03-24T12:44:46.595092"
+  },
+  {
+    "user_a": "Isabella Rodriguez",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 6,
+      "C": 8,
+      "D": 86
+    },
+    "feel": {
+      "R": 8,
+      "C": 6,
+      "D": 86
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.67,
+    "timestamp": "2026-03-24T12:45:00.364798"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Maya Singh",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 7,
+      "C": 0,
+      "D": 93
+    },
+    "feel": {
+      "R": 1,
+      "C": 6,
+      "D": 93
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.6,
+    "timestamp": "2026-03-24T12:45:14.396301"
+  },
+  {
+    "user_a": "Jake Morrison",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 61,
+      "C": 0,
+      "D": 39
+    },
+    "feel": {
+      "R": 28,
+      "C": 33,
+      "D": 39
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.7,
+    "timestamp": "2026-03-24T12:45:44.150246"
+  },
+  {
+    "user_a": "Maya Singh",
+    "user_b": "Ethan Brooks",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_3",
+    "think": {
+      "R": 5,
+      "C": 22,
+      "D": 73
+    },
+    "feel": {
+      "R": 16,
+      "C": 11,
+      "D": 73
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.75,
+    "timestamp": "2026-03-24T12:46:00.615800"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Marcus Williams",
+    "book_id": "Pride and Prejudice",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 73,
+      "C": 0,
+      "D": 27
+    },
+    "feel": {
+      "R": 20,
+      "C": 53,
+      "D": 27
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "contradict",
+    "verdict": null,
+    "confidence": 0.79,
+    "timestamp": "2026-03-24T12:46:47.330912"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "Sophia Patel",
+    "book_id": "Pride and Prejudice",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 15,
+      "C": 0,
+      "D": 85
+    },
+    "feel": {
+      "R": 9,
+      "C": 6,
+      "D": 85
+    },
+    "dominant_think": "diverge",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.61,
+    "timestamp": "2026-03-24T12:47:10.423899"
+  },
+  {
+    "user_a": "Emma Chen",
+    "user_b": "David Kim",
+    "book_id": "Pride and Prejudice",
+    "passage_id": "passage_1",
+    "think": {
+      "R": 50,
+      "C": 0,
+      "D": 50
+    },
+    "feel": {
+      "R": 27,
+      "C": 23,
+      "D": 50
+    },
+    "dominant_think": "resonate",
+    "dominant_feel": "diverge",
+    "verdict": null,
+    "confidence": 0.83,
+    "timestamp": "2026-03-24T12:47:46.361680"
+  }
+]

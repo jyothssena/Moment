@@ -1,0 +1,21 @@
+{
+  "user_a": "Sophia Patel",
+  "user_b": "Ryan O'Connor",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 5,
+    "C": 0,
+    "D": 95
+  },
+  "feel": {
+    "R": 3,
+    "C": 2,
+    "D": 95
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.66,
+  "timestamp": "2026-03-24T06:16:05.715813"
+}

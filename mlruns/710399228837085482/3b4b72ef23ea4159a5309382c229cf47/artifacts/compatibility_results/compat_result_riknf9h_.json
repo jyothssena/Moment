@@ -1,0 +1,21 @@
+{
+  "user_a": "Sophia Patel",
+  "user_b": "Ethan Brooks",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 19,
+    "C": 0,
+    "D": 81
+  },
+  "feel": {
+    "R": 58,
+    "C": 39,
+    "D": 3
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "resonate",
+  "verdict": null,
+  "confidence": 0.7,
+  "timestamp": "2026-03-24T05:59:17.042363"
+}

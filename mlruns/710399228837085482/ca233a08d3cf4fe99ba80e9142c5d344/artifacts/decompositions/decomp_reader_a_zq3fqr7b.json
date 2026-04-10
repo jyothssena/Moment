@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "David Kim",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Victor uses deterministic language to deny free will and claim fate, which is a convenient abdication of responsibility.",
+      "quote": "\"Words of fate enounced to destroy me.\" Deterministic language. Victor's denying free will, claiming fate forced this. Convenient abdication of responsibility.",
+      "weight": 0.23,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "2",
+      "claim": "Victor recognizes danger but proceeds anyway, demonstrating choice over fate, as he \"knows better, does worse.\"",
+      "quote": "\"Soul grappling with a palpable enemy.\" He recognizes danger and proceeds anyway. Knows better, does worse. That's not fate. That's choice.",
+      "weight": 0.23,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "3",
+      "claim": "The focus on \"one thought, one conception, one purpose\" signifies a dangerous monomania where moral reasoning is lost.",
+      "quote": "\"One thought, one conception, one purpose.\" Monomania. Dangerous state. When mind narrows to single purpose, moral reasoning disappears.",
+      "weight": 0.22,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "4",
+      "claim": "Victor dismisses \"yesternight's thoughts\" (morning clarity) as a dream, choosing delusion and night obsession over reason.",
+      "quote": "\"Yesternight's thoughts were as a dream.\" Morning clarity dismissed as illusion. Night obsession accepted as truth. He's choosing delusion over reason.",
+      "weight": 0.22,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "5",
+      "claim": "The reader questions the point at which ambition transforms into pathology.",
+      "quote": "at what point does ambition become pathology?",
+      "weight": 0.1,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

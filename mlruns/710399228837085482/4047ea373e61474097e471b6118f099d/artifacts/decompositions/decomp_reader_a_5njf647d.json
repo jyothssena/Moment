@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Sophia Patel",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The phrase \"Chord after chord was sounded\" perfectly captures the feeling of an idea resonating deeply and taking hold without conscious permission, like music playing spontaneously.",
+      "quote": "\"Chord after chord was sounded.\" That's exactly what it feels like. When an idea finds the right frequency in you, it doesn't ask permission. It just starts playing.",
+      "weight": 0.31,
+      "emotional_mode": "self-referential"
+    },
+    {
+      "id": "2",
+      "claim": "The description \"Keys were touched which formed the mechanism of my being\" suggests that Victor's path was not a choice but an activation of something pre-existing within him, implying the professor merely unlocked what was already there.",
+      "quote": "\"Keys were touched which formed the mechanism of my being.\" Not a choice. More like a lock opening. The professor didn't create anything in Victor. He just found what was already there.",
+      "weight": 0.36,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "Victor's state, characterized by \"One thought, one conception, one purpose,\" indicates an uncontrollable obsession rather than mere ambition, suggesting he was possessed and unable to stop.",
+      "quote": "I don't think Victor could have stopped at that point. The obsession already had him. \"One thought, one conception, one purpose\" \u2014 that's not ambition. That's being possessed.",
+      "weight": 0.33,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

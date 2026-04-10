@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Isabella Rodriguez",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The character actively resists reality and works to maintain his delusion, as shown by his statement \"I try in vain to be persuaded.\"",
+      "quote": "\"I try in vain to be persuaded.\"",
+      "weight": 0.191,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "2",
+      "claim": "The character seeks validation for his conviction, feeling alone and needing confirmation that he's not mad, despite the impossibility of a response, highlighted by his question \"Do you understand this feeling?\"",
+      "quote": "\"Do you understand this feeling?\"",
+      "weight": 0.36,
+      "emotional_mode": "empathetic"
+    },
+    {
+      "id": "3",
+      "claim": "The character replaces observation with imagination, exhibiting cognitive distortion by trusting imagination over reality's harsh truth, as he sees \"Imagination as the region of beauty.\"",
+      "quote": "\"Imagination as the region of beauty.\"",
+      "weight": 0.281,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "This pattern of choosing delusion despite warnings is a common way people walk into disasters.",
+      "quote": "(no direct quote)",
+      "weight": 0.169,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "user_a": "Emma Chen",
+  "user_b": "Marcus Williams",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 11,
+    "C": 0,
+    "D": 89
+  },
+  "feel": {
+    "R": 7,
+    "C": 4,
+    "D": 89
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.56,
+  "timestamp": "2026-03-24T06:08:06.262151"
+}

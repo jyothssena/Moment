@@ -1,0 +1,21 @@
+{
+  "user_a": "Marcus Williams",
+  "user_b": "Ethan Brooks",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 14,
+    "C": 5,
+    "D": 81
+  },
+  "feel": {
+    "R": 13,
+    "C": 5,
+    "D": 82
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.74,
+  "timestamp": "2026-03-24T06:14:56.788269"
+}

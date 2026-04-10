@@ -1,0 +1,32 @@
+# ── MLflow Experiment Config ───────────────────────────────────────────────────
+
+mlflow:
+  experiment_name: "momento_compatibility"
+  tracking_uri: "mlruns"           # local folder; change to remote URI if needed
+  run_tags:
+    project: "MOMENT"
+    team: "Group 23"
+
+# ── Model / Agent Config ───────────────────────────────────────────────────────
+
+model:
+  name: "gemini-2.5-flash"
+  temperature: 0.1
+  prompt_version: "v1.0"           # bump this when you change any system prompt
+
+# ── Aggregator Config ──────────────────────────────────────────────────────────
+
+aggregator:
+  min_confidence: 0.20
+  max_confidence: 0.95
+  confidence_weights:
+    depth: 0.30
+    coverage: 0.40
+    mapping_quality: 0.30
+
+# ── Data paths (relative to repo root) ────────────────────────────────────────
+
+data:
+  interpretations: "data/processed/interpretations_10_users.json"
+  decompositions:  "data/processed/decompositions.json"
+  compat_runs:     "data/processed/compatibility_runs.json"

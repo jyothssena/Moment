@@ -1,0 +1,21 @@
+{
+  "user_a": "Ryan O'Connor",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 67,
+    "C": -38,
+    "D": 71
+  },
+  "feel": {
+    "R": 38,
+    "C": -9,
+    "D": 71
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.66,
+  "timestamp": "2026-03-24T06:04:50.059679"
+}

@@ -1,0 +1,21 @@
+{
+  "user_a": "Sophia Patel",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 53,
+    "C": 0,
+    "D": 47
+  },
+  "feel": {
+    "R": 28,
+    "C": 25,
+    "D": 47
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.74,
+  "timestamp": "2026-03-24T05:58:47.762245"
+}

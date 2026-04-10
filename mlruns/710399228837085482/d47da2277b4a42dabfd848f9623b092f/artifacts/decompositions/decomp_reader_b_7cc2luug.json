@@ -1,0 +1,28 @@
+{
+  "book_id": "Pride and Prejudice",
+  "passage_id": "passage_1",
+  "user_id": "Marcus Williams",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader expresses a strong negative reaction to the creature's appearance and notes Victor's immediate rejection.",
+      "quote": "God that yellow eye line. He doesn't give it a single chance.",
+      "weight": 0.19,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "2",
+      "claim": "The reader clarifies that the 'beautiful features making it worse' refers to Victor's failed expectations, not the creature's inherent nature, emphasizing the creature's simple existence.",
+      "quote": "The beautiful features making it worse \u2014 that's not about the creature at all. That's about Victor's expectations colliding with reality. The creature just exists. Just breathes.",
+      "weight": 0.48,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The reader highlights the creature's first gesture being met with rejection, emphasizing the heavy burden of this early emotional experience.",
+      "quote": "Reached out for him later. First gesture and already it knows what rejection feels like. That's a heavy thing to carry from minute one.",
+      "weight": 0.33,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

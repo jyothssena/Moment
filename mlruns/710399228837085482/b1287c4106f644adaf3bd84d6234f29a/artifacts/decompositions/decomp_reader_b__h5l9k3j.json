@@ -1,0 +1,28 @@
+{
+  "book_id": "Pride and Prejudice",
+  "passage_id": "passage_1",
+  "user_id": "Sophia Patel",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The passage establishes an intense, crushing atmosphere of anxiety even before the creature's creation, highlighting the pre-existing dread.",
+      "quote": "\"Anxiety that almost amounted to agony\" \u2014 and nothing has happened yet. The atmosphere is crushing before the creature exists.",
+      "weight": 0.205,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader emphasizes the creature's perspective, noting its immediate experience of recoil and being labeled a catastrophe upon its first moments of existence.",
+      "quote": "But I keep coming back to the creature's side of this. Opens its eyes for the first time. The first thing it sees is someone recoiling. The first word that applies to it is catastrophe \u2014 before it breathes twice.",
+      "weight": 0.357,
+      "emotional_mode": "empathetic"
+    },
+    {
+      "id": "3",
+      "claim": "The 'luxuriances' making the creature more horrible is Victor's failure, not the creature's, as the creature is immediately deemed wrong despite being created exactly as intended.",
+      "quote": "\"Luxuriances only formed a more horrid contrast.\" The beautiful parts making it more horrible \u2014 that's not the creature's failure. That's Victor's. The creature arrives exactly as made and is immediately told it is wrong.",
+      "weight": 0.438,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

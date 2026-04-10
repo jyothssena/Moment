@@ -1,0 +1,21 @@
+{
+  "user_a": "Aisha Thompson",
+  "user_b": "Ryan O'Connor",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 61,
+    "C": 0,
+    "D": 39
+  },
+  "feel": {
+    "R": -11,
+    "C": 72,
+    "D": 39
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "contradict",
+  "verdict": null,
+  "confidence": 0.69,
+  "timestamp": "2026-03-24T06:02:38.373051"
+}

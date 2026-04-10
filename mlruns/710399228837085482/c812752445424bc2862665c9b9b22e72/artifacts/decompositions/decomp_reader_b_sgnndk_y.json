@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Ethan Brooks",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The letter format is significant because it allows Walton to share his feelings with his sister.",
+      "quote": "Letter format is doing something here. Walton writes to his sister, trying to share what he feels.",
+      "weight": 0.183,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The phrase \"Wind of promise\" is highly impactful and encapsulates a great deal of meaning.",
+      "quote": "\"Wind of promise.\" Two words that carry everything.",
+      "weight": 0.1,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "3",
+      "claim": "The common interpretation of \"I try in vain to be persuaded the pole is frost and desolation\" as wilful denial is incorrect; instead, it demonstrates the vision's strength over fear, which is essential for the journey.",
+      "quote": "\"I try in vain to be persuaded the pole is frost and desolation\" \u2014 people read that as wilful denial. But the persuasion hasn't taken because it hasn't been sufficient. He's looked at the evidence and found it doesn't kill the vision. That's not refusing reality. That's the vision being stronger than the fear, which is what the journey requires.",
+      "weight": 0.617,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "The phrase \"Perpetual splendour\" prompts the reader to consider the possibility that Walton's optimistic vision might actually be correct.",
+      "quote": "\"Perpetual splendour\" \u2014 what if he's right?",
+      "weight": 0.1,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

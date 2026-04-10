@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Aisha Thompson",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader understands and resonates with the feeling described in the passage, specifically the idea of harshness being perceived as a promise.",
+      "quote": "\"Do you understand this feeling?\" Yeah, actually. Cold that should feel harsh feeling like promise.",
+      "weight": 0.27,
+      "emotional_mode": "self-referential"
+    },
+    {
+      "id": "2",
+      "claim": "The reader observes the psychological phenomenon where pre-existing beliefs lead to selective confirmation of evidence.",
+      "quote": "Every sign confirming what you already believe because you've already decided it is.",
+      "weight": 0.3,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The reader validates the character's genuine perception of \"perpetual splendour\" and reflects on how intense hope, from an internal viewpoint, feels like clarity rather than delusion.",
+      "quote": "\"Perpetual splendour.\" He's not lying. That's genuinely what he sees. Hope this strong doesn't feel like delusion from inside. It feels like clarity.",
+      "weight": 0.43,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

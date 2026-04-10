@@ -1,0 +1,21 @@
+{
+  "user_a": "Marcus Williams",
+  "user_b": "Maya Singh",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 11,
+    "C": 0,
+    "D": 89
+  },
+  "feel": {
+    "R": 7,
+    "C": 4,
+    "D": 89
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.6,
+  "timestamp": "2026-03-24T06:14:39.495533"
+}

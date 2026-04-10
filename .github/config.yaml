@@ -1,0 +1,65 @@
+# ============================================================
+# MOMENT Preprocessing Pipeline - Config
+# ============================================================
+
+# --- File Paths ---
+paths:
+  raw:
+    interpretations: "data/raw/all_interpretations_450_FINAL_NO_BIAS.json"
+    passages:        "data/raw/passages.csv"
+    characters:      "data/raw/characters.csv"
+  processed:
+    moments: "data/processed/moments_processed.json"
+    books:   "data/processed/books_processed.json"
+    users:   "data/processed/users_processed.json"
+
+# --- Book Metadata (fallback if API is down) ---
+books:
+  - title: "Frankenstein"
+    gutenberg_id: 84
+    author: "Mary Shelley"
+  - title: "Pride and Prejudice"
+    gutenberg_id: 1342
+    author: "Jane Austen"
+  - title: "The Great Gatsby"
+    gutenberg_id: 64317
+    author: "F. Scott Fitzgerald"
+
+# Normalize mismatched titles in passages.csv
+title_map:
+  "PRIDE & PREJUDICE": "Pride and Prejudice"
+  "Unknown": "Frankenstein"
+
+# --- Gutenberg API ---
+gutenberg_api: "https://gutendex.com/books"
+gutenberg_timeout: 10
+
+# --- Text Validation ---
+validation:
+  min_words: 10
+  max_words: 600
+  min_chars: 50
+  quality_threshold: 0.5
+
+# --- Issue Detection ---
+issues:
+  profanity_ratio_threshold: 0.90   # flag if >90% words are profane
+  caps_threshold: 0.90              # flag if >90% letters are uppercase
+  punct_threshold: 0.90             # flag if >90% chars are punctuation
+  repetitive_chars: 25               # flag if same char repeats 25+ times
+  repetitive_words_threshold: 0.90  # flag if any word is >90% of total
+
+# --- Anomaly Detection ---
+anomalies:
+  iqr_multiplier: 1.5        # IQR method for word count outliers
+  zscore_threshold: 2.5      # z-score method for readability outliers
+  similarity_threshold: 0.85 # TF-IDF cosine similarity for duplicates
+  new_reader_ceiling: 70     # readability above this = simple writing
+  well_read_floor: 30        # readability below this = complex writing
+
+# --- Output ---
+indent: 2
+timestamp_format: "%Y-%m-%dT%H:%M:%S"
+
+# --- Logging ---
+log_level: "INFO"

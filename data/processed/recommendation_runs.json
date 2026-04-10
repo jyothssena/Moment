@@ -1,0 +1,156 @@
+[
+  {
+    "user_id": "user_emma_chen_fd5e3def",
+    "timestamp": "2026-03-22T19:57:07.341437",
+    "resonance": [],
+    "contradiction": [],
+    "divergence": []
+  },
+  {
+    "user_id": "user_emma_chen_fd5e3def",
+    "timestamp": "2026-03-22T19:57:46.966763",
+    "resonance": [],
+    "contradiction": [],
+    "divergence": []
+  },
+  {
+    "user_id": "user_emma_chen_fd5e3def",
+    "timestamp": "2026-03-22T19:58:54.772950",
+    "resonance": [],
+    "contradiction": [],
+    "divergence": []
+  },
+  {
+    "user_id": "1",
+    "timestamp": "2026-03-22T19:59:26.072066",
+    "resonance": [],
+    "contradiction": [],
+    "divergence": []
+  },
+  {
+    "user_id": "Emma Chen",
+    "timestamp": "2026-03-22T20:00:00.301765",
+    "resonance": [
+      {
+        "match_user_id": 1,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 1.0,
+        "insight": "Both readers interpret Victor's immediate reaction to the creature's awakening as a catastrophic misinterpretation, focusing on his fixation on the 'yellow eye' and his inability to see the creature as anything but a threat, despite its newborn-like actions.",
+        "timestamp": "2026-03-22T19:03:10.330908"
+      },
+      {
+        "match_user_id": 4,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.95,
+        "insight": "You both keenly observe how Victor's own misinterpretations and immediate rejection of his creation, particularly his fixation on the 'yellow eye' and misreading the creature's reach, are central to the creature's tragic fate. You both see Victor as the architect of the monster through his flawed perceptions.",
+        "timestamp": "2026-03-22T19:03:24.843568"
+      },
+      {
+        "match_user_id": 7,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.95,
+        "insight": "Emma and Isabella both keenly observe how Victor's own fear and projection, rather than the creature's actions, are what truly create the 'monster.' They both point out his immediate labeling of the creature as a 'catastrophe' and his misinterpretation of its natural, newborn gestures as threats, suggesting a deep intellectual alignment in their reading of Frankenstein.",
+        "timestamp": "2026-03-22T19:03:40.153737"
+      }
+    ],
+    "contradiction": [],
+    "divergence": [
+      {
+        "match_user_id": 10,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.9,
+        "insight": "Emma delves into Victor's psychological state, arguing that his immediate negative reaction and misinterpretations are what create the 'monster.' Ethan, however, analyzes Shelley's narrative craft, appreciating how the author's deliberate gaps and juxtapositions shape the reader's experience. Their distinct lenses could spark a fascinating conversation about the interplay between character psychology and authorial technique.",
+        "timestamp": "2026-03-22T19:04:00.569867"
+      },
+      {
+        "match_user_id": 49,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.9,
+        "insight": "Both readers are deeply struck by Victor's immediate rejection of his creation. Emma meticulously analyzes Victor's psychological misinterpretations within the text, while Patricia connects this dynamic to universal human experiences of idealization versus reality. They could have a fascinating discussion, with Emma grounding the conversation in the specific literary details and Patricia expanding it to broader human patterns.",
+        "timestamp": "2026-03-22T19:08:04.109300"
+      },
+      {
+        "match_user_id": 32,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.85,
+        "insight": "Emma delves into Victor's psyche, seeing his focus on the 'yellow eye' as a sign of his immediate rejection and dehumanization of the creature. Marcus, however, appreciates Shelley's craft, noting how that single 'dull yellow eye' powerfully establishes the scene's horror through effective literary detail. They both notice the same detail but interpret its significance through different lenses.",
+        "timestamp": "2026-03-22T19:06:10.400642"
+      }
+    ]
+  },
+  {
+    "user_id": "Emma Chen",
+    "timestamp": "2026-03-22T20:00:16.365820",
+    "resonance": [
+      {
+        "match_user_id": 1,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 1.0,
+        "insight": "Both readers interpret Victor's immediate reaction to the creature's awakening as a catastrophic misinterpretation, focusing on his fixation on the 'yellow eye' and his inability to see the creature as anything but a threat, despite its newborn-like actions.",
+        "timestamp": "2026-03-22T19:03:10.330908"
+      },
+      {
+        "match_user_id": 4,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.95,
+        "insight": "You both keenly observe how Victor's own misinterpretations and immediate rejection of his creation, particularly his fixation on the 'yellow eye' and misreading the creature's reach, are central to the creature's tragic fate. You both see Victor as the architect of the monster through his flawed perceptions.",
+        "timestamp": "2026-03-22T19:03:24.843568"
+      },
+      {
+        "match_user_id": 7,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.95,
+        "insight": "Emma and Isabella both keenly observe how Victor's own fear and projection, rather than the creature's actions, are what truly create the 'monster.' They both point out his immediate labeling of the creature as a 'catastrophe' and his misinterpretation of its natural, newborn gestures as threats, suggesting a deep intellectual alignment in their reading of Frankenstein.",
+        "timestamp": "2026-03-22T19:03:40.153737"
+      }
+    ],
+    "contradiction": [],
+    "divergence": [
+      {
+        "match_user_id": 10,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.9,
+        "insight": "Emma delves into Victor's psychological state, arguing that his immediate negative reaction and misinterpretations are what create the 'monster.' Ethan, however, analyzes Shelley's narrative craft, appreciating how the author's deliberate gaps and juxtapositions shape the reader's experience. Their distinct lenses could spark a fascinating conversation about the interplay between character psychology and authorial technique.",
+        "timestamp": "2026-03-22T19:04:00.569867"
+      },
+      {
+        "match_user_id": 49,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.9,
+        "insight": "Both readers are deeply struck by Victor's immediate rejection of his creation. Emma meticulously analyzes Victor's psychological misinterpretations within the text, while Patricia connects this dynamic to universal human experiences of idealization versus reality. They could have a fascinating discussion, with Emma grounding the conversation in the specific literary details and Patricia expanding it to broader human patterns.",
+        "timestamp": "2026-03-22T19:08:04.109300"
+      },
+      {
+        "match_user_id": 32,
+        "book_id": 1,
+        "think_dimension": null,
+        "feel_dimension": null,
+        "confidence": 0.85,
+        "insight": "Emma delves into Victor's psyche, seeing his focus on the 'yellow eye' as a sign of his immediate rejection and dehumanization of the creature. Marcus, however, appreciates Shelley's craft, noting how that single 'dull yellow eye' powerfully establishes the scene's horror through effective literary detail. They both notice the same detail but interpret its significance through different lenses.",
+        "timestamp": "2026-03-22T19:06:10.400642"
+      }
+    ]
+  }
+]

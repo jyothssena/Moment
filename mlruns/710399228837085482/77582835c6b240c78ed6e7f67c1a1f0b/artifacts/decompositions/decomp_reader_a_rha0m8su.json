@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Emma Chen",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The character is already framing his life as a tragedy, which acts as a self-fulfilling prophecy.",
+      "quote": "\"Words of fate enounced to destroy me.\" He's already narrating his life as tragedy before anything happens. Self-fulfilling prophecy.",
+      "weight": 0.2,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The character's ambition is his true enemy, and despite recognizing it as a struggle, he surrenders to it.",
+      "quote": "\"Soul grappling with a palpable enemy.\" The enemy is his own ambition. He knows it. Describes it as combat, as struggle, and still surrenders to it.",
+      "weight": 0.31,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "3",
+      "claim": "The repetition of his focus indicates an obsession and compulsion, rather than genuine inspiration.",
+      "quote": "\"One thought, one conception, one purpose.\" Repetition shows obsession forming. Mind narrowing to single focus. That's not inspiration\u2014that's compulsion.",
+      "weight": 0.26,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "The character ignores the clarity of morning, allowing 'dream logic' to prevail, which is identified as a mistake.",
+      "quote": "\"Yesternight's thoughts were as a dream.\" Morning brings clarity but he ignores it. The dream logic won. That's the mistake.",
+      "weight": 0.23,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

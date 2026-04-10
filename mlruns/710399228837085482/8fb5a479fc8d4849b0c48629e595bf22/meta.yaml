@@ -1,0 +1,14 @@
+artifact_uri: /Users/tanmayishurpali/mar24/Moment/mlruns/710399228837085482/8fb5a479fc8d4849b0c48629e595bf22/artifacts
+end_time: 1774383007726
+entry_point_name: ''
+experiment_id: '710399228837085482'
+lifecycle_stage: active
+run_id: 8fb5a479fc8d4849b0c48629e595bf22
+run_name: decomp_reader_b_Jake Morrison
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774383007718
+status: 3
+tags: []
+user_id: tanmayishurpali

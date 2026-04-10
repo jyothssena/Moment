@@ -1,0 +1,42 @@
+{
+  "book_id": "Pride and Prejudice",
+  "passage_id": "passage_1",
+  "user_id": "David Kim",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The character experiences a paradox where his desired success ultimately leads to his destruction.",
+      "quote": "Success as catastrophe. That's the paradox. He got what he wanted and it destroyed him.",
+      "weight": 0.19,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The 'yellow eye' symbolizes the character's epistemological crisis, representing the unbridgeable gap between his imagination and reality.",
+      "quote": "Yellow eye is his epistemological crisis. What he imagined versus what exists. Couldn't bridge that gap.",
+      "weight": 0.21,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The passage prompts a fundamental question about the creator's responsibility when their creation goes awry.",
+      "quote": "What does a creator owe when creation goes wrong? That's the question here.",
+      "weight": 0.16,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "Shelley's intentional vagueness regarding the 'instruments of life' shifts the focus from the 'how' of creation to its 'why' and subsequent consequences.",
+      "quote": "Shelley keeps the \"instruments of life\" vague on purpose. Not about how. About why and what comes after.",
+      "weight": 0.22,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "5",
+      "claim": "Victor's misinterpretation of the Creature's innocent outreach as a threat raises the broader question of whether monsters are created by our own misjudgments of innocence.",
+      "quote": "Creature reaches out\u2014Victor sees threat. Do we create monsters by misinterpreting innocence as danger?",
+      "weight": 0.22,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

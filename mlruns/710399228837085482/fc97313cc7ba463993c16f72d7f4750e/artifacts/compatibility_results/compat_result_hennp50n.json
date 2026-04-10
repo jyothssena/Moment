@@ -1,0 +1,21 @@
+{
+  "user_a": "Emma Chen",
+  "user_b": "Maya Singh",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 30,
+    "C": 0,
+    "D": 70
+  },
+  "feel": {
+    "R": -2,
+    "C": 32,
+    "D": 70
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.69,
+  "timestamp": "2026-03-24T05:54:09.287363"
+}

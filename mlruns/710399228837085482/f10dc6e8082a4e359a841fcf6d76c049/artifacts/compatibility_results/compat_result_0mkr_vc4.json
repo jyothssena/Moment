@@ -1,0 +1,21 @@
+{
+  "user_a": "Ryan O'Connor",
+  "user_b": "Maya Singh",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "think": {
+    "R": 8,
+    "C": 12,
+    "D": 80
+  },
+  "feel": {
+    "R": 8,
+    "C": 12,
+    "D": 80
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.49,
+  "timestamp": "2026-03-24T05:43:30.565551"
+}

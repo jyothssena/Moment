@@ -1,0 +1,21 @@
+{
+  "user_a": "Sophia Patel",
+  "user_b": "David Kim",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 17,
+    "C": 19,
+    "D": 64
+  },
+  "feel": {
+    "R": 21,
+    "C": 14,
+    "D": 65
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.72,
+  "timestamp": "2026-03-24T06:15:16.474834"
+}

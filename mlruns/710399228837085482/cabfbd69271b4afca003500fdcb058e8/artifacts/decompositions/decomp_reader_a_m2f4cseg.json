@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Emma Chen",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader observes Walton's resistance to reality, noting he knows the truth but chooses fantasy, in response to the passage's mention of the pole.",
+      "quote": "He admits he's resisting reality. Knows the truth but chooses fantasy.",
+      "weight": 0.22,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader questions Walton's use of \"Wind of promise,\" interpreting it as a sign of danger and death.",
+      "quote": "Promise of what? Danger. Death. But he calls it promise.",
+      "weight": 0.17,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "3",
+      "claim": "The reader identifies Walton's vision of \"Perpetual splendour\" as a romantic delusion, imagining paradise where there is only ice.",
+      "quote": "Imagining paradise where there's only ice. That's delusion. Romantic delusion, but still delusion.",
+      "weight": 0.29,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "The reader draws a parallel between Walton and Victor, highlighting their shared dangerous optimism and refusal to see consequences, positioning Walton as a precursor to Victor.",
+      "quote": "Walton's Victor before the creation scene. Same dangerous optimism. Same refusal to see consequences.",
+      "weight": 0.32,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

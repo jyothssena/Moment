@@ -1,0 +1,21 @@
+{
+  "user_a": "Aisha Thompson",
+  "user_b": "Ethan Brooks",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 24,
+    "C": 0,
+    "D": 76
+  },
+  "feel": {
+    "R": 15,
+    "C": 10,
+    "D": 75
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.66,
+  "timestamp": "2026-03-24T06:04:02.715519"
+}

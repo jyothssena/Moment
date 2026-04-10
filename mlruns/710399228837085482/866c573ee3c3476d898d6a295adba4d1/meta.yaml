@@ -1,0 +1,14 @@
+artifact_uri: /Users/tanmayishurpali/mar24/Moment/mlruns/710399228837085482/866c573ee3c3476d898d6a295adba4d1/artifacts
+end_time: 1774383007460
+entry_point_name: ''
+experiment_id: '710399228837085482'
+lifecycle_stage: active
+run_id: 866c573ee3c3476d898d6a295adba4d1
+run_name: decomp_reader_b_Ethan Brooks
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774383007451
+status: 3
+tags: []
+user_id: tanmayishurpali

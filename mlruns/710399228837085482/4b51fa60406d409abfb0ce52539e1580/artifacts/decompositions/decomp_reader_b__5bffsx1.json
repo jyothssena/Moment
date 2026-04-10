@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Sophia Patel",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The phrase \"Wind of promise\" is contradictory because wind is inherently neutral and doesn't promise anything.",
+      "quote": "\"Wind of promise.\" Contradictory on its face \u2014 wind doesn't promise anything.",
+      "weight": 0.12,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The reader understands the psychological phenomenon where strong desire imbues neutral things with meaning, making one interpret them as fulfilling a need.",
+      "quote": "But I understand the feeling. When you want something badly enough, neutral things start carrying meaning. The wind is cold and you call it promise because that's what you need it to be.",
+      "weight": 0.35,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The phrase \"I try in vain to be persuaded\" indicates a character's awareness of a situation but an inability to let that knowledge deter them, which is not stupidity but a deep commitment.",
+      "quote": "\"I try in vain to be persuaded.\" He knows. He just can't let knowing stop him. That's not stupidity. That's what it feels like to be all the way in something.",
+      "weight": 0.35,
+      "emotional_mode": "empathetic"
+    },
+    {
+      "id": "4",
+      "claim": "The phrase \"Perpetual splendour\" reflects the idealized perception of a destination before experiencing it, a common human tendency.",
+      "quote": "\"Perpetual splendour.\" Of course it sounds like that from here. Every destination does before you arrive.",
+      "weight": 0.18,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Maya Singh",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Walton's confusion of the beautiful and the sublime, as defined by Burke, is a critical misinterpretation of the Arctic's true nature (terror) and will lead to his destruction.",
+      "quote": "(no direct quote)",
+      "weight": 0.3,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The phrase \"I try in vain to be persuaded\" highlights Walton's failed attempt at realism, as he admits his failure yet proceeds with his dangerous endeavor.",
+      "quote": "\"I try in vain to be persuaded.\" Vain is key word. Failed attempt at realism. He admits failure and proceeds anyway.",
+      "weight": 0.21,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "3",
+      "claim": "The concept of \"Perpetual splendour\" initially sounds heavenly but, upon deeper reflection, implies a lack of rest or relief, transforming paradise into a permanent prison.",
+      "quote": "\"Perpetual splendour.\" Perpetual light. No darkness. Sounds like heaven. But perpetual light means no rest. No night. No relief. Paradise becomes prison when it's permanent.",
+      "weight": 0.25,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "Shelley's brilliant framing device establishes a parallel between Walton and Victor, both romantics chasing impossible dreams, allowing the reader to foresee Victor's tragedy through Walton's delusion.",
+      "quote": "(no direct quote)",
+      "weight": 0.24,
+      "emotional_mode": "aesthetic"
+    }
+  ]
+}

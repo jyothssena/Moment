@@ -1,0 +1,21 @@
+{
+  "user_a": "Emma Chen",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 32,
+    "C": 12,
+    "D": 56
+  },
+  "feel": {
+    "R": 22,
+    "C": 22,
+    "D": 56
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.71,
+  "timestamp": "2026-03-24T05:53:38.063346"
+}

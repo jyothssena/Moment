@@ -1,0 +1,14 @@
+artifact_uri: /Users/tanmayishurpali/mar24/Moment/mlruns/710399228837085482/2bbaade445ea4731be020c72be8b9ecb/artifacts
+end_time: 1774382869366
+entry_point_name: ''
+experiment_id: '710399228837085482'
+lifecycle_stage: active
+run_id: 2bbaade445ea4731be020c72be8b9ecb
+run_name: decomp_reader_a_Sophia Patel
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774382869359
+status: 3
+tags: []
+user_id: tanmayishurpali

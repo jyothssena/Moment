@@ -1,0 +1,362 @@
+name: Momento — CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "model_interface.py"
+      - "aggregate.py"
+      - "aggregator.py"
+      - "compatibility_agent.py"
+      - "decomposing_agent.py"
+      - "validate_model.py"
+      - "bias_detection.py"
+      - "rollback.py"
+      - "notifications.py"
+      - "deploy.py"
+      - "requirements.txt"
+      - "Dockerfile"
+      - "tests/**"
+  pull_request:
+    branches: [main]
+
+env:
+  PROJECT_ID:    ${{ secrets.GCP_PROJECT_ID }}
+  REGION:        ${{ secrets.GCP_REGION }}
+  REPO:          moment-agents
+  REGISTRY:      ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/moment-agents
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 1 — CI: Tests
+# ─────────────────────────────────────────────────────────────────────────────
+jobs:
+  test:
+    name: "1 · Run Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest
+
+      - name: Run full test suite
+        run: pytest tests/ -v --tb=short
+
+      - name: Notify on test failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          from notifications import notify_pipeline_failure
+          notify_pipeline_failure('test', 'pytest suite failed — see GitHub Actions logs')
+          "
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 2 — CI: Validation + Bias Detection
+# ─────────────────────────────────────────────────────────────────────────────
+  validate:
+    name: "2 · Validate & Bias Check"
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run model inference on validation set
+        run: python run_validation_set.py --output validation_results.json
+        env:
+          GEMINI_API_KEY_MOMENT: ${{ secrets.GEMINI_API_KEY_MOMENT }}
+
+      - name: Validate model outputs
+        run: python validate_model.py validation_results.json
+
+      - name: Detect model bias
+        run: python bias_detection.py validation_results.json
+
+      - name: Notify on validation failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          import json
+          from notifications import notify_validation_failure
+          try:
+              with open('validation_results.json') as f:
+                  data = json.load(f)
+              from validate_model import compute_validation_metrics, run_validation_gate
+              results = data if isinstance(data, list) else data.get('pairs', [])
+              gate = run_validation_gate(results)
+              notify_validation_failure(gate['metrics'], gate['failures'])
+          except Exception as e:
+              notify_validation_failure({'error': str(e)}, [str(e)])
+          "
+
+      - name: Upload validation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results-${{ github.sha }}
+          path: validation_results.json
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 3 — CD: Build & Push Docker Images
+# ─────────────────────────────────────────────────────────────────────────────
+  build-and-push:
+    name: "3 · Build & Push to Registry"
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+
+      - name: Build Decompose Agent image
+        run: |
+          docker build \
+            --build-arg GIT_SHA=${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/decompose-agent:${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/decompose-agent:latest \
+            -f Dockerfile .
+
+      - name: Build Compatibility Agent image
+        run: |
+          docker build \
+            --build-arg GIT_SHA=${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/compat-agent:${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/compat-agent:latest \
+            -f Dockerfile .
+
+      - name: Build Profile Agent image
+        run: |
+          docker build \
+            --build-arg GIT_SHA=${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/profile-agent:${{ github.sha }} \
+            -t ${{ env.REGISTRY }}/profile-agent:latest \
+            -f Dockerfile .
+
+      - name: Push all agent images
+        run: |
+          docker push ${{ env.REGISTRY }}/decompose-agent:${{ github.sha }}
+          docker push ${{ env.REGISTRY }}/decompose-agent:latest
+          docker push ${{ env.REGISTRY }}/compat-agent:${{ github.sha }}
+          docker push ${{ env.REGISTRY }}/compat-agent:latest
+          docker push ${{ env.REGISTRY }}/profile-agent:${{ github.sha }}
+          docker push ${{ env.REGISTRY }}/profile-agent:latest
+
+      - name: Notify on build failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          from notifications import notify_pipeline_failure
+          notify_pipeline_failure('build-and-push', 'Docker build or push to Artifact Registry failed')
+          "
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 4 — CD: Rollback Check
+# ─────────────────────────────────────────────────────────────────────────────
+  rollback-check:
+    name: "4 · Rollback Check"
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download validation results
+        uses: actions/download-artifact@v4
+        with:
+          name: validation-results-${{ github.sha }}
+
+      - name: Compute metrics for rollback comparison
+        run: |
+          python -c "
+          import json
+          from validate_model import compute_validation_metrics
+          with open('validation_results.json') as f:
+              data = json.load(f)
+          results = data if isinstance(data, list) else data.get('pairs', [])
+          metrics = compute_validation_metrics(results)
+          with open('new_metrics.json', 'w') as f:
+              json.dump(metrics, f, indent=2)
+          print('New metrics:', json.dumps(metrics, indent=2))
+          "
+
+      - name: Fetch baseline metrics from GCS
+        run: |
+          gcloud storage cp gs://${{ secrets.GCS_BUCKET }}/metrics_baseline.json . \
+            || echo '{}' > metrics_baseline.json
+
+      - name: Run rollback check
+        id: rollback
+        run: python rollback.py new_metrics.json metrics_baseline.json
+
+      - name: Trigger rollback — re-tag previous image as production
+        if: failure() && steps.rollback.outcome == 'failure'
+        run: |
+          for agent in decompose-agent compat-agent profile-agent; do
+            gcloud artifacts docker tags add \
+              ${{ env.REGISTRY }}/${agent}:production-stable \
+              ${{ env.REGISTRY }}/${agent}:production \
+              || echo "No stable image for ${agent}"
+          done
+
+      - name: Notify on rollback
+        if: failure() && steps.rollback.outcome == 'failure'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          from notifications import notify_rollback
+          notify_rollback(
+            reason='New model metrics regressed beyond rollback threshold',
+            rolled_back_to='production-stable'
+          )
+          "
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 5 — CD: Deploy to Vertex AI
+# ─────────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: "5 · Deploy to Vertex AI"
+    runs-on: ubuntu-latest
+    needs: rollback-check
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Vertex AI SDK
+        run: pip install -r requirements.txt && pip install google-cloud-aiplatform[agent_engines,adk]
+
+      - name: Download validation results
+        uses: actions/download-artifact@v4
+        with:
+          name: validation-results-${{ github.sha }}
+
+      - name: Compute new metrics
+        run: |
+          python -c "
+          import json
+          from validate_model import compute_validation_metrics
+          with open('validation_results.json') as f:
+              data = json.load(f)
+          results = data if isinstance(data, list) else data.get('pairs', [])
+          metrics = compute_validation_metrics(results)
+          with open('new_metrics.json', 'w') as f:
+              json.dump(metrics, f, indent=2)
+          "
+
+      - name: Deploy agents to Vertex AI Agent Engine
+        run: python deploy.py
+        env:
+          GCP_PROJECT_ID:        ${{ secrets.GCP_PROJECT_ID }}
+          GCP_REGION:            ${{ secrets.GCP_REGION }}
+          GCS_BUCKET:            ${{ secrets.GCS_BUCKET }}
+          GEMINI_API_KEY_MOMENT: ${{ secrets.GEMINI_API_KEY_MOMENT }}
+
+      - name: Tag all deployed images as production-stable
+        run: |
+          for agent in decompose-agent compat-agent profile-agent; do
+            docker pull ${{ env.REGISTRY }}/${agent}:${{ github.sha }}
+            docker tag  ${{ env.REGISTRY }}/${agent}:${{ github.sha }} \
+                        ${{ env.REGISTRY }}/${agent}:production-stable
+            docker push ${{ env.REGISTRY }}/${agent}:production-stable
+          done
+
+      - name: Save new baseline metrics to GCS
+        run: |
+          gcloud storage cp new_metrics.json \
+            gs://moment-agent-data/metrics_baseline.json
+
+      - name: Notify on successful deployment
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          from notifications import notify_deployment_success, notify_training_complete
+          import json
+          with open('new_metrics.json') as f:
+              metrics = json.load(f)
+          notify_training_complete('${{ github.sha }}', metrics)
+          notify_deployment_success('${{ github.sha }}', 'Vertex AI')
+          "
+
+      - name: Notify on deployment failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          python -c "
+          from notifications import notify_pipeline_failure
+          notify_pipeline_failure('deploy', 'Vertex AI deployment failed — check deploy.py logs')
+          "

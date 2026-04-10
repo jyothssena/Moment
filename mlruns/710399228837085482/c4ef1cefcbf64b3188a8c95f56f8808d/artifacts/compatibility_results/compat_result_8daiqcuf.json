@@ -1,0 +1,21 @@
+{
+  "user_a": "Emma Chen",
+  "user_b": "Ryan O'Connor",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 33,
+    "C": 42,
+    "D": 25
+  },
+  "feel": {
+    "R": 12,
+    "C": 63,
+    "D": 25
+  },
+  "dominant_think": "contradict",
+  "dominant_feel": "contradict",
+  "verdict": null,
+  "confidence": 0.87,
+  "timestamp": "2026-03-24T06:10:17.645940"
+}

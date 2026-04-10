@@ -1,0 +1,21 @@
+{
+  "user_a": "David Kim",
+  "user_b": "Isabella Rodriguez",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 27,
+    "C": 11,
+    "D": 62
+  },
+  "feel": {
+    "R": 19,
+    "C": 19,
+    "D": 62
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.71,
+  "timestamp": "2026-03-24T06:00:49.922801"
+}

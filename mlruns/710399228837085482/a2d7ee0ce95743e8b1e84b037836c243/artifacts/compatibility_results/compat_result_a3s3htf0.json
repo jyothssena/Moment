@@ -1,0 +1,21 @@
+{
+  "user_a": "Marcus Williams",
+  "user_b": "Isabella Rodriguez",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 25,
+    "C": 0,
+    "D": 75
+  },
+  "feel": {
+    "R": 25,
+    "C": 0,
+    "D": 75
+  },
+  "dominant_think": "diverge",
+  "dominant_feel": "diverge",
+  "verdict": null,
+  "confidence": 0.61,
+  "timestamp": "2026-03-24T05:55:57.763107"
+}

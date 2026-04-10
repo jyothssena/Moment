@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Maya Singh",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Shelley uses musical metaphors to describe Victor's ambition, creating beautiful language that highlights the dangerous nature of his thinking.",
+      "quote": "Shelley's using musical metaphors\u2014\"keys,\" \"chord after chord.\" Victor's seduction by ambition rendered as symphony. Beautiful language for dangerous thinking.",
+      "weight": 0.195,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "2",
+      "claim": "Victor frames his situation as a Greek tragedy, attributing his downfall to fate rather than choice, which Shelley uses to illustrate how people rewrite their decisions to escape guilt.",
+      "quote": "\"Words of fate enounced to destroy me.\" He's narrativizing this as Greek tragedy. Fate, not choice. Shelley's showing how people rewrite their own decisions as destiny to escape guilt.",
+      "weight": 0.25,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "Victor uses biblical language to elevate his scientific obsession to a religious experience, a conflation of science and the divine that the reader identifies as the core problem.",
+      "quote": "\"I closed not my eyes that night.\" Biblical phrasing. Old Testament language. Victor's elevating his scientific obsession to religious experience. That conflation of science and the divine is the whole problem.",
+      "weight": 0.258,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "Victor dismisses his morning clarity, choosing his irrational obsession over reality, which the reader interprets as Shelley's warning about humanity's tendency to proceed despite knowing better.",
+      "quote": "\"Yesternight's thoughts were as a dream.\" He wakes with clarity\u2014the night's obsession revealed as irrational\u2014and dismisses that clarity. Chooses the dream over reality. That's Shelley's warning. We always know better. We proceed anyway.",
+      "weight": 0.297,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

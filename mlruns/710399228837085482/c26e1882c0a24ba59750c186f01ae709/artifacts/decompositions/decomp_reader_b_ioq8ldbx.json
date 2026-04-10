@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Jake Morrison",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The character, despite knowing the facts about the harsh reality, still chooses to prioritize his vision.",
+      "quote": "He knows the facts. Chooses the vision anyway.",
+      "weight": 0.132,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "This choice is not an act of stupidity, but rather a common and perhaps essential characteristic of historical expeditions, where explorers refuse to believe negative predictions.",
+      "quote": "That's not stupidity. Every expedition in history started with someone refusing to believe the place they were going was as bad as everyone said.",
+      "weight": 0.547,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The outcomes of such ventures are uncertain, and sometimes the optimistic belief, like a \"Wind of promise,\" can indeed prove to be a real and valid force.",
+      "quote": "Some of them were wrong. Some weren't. \"Wind of promise\" is a real thing.",
+      "weight": 0.321,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

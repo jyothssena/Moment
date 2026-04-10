@@ -1,0 +1,21 @@
+{
+  "user_a": "Emma Chen",
+  "user_b": "David Kim",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 90,
+    "C": 0,
+    "D": 10
+  },
+  "feel": {
+    "R": 3,
+    "C": 87,
+    "D": 10
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "contradict",
+  "verdict": null,
+  "confidence": 0.87,
+  "timestamp": "2026-03-24T05:47:27.104219"
+}

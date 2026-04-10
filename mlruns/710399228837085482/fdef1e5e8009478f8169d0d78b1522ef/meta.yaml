@@ -1,0 +1,14 @@
+artifact_uri: /Users/tanmayishurpali/mar24/Moment/mlruns/710399228837085482/fdef1e5e8009478f8169d0d78b1522ef/artifacts
+end_time: 1774383007068
+entry_point_name: ''
+experiment_id: '710399228837085482'
+lifecycle_stage: active
+run_id: fdef1e5e8009478f8169d0d78b1522ef
+run_name: decomp_reader_b_Ryan O'Connor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774383007056
+status: 3
+tags: []
+user_id: tanmayishurpali

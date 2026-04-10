@@ -1,0 +1,21 @@
+{
+  "user_a": "David Kim",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 34,
+    "C": 49,
+    "D": 17
+  },
+  "feel": {
+    "R": 41,
+    "C": 42,
+    "D": 17
+  },
+  "dominant_think": "contradict",
+  "dominant_feel": "contradict",
+  "verdict": null,
+  "confidence": 0.77,
+  "timestamp": "2026-03-24T12:39:16.154244"
+}

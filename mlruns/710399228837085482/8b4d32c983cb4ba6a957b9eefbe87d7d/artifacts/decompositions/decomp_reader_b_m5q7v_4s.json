@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Ethan Brooks",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "Shelley deliberately skips the creation process, immediately moving past the \"Instruments of life.\"",
+      "quote": "Shelley skips the creation. \"Instruments of life\"",
+      "weight": 0.1,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The immediate opening of the \"dull yellow eye\" emphasizes the deliberate narrative gap.",
+      "quote": "then immediately \"dull yellow eye\" opens. The gap is deliberate.",
+      "weight": 0.136,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "3",
+      "claim": "The actual physical appearance of the creature, with its specific unappealing details, is what truly fills the narrative gap.",
+      "quote": "What fills that gap is the actual creature: yellow skin barely covering muscle, watery eyes, black lips. That's what was there.",
+      "weight": 0.246,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "4",
+      "claim": "Victor's \"Beautiful!\u2014Great God!\" is not confused aesthetics but a reaction to the imagined meeting the actual.",
+      "quote": "Victor's \"Beautiful!\u2014Great God!\" isn't confused aesthetics \u2014 it's what happens when what you imagined meets what you actually made.",
+      "weight": 0.246,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "5",
+      "claim": "The creature arrived exactly as assembled, and \"catastrophe\" accurately describes its immediate state, not a failure of the creation process itself.",
+      "quote": "The creature arrived exactly as assembled. Calling it \"catastrophe\" is accurate description of that specific thing, in that specific room, at that specific moment. Not a failure. The right word.",
+      "weight": 0.272,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

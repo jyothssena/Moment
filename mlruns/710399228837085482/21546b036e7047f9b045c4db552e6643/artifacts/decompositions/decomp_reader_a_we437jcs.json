@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Marcus Williams",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The 'palpable enemy' referred to in the passage is Victor himself, driven by his own hunger.",
+      "quote": "That enemy is himself. His own hunger.",
+      "weight": 0.127,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader personally identifies with the feeling of being consumed by an idea, but distinguishes their experience from Victor's because their ideas do not result in a living creation.",
+      "quote": "Know that feeling \u2014 when an idea takes everything over and you can't get out. But you don't build anything from it that then has to live.",
+      "weight": 0.527,
+      "emotional_mode": "self-referential"
+    },
+    {
+      "id": "3",
+      "claim": "Victor's future creation will bear the burden of his internal struggle ('insurrection') without having chosen to do so.",
+      "quote": "Whatever comes from this night will carry all this insurrection without having chosen any of it.",
+      "weight": 0.345,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

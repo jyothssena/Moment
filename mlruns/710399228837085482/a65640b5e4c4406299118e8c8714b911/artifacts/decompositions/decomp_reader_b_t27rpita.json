@@ -1,0 +1,42 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Isabella Rodriguez",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The passage's description of a \"soul grappling with a palpable enemy\" refers to intrusive thoughts, where the character's own mind is the adversary.",
+      "quote": "\"Soul grappling with a palpable enemy.\" He's describing intrusive thoughts. The enemy is his own mind.",
+      "weight": 0.125,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The phrase \"One by one the various keys were touched which formed the mechanism of my being\" illustrates how obsession systematically exploits pre-existing vulnerabilities, implying the character's capacity for this state was always present.",
+      "quote": "\"One by one the various keys were touched which formed the mechanism of my being.\" That's how obsession works. It finds your vulnerabilities, activates them systematically. \"Keys\" implies unlocking something that was already there. His capacity for this was always present.",
+      "weight": 0.36,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "3",
+      "claim": "The repetition of \"One thought, one conception, one purpose\" perfectly captures a classic, clinically concerning obsessive pattern characterized by rumination and an inability to shift focus.",
+      "quote": "\"One thought, one conception, one purpose.\" Classic obsessive pattern. Rumination. Inability to shift focus. Clinically concerning.",
+      "weight": 0.154,
+      "emotional_mode": "prosecutorial"
+    },
+    {
+      "id": "4",
+      "claim": "The description of an \"Internal being in a state of insurrection and turmoil\" signifies a self-revolt where the character's better judgment is losing the internal battle.",
+      "quote": "\"Internal being in a state of insurrection and turmoil.\" His body knows this is wrong. Insurrection\u2014revolt against the self. He's at war with his own better judgment and losing.",
+      "weight": 0.25,
+      "emotional_mode": "empathetic"
+    },
+    {
+      "id": "5",
+      "claim": "Despite the morning offering a chance for perspective, the character fails to utilize it.",
+      "quote": "Morning brings perspective (\"thoughts were as a dream\") but he doesn't use it.",
+      "weight": 0.11,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

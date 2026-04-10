@@ -1,0 +1,21 @@
+{
+  "user_a": "David Kim",
+  "user_b": "Maya Singh",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "think": {
+    "R": 59,
+    "C": 0,
+    "D": 41
+  },
+  "feel": {
+    "R": -9,
+    "C": 68,
+    "D": 41
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "contradict",
+  "verdict": null,
+  "confidence": 0.84,
+  "timestamp": "2026-03-24T12:39:51.651841"
+}

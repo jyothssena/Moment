@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Ryan O'Connor",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The term \"Catastrophe\" is used prematurely, before any actual negative event has occurred.",
+      "quote": "\"Catastrophe\" before anything bad",
+      "weight": 0.13,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The visual detail of the \"dull yellow eye\" is a concrete and alarming reality.",
+      "quote": "but the \"dull yellow eye\" was real. Watery, yellow, looking back at him.",
+      "weight": 0.36,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "3",
+      "claim": "The reaction to the creature's appearance was an honest and accurate response, not a result of prejudice or personal failing.",
+      "quote": "The honest reaction to what he saw. Not prejudice. Not failure. The creature arrived and it was alarming. That's an accurate reaction.",
+      "weight": 0.51,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Aisha Thompson",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader describes the symbolic imagery surrounding the creature's birth, noting the transition of light.",
+      "quote": "Candle dying, creature's eye opening. One light going out, another turning on.",
+      "weight": 0.2,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The reader expresses profound empathy for the creature's immediate and inherently tragic state of being, marked by catastrophe and wretchedness from its first moments.",
+      "quote": "I feel for it so much. First moment alive and already it's a catastrophe. Already a wretch.",
+      "weight": 0.28,
+      "emotional_mode": "empathetic"
+    },
+    {
+      "id": "3",
+      "claim": "The reader observes the creature's natural, newborn-like gesture of reaching out and contrasts it with Victor's perception of it as a threat.",
+      "quote": "Reached out for him later \u2014 newborns do that. Victor saw threat.",
+      "weight": 0.2,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "4",
+      "claim": "The reader laments the fundamental tragedy of the creature's existence, beginning with its creator's immediate horror.",
+      "quote": "What kind of beginning is that. You open your eyes and the person who made you is already horrified.",
+      "weight": 0.32,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

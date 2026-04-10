@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Ethan Brooks",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The passage is compressed, moving quickly through a sequence of events including a lecture, ignition, sleepless night, morning doubt, and commitment, indicating Shelley's fast pacing.",
+      "quote": "Compressed passage \u2014 lecture, ignition, sleepless night, morning doubt, commitment. Shelley moves fast.",
+      "weight": 0.21,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The phrase \"Chord after chord was sounded\" uses a musical metaphor to specifically convey that the obsession felt cumulative and built, rather than sudden or imposed.",
+      "quote": "\"Chord after chord was sounded.\" The musical metaphor is doing something specific here \u2014 making the obsession feel cumulative, not sudden. Built. Not imposed.",
+      "weight": 0.39,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "3",
+      "claim": "The phrase \"Yesternight's thoughts were as a dream\" suggests the character acknowledges an exit, takes stock, and proceeds, revealing an honesty that is often not credited in most readings.",
+      "quote": "\"Yesternight's thoughts were as a dream.\" He sees the exit. Takes stock. Proceeds. There's something honest in that most readings don't credit him with.",
+      "weight": 0.39,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

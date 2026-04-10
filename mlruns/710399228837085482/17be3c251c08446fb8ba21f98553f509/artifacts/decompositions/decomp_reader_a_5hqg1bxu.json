@@ -1,0 +1,35 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_3",
+  "user_id": "Marcus Williams",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The narrator is asking his sister a rhetorical question about his feelings, but she is not physically present to hear or understand.",
+      "quote": "\"Do you understand this feeling?\" Asking his sister. She's not there.",
+      "weight": 0.26,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "His crew is present but is not engaged in understanding his feelings; they merely follow orders.",
+      "quote": "His crew is there. They don't get asked. They just follow.",
+      "weight": 0.28,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "3",
+      "claim": "The description of the 'perpetual sun' evokes both beauty and a sense of isolation.",
+      "quote": "The perpetual sun sounds beautiful. Also sounds lonely.",
+      "weight": 0.19,
+      "emotional_mode": "aesthetic"
+    },
+    {
+      "id": "4",
+      "claim": "The narrator feels that those closest to him are the least capable of truly understanding his emotions.",
+      "quote": "And the people closest to him are the last ones who'd know how he really feels.",
+      "weight": 0.26,
+      "emotional_mode": "philosophical"
+    }
+  ]
+}

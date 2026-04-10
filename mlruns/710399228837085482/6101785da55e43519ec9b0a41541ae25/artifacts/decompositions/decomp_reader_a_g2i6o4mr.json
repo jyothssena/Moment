@@ -1,0 +1,28 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "user_id": "Aisha Thompson",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The reader interprets the 'palpable enemy' as an internal struggle, which they believe is ultimately unwinnable.",
+      "quote": "\"Soul grappling with a palpable enemy.\"",
+      "weight": 0.22,
+      "emotional_mode": "philosophical"
+    },
+    {
+      "id": "2",
+      "claim": "The reader personally identifies with the feeling of an idea taking hold and refusing to release, as described by \"Chord after chord was sounded.\"",
+      "quote": "\"Chord after chord was sounded\"",
+      "weight": 0.39,
+      "emotional_mode": "self-referential"
+    },
+    {
+      "id": "3",
+      "claim": "The reader empathizes with the character's sleeplessness, explaining that when deeply obsessed, objective reality feels less true than the obsession itself.",
+      "quote": "(no direct quote)",
+      "weight": 0.39,
+      "emotional_mode": "empathetic"
+    }
+  ]
+}

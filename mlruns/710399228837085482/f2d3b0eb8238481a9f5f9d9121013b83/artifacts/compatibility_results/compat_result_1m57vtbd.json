@@ -1,0 +1,21 @@
+{
+  "user_a": "Marcus Williams",
+  "user_b": "Jake Morrison",
+  "book_id": "Frankenstein",
+  "passage_id": "passage_2",
+  "think": {
+    "R": 55,
+    "C": 0,
+    "D": 45
+  },
+  "feel": {
+    "R": 111,
+    "C": -56,
+    "D": 45
+  },
+  "dominant_think": "resonate",
+  "dominant_feel": "resonate",
+  "verdict": null,
+  "confidence": 0.87,
+  "timestamp": "2026-03-24T05:56:20.240819"
+}

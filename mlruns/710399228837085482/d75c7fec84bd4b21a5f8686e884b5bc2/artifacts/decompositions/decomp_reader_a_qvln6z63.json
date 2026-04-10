@@ -1,0 +1,21 @@
+{
+  "book_id": "Frankenstein",
+  "passage_id": "passage_1",
+  "user_id": "Jake Morrison",
+  "subclaims": [
+    {
+      "id": "1",
+      "claim": "The specific detail of the \"Dull yellow eye\" opening in a dead face is a crucial, distinct reality that contrasts with Victor's imagined outcome.",
+      "quote": "\"Dull yellow eye\" opens in a dead face and looks back at him. That specific thing. That specific eye. Not what Victor imagined it would look like. What was actually there.",
+      "weight": 0.38,
+      "emotional_mode": "observational"
+    },
+    {
+      "id": "2",
+      "claim": "The description of the event as \"catastrophe\" is an accurate reflection of the alarming reality of what happened when the eye opened, rather than a sign of Victor's prejudice, lack of empathy, or personal failure.",
+      "quote": "Calling it \"catastrophe\" isn't prejudice. It isn't a failure of empathy or imagination. It's the accurate word for what happened when that eye opened. What was actually there. and it was alarming. That's not Victor's failure. That's the reality of what was in the room.",
+      "weight": 0.62,
+      "emotional_mode": "prosecutorial"
+    }
+  ]
+}

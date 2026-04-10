@@ -107,7 +107,7 @@ dvc:
 # --- Alerts ---
 alerts:
   email:
-    enabled: false
+    enabled: true
     recipients:
       - "patel.heet@northeastern.edu"
   slack:
