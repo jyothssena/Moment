@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pg8000
+pyfarmhash
+google-cloud-bigquery
+google-cloud-bigquery-storage
+cloud-sql-python-connector[pg8000]
+pandas
+pandas-gbq
+pyarrow
+textstat
+langdetect
+requests
+pyyaml

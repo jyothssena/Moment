@@ -20,6 +20,8 @@ x-airflow-common: &airflow-common
     # GCS credentials — service account key
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/gcs-key.json
     GOOGLE_CLOUD_PROJECT: moment-486719
+    GEMINI_API_KEY_MOMENT: AIzaSyBJ4vdTN3cgnrhSa5mTmHaZzT0X1RIZTGc
+    PYTHONPATH: /opt/airflow:/opt/airflow/models
   volumes:
     # DAG file
     - ./data_pipeline/airflow/dags:/opt/airflow/dags
@@ -37,6 +39,8 @@ x-airflow-common: &airflow-common
     - ./requirements.txt:/opt/airflow/requirements.txt
     # GCS service account key — place your key as gcs-service-account.json in repo root
     - ./gcs-service-account.json:/opt/airflow/gcs-key.json:ro
+    - ./models:/opt/airflow/models
+    - ./tools.py:/opt/airflow/tools.py 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:
@@ -49,6 +53,7 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
+      platform: linux/amd64
     volumes:
       - postgres-db:/var/lib/postgresql/data
     healthcheck:
@@ -99,5 +104,17 @@ services:
                airflow scheduler"
     restart: always
 
+  cloud-sql-proxy:
+    image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2
+    command:
+     - "--address=0.0.0.0"
+     - "--port=5432"
+     - "moment-486719:us-central1:moment-db"
+    volumes:
+     - ./credentials/gcs-serive-account.json:/key.json
+    environment:
+     GOOGLE_APPLICATION_CREDENTIALS: /key.json
+
 volumes:
   postgres-db:
+

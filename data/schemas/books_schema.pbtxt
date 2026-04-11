@@ -268,7 +268,7 @@ string_domain {
 string_domain {
   name: "book_author"
   value: "F. Scott (Francis Scott) Fitzgerald"
-  value: "Mary Shelley"
+  value: "Mary Wollstonecraft Shelley"
 }
 string_domain {
   name: "passage_title"
@@ -290,5 +290,5 @@ string_domain {
 }
 string_domain {
   name: "timestamp"
-  value: "2026-02-25T00:00:53"
+  value: "2026-04-01T00:10:38"
 }

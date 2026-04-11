@@ -3,3 +3,5 @@ USER root
 RUN apt-get update && apt-get install -y gcc g++ && apt-get clean
 USER airflow
 RUN pip install --no-cache-dir tensorflow-data-validation
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt

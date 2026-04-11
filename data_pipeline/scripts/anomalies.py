@@ -221,7 +221,7 @@ def _check_style_mismatch(readability, character, ceiling, floor, details):
     if not character:
         return False
 
-    exp = character.get("Experience_Level", "").strip()
+    exp = (character.get("Experience_Level") or "").strip()
     dist = character.get("Distribution_Category", "").strip()
 
     if (exp == "New" or dist == "NEW READER") and readability < floor:

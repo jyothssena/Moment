@@ -2,41 +2,6 @@
   {
     "book_id": "Frankenstein",
     "passage_id": "passage_1",
-    "user_id": "Aisha Thompson",
-    "subclaims": [
-      {
-        "id": "1",
-        "claim": "The reader describes the symbolic imagery surrounding the creature's birth, noting the transition of light.",
-        "quote": "Candle dying, creature's eye opening. One light going out, another turning on.",
-        "weight": 0.2,
-        "emotional_mode": "observational"
-      },
-      {
-        "id": "2",
-        "claim": "The reader expresses profound empathy for the creature's immediate and inherently tragic state of being, marked by catastrophe and wretchedness from its first moments.",
-        "quote": "I feel for it so much. First moment alive and already it's a catastrophe. Already a wretch.",
-        "weight": 0.28,
-        "emotional_mode": "empathetic"
-      },
-      {
-        "id": "3",
-        "claim": "The reader observes the creature's natural, newborn-like gesture of reaching out and contrasts it with Victor's perception of it as a threat.",
-        "quote": "Reached out for him later \u2014 newborns do that. Victor saw threat.",
-        "weight": 0.2,
-        "emotional_mode": "philosophical"
-      },
-      {
-        "id": "4",
-        "claim": "The reader laments the fundamental tragedy of the creature's existence, beginning with its creator's immediate horror.",
-        "quote": "What kind of beginning is that. You open your eyes and the person who made you is already horrified.",
-        "weight": 0.32,
-        "emotional_mode": "empathetic"
-      }
-    ]
-  },
-  {
-    "book_id": "Frankenstein",
-    "passage_id": "passage_1",
     "user_id": "Ryan O'Connor",
     "subclaims": [
       {
@@ -59,41 +24,6 @@
         "quote": "The honest reaction to what he saw. Not prejudice. Not failure. The creature arrived and it was alarming. That's an accurate reaction.",
         "weight": 0.51,
         "emotional_mode": "prosecutorial"
-      }
-    ]
-  },
-  {
-    "book_id": "Frankenstein",
-    "passage_id": "passage_1",
-    "user_id": "Isabella Rodriguez",
-    "subclaims": [
-      {
-        "id": "1",
-        "claim": "Victor's initial reaction of \"Catastrophe\" is a projection of his own capabilities and fears, not a reaction to the creature itself.",
-        "quote": "\"Catastrophe\" before the creature does anything. He's not reacting to the creature\u2014he's reacting to himself. What he's capable of. That's projection.",
-        "weight": 0.226,
-        "emotional_mode": "philosophical"
-      },
-      {
-        "id": "2",
-        "claim": "The creature's initial movements are natural for a newborn, not aggressive, and Victor misinterprets them as monstrous to justify his own flight.",
-        "quote": "Breathing hard, convulsive motion. That's not aggression. That's a newborn figuring out a body. Victor needs it to be monstrous to justify running.",
-        "weight": 0.261,
-        "emotional_mode": "prosecutorial"
-      },
-      {
-        "id": "3",
-        "claim": "This dynamic of rejecting the real for an imagined ideal is a common pattern, particularly in parenting, which destroys the ability to love what is actually present.",
-        "quote": "See this with parents all the time. Imagine perfect child, reject real one. The fantasy destroys your ability to love what's actually there.",
-        "weight": 0.252,
-        "emotional_mode": "self-referential"
-      },
-      {
-        "id": "4",
-        "claim": "Victor's fear transforms the creature's ambiguous gestures, like reaching out for connection, into threats, illustrating how fear creates monsters.",
-        "quote": "Hand reaching out later. Probably wanting connection. Victor's fear made it a threat. We create monsters by being terrified of ambiguous gestures.",
-        "weight": 0.261,
-        "emotional_mode": "philosophical"
       }
     ]
   },
@@ -882,62 +812,622 @@
     ]
   },
   {
-    "book_id": "Pride and Prejudice",
+    "book_id": "Frankenstein",
     "passage_id": "passage_1",
-    "user_id": "Emma Chen",
+    "user_id": "test_user",
     "subclaims": [
       {
         "id": "1",
-        "claim": "Victor immediately labels his creation a \"catastrophe\" even before it has done anything harmful, simply because it opened its eyes.",
-        "quote": "He says \"catastrophe\" before anything bad happens. Just... think about that. The creature opened its eyes. That's it. Victor's already calling it disaster.",
-        "weight": 0.25,
+        "claim": "The moment is about the creature.",
+        "quote": "about the creature",
+        "weight": 1.0,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "unknown",
+    "passage_id": "passage_3",
+    "user_id": "Dr. James Fletcher",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The character's attempt to be persuaded is a failure, revealing a willful ignorance rather than faith, as he knows the desolate reality but chooses to believe otherwise.",
+        "quote": "\"I try in vain to be persuaded.\" Vain. The attempt failed. He knows the pole is desolate. Chooses to believe otherwise. That's not faith. That's willful ignorance masquerading as vision.",
+        "weight": 0.21,
         "emotional_mode": "prosecutorial"
       },
       {
         "id": "2",
-        "claim": "Victor's mind is breaking due to the contradictory reality of his creation, as evidenced by his simultaneous exclamations of \"Beautiful!\u2014Great God!\". He cannot reconcile the creature's existence with his expectations.",
-        "quote": "\"Beautiful!\u2014Great God!\" Right next to each other. His brain's breaking. He built this with specific features and now he can't handle that it's real.",
-        "weight": 0.25,
+        "claim": "The phrase \"Wind of promise\" exemplifies romantic pathetic fallacy, where human intention is wrongly attributed to nature, exposing the futility of the character's quest through his projection of meaning.",
+        "quote": "\"Wind of promise.\" Romantic pathetic fallacy. Attributing human intention to nature. Wind doesn't promise. It blows. His projection of meaning onto meaningless phenomena reveals the emptiness of his quest.",
+        "weight": 0.24,
         "emotional_mode": "philosophical"
       },
       {
         "id": "3",
-        "claim": "Victor fixates on a single negative detail, the creature's yellow eye, to reduce its entire being to a gross feature and avoid acknowledging it as alive.",
-        "quote": "That yellow eye. Why does he fixate on that one detail? Reducing the whole being to one gross feature so he doesn't have to see it as alive.",
-        "weight": 0.25,
+        "claim": "The idea of imagination supplanting reality, as seen in \"Imagination as the region of beauty and delight,\" represents a dangerous form of Romantic philosophy, perverting Burke's sublime into a deluding beauty.",
+        "quote": "\"Imagination as the region of beauty and delight.\" Imagination supplanting reality. This is Romantic philosophy at its most dangerous. Burke's sublime\u2014terror that elevates\u2014perverted into beauty that deludes.",
+        "weight": 0.27,
         "emotional_mode": "philosophical"
       },
       {
         "id": "4",
-        "claim": "Victor misinterprets the creature's innocent, newborn-like gestures as a threat, thereby creating the 'monster' through his own flawed perception.",
-        "quote": "The creature reaches for him later. Newborns do that. But Victor sees threat. He created the monster by interpreting everything wrong.",
-        "weight": 0.25,
+        "claim": "Both Walton and Victor are Romantic idealists who ignore material reality, and Shelley, as the daughter of radicals, uses Romanticism as a cautionary tale, showing it leads to destruction rather than glory.",
+        "quote": "Walton and Victor both. Romantic idealists ignoring material reality. Shelley, daughter of radicals, knows where that leads. Not to glory. To frozen wastes and dead monsters. Romanticism as cautionary tale.",
+        "weight": 0.28,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "unknown",
+    "passage_id": "passage_3",
+    "user_id": "Nathan Cooper",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The common interpretation of the \"boats against the current\" imagery is one of futility where structural forces ultimately prevail.",
+        "quote": "Standard: futile, structural forces win.",
+        "weight": 0.13,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"he did not know it was already behind him\" indicates a simple lack of current knowledge, not a cognitive distortion or delusion.",
+        "quote": "\"he did not know it was already behind him\" \u2014 that's not cognitive distortion. That's just not knowing yet.",
+        "weight": 0.34,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase \"So we beat on\" highlights active, present-tense effort and continued movement despite strong opposing forces.",
+        "quote": "\"So we beat on\" \u2014 present tense, active. The current is strong. The boats are still moving.",
+        "weight": 0.31,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "A state of not knowing or facing difficulty should not be equated with delusion or the invalidity of one's aspirations.",
+        "quote": "Not knowing isn't delusion. The current being hard isn't the same as the dream being wrong.",
+        "weight": 0.22,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Dr. James Fletcher",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor's immediate labeling of the creature's existence as a \"catastrophe\" before any action demonstrates prejudice, where judgment precedes observation.",
+        "quote": "The creature hasn't committed any act yet Victor calls this catastrophe. Judgment precedes action. That's the foundation of prejudice\u2014deciding what something is before observing what it does.",
+        "weight": 0.223,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "Victor's inability to describe his emotions about the \"catastrophe\" stems from their irrationality, as there's no logical language for horror at one's own success.",
+        "quote": "\"How can I describe my emotions at this catastrophe.\" He can't describe them because they're irrational. There's no language for horror at your own success.",
+        "weight": 0.191,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's features becoming \"more horrible\" is a matter of Victor's perception, not a change in reality, indicating Victor's altered willingness to see them.",
+        "quote": "Beautiful features making the creature more horrible. That's perception, not reality. The features didn't change\u2014Victor's willingness to see them did.",
+        "weight": 0.185,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "Victor misinterprets the creature's natural need for connection as a threat, demonstrating how his fear actively creates the monster by treating it as such.",
+        "quote": "Later the creature reaches for him. Probably seeking warmth, connection, understanding. Victor interprets need as threat. Fear creates the monster. The creature becomes monstrous because Victor treats it as monstrous.",
+        "weight": 0.248,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "5",
+        "claim": "The passage prompts a reflection on the creator's responsibility towards their creation, especially when that creation evokes fear.",
+        "quote": "Shelley's asking: what responsibility do we have to what we create, even when creation terrifies us? Especially then.",
+        "weight": 0.153,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Marcus Johnson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The descriptive elements of the setting are highly effective in establishing the mood.",
+        "quote": "November. Rain. Candle almost dead. This is atmosphere doing heavy lifting.",
+        "weight": 0.15,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"Dull yellow eye\" is incredibly concise and creates a vivid, impactful image.",
+        "quote": "\"Dull yellow eye.\" Two words and you have the whole image.",
+        "weight": 0.14,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "3",
+        "claim": "The effectiveness of the craft lies in using one specific, 'wrong' detail rather than a comprehensive list of flaws.",
+        "quote": "That's the craft \u2014 one specific wrong detail instead of a list of everything wrong. Yellow. Not red, not white. Yellow.",
+        "weight": 0.35,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "4",
+        "claim": "Shelley successfully builds horror through the setting, making explicit explanation of the horror unnecessary and earning the reader's reaction.",
+        "quote": "The scene doesn't need to explain the horror. The setting already told you. Shelley earns the reaction by the time it lands.",
+        "weight": 0.36,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Hannah Park",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The creature's birth is depicted as an arrival into a world already fading, mirroring its doomed existence.",
+        "quote": "Dying candlelight. The creature waking into a world that is already dimming.",
+        "weight": 0.1,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "Shelley's personal experience of losing children informs the depiction of creation and rejection within the narrative, evident in the atmospheric details.",
+        "quote": "Shelley lost children. She knew what it meant to create something and have it arrive into rejection. That knowledge is in every detail here \u2014 the rain, the dark, the light going out as a new one opens.",
+        "weight": 0.34,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's initial action is a pure, instinctual reach towards its creator, highlighting its fundamental need for connection despite lacking language.",
+        "quote": "It reaches toward him. That instinct is everything. It has no language yet for what it needs. Just the instinct toward its maker.",
+        "weight": 0.22,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's perception of the creature is one of cold assessment and rejection, failing to see its inherent beauty or life, treating it as a collection of flaws rather than a being.",
+        "quote": "Victor lists its features like defects on a form. Hair, teeth, skin \u2014 objects to be assessed rather than a life to be welcomed. It arrives as beautiful as he built it and he cannot see it at all.",
+        "weight": 0.34,
         "emotional_mode": "prosecutorial"
       }
     ]
   },
   {
-    "book_id": "Pride and Prejudice",
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Sarah Mitchell",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The description of the 'Yellow eye opening by half-extinguished light' functions both as a Gothic atmospheric detail and a literal depiction of the creature's appearance.",
+        "quote": "\"Yellow eye opening by half-extinguished light.\" Gothic atmosphere \u2014 but also just what it actually looked like.",
+        "weight": 0.19,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The sequence \"Beautiful!\u2014Great God!\" reveals that the creature's intended beautiful features paradoxically made its appearance more alarming than if it had been randomly assembled.",
+        "quote": "\"Beautiful!\u2014Great God!\" That sequence tells you everything. The beautiful parts made it worse. The careful selection of features produced something more alarming than randomness would have.",
+        "weight": 0.36,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's physical attributes, such as its 'Dull yellow eye,' black lips, and yellowed skin, were a direct and accurate manifestation of how it was constructed.",
+        "quote": "\"Dull yellow eye\" in a face with black lips and yellowed skin \u2014 the creature arrived exactly as assembled.",
+        "weight": 0.23,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's reaction to the creature's genuinely alarming appearance is not a moral failing or a projection, but an accurate perception of what he had created.",
+        "quote": "Responding to that reality isn't Victor's moral failure. It's someone seeing clearly what they built. The eye that opened was genuinely alarming. That's not projection.",
+        "weight": 0.22,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Sophia Patel",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The passage's description of \"Anxiety that almost amounted to agony\" establishes a crushing atmosphere of dread even before the creature's existence.",
+        "quote": "\"Anxiety that almost amounted to agony\" \u2014 and nothing has happened yet. The atmosphere is crushing before the creature exists.",
+        "weight": 0.196,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The reader emphasizes the creature's immediate negative experience upon creation, highlighting that its first perceptions are recoil and being labeled a catastrophe.",
+        "quote": "But I keep coming back to the creature's side of this. Opens its eyes for the first time. The first thing it sees is someone recoiling. The first word that applies to it is catastrophe \u2014 before it breathes twice.",
+        "weight": 0.392,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The passage's mention of \"Luxuriances only formed a more horrid contrast\" is interpreted as Victor's failure, not the creature's, because the creature is condemned for its inherent design rather than its own actions.",
+        "quote": "\"Luxuriances only formed a more horrid contrast.\" The beautiful parts making it more horrible \u2014 that's not the creature's failure. That's Victor's. The creature arrives exactly as made and is immediately told it is wrong.",
+        "weight": 0.412,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Dr. Amelia Wright",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The characters project their own desires onto the subject, deciding what he wants without truly knowing him.",
+        "quote": "They don't know him but they've decided what he wants. That's projection. Their need becoming his supposed desire.",
+        "weight": 0.3,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The collective belief of the community overrides and replaces the individual's actual thoughts and truth.",
+        "quote": "Social truth replacing individual truth. What the community believes overwrites what the person actually thinks.",
+        "weight": 0.22,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The use of ownership-related language like 'property' and 'rightful' demonstrates the dehumanization of the subject, treating him as an object to be acquired rather than a person.",
+        "quote": "Ownership language\u2014property, rightful\u2014shows the dehumanization. He's not a person to be known. He's a resource to be acquired.",
+        "weight": 0.34,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "The author, Austen, is depicted as documenting how societal systems reduce people to mere objects.",
+        "quote": "Austen documenting how systems make people into objects.",
+        "weight": 0.14,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Jamal Washington",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The concept of \"universal truth\" is often a social construct designed to serve specific interests, a reality that Austen understands.",
+        "quote": "What they call universal truth is just what serves them. Austen knows this.",
+        "weight": 0.18,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "Societal pressure transforms the need for a rich man to marry into an asserted obligation, which then becomes an accepted fact.",
+        "quote": "Rich man arrives. They need him to want marriage. So they assert he must. Need becomes obligation becomes accepted fact.",
+        "weight": 0.3,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The underlying economics of the system involve applying property rights to humans, where marriage is a means of survival for women, rich men are resources, and competition is an inevitable outcome.",
+        "quote": "Ownership language throughout. Property rights applied to humans. That's the honest economics. Marriage was survival for women. Rich men were resources. Competition was inevitable.",
+        "weight": 0.38,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "Austen's intention is not to endorse this system but to dissect it and expose its deforming effects on all individuals involved.",
+        "quote": "Austen's not celebrating this system. She's anatomizing it. Showing how it deforms everyone involved.",
+        "weight": 0.14,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Lily Chen",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader appreciates the opening's initial formal style, which is then immediately subverted.",
+        "quote": "Love the opening. So proper and formal. Then immediately undercuts itself.",
+        "weight": 0.27,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "The reader feels empathy for the character, noting that others are prematurely and baselessly planning his future, specifically regarding finding a wife.",
+        "quote": "Poor guy. Can't even arrive without everyone planning his future. They've already decided he's looking for a wife. Based on absolutely nothing.",
+        "weight": 0.59,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The reader finds the description of the character as \"property\" to be harsh, despite acknowledging its potential truth.",
+        "quote": "Calling him property is harsh. True maybe, but harsh.",
+        "weight": 0.14,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Thomas Reed",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The idea that a rich single man is a marriage candidate is a valid and accurate interpretation of the social situation of the time.",
+        "quote": "Rich single man means marriage candidate. They're not wrong to think so.",
+        "weight": 0.367,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"Must be in want of a wife\" accurately reflects the social reality of the situation being described.",
+        "quote": "\"Must be in want of a wife\" is just what the situation was.",
+        "weight": 0.4,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase \"Rightful property\" is an honest acknowledgment of the economic realities underlying marriage.",
+        "quote": "\"Rightful property\" is honest about the economics.",
+        "weight": 0.233,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Andre Thompson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The passage's rhythm, characterized by short, building sentences and pauses, creates a musical pacing that generates tension.",
+        "quote": "The rhythm of this hits different. Short sentences building: \"content to be alone\"\u2014long pause\u2014\"stretched out his arms\"\u2014another pause\u2014\"trembling.\" That's musical pacing. Creating tension through gaps.",
+        "weight": 0.567,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "The \"green light\" serves as a memorable and impactful element, a \"hook\" that resonates with the reader.",
+        "quote": "The green light is the hook, the part that sticks.",
+        "weight": 0.2,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The character's sudden vanishing creates a powerful, almost musical \"beat drop\" effect, where absence becomes the most impactful element.",
+        "quote": "Then the vanishing: beat drop. He was there, now he's not. Negative space as loudest sound.",
+        "weight": 0.233,
+        "emotional_mode": "aesthetic"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Michelle Davis",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The common interpretation of trembling is negative, signifying sadness or mental deterioration.",
+        "quote": "The trembling gets read as sad. As evidence of how far gone he is.",
+        "weight": 0.267,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The reader offers an alternative interpretation: trembling while reaching for a desired object is a sign of honesty.",
+        "quote": "But trembling when you reach toward a single green light you want\u2014that's honesty.",
+        "weight": 0.317,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The character's act of reaching out, despite knowing the object is distant and small, demonstrates a rare and admirable quality.",
+        "quote": "Minute and far away and he knows it. He stretched out his arms anyway. That takes something most people don't have.",
+        "weight": 0.417,
+        "emotional_mode": "empathetic"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Steven Park",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The trembling Gatsby exhibits is not a sign of failure or pathology, but rather an appropriate and precise physical response to the significant distance and importance of his desire.",
+        "quote": "The trembling isn't the body failing \u2014 it's the body doing exactly what the moment requires. Registering the real weight of a real distance toward something that actually matters. The trembling is precision, not pathology.",
+        "weight": 0.565,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "Gatsby is fully aware of the significant distance to his desire, as indicated by the quoted phrase \"Minute and far away.\"",
+        "quote": "\"Minute and far away\" \u2014 he knows the distance.",
+        "weight": 0.116,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The reader proposes an alternative interpretation that Gatsby's behavior is \"correct,\" not delusional or dysfunctional, but rather a conscious effort to maintain desire without distorting it, even when reaching without an audience.",
+        "quote": "Alternative: this is correct behavior. He reaches anyway, at night, without audience. Not delusion. Not dysfunction. Maintaining desire without distorting it.",
+        "weight": 0.319,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Jessica Chang",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The subject's physical reactions (trembling, vanishing) are interpreted as a 'system failure' where desire overrides control mechanisms, leading to a 'system shutdown' and complete withdrawal.",
+        "quote": "The trembling as system failure: body experiencing desire his control mechanisms can't regulate. System designed for solitude experiencing malfunction when confronted with object of desire. His vanishing indicates system shutdown\u2014when control is lost, complete withdrawal is only available response.",
+        "weight": 0.464,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"Content to be alone\" suggests intentional isolation, but this is contradicted by the subject's act of reaching.",
+        "quote": "\"Content to be alone\" suggests intentional isolation, but the reaching contradicts that.",
+        "weight": 0.143,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The green light functions as an external trigger, overriding the subject's internal programming.",
+        "quote": "The green light functions as trigger: external stimulus overriding internal programming.",
+        "weight": 0.125,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Nick's observation without intervention is likened to surveillance, characterized by data collection without interference.",
+        "quote": "Nick's observation without intervention mirrors surveillance: data collection without interference.",
+        "weight": 0.125,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "5",
+        "claim": "The \"unquiet darkness\" is perceived as an ambient disturbance, indicating that one system's failure destabilizes nearby systems.",
+        "quote": "The \"unquiet darkness\" is ambient disturbance: one system's failure destabilizing nearby systems.",
+        "weight": 0.143,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Isabella Rodriguez",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor's initial reaction of \"catastrophe\" is a projection of his own capabilities and fears, not a reaction to the creature itself.",
+        "quote": "\"Catastrophe\" before the creature does anything. He's not reacting to the creature\u2014he's reacting to himself. What he's capable of. That's projection.",
+        "weight": 0.25,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The creature's initial \"breathing hard, convulsive motion\" should be understood as a newborn's natural movements, not aggression, which Victor misinterprets to justify his flight.",
+        "quote": "Breathing hard, convulsive motion. That's not aggression. That's a newborn figuring out a body. Victor needs it to be monstrous to justify running.",
+        "weight": 0.25,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The dynamic of imagining a perfect child and rejecting the real one, thereby destroying the ability to love what is actually present, is a common pattern observed in parenting.",
+        "quote": "See this with parents all the time. Imagine perfect child, reject real one. The fantasy destroys your ability to love what's actually there.",
+        "weight": 0.25,
+        "emotional_mode": "self-referential"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's fear transforms the creature's probable desire for connection into a threat, illustrating how fear of ambiguous gestures can lead to the creation of \"monsters.\"",
+        "quote": "Hand reaching out later. Probably wanting connection. Victor's fear made it a threat. We create monsters by being terrified of ambiguous gestures.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "William Foster",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The image of a man reaching for something he'll never touch represents mortality.",
+        "quote": "Man stands alone at night reaching for something he'll never touch. That's mortality.",
+        "weight": 0.2,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The physical sensation of trembling signifies the body's awareness of limited time.",
+        "quote": "The trembling is your body knowing you're running out of time.",
+        "weight": 0.16,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The 'green light' symbolizes lost opportunities or past states like youth or health.",
+        "quote": "The green light might as well be youth, or health, or another chance. Anything that's behind you now.",
+        "weight": 0.27,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "The 'water between them' represents the irreversible passage of time.",
+        "quote": "Water between them is time you can't recross.",
+        "weight": 0.12,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "5",
+        "claim": "The act of 'vanishing' illustrates the sudden and absolute nature of death.",
+        "quote": "His vanishing: that's how death works. You're here, trembling with want, then you're not.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
     "passage_id": "passage_1",
     "user_id": "Marcus Williams",
     "subclaims": [
       {
         "id": "1",
-        "claim": "The reader expresses a strong negative reaction to the creature's appearance and notes Victor's immediate rejection.",
+        "claim": "Victor immediately judges and rejects the creature based on its appearance.",
         "quote": "God that yellow eye line. He doesn't give it a single chance.",
-        "weight": 0.19,
+        "weight": 0.18,
         "emotional_mode": "prosecutorial"
       },
       {
         "id": "2",
-        "claim": "The reader clarifies that the 'beautiful features making it worse' refers to Victor's failed expectations, not the creature's inherent nature, emphasizing the creature's simple existence.",
-        "quote": "The beautiful features making it worse \u2014 that's not about the creature at all. That's about Victor's expectations colliding with reality. The creature just exists. Just breathes.",
-        "weight": 0.48,
+        "claim": "The phrase 'beautiful features making it worse' reflects Victor's internal conflict between his expectations and the reality of his creation, rather than an inherent flaw in the creature itself.",
+        "quote": "The beautiful features making it worse \u2014 that's not about the creature at all. That's about Victor's expectations colliding with reality.",
+        "weight": 0.39,
         "emotional_mode": "philosophical"
       },
       {
         "id": "3",
-        "claim": "The reader highlights the creature's first gesture being met with rejection, emphasizing the heavy burden of this early emotional experience.",
+        "claim": "The creature's initial state is one of simple, unthreatening existence.",
+        "quote": "The creature just exists. Just breathes.",
+        "weight": 0.1,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "The creature's very first interaction is met with rejection, imposing a significant emotional burden from the outset of its existence.",
         "quote": "Reached out for him later. First gesture and already it knows what rejection feels like. That's a heavy thing to carry from minute one.",
         "weight": 0.33,
         "emotional_mode": "empathetic"
@@ -945,72 +1435,1122 @@
     ]
   },
   {
-    "book_id": "Pride and Prejudice",
+    "book_id": "Frankenstein",
     "passage_id": "passage_1",
-    "user_id": "Sophia Patel",
+    "user_id": "David Kim",
     "subclaims": [
       {
         "id": "1",
-        "claim": "The passage establishes an intense, crushing atmosphere of anxiety even before the creature's creation, highlighting the pre-existing dread.",
-        "quote": "\"Anxiety that almost amounted to agony\" \u2014 and nothing has happened yet. The atmosphere is crushing before the creature exists.",
-        "weight": 0.205,
-        "emotional_mode": "observational"
+        "claim": "Victor's success in creation paradoxically led to his destruction.",
+        "quote": "Success as catastrophe. That's the paradox. He got what he wanted and it destroyed him.",
+        "weight": 0.167,
+        "emotional_mode": "philosophical"
       },
       {
         "id": "2",
-        "claim": "The reader emphasizes the creature's perspective, noting its immediate experience of recoil and being labeled a catastrophe upon its first moments of existence.",
-        "quote": "But I keep coming back to the creature's side of this. Opens its eyes for the first time. The first thing it sees is someone recoiling. The first word that applies to it is catastrophe \u2014 before it breathes twice.",
-        "weight": 0.357,
+        "claim": "The 'yellow eye' symbolizes Victor's epistemological crisis, highlighting the gap between his imagination and reality.",
+        "quote": "Yellow eye is his epistemological crisis. What he imagined versus what exists. Couldn't bridge that gap.",
+        "weight": 0.216,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The passage raises the fundamental question of a creator's responsibility when their creation goes awry.",
+        "quote": "What does a creator owe when creation goes wrong? That's the question here.",
+        "weight": 0.167,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Shelley deliberately keeps the 'instruments of life' vague to focus on the 'why' and 'what comes after' rather than the 'how'.",
+        "quote": "Shelley keeps the \"instruments of life\" vague on purpose. Not about how. About why and what comes after.",
+        "weight": 0.235,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "5",
+        "claim": "The interaction between the creature and Victor suggests that misinterpreting innocence as danger can lead to the creation of monsters.",
+        "quote": "Creature reaches out\u2014Victor sees threat. Do we create monsters by misinterpreting innocence as danger?",
+        "weight": 0.216,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Aisha Thompson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader feels deep empathy for the creature's immediate suffering and catastrophic existence from its very first moments.",
+        "quote": "I feel for it so much. First moment alive and already it's a catastrophe. Already a wretch.",
+        "weight": 0.35,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "2",
+        "claim": "Victor misinterprets the creature's natural, newborn gesture of reaching out as a threat.",
+        "quote": "Reached out for him later \u2014 newborns do that. Victor saw threat.",
+        "weight": 0.24,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's beginning is inherently tragic and horrifying, marked by the immediate revulsion of its creator.",
+        "quote": "What kind of beginning is that. You open your eyes and the person who made you is already horrified.",
+        "weight": 0.41,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Emma Chen",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor prematurely labels his creation a \"catastrophe\" immediately after it opens its eyes, indicating his instant negative judgment.",
+        "quote": "He says \"catastrophe\" before anything bad happens. Just... think about that. The creature opened its eyes. That's it. Victor's already calling it disaster.",
+        "weight": 0.28,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The immediate juxtaposition of \"Beautiful!\u2014Great God!\" reveals Victor's mental breakdown and inability to cope with the reality of his creation, despite having designed its features.",
+        "quote": "\"Beautiful!\u2014Great God!\" Right next to each other. His brain's breaking. He built this with specific features and now he can't handle that it's real.",
+        "weight": 0.28,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "Victor's fixation on the \"yellow eye\" serves as a mechanism to reduce the creature to a single repulsive feature, allowing him to avoid acknowledging its living being.",
+        "quote": "That yellow eye. Why does he fixate on that one detail? Reducing the whole being to one gross feature so he doesn't have to see it as alive.",
+        "weight": 0.28,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Victor misinterprets the creature's natural, newborn-like gesture of reaching out as a threat, thereby creating the 'monster' through his own flawed perception.",
+        "quote": "The creature reaches for him later. Newborns do that. But Victor sees threat. He created the monster by interpreting everything wrong.",
+        "weight": 0.16,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "passage_1",
+    "user_id": "Rachel Green",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader interprets the passage as implying that a rich man is seen as a marriage target, a belief they observe as widespread, but they express uncertainty about its universal truth.",
+        "quote": "Rich guy means marriage target. Everyone thinks this. Don't know if it's true.",
+        "weight": 0.6,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The reader concludes that the primary motivation is financial, acknowledging this assessment as harsh but likely accurate.",
+        "quote": "Just want the money basically. Harsh but probably accurate.",
+        "weight": 0.4,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "David Kim",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The character's statement, 'I try in vain to be persuaded that the pole is the seat of frost and desolation,' reveals a willful ignorance and a rejection of truth in favor of fantasy, which is denial rather than courage.",
+        "quote": "\"I try in vain to be persuaded that the pole is the seat of frost and desolation.\"",
+        "weight": 0.3,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The character's preference for imagination over reality, as shown by 'Ever presents itself to my imagination as the region of beauty,' is a shared flaw between Walton and Victor, who both favor an imagined version over the real.",
+        "quote": "\"Ever presents itself to my imagination as the region of beauty.\"",
+        "weight": 0.35,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase 'Perpetual splendour' evokes a 'paradise myth,' where explorers mistakenly believe they are finding Eden but instead encounter death.",
+        "quote": "\"Perpetual splendour.\"",
+        "weight": 0.21,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Walton perfectly mirrors Victor in their shared pursuit of glory, their isolation, and their ultimate doom.",
+        "quote": "(no direct quote)",
+        "weight": 0.14,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Aisha Thompson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader affirms understanding of the feeling posed by the passage.",
+        "quote": "\"Do you understand this feeling?\" Yeah, actually.",
+        "weight": 0.1,
+        "emotional_mode": "self-referential"
+      },
+      {
+        "id": "2",
+        "claim": "The reader identifies with the experience of harshness being perceived as promise and the confirmation bias of seeing what one already believes.",
+        "quote": "Cold that should feel harsh feeling like promise. Every sign confirming what you already believe because you've already decided it is.",
+        "weight": 0.49,
         "emotional_mode": "empathetic"
       },
       {
         "id": "3",
-        "claim": "The 'luxuriances' making the creature more horrible is Victor's failure, not the creature's, as the creature is immediately deemed wrong despite being created exactly as intended.",
-        "quote": "\"Luxuriances only formed a more horrid contrast.\" The beautiful parts making it more horrible \u2014 that's not the creature's failure. That's Victor's. The creature arrives exactly as made and is immediately told it is wrong.",
-        "weight": 0.438,
+        "claim": "The reader acknowledges the character's sincere perception of \"Perpetual splendour.\"",
+        "quote": "\"Perpetual splendour.\" He's not lying. That's genuinely what he sees.",
+        "weight": 0.1,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "The reader reflects that strong hope, from an internal perspective, feels like clarity rather than delusion.",
+        "quote": "Hope this strong doesn't feel like delusion from inside. It feels like clarity.",
+        "weight": 0.31,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Ryan O'Connor",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The character (Guy) holds an incredibly optimistic view regarding the Arctic's potential.",
+        "quote": "Guy thinks the Arctic is going to be incredible.",
+        "weight": 0.2,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The character specifically anticipates \"Perpetual splendour\" in the Arctic.",
+        "quote": "\"Perpetual splendour.\"",
+        "weight": 0.1,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The character also anticipates a \"Wind of promise\" from the Arctic.",
+        "quote": "\"Wind of promise.\"",
+        "weight": 0.1,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "The reader acknowledges the potential accuracy of the character's visual assessment of the Arctic but questions whether its beauty justifies the overall experience.",
+        "quote": "He's probably not wrong about what it looks like. Whether it's worth the rest of it \u2014 that's the actual question.",
+        "weight": 0.6,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Isabella Rodriguez",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The character is actively resisting reality and working to maintain a delusion, despite trying to be persuaded.",
+        "quote": "\"I try in vain to be persuaded.\" Active resistance to reality. He's working to maintain his delusion.",
+        "weight": 0.18,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The character is seeking validation for his feelings, highlighting his isolation and need for confirmation that he's not mad, even though he's writing a letter.",
+        "quote": "\"Do you understand this feeling?\" Seeking validation. Margaret's not responding\u2014she can't, it's a letter. He's alone with his conviction, needs someone to confirm it's not madness.",
+        "weight": 0.36,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The character is using imagination to replace observation, exhibiting a classic cognitive distortion where he trusts imagination over reality.",
+        "quote": "\"Imagination as the region of beauty.\" Imagination replacing observation. Classic cognitive distortion. Reality says frost and desolation. Imagination says beauty and delight. He trusts imagination.",
+        "weight": 0.31,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "This pattern of choosing delusion over reality, despite warnings, is a common way people walk into disasters.",
+        "quote": "(no direct quote)",
+        "weight": 0.15,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Jake Morrison",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The character, despite knowing the harsh realities, chooses to pursue his vision, demonstrating a conflict between fact and aspiration.",
+        "quote": "\"I try in vain to be persuaded the pole is frost and desolation.\" He knows the facts. Chooses the vision anyway.",
+        "weight": 0.322,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "This choice is not a sign of stupidity, but rather a common and defining characteristic of historical expeditions and explorers.",
+        "quote": "That's not stupidity. Every expedition in history started with someone refusing to believe the place they were going was as bad as everyone said.",
+        "weight": 0.491,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "While some such ventures fail, others succeed, indicating that an optimistic outlook or a \"Wind of promise\" can sometimes be justified and lead to real outcomes.",
+        "quote": "Some of them were wrong. Some weren't. \"Wind of promise\" is a real thing.",
+        "weight": 0.186,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Maya Singh",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Walton dangerously conflates Burke's concepts of the beautiful and the sublime, misinterpreting the Arctic's terror-inspiring nature as mere beauty, a confusion that will lead to his destruction.",
+        "quote": "Romantic sublime in full force. Burke's beautiful versus sublime\u2014Walton's conflating them. Arctic should inspire terror (sublime). He's calling it beauty. That confusion will destroy him.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"I try in vain to be persuaded\" reveals Walton's failed attempt at realism, as he admits his failure yet proceeds with his endeavor regardless.",
+        "quote": "\"I try in vain to be persuaded.\" Vain is key word. Failed attempt at realism. He admits failure and proceeds anyway.",
+        "weight": 0.18,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The concept of \"Perpetual splendour\" initially suggests a heavenly state, but upon deeper consideration, it implies a lack of rest and relief, transforming paradise into a permanent prison.",
+        "quote": "\"Perpetual splendour.\" Perpetual light. No darkness. Sounds like heaven. But perpetual light means no rest. No night. No relief. Paradise becomes prison when it's permanent.",
+        "weight": 0.28,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Shelley's brilliant framing device establishes a parallel between Walton and Victor, both romantics pursuing impossible dreams, allowing the reader to foresee Walton's delusion and the impending tragedy mirroring Victor's.",
+        "quote": "Shelley's framing device is brilliant. Walton mirrors Victor. Both romantics. Both chasing impossible dreams. Reader sees Walton's delusion, knows Victor's coming. Parallel tragedies.",
+        "weight": 0.29,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Dr. James Fletcher",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The phrase \"I try in vain to be persuaded\" highlights Walton's willful ignorance, not faith, in pursuing his desolate quest.",
+        "quote": "\"I try in vain to be persuaded.\"",
+        "weight": 0.21,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The \"Wind of promise\" is a romantic pathetic fallacy, where Walton projects meaning onto nature, revealing the futility of his quest.",
+        "quote": "\"Wind of promise.\"",
+        "weight": 0.23,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "The idea of \"Imagination as the region of beauty and delight\" represents a dangerous Romantic philosophy where imagination supplants reality, perverting Burke's sublime into a deluding beauty.",
+        "quote": "\"Imagination as the region of beauty and delight.\"",
+        "weight": 0.27,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Both Walton and Victor are Romantic idealists who ignore material reality, leading to disastrous consequences, framing Romanticism as a cautionary tale in Shelley's work.",
+        "quote": "(no direct quote)",
+        "weight": 0.29,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Hannah Park",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The line \"Cold northern breeze fills me with delight\" captures a moment of pure, genuine feeling for Walton, devoid of irony or warning, which precedes the narrative's eventual unraveling.",
+        "quote": "\"Cold northern breeze fills me with delight.\" Shelley gives us this moment of pure feeling before everything unravels. Not irony. Not warning. Just Walton, genuinely transported.",
+        "weight": 0.29,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The question \"Do you understand this feeling?\" is the most human line in the passage, expressing a fundamental need for shared understanding and validation of one's desires.",
+        "quote": "\"Do you understand this feeling?\" It's the most human line in the passage. The need to be understood in your wanting. To have someone else feel the wind of promise.",
+        "weight": 0.31,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase \"I try in vain to be persuaded\" highlights the futility of attempting to dismiss deeply ingrained convictions or obsessions, a recurring theme in Shelley's work.",
+        "quote": "\"I try in vain to be persuaded.\" He tried. He really did. But some things, once they take hold, cannot be argued away. Shelley knows this. She wrote about it once before, with a different man and a different obsession.",
+        "weight": 0.4,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Marcus Johnson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The phrase \"Wind of promise\" is a strong image because its constituent words create an unusual combination.",
+        "quote": "\"Wind of promise.\" Strong image. Two words that shouldn't go together.",
+        "weight": 0.17,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "Similarly, \"Perpetual splendour\" is another phrase where the words are slightly mismatched, but this incongruity serves a useful purpose.",
+        "quote": "\"Perpetual splendour.\" Two more. Both slightly wrong in a useful way.",
+        "weight": 0.18,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "3",
+        "claim": "Shelley deliberately selects phrases that possess a surface beauty but also an underlying sense of unease, a subtle technique that effectively contributes to the text's meaning.",
+        "quote": "Shelley's picking phrases that sound beautiful and feel slightly off. That's doing the work quietly.",
+        "weight": 0.27,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "This characteristic of language\u2014sounding triumphant yet feeling unsettling\u2014pervades the entire passage, creating a noticeable but inexplicable effect on the reader.",
+        "quote": "The whole passage has that quality \u2014 language that sounds like triumph but sits a little uneasy. You notice it without knowing why.",
+        "weight": 0.38,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_3",
+    "user_id": "Sarah Mitchell",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "There is a contrast between the expected danger implied by the 'Gothic register' and Walton's actual feeling of 'delight' regarding the 'cold northern breeze.'",
+        "quote": "\"Cold northern breeze fills me with delight.\" Gothic register says danger. Walton says delight.",
+        "weight": 0.26,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "Walton's inability to be persuaded that 'the pole is frost' suggests that his positive 'delight-reading' of the situation might be accurate, and his vision is holding up rather than him being in denial.",
+        "quote": "\"I try in vain to be persuaded the pole is frost\" \u2014 what if the delight-reading is accurate? The persuasion failed because the vision held up, not because he's refusing to look.",
+        "weight": 0.59,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase 'Wind of promise' further supports the idea that Walton's positive interpretation of his journey might be correct.",
+        "quote": "\"Wind of promise.\" That's possibly the right call.",
+        "weight": 0.15,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Isabella Rodriguez",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The phrase \"Truth universally acknowledged\" highlights the contradiction of people claiming to know what someone wants without actually knowing them, which is a form of projection.",
+        "quote": "\"Truth universally acknowledged\" \u2014 but they're admitting they don't know him while simultaneously claiming to know what he wants. That's classic projection\u2014attributing your needs to someone else.",
+        "weight": 0.28,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The families' need for marriage leads them to assert a desire in the man, enforcing it as social fact through repetition rather than evidence.",
+        "quote": "The families need him to want marriage. So they decide he does. Then enforce that decision as social fact. Truth by repetition, not evidence.",
+        "weight": 0.28,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "Referring to the man as \"rightful property\" is dehumanizing, reducing him to a function or resource, which is common in transactional systems where people become commodities.",
+        "quote": "Calling him \"rightful property\" is dehumanizing language. Reduces person to function. To resource. That's what happens in systems where survival depends on transactions. People become commodities.",
+        "weight": 0.34,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "Austen uses satire to diagnose social pathology by making implicit societal issues explicit.",
+        "quote": "Austen's diagnosing social pathology through satire. Making the implicit explicit.",
+        "weight": 0.1,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Dr. James Fletcher",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The opening statement of the passage presents a universal truth claim that is immediately questionable, which is an effective ironic strategy.",
+        "quote": "Opening with universal truth claim that's immediately questionable. Good ironic strategy.",
+        "weight": 0.1,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "Social norms operate by substituting consensus for evidence, as demonstrated by characters making absolute claims about someone they don't know.",
+        "quote": "They acknowledge not knowing him. Proceed with absolute claims anyway. That's how social norms function\u2014consensus substituting for evidence.",
+        "weight": 0.19,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "A rich man is commodified, becoming property of families based on his wealth rather than his identity, treating him as a human resource.",
+        "quote": "Rich man becomes property of the families. Not because of who he is. Because of what he has. That's commodification. Human as resource.",
+        "weight": 0.22,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "Austen depicts marriage as an economic transaction, a survival strategy for women seeking financial security, where rich men are scarce resources, with economics preceding romance.",
+        "quote": "Austen's showing marriage economics without sentimentality. This is how it worked. Women needed financial security. Marriage was survival strategy. Rich men were scarce resources to be competed for. The romance comes later. The economics come first.",
+        "weight": 0.38,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "5",
+        "claim": "The central question of the novel is whether genuine affection can develop within such a transactional system.",
+        "quote": "Can genuine affection grow within transactional system? That's the novel's question.",
+        "weight": 0.11,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Hannah Park",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The opening of the passage uses a grand and formal tone, which creates satire when contrasted with the subject of gossip and matchmaking.",
+        "quote": "That opening. So grand and formal. Sounds important. Then it's about gossip and matchmaking. That gap between tone and subject is the satire.",
+        "weight": 0.36,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The passage depicts families treating a stranger as property, valuing only his fortune over his character or desires, highlighting the mercenary aspect of marriage.",
+        "quote": "Families claiming a stranger as property. Based purely on his fortune. Not his character, not his desires. Just money.",
+        "weight": 0.32,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "Austen honestly portrays marriage as an economic necessity for women, a system of survival where options were limited, without romanticizing it.",
+        "quote": "Austen's being honest about what marriage was. Economics. Survival. Women had limited options. This is how the system worked. She's not hiding it under romance. She's showing it.",
+        "weight": 0.32,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Jamal Washington",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "What is presented as \"universal truth\" is often a construct serving specific interests, a fact that Austen recognizes.",
+        "quote": "What they call universal truth is just what serves them. Austen knows this.",
+        "weight": 0.16,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The societal expectation for rich men to marry is driven by need, which then solidifies into an obligation and an accepted social fact.",
+        "quote": "Rich man arrives. They need him to want marriage. So they assert he must. Need becomes obligation becomes accepted fact.",
+        "weight": 0.27,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "Marriage functions as an economic system where women's survival depends on securing wealthy men as resources, leading to inevitable competition, which is reflected in the use of ownership language and the application of property rights to humans.",
+        "quote": "Ownership language throughout. Property rights applied to humans. That's the honest economics. Marriage was survival for women. Rich men were resources. Competition was inevitable.",
+        "weight": 0.37,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "Austen's intention is not to endorse the societal system she depicts, but rather to dissect it and expose how it negatively impacts everyone involved.",
+        "quote": "Austen's not celebrating this system. She's anatomizing it. Showing how it deforms everyone involved.",
+        "weight": 0.2,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Lily Chen",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader appreciates the opening's proper and formal tone, noting how it immediately undercuts itself.",
+        "quote": "Love the opening. So proper and formal. Then immediately undercuts itself.",
+        "weight": 0.23,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "2",
+        "claim": "The reader feels sympathy for the character, criticizing how others plan his future and assume he's seeking a wife without any basis.",
+        "quote": "Poor guy. Can't even arrive without everyone planning his future. They've already decided he's looking for a wife. Based on absolutely nothing.",
+        "weight": 0.57,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "The reader finds the description of the character as 'property' harsh, even while acknowledging its potential truth.",
+        "quote": "Calling him property is harsh. True maybe, but harsh.",
+        "weight": 0.2,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Thomas Reed",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The premise that a rich single man is a marriage candidate is a correct and understandable social observation.",
+        "quote": "Rich single man means marriage candidate. They're not wrong to think so.",
+        "weight": 0.4,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The statement \"Must be in want of a wife\" accurately reflects the social situation of the time.",
+        "quote": "\"Must be in want of a wife\" is just what the situation was.",
+        "weight": 0.4,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "The phrase \"Rightful property\" honestly portrays the underlying economic realities.",
+        "quote": "\"Rightful property\" is honest about the economics.",
+        "weight": 0.2,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Marcus Johnson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The passage begins with a grand, universal statement but quickly shifts focus to themes of greed and manipulation.",
+        "quote": "Opens with something grand. Universal truth. Then immediately it's about greed and scheming.",
+        "weight": 0.304,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "A wealthy man is reduced to an object of acquisition and conflict, with his personal identity overshadowed by his financial status before he is even known.",
+        "quote": "Rich man becomes object. To be acquired. Divided. Fought over. Before anyone even meets him. Before he says a single word. His money speaks for him.",
+        "weight": 0.696,
         "emotional_mode": "prosecutorial"
       }
     ]
   },
   {
     "book_id": "Pride and Prejudice",
-    "passage_id": "passage_1",
-    "user_id": "David Kim",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Rachel Green",
     "subclaims": [
       {
         "id": "1",
-        "claim": "The character experiences a paradox where his desired success ultimately leads to his destruction.",
-        "quote": "Success as catastrophe. That's the paradox. He got what he wanted and it destroyed him.",
-        "weight": 0.19,
+        "claim": "The prevailing social norm dictates that a wealthy man is primarily a target for marriage, a belief widely held.",
+        "quote": "Rich guy means marriage target. Everyone thinks this.",
+        "weight": 0.37,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "There is uncertainty regarding the actual truth or validity of this social norm.",
+        "quote": "Don't know if it's true.",
+        "weight": 0.26,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The fundamental motivation behind this pursuit is financial gain, an assessment that, while harsh, is likely accurate.",
+        "quote": "Just want the money basically. Harsh but probably accurate.",
+        "weight": 0.37,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Dr. Amelia Wright",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The community projects its own desires onto an individual, deciding what he wants without truly knowing him, making their need his supposed desire.",
+        "quote": "They don't know him but they've decided what he wants. That's projection. Their need becoming his supposed desire.",
+        "weight": 0.31,
         "emotional_mode": "philosophical"
       },
       {
         "id": "2",
-        "claim": "The 'yellow eye' symbolizes the character's epistemological crisis, representing the unbridgeable gap between his imagination and reality.",
+        "claim": "Social truth, or what the community collectively believes, overrides and replaces an individual's actual truth or thoughts.",
+        "quote": "Social truth replacing individual truth. What the community believes overwrites what the person actually thinks.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The use of ownership-oriented language, such as 'property' and 'rightful,' demonstrates the dehumanization of the individual, treating him as a resource to be acquired rather than a person to be known.",
+        "quote": "Ownership language\u2014property, rightful\u2014shows the dehumanization. He's not a person to be known. He's a resource to be acquired.",
+        "weight": 0.32,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "Austen's writing serves to document how societal systems are capable of transforming people into mere objects.",
+        "quote": "Austen documenting how systems make people into objects.",
+        "weight": 0.12,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Pride and Prejudice",
+    "passage_id": "gutenberg_1342_passage_1",
+    "user_id": "Sarah Mitchell",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The passage's opening statement is a grand claim delivered with an ironic tone, yet its fundamental premise holds true despite the irony.",
+        "quote": "Grand claim. Ironic tone. But the premise underneath survives the irony.",
+        "weight": 0.18,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"Truth universally acknowledged\" was largely accurate for the period, as a wealthy man's arrival indeed signified a potential marriage candidate.",
+        "quote": "\"Truth universally acknowledged\" \u2014 because it largely was. A man of fortune arriving in the neighbourhood meant marriage candidate.",
+        "weight": 0.31,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "The inference that a man of fortune \"Must be in want of a wife\" was a reasonable conclusion in that social context.",
+        "quote": "\"Must be in want of a wife\" was reasonable inference.",
+        "weight": 0.16,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "4",
+        "claim": "While \"Rightful property\" uses harsh language, it accurately reflects the economic realities of the time.",
+        "quote": "\"Rightful property\" is ugly language for accurate economics.",
+        "weight": 0.15,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "5",
+        "claim": "The families' expectation of a wealthy man's availability for marriage was not an illusion but a reflection of the actual situation.",
+        "quote": "The families weren't imagining his availability. That was just the situation.",
+        "weight": 0.2,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Emma Chen",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor prematurely labels his creation a \"catastrophe\" immediately upon its awakening, demonstrating his instant negative judgment.",
+        "quote": "He says \"catastrophe\" before anything bad happens. Just... think about that. The creature opened its eyes. That's it. Victor's already calling it disaster.",
+        "weight": 0.25,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The immediate juxtaposition of \"Beautiful!\u2014Great God!\" reveals Victor's mental breakdown and his inability to reconcile with the reality of his own creation, despite having designed it.",
+        "quote": "\"Beautiful!\u2014Great God!\" Right next to each other. His brain's breaking. He built this with specific features and now he can't handle that it's real.",
+        "weight": 0.26,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "3",
+        "claim": "Victor's fixation on the \"yellow eye\" serves as a mechanism to reduce the creature to a single \"gross feature,\" allowing him to avoid acknowledging its living being.",
+        "quote": "That yellow eye. Why does he fixate on that one detail? Reducing the whole being to one gross feature so he doesn't have to see it as alive.",
+        "weight": 0.26,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Victor misinterprets the creature's natural, newborn-like actions as a threat, thereby creating the \"monster\" through his own flawed interpretations.",
+        "quote": "The creature reaches for him later. Newborns do that. But Victor sees threat. He created the monster by interpreting everything wrong.",
+        "weight": 0.23,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Marcus Williams",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The description of the creature's yellow eye is striking, and Victor's immediate reaction shows he gives it no chance.",
+        "quote": "God that yellow eye line. He doesn't give it a single chance.",
+        "weight": 0.18,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The idea that the creature's \"beautiful features\" make it worse is not about the creature's inherent nature, but rather about Victor's expectations clashing with reality, while the creature simply exists and breathes.",
+        "quote": "The beautiful features making it worse \u2014 that's not about the creature at all. That's about Victor's expectations colliding with reality. The creature just exists. Just breathes.",
+        "weight": 0.43,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's very first gesture of reaching out is met with rejection, burdening it with the feeling of being unwanted from the very beginning of its existence.",
+        "quote": "Reached out for him later. First gesture and already it knows what rejection feels like. That's a heavy thing to carry from minute one.",
+        "weight": 0.39,
+        "emotional_mode": "empathetic"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Isabella Rodriguez",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor's initial reaction of \"Catastrophe\" is a projection of his own capabilities and not a reaction to the creature's actions.",
+        "quote": "\"Catastrophe\" before the creature does anything. He's not reacting to the creature\u2014he's reacting to himself. What he's capable of. That's projection.",
+        "weight": 0.25,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "2",
+        "claim": "The creature's initial physical actions, like breathing hard and convulsive motion, are natural for a newborn, but Victor misinterprets them as monstrous to justify his fear and abandonment.",
+        "quote": "Breathing hard, convulsive motion. That's not aggression. That's a newborn figuring out a body. Victor needs it to be monstrous to justify running.",
+        "weight": 0.25,
+        "emotional_mode": "prosecutorial"
+      },
+      {
+        "id": "3",
+        "claim": "This pattern of imagining a perfect child and rejecting the real one is common, particularly with parents, and prevents the ability to love what truly exists.",
+        "quote": "See this with parents all the time. Imagine perfect child, reject real one. The fantasy destroys your ability to love what's actually there.",
+        "weight": 0.25,
+        "emotional_mode": "self-referential"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's fear transforms the creature's ambiguous gesture of reaching out into a threat, illustrating how fear can lead to the creation of \"monsters\" from innocent actions.",
+        "quote": "Hand reaching out later. Probably wanting connection. Victor's fear made it a threat. We create monsters by being terrified of ambiguous gestures.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Marcus Johnson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The initial descriptions of November, rain, and a dying candle effectively create a strong atmosphere.",
+        "quote": "November. Rain. Candle almost dead. This is atmosphere doing heavy lifting.",
+        "weight": 0.17,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The phrase \"Dull yellow eye\" is a powerful example of concise and effective craft, using a single specific detail to convey the entire image and horror.",
+        "quote": "\"Dull yellow eye.\" Two words and you have the whole image. That's the craft \u2014 one specific wrong detail instead of a list of everything wrong. Yellow. Not red, not white. Yellow.",
+        "weight": 0.49,
+        "emotional_mode": "aesthetic"
+      },
+      {
+        "id": "3",
+        "claim": "Shelley skillfully builds horror through the setting, making explicit explanation unnecessary and earning the reader's reaction by the time the horror lands.",
+        "quote": "The scene doesn't need to explain the horror. The setting already told you. Shelley earns the reaction by the time it lands.",
+        "weight": 0.34,
+        "emotional_mode": "observational"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Sophia Patel",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The reader notes the intense pre-existing tension, highlighted by the phrase \"Anxiety that almost amounted to agony,\" even before the creature's creation.",
+        "quote": "\"Anxiety that almost amounted to agony\"",
+        "weight": 0.23,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The reader shifts perspective to the creature, emphasizing its immediate negative reception upon creation, seeing recoil and being labeled a catastrophe from the very beginning.",
+        "quote": "But I keep coming back to the creature's side of this. Opens its eyes for the first time. The first thing it sees is someone recoiling. The first word that applies to it is catastrophe \u2014 before it breathes twice.",
+        "weight": 0.4,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The reader interprets the phrase \"Luxuriances only formed a more horrid contrast\" as Victor's failure, not the creature's, because the creature is immediately judged as wrong despite being made exactly as it is.",
+        "quote": "\"Luxuriances only formed a more horrid contrast.\"",
+        "weight": 0.37,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Aisha Thompson",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The moment describes a symbolic transition where one life or light ends as another begins.",
+        "quote": "Candle dying, creature's eye opening. One light going out, another turning on.",
+        "weight": 0.28,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The reader feels deep empathy for the creature's immediate suffering and rejection, seeing its first moments as a catastrophe.",
+        "quote": "I feel for it so much. First moment alive and already it's a catastrophe. Already a wretch.",
+        "weight": 0.33,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's initial actions were natural and innocent, akin to a newborn reaching out.",
+        "quote": "Reached out for him later \u2014 newborns do that.",
+        "weight": 0.16,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's reaction was one of fear and horror, misinterpreting the creature's actions and creating a tragic beginning for the creature.",
+        "quote": "Victor saw threat. What kind of beginning is that. You open your eyes and the person who made you is already horrified.",
+        "weight": 0.23,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Dr. James Fletcher",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor's judgment of the creature as a \"catastrophe\" before any action is the foundation of prejudice, demonstrating a decision about something's nature before observing its deeds.",
+        "quote": "Judgment precedes action. That's the foundation of prejudice\u2014deciding what something is before observing what it does.",
+        "weight": 0.22,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "Victor's inability to describe his emotions at the \"catastrophe\" stems from their irrationality, as there is no language to express horror at one's own success.",
+        "quote": "\"How can I describe my emotions at this catastrophe.\" He can't describe them because they're irrational. There's no language for horror at your own success.",
+        "weight": 0.19,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's \"beautiful features\" appearing horrible is a matter of Victor's perception, not a change in reality, reflecting his altered willingness to see.",
+        "quote": "That's perception, not reality. The features didn't change\u2014Victor's willingness to see them did.",
+        "weight": 0.17,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's fear transforms the creature into a monster by interpreting its natural need for warmth, connection, and understanding as a threat, thus creating the monstrosity through his own treatment.",
+        "quote": "Fear creates the monster. The creature becomes monstrous because Victor treats it as monstrous.",
+        "weight": 0.25,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "5",
+        "claim": "Shelley's central question explores the profound responsibility creators have towards their creations, especially when those creations evoke terror.",
+        "quote": "Shelley's asking: what responsibility do we have to what we create, even when creation terrifies us? Especially then.",
+        "weight": 0.17,
+        "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Hannah Park",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The creature's awakening is set against a backdrop of fading light, symbolizing a world already dimming for it.",
+        "quote": "Dying candlelight. The creature waking into a world that is already dimming.",
+        "weight": 0.12,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "Shelley's personal experience of loss and rejection informs the detailed portrayal of the creature's unwelcomed arrival, reflected in the setting's details.",
+        "quote": "Shelley lost children. She knew what it meant to create something and have it arrive into rejection. That knowledge is in every detail here \u2014 the rain, the dark, the light going out as a new one opens.",
+        "weight": 0.33,
+        "emotional_mode": "self-referential"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's initial action is a primal, wordless instinct to connect with its creator.",
+        "quote": "It reaches toward him. That instinct is everything. It has no language yet for what it needs. Just the instinct toward its maker.",
+        "weight": 0.24,
+        "emotional_mode": "empathetic"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's perception of the creature is flawed, seeing its features as defects rather than appreciating its inherent beauty and life.",
+        "quote": "Victor lists its features like defects on a form. Hair, teeth, skin \u2014 objects to be assessed rather than a life to be welcomed. It arrives as beautiful as he built it and he cannot see it at all.",
+        "weight": 0.31,
+        "emotional_mode": "prosecutorial"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "David Kim",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "Victor's story presents a paradox where achieving his desired outcome ultimately leads to his destruction.",
+        "quote": "Success as catastrophe. That's the paradox. He got what he wanted and it destroyed him.",
+        "weight": 0.18,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "2",
+        "claim": "The 'yellow eye' symbolizes Victor's epistemological crisis, highlighting the unbridgeable gap between his imagination and the reality of his creation.",
         "quote": "Yellow eye is his epistemological crisis. What he imagined versus what exists. Couldn't bridge that gap.",
         "weight": 0.21,
         "emotional_mode": "philosophical"
       },
       {
         "id": "3",
-        "claim": "The passage prompts a fundamental question about the creator's responsibility when their creation goes awry.",
+        "claim": "The central question posed by the narrative is the extent of a creator's responsibility when their creation goes awry.",
         "quote": "What does a creator owe when creation goes wrong? That's the question here.",
-        "weight": 0.16,
+        "weight": 0.17,
         "emotional_mode": "philosophical"
       },
       {
         "id": "4",
-        "claim": "Shelley's intentional vagueness regarding the 'instruments of life' shifts the focus from the 'how' of creation to its 'why' and subsequent consequences.",
+        "claim": "Shelley deliberately keeps the 'instruments of life' vague to shift the narrative's focus from the 'how' of creation to the 'why' and its subsequent consequences.",
         "quote": "Shelley keeps the \"instruments of life\" vague on purpose. Not about how. About why and what comes after.",
-        "weight": 0.22,
+        "weight": 0.23,
         "emotional_mode": "observational"
       },
       {
         "id": "5",
-        "claim": "Victor's misinterpretation of the Creature's innocent outreach as a threat raises the broader question of whether monsters are created by our own misjudgments of innocence.",
+        "claim": "Victor's perception of the creature's outreach as a threat raises a broader question about whether humanity creates monsters by misinterpreting innocence as danger.",
         "quote": "Creature reaches out\u2014Victor sees threat. Do we create monsters by misinterpreting innocence as danger?",
-        "weight": 0.22,
+        "weight": 0.21,
         "emotional_mode": "philosophical"
+      }
+    ]
+  },
+  {
+    "book_id": "Frankenstein",
+    "passage_id": "gutenberg_84_passage_1",
+    "user_id": "Sarah Mitchell",
+    "subclaims": [
+      {
+        "id": "1",
+        "claim": "The description \"Yellow eye opening by half-extinguished light\" effectively conveys both a gothic atmosphere and a literal depiction of the scene.",
+        "quote": "\"Yellow eye opening by half-extinguished light.\" Gothic atmosphere \u2014 but also just what it actually looked like.",
+        "weight": 0.17,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "2",
+        "claim": "The sequence \"Beautiful!\u2014Great God!\" reveals that the creature's intended beautiful features paradoxically made its appearance more alarming than if it had been randomly assembled.",
+        "quote": "\"Beautiful!\u2014Great God!\" That sequence tells you everything. The beautiful parts made it worse. The careful selection of features produced something more alarming than randomness would have.",
+        "weight": 0.31,
+        "emotional_mode": "philosophical"
+      },
+      {
+        "id": "3",
+        "claim": "The creature's appearance, specifically the \"Dull yellow eye\" combined with black lips and yellowed skin, was a direct and accurate representation of how it was constructed.",
+        "quote": "\"Dull yellow eye\" in a face with black lips and yellowed skin \u2014 the creature arrived exactly as assembled.",
+        "weight": 0.21,
+        "emotional_mode": "observational"
+      },
+      {
+        "id": "4",
+        "claim": "Victor's reaction to the creature's genuinely alarming appearance is not a moral failing, but rather a clear and accurate perception of the reality of what he had built, free from projection.",
+        "quote": "Responding to that reality isn't Victor's moral failure. It's someone seeing clearly what they built. The eye that opened was genuinely alarming. That's not projection.",
+        "weight": 0.31,
+        "emotional_mode": "prosecutorial"
       }
     ]
   }
