@@ -302,7 +302,7 @@ def refit_user(
         for pos, r in enumerate(ranked, 1):
             wu = r.pop("weights_used", {})
             rows_to_insert.append({
-                "user_id":       str(user_id),
+                "user_id":       int(user_id),
                 "book_id":       b_id,
                 "passage_id":    p_id,
                 "rank_position": pos,
