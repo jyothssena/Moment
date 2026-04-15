@@ -203,12 +203,33 @@ def pipeline_status():
 # ── Background: batch compatibility ──────────────────────────────────────────
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# Max parallel Gemini calls per user batch.
+# Each worker fires up to 2 Gemini requests (decompose + score), so
+# MAX_COMPAT_WORKERS=8 means up to 16 simultaneous API calls.
+# Tune down if you see HTTP 429s from Gemini in the logs.
+MAX_COMPAT_WORKERS = 8
 def _run_batch_compatibility(
     user_id:        str,
     book_id:        str,
     passage_id:     str,
     interpretation: str,
 ) -> None:
+    """
+    Run compatibility between one processed moment and every existing BQ user
+    on the same passage — in parallel using ThreadPoolExecutor.
+
+    Work is I/O-bound (Gemini API + BigQuery), so threads give real speedup:
+    N matches that took N×~4s sequentially now take ~4s regardless of N
+    (up to MAX_COMPAT_WORKERS concurrent pairs).
+
+    Only matches against users already in BQ — moments ingested in the same
+    pipeline run are excluded (get_moments_for_passage uses exclude_user_id,
+    and BQ is written before this task starts so same-batch users will appear,
+    but passage-level deduplication in the compat agent handles exact pairs).
+
+    BQ streaming insert (log_compat_run) is thread-safe — each call is an
+    independent HTTP request, no shared state.
+    """
     logger.info(f"[Compat] starting batch for {user_id} on {book_id}/{passage_id}")
 
     try:
@@ -221,41 +242,51 @@ def _run_batch_compatibility(
         logger.info(f"[Compat] no other users on passage {passage_id} — skipping")
         return
 
-    logger.info(f"[Compat] running {len(other_moments)} comparisons for {user_id} (parallel)")
+    logger.info(
+        f"[Compat] running {len(other_moments)} comparisons for {user_id} "
+        f"(parallel, max_workers={MAX_COMPAT_WORKERS})"
+    )
     compat_runs   = 0
     compat_errors = 0
 
-    def _run_one(other):
+    def _run_one(other: dict) -> tuple:
+        """
+        Run a single compat pair.
+        Always returns (other_user_id, result_or_None) — never raises.
+
+        Returning a tuple (instead of just result) means the caller always
+        knows which user the result belongs to without reaching into
+        futures[future], which was the source of the
+        'error for <uid>: None' log noise when result was None.
+        """
         other_user_id = str(other["user_id"])
         other_text    = other.get("cleaned_interpretation", "")
         if not other_text:
-            return None
-        return run_compatibility_agent(
+            return other_user_id, None   # skip silently — empty interpretation
+        result = run_compatibility_agent(
             user_a_id=user_id,
             user_b_id=other_user_id,
             book_id=book_id,
             moment_a={"passage_id": passage_id, "cleaned_interpretation": interpretation},
             moment_b={"passage_id": passage_id, "cleaned_interpretation": other_text},
         )
+        return other_user_id, result
 
-    MAX_WORKERS = 8   # tune this — Gemini rate limits will be the real ceiling
-
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+    with ThreadPoolExecutor(max_workers=MAX_COMPAT_WORKERS) as executor:
         futures = {executor.submit(_run_one, other): other for other in other_moments}
 
         for future in as_completed(futures):
             try:
-                result = future.result()
+                other_user_id, result = future.result()  # always (str, dict|None)
                 if result is None:
-                    pass
+                    pass  # empty interpretation — skipped silently inside _run_one
                 elif "error" in result:
-                    other = futures[future]
-                    logger.warning(f"[Compat] error for {other['user_id']}: {result['error']}")
+                    logger.warning(f"[Compat] error {user_id}×{other_user_id}: {result['error']}")
                     compat_errors += 1
                 else:
                     compat_runs += 1
                     logger.info(
-                        f"[Compat] ✓ {user_id}×{result.get('user_b')}: "
+                        f"[Compat] ✓ {user_id}×{other_user_id}: "
                         f"{result.get('dominant_think')} ({result.get('confidence')})"
                     )
             except Exception as e:
@@ -264,11 +295,13 @@ def _run_batch_compatibility(
 
     logger.info(f"[Compat] complete for {user_id} — {compat_runs} runs, {compat_errors} errors")
 
+    # Refit rankings for this user now that new compat runs are logged
     try:
         refit_user(user_id)
         logger.info(f"[Rankings] ✓ updated for {user_id}")
     except Exception as e:
         logger.error(f"[Rankings] error for {user_id}: {e}")
+
 
 # ── Background: rankings refit ────────────────────────────────────────────────
 
