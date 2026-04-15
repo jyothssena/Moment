@@ -22,7 +22,7 @@ if not _api_key:
     )
 
 _gemini_client = genai.Client(api_key=_api_key)
-_GEMINI_MODEL  = "gemini-2.5-flash-lite"
+_GEMINI_MODEL  = "gemini-2.5-flash"
 
 # ── System prompt ─────────────────────────────────────────────────────────────
 
