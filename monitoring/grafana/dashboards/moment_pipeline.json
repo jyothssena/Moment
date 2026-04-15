@@ -1,0 +1,450 @@
+{
+  "__inputs": [],
+  "__requires": [
+    { "type": "grafana", "id": "grafana", "name": "Grafana", "version": "10.0.0" },
+    { "type": "datasource", "id": "prometheus", "name": "Prometheus", "version": "1.0.0" }
+  ],
+  "annotations": { "list": [] },
+  "description": "MOMENT ML Pipeline — model health, data drift, and infrastructure monitoring",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Pipeline Overview",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green", "value": null },
+            { "color": "red",   "value": 0 }
+          ]},
+          "unit": "short"
+        }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 1 },
+      "id": 2,
+      "options": { "reduceOptions": { "calcs": ["sum"] }, "orientation": "auto", "textMode": "auto", "colorMode": "background" },
+      "title": "Pipeline Runs (24h)",
+      "type": "stat",
+      "targets": [
+        { "expr": "increase(moment_pipeline_runs_total{status=\"success\"}[24h])", "legendFormat": "success" },
+        { "expr": "increase(moment_pipeline_runs_total{status=\"error\"}[24h])",   "legendFormat": "error" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "red",    "value": null },
+            { "color": "yellow", "value": 0.50 },
+            { "color": "green",  "value": 0.70 }
+          ]},
+          "min": 0, "max": 1,
+          "unit": "percentunit"
+        }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 1 },
+      "id": 3,
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] }, "orientation": "auto", "showThresholdLabels": true, "showThresholdMarkers": true },
+      "title": "Valid Moment Ratio (last run)",
+      "type": "gauge",
+      "targets": [
+        { "expr": "moment_valid_ratio", "legendFormat": "valid ratio" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "red",    "value": null },
+            { "color": "yellow", "value": 0.40 },
+            { "color": "green",  "value": 0.55 }
+          ]},
+          "min": 0, "max": 1,
+          "unit": "short"
+        }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 8, "y": 1 },
+      "id": 4,
+      "options": { "reduceOptions": { "calcs": ["mean"] }, "orientation": "auto", "textMode": "value_and_name", "colorMode": "background" },
+      "title": "Avg Confidence (1h)",
+      "type": "stat",
+      "targets": [
+        { "expr": "avg_over_time(moment_compat_confidence_gauge[1h])", "legendFormat": "confidence" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "color": { "mode": "palette-classic" } }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 12, "y": 1 },
+      "id": 5,
+      "options": { "reduceOptions": { "calcs": ["sum"] }, "orientation": "auto", "textMode": "value_and_name", "colorMode": "background" },
+      "title": "Compat Runs (1h)",
+      "type": "stat",
+      "targets": [
+        { "expr": "increase(moment_compat_runs_total{outcome=\"success\"}[1h])", "legendFormat": "success" },
+        { "expr": "increase(moment_compat_runs_total{outcome=\"cached\"}[1h])",  "legendFormat": "cached" },
+        { "expr": "increase(moment_compat_runs_total{outcome=~\"error.*\"}[1h])","legendFormat": "error" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "color": { "mode": "palette-classic" } }
+      },
+      "gridPos": { "h": 4, "w": 8, "x": 16, "y": 1 },
+      "id": 6,
+      "options": { "reduceOptions": { "calcs": ["sum"] }, "orientation": "horizontal", "textMode": "value_and_name", "colorMode": "background" },
+      "title": "Preprocessing Skips (1h)",
+      "type": "stat",
+      "targets": [
+        { "expr": "increase(moment_pipeline_moments_processed_total{outcome=\"skipped_injection\"}[1h])",  "legendFormat": "injection" },
+        { "expr": "increase(moment_pipeline_moments_processed_total{outcome=\"skipped_pii\"}[1h])",       "legendFormat": "PII" },
+        { "expr": "increase(moment_pipeline_moments_processed_total{outcome=\"skipped_profanity\"}[1h])","legendFormat": "profanity" },
+        { "expr": "increase(moment_pipeline_moments_processed_total{outcome=\"skipped_spam\"}[1h])",     "legendFormat": "spam" },
+        { "expr": "increase(moment_pipeline_moments_processed_total{outcome=\"skipped_invalid\"}[1h])",  "legendFormat": "invalid" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 5 },
+      "id": 10,
+      "title": "Model Confidence — Primary Decay Signal",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "lineWidth": 2, "fillOpacity": 10 },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "transparent", "value": null },
+            { "color": "red",   "value": 0.30 },
+            { "color": "yellow","value": 0.40 },
+            { "color": "green", "value": 0.55 }
+          ]}
+        }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 11,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "Confidence Score Distribution Over Time (P10 / P50 / P90)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.90, sum(rate(moment_compat_confidence_bucket[30m])) by (le))",
+          "legendFormat": "P90"
+        },
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(moment_compat_confidence_bucket[30m])) by (le))",
+          "legendFormat": "P50 (median)"
+        },
+        {
+          "expr": "histogram_quantile(0.10, sum(rate(moment_compat_confidence_bucket[30m])) by (le))",
+          "legendFormat": "P10 (early warning)"
+        }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 12,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "Confidence by Verdict (P50) — Detects per-class decay",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(moment_compat_confidence_bucket{dominant_think=\"resonate\"}[30m])) by (le))",
+          "legendFormat": "resonate P50"
+        },
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(moment_compat_confidence_bucket{dominant_think=\"contradict\"}[30m])) by (le))",
+          "legendFormat": "contradict P50"
+        },
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(moment_compat_confidence_bucket{dominant_think=\"diverge\"}[30m])) by (le))",
+          "legendFormat": "diverge P50"
+        }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+      "id": 20,
+      "title": "Data Drift — Input Distribution",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 15 },
+      "id": 21,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "list", "placement": "bottom" } },
+      "title": "Interpretation Word Count (mean / P50 / P95) — Distribution shift detection",
+      "description": "Baseline: mean ~80–150 words. Alert thresholds: <30 (too short), P95>400 (tail shift).",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "moment_word_count_mean", "legendFormat": "mean" },
+        { "expr": "moment_word_count_p50",  "legendFormat": "P50" },
+        { "expr": "moment_word_count_p95",  "legendFormat": "P95" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 15 },
+      "id": 22,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "list", "placement": "bottom" } },
+      "title": "Quality Score (mean / P10) + Readability Mean — Data quality drift",
+      "description": "P10 quality score is the early warning: a low tail rising means more borderline interpretations are sneaking through.",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "moment_quality_score_mean", "legendFormat": "quality mean" },
+        { "expr": "moment_quality_score_p10",  "legendFormat": "quality P10 (low tail)" },
+        { "expr": "moment_readability_mean",   "legendFormat": "readability (Flesch)" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 22 },
+      "id": 30,
+      "title": "Verdict Distribution — Behavioural Drift",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2, "fillOpacity": 20, "stacking": { "mode": "normal" } } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 23 },
+      "id": 31,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "THINK Verdict Distribution Over Time (stacked)",
+      "description": "Stacked total = all compat runs. A shift in shape = behavioural drift. Diverge > 60% sustained triggers alert.",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "increase(moment_compat_think_ratio{verdict=\"resonate\"}[5m])",   "legendFormat": "resonate" },
+        { "expr": "increase(moment_compat_think_ratio{verdict=\"contradict\"}[5m])", "legendFormat": "contradict" },
+        { "expr": "increase(moment_compat_think_ratio{verdict=\"diverge\"}[5m])",    "legendFormat": "diverge" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2, "fillOpacity": 20, "stacking": { "mode": "normal" } } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 23 },
+      "id": 32,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "FEEL Verdict Distribution Over Time (stacked)",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "increase(moment_compat_feel_ratio{verdict=\"resonate\"}[5m])",   "legendFormat": "resonate" },
+        { "expr": "increase(moment_compat_feel_ratio{verdict=\"contradict\"}[5m])", "legendFormat": "contradict" },
+        { "expr": "increase(moment_compat_feel_ratio{verdict=\"diverge\"}[5m])",    "legendFormat": "diverge" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 30 },
+      "id": 40,
+      "title": "Gemini API Latency & Reliability",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "s", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 31 },
+      "id": 41,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "Gemini Call Latency (P50 / P95) by Call Type",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "histogram_quantile(0.50, sum(rate(moment_gemini_latency_seconds_bucket{call_type=\"decompose\"}[5m])) by (le))", "legendFormat": "decompose P50" },
+        { "expr": "histogram_quantile(0.95, sum(rate(moment_gemini_latency_seconds_bucket{call_type=\"decompose\"}[5m])) by (le))", "legendFormat": "decompose P95" },
+        { "expr": "histogram_quantile(0.50, sum(rate(moment_gemini_latency_seconds_bucket{call_type=\"score\"}[5m])) by (le))",     "legendFormat": "score P50" },
+        { "expr": "histogram_quantile(0.95, sum(rate(moment_gemini_latency_seconds_bucket{call_type=\"score\"}[5m])) by (le))",     "legendFormat": "score P95" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "reqps", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 31 },
+      "id": 42,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "Gemini Error Rate by Type",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "rate(moment_gemini_errors_total[5m])", "legendFormat": "{{ call_type }} / {{ error_type }}" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 38 },
+      "id": 50,
+      "title": "Bradley-Terry Model Health",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "lineWidth": 2 },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "yellow", "value": null },
+            { "color": "green",  "value": 0.15 }
+          ]}
+        }
+      },
+      "gridPos": { "h": 7, "w": 8, "x": 0, "y": 39 },
+      "id": 51,
+      "options": { "tooltip": { "mode": "single" }, "legend": { "displayMode": "list", "placement": "bottom" } },
+      "title": "BT Blend Weight (0=cold start, 0.7=data-rich)",
+      "description": "Tracks how much the Bradley-Terry learned ranking contributes vs raw confidence. Low = not enough user comparison data.",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "moment_bt_blend_weight_bt", "legendFormat": "BT weight" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "s", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 8, "x": 8, "y": 39 },
+      "id": 52,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "list", "placement": "bottom" } },
+      "title": "BT Refit Duration (P50 / P95)",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "histogram_quantile(0.50, sum(rate(moment_bt_refit_duration_seconds_bucket[5m])) by (le))", "legendFormat": "P50" },
+        { "expr": "histogram_quantile(0.95, sum(rate(moment_bt_refit_duration_seconds_bucket[5m])) by (le))", "legendFormat": "P95" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 8, "x": 16, "y": 39 },
+      "id": 53,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "Cache Efficiency (decomp & compat)",
+      "description": "Low hit rate = users writing about new passages (expected growth signal). Sudden drop = possible data reset.",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "rate(moment_decomp_cache_hits_total[5m]) / (rate(moment_decomp_cache_hits_total[5m]) + rate(moment_decomp_cache_misses_total[5m]) + 1e-9)",
+          "legendFormat": "decomp cache hit %"
+        },
+        {
+          "expr": "rate(moment_compat_cache_hits_total[5m]) / (rate(moment_compat_runs_total[5m]) + 1e-9)",
+          "legendFormat": "compat cache hit %"
+        }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 46 },
+      "id": 60,
+      "title": "HTTP Endpoint Performance",
+      "type": "row"
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "reqps", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 47 },
+      "id": 61,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "HTTP Request Rate by Endpoint",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "sum by (handler) (rate(http_requests_total[5m]))", "legendFormat": "{{ handler }}" }
+      ]
+    },
+
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": { "unit": "s", "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 47 },
+      "id": 62,
+      "options": { "tooltip": { "mode": "multi" }, "legend": { "displayMode": "table", "placement": "bottom" } },
+      "title": "HTTP Request Latency P95 by Handler",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum by (handler, le) (rate(http_request_duration_seconds_bucket[5m])))",
+          "legendFormat": "{{ handler }} P95"
+        }
+      ]
+    }
+
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "tags": ["moment", "mlops", "pipeline"],
+  "templating": { "list": [] },
+  "time": { "from": "now-3h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "MOMENT ML Pipeline Dashboard",
+  "uid": "moment-pipeline-v1",
+  "version": 1
+}

@@ -9,17 +9,15 @@ cloud-sql-python-connector[pg8000]
 pandas
 pandas-gbq
 pyarrow
-textstat
-langdetect
-requests
-pyyaml
-langdetect>=1.0.9      # language detection
+numpy>=1.26.0
 textstat>=0.7.3        # Flesch readability score
+langdetect>=1.0.9      # language detection
 scikit-learn>=1.4.0    # TF-IDF + cosine similarity for duplicate detection
 requests>=2.31.0       # Gutenberg API calls
 pyyaml>=6.0.1          # reading config.yaml
-google-cloud-storage>=2.14.0  # GCS data acquisition           # progress bars
-pytest>=7.4.0    
-pyyaml>=6.0
+google-cloud-storage>=2.14.0  # GCS data acquisition
+pytest>=7.4.0
 python-dotenv>=1.0.0
 google-genai
+# ── Monitoring ────────────────────────────────────────────────────────────────
+google-cloud-monitoring>=2.19.0        # Push custom metrics to Cloud Monitoring (works on Cloud Run via ADC)

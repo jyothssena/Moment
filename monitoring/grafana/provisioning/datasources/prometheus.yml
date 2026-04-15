@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  # ── Google Cloud Monitoring ───────────────────────────────────────────────
+  # All MOMENT custom metrics live under custom.googleapis.com/moment/*
+  # Grafana uses the grafana-googlecloud-datasource plugin (installed via
+  # GF_INSTALL_PLUGINS env var in docker-compose / Cloud Run Grafana service).
+  # Auth is handled automatically via ADC / the attached service account.
+  - name: Google Cloud Monitoring
+    type: grafana-googlecloud-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      authenticationType: gce          # uses ADC on Cloud Run; service account locally
+      defaultProject: moment-486719
