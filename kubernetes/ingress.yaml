@@ -1,0 +1,74 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: moment-api-ingress
+  namespace: moment
+  labels:
+    app: moment-api
+  annotations:
+    # Use GKE's built-in L7 load balancer (HTTP/HTTPS)
+    kubernetes.io/ingress.class: "gce"
+
+    # GCP automatically provisions and renews an SSL certificate
+    # Set this to your actual domain — or use the auto-assigned IP for MVP
+    networking.gke.io/managed-certificates: "moment-ssl-cert"
+
+    # Force all HTTP traffic to redirect to HTTPS
+    kubernetes.io/ingress.allow-http: "false"
+
+    # Enable Cloud CDN for caching static responses (speeds up repeated reads)
+    cloud.google.com/backend-config: '{"default": "moment-backend-config"}'
+
+spec:
+  rules:
+    # Replace with your actual domain name
+    # For MVP with no domain, remove the host line and use the IP directly
+    - host: api.moment-app.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: moment-api-service
+                port:
+                  number: 80
+
+---
+# GCP Managed SSL Certificate — auto-provisioned and auto-renewed
+# GCP handles TLS termination at the load balancer level
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: moment-ssl-cert
+  namespace: moment
+spec:
+  domains:
+    - api.moment-app.com   # replace with your actual domain
+
+---
+# BackendConfig — configures health checks and timeouts at the load balancer level
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: moment-backend-config
+  namespace: moment
+spec:
+  # How long LB waits for a response before considering request timed out
+  timeoutSec: 60
+
+  # LB health check — separate from Kubernetes liveness probe
+  # The LB uses this to decide which nodes get traffic
+  healthCheck:
+    checkIntervalSec: 15
+    timeoutSec: 5
+    healthyThreshold: 1
+    unhealthyThreshold: 2
+    type: HTTP
+    requestPath: /health
+    port: 8080
+
+  # Connection draining — when a pod is removed, wait for in-flight
+  # requests to complete before cutting the connection
+  connectionDraining:
+    drainingTimeoutSec: 30

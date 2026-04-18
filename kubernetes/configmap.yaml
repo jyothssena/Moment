@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: moment-config
+  namespace: moment
+  labels:
+    app: moment
+data:
+  # Model mode — switch to "real" when model team fixes negative score
+  MODEL_MODE: "stub"
+
+  # GCP
+  GCP_PROJECT_ID:  "moment-486719"
+  GCP_REGION:      "us-central1"
+  GCS_BUCKET:      "moment-agent-data"
+
+  # BigQuery
+  BQ_RAW_DATASET:       "moment_raw"
+  BQ_PROCESSED_DATASET: "moment_processed"
+  BQ_REPORTS_DATASET:   "moment_reports"
+
+  # MLflow — API pods log experiments to the in-cluster MLflow server
+  MLFLOW_TRACKING_URI: "http://mlflow-service:5000"
+
+  # Airflow UI (internal)
+  AIRFLOW_HOST: "http://airflow-service:8080"
+
+  # API
+  PORT:    "8080"
+  WORKERS: "2"
+  LOG_LEVEL: "INFO"

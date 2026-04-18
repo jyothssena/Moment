@@ -1,0 +1,183 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: moment
+  labels:
+    app: grafana
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus-service:9090
+        isDefault: true
+        editable: true
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards-config
+  namespace: moment
+  labels:
+    app: grafana
+data:
+  dashboards.yaml: |
+    apiVersion: 1
+    providers:
+      - name: 'default'
+        folder: 'Momento'
+        type: file
+        options:
+          path: /var/lib/grafana/dashboards
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-momento
+  namespace: moment
+  labels:
+    app: grafana
+data:
+  momento-overview.json: |
+    {
+      "dashboard": {
+        "title": "Momento — Model Monitoring",
+        "uid": "momento-overview",
+        "timezone": "browser",
+        "refresh": "10s",
+        "panels": [
+          {
+            "title": "Request rate",
+            "type": "timeseries",
+            "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+            "targets": [{"expr": "rate(momento_http_requests_total[5m])", "legendFormat": "{{endpoint}} {{status}}"}]
+          },
+          {
+            "title": "Request latency (p95)",
+            "type": "timeseries",
+            "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+            "targets": [{"expr": "histogram_quantile(0.95, rate(momento_http_request_duration_seconds_bucket[5m]))", "legendFormat": "{{endpoint}}"}]
+          },
+          {
+            "title": "Confidence score distribution",
+            "type": "histogram",
+            "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+            "targets": [{"expr": "rate(momento_confidence_score_bucket[10m])", "legendFormat": "{{le}}"}]
+          },
+          {
+            "title": "Verdict breakdown",
+            "type": "piechart",
+            "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+            "targets": [{"expr": "momento_verdict_total", "legendFormat": "{{verdict}}"}]
+          },
+          {
+            "title": "Model calls",
+            "type": "stat",
+            "gridPos": {"h": 4, "w": 6, "x": 0, "y": 16},
+            "targets": [{"expr": "sum(momento_model_calls_total)"}]
+          },
+          {
+            "title": "Model errors",
+            "type": "stat",
+            "gridPos": {"h": 4, "w": 6, "x": 6, "y": 16},
+            "targets": [{"expr": "sum(momento_model_errors_total)"}]
+          },
+          {
+            "title": "Active requests",
+            "type": "gauge",
+            "gridPos": {"h": 4, "w": 6, "x": 12, "y": 16},
+            "targets": [{"expr": "momento_active_requests"}]
+          },
+          {
+            "title": "Error rate",
+            "type": "stat",
+            "gridPos": {"h": 4, "w": 6, "x": 18, "y": 16},
+            "targets": [{"expr": "sum(rate(momento_model_errors_total[5m])) / sum(rate(momento_model_calls_total[5m]))"}]
+          }
+        ]
+      }
+    }
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: moment
+  labels:
+    app: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.4.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: "admin"
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: "momento"
+            - name: GF_USERS_ALLOW_SIGN_UP
+              value: "false"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+          volumeMounts:
+            - name: datasources
+              mountPath: /etc/grafana/provisioning/datasources
+            - name: dashboards-config
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: dashboard-momento
+              mountPath: /var/lib/grafana/dashboards
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+      volumes:
+        - name: datasources
+          configMap:
+            name: grafana-datasources
+        - name: dashboards-config
+          configMap:
+            name: grafana-dashboards-config
+        - name: dashboard-momento
+          configMap:
+            name: grafana-dashboard-momento
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+  namespace: moment
+  labels:
+    app: grafana
+spec:
+  type: NodePort
+  selector:
+    app: grafana
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+      nodePort: 30030

@@ -1,0 +1,133 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moment-api
+  namespace: moment
+  labels:
+    app: moment-api
+    version: latest
+  annotations:
+    # Deployment strategy: rolling update ensures zero downtime
+    # New pods start before old ones are terminated
+    kubernetes.io/change-cause: "Deployed by GitHub Actions"
+spec:
+  # Start with 2 replicas — HPA will scale up/down from here
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: moment-api
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1        # Allow 1 extra pod during update (2+1=3 max)
+      maxUnavailable: 0  # Never kill a pod until new one is healthy (zero downtime)
+
+  template:
+    metadata:
+      labels:
+        app: moment-api
+        version: latest
+    spec:
+      # Use Workload Identity — pods access GCS/BQ with a GCP service account
+      # No service account key files needed inside the container
+      serviceAccountName: moment-ksa
+
+      # Graceful shutdown — wait 30s for in-flight requests to complete
+      terminationGracePeriodSeconds: 30
+
+      containers:
+        - name: moment-api
+          # Image is overwritten by CI/CD pipeline on every deploy:
+          #   kubectl set image deployment/moment-api \
+          #     moment-api=REGISTRY/moment-api:GIT_SHA
+          image: REGISTRY_PLACEHOLDER/moment-api:latest
+          imagePullPolicy: Always
+
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+
+          # ── Environment from ConfigMap (non-sensitive) ──────────────────
+          envFrom:
+            - configMapRef:
+                name: moment-config
+
+          # ── Environment from Secret (sensitive) ────────────────────────
+          env:
+            - name: GEMINI_API_KEY_MOMENT
+              valueFrom:
+                secretKeyRef:
+                  name: moment-secrets
+                  key: GEMINI_API_KEY_MOMENT
+                  optional: true   # optional=true: pod starts even without key (stub mode works)
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: moment-secrets
+                  key: SLACK_WEBHOOK_URL
+                  optional: true
+
+          # ── Resource limits ─────────────────────────────────────────────
+          # Requests = what Kubernetes reserves on the node
+          # Limits = maximum the container can use before being OOM-killed
+          resources:
+            requests:
+              cpu: "250m"       # 0.25 vCPU reserved
+              memory: "512Mi"   # 512MB reserved
+            limits:
+              cpu: "1000m"      # max 1 vCPU
+              memory: "1Gi"     # max 1GB — OOM kill if exceeded
+
+          # ── Liveness probe ──────────────────────────────────────────────
+          # If this fails 3 times, Kubernetes restarts the container.
+          # Catches infinite loops, deadlocks, corrupted state.
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15   # wait 15s for app to start
+            periodSeconds: 20          # check every 20s
+            timeoutSeconds: 5
+            failureThreshold: 3        # restart after 3 consecutive failures
+
+          # ── Readiness probe ─────────────────────────────────────────────
+          # If this fails, Kubernetes stops sending traffic to this pod.
+          # Pod stays alive but is removed from the load balancer.
+          # Catches startup not yet complete, temporary overload.
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          # ── Startup probe ───────────────────────────────────────────────
+          # Gives the container extra time to start before liveness kicks in.
+          # Prevents liveness from killing a slow-starting container.
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 12       # 12 × 5s = 60s max startup time
+
+      # ── Pod anti-affinity ───────────────────────────────────────────────
+      # Spreads pods across different nodes — if one node goes down,
+      # the other pod on a different node keeps serving traffic
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values: [moment-api]
+                topologyKey: kubernetes.io/hostname

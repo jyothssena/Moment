@@ -1,0 +1,161 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airflow
+  namespace: moment
+  labels:
+    app: airflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: airflow
+  strategy:
+    type: Recreate   # Airflow uses SQLite on a PVC — only one pod can write at a time
+  template:
+    metadata:
+      labels:
+        app: airflow
+    spec:
+      serviceAccountName: moment-ksa
+
+      initContainers:
+        # Initialises the Airflow DB before the webserver starts
+        - name: airflow-init
+          image: apache/airflow:2.10.4-python3.11
+          command: ["airflow", "db", "migrate"]
+          envFrom:
+            - configMapRef:
+                name: moment-config
+            - configMapRef:
+                name: airflow-config
+          env:
+            - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+              value: sqlite:////opt/airflow/airflow.db
+          volumeMounts:
+            - name: airflow-logs
+              mountPath: /opt/airflow/logs
+            - name: airflow-logs
+              mountPath: /opt/airflow/airflow.db
+              subPath: airflow.db
+
+      containers:
+        # ── Webserver ──────────────────────────────────────────────────────
+        - name: webserver
+          image: apache/airflow:2.10.4-python3.11
+          command: ["airflow", "webserver"]
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: moment-config
+            - configMapRef:
+                name: airflow-config
+          env:
+            - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+              value: sqlite:////opt/airflow/airflow.db
+            - name: AIRFLOW__WEBSERVER__SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: moment-secrets
+                  key: AIRFLOW_SECRET_KEY
+                  optional: true
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 10
+          volumeMounts:
+            - name: airflow-logs
+              mountPath: /opt/airflow/logs
+            - name: airflow-logs
+              mountPath: /opt/airflow/airflow.db
+              subPath: airflow.db
+            - name: dags
+              mountPath: /opt/airflow/dags
+              readOnly: true
+
+        # ── Scheduler ──────────────────────────────────────────────────────
+        - name: scheduler
+          image: apache/airflow:2.10.4-python3.11
+          command: ["airflow", "scheduler"]
+          envFrom:
+            - configMapRef:
+                name: moment-config
+            - configMapRef:
+                name: airflow-config
+          env:
+            - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+              value: sqlite:////opt/airflow/airflow.db
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+          livenessProbe:
+            exec:
+              command: ["airflow", "jobs", "check", "--job-type", "SchedulerJob", "--local"]
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 15
+            failureThreshold: 3
+          volumeMounts:
+            - name: airflow-logs
+              mountPath: /opt/airflow/logs
+            - name: airflow-logs
+              mountPath: /opt/airflow/airflow.db
+              subPath: airflow.db
+            - name: dags
+              mountPath: /opt/airflow/dags
+              readOnly: true
+
+        # ── git-sync sidecar ───────────────────────────────────────────────
+        # Continuously pulls the latest DAGs from the repo into /dags
+        # No manual copying needed — any DAG pushed to main auto-appears
+        - name: git-sync
+          image: registry.k8s.io/git-sync/git-sync:v4.2.1
+          args:
+            - --repo=https://github.com/jyothssena/Moment.git
+            - --branch=main
+            - --depth=1
+            - --period=60s
+            - --root=/dags
+            - --link=current
+            - --one-time=false
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+          volumeMounts:
+            - name: dags
+              mountPath: /dags
+
+      volumes:
+        - name: airflow-logs
+          persistentVolumeClaim:
+            claimName: airflow-logs-pvc
+        - name: dags
+          emptyDir: {}

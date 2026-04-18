@@ -148,4 +148,6 @@ MANIFEST
 dmypy.json
 gcs-service-account.json
 google-cloud-sdk/
-google-cloud-cli-*.tar.gz
+google-cloud-cli-*.tar.gzmlruns/
+moment-cicd-sa-key.json
+gcs-service-account.json

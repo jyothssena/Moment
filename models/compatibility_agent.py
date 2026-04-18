@@ -27,125 +27,87 @@ from aggregator import aggregate
 
 # ── Compatibility Agent ───────────────────────────────────────────────────────
 
-_COMPAT_SYSTEM_PROMPT = textwrap.dedent("""
-You are the Moment Compatibility Scorer for Momento.
-You will be given two decomposed reader profiles — sub-claims with
-weights and emotional modes already assigned — along with the
-original moment text for each reader.
-Use the original moment texts as context when scoring matched pairs,
-especially when judging whether positions point in the same direction
-(Think Q2) or whether readers share the same emotional experience
-(Feel Q4). The decomposed sub-claims define the structure.
-The original texts provide the interpretive framing.
-Map sub-claims across readers, then score each matched pair.
-Output only the final JSON — no preamble, no markdown fences.
+_COMPAT_SYSTEM_PROMPT = """
+You are the Moment Compatibility Scorer.
+You receive pre-decomposed sub-claims from two readers (A and B) for the same
+passage. Map them, score each pair, return JSON.
 
 ════════════════════════════════════════════════════════════
-STEP 1 — MAP USING THREE GATES
+CRITICAL — THINK AND FEEL ARE INDEPENDENT
 ════════════════════════════════════════════════════════════
 
-For each sub-claim in A, find the best candidate in B.
-All three gates must pass for a match.
+Score them separately. Two readers can share a conclusion but feel differently.
+Two readers can disagree intellectually but share the same emotional response.
+Never let Think scores contaminate Feel scores.
 
-GATE 1 — Shared subject
-Both sub-claims make a claim about the same specific subject?
-(same character, same named aspect, same event in the passage)
+════════════════════════════════════════════════════════════
+STEP 1 — MAP SUB-CLAIMS 
+════════════════════════════════════════════════════════════
 
-AUTOMATIC YES: if both reference the same specific phrase from
-the passage text — different angles on the same phrase are Gate 2
-and Gate 3 questions, not different subjects.
-
-Note: character evasion ≠ authorial choice even if both about language
-Note: pre-creation moment ≠ post-creation moment even if same character
-YES → Gate 2   |   NO → UNMATCHED
-
-GATE 2 — Shared textual anchor
-At least one applies:
-  a. Both reference the same quoted phrase from the passage
-  b. Both describe the same specific moment or event in the passage
-     (same action, same beat — even if described in different words
-     or anchored to different passage phrases)
-  c. Both sub-claims respond to the same specific character behaviour
-     or authorial choice AND make claims that could directly agree or
-     disagree with each other.
-     Note: "same character" alone is not sufficient for 2c — must be
-     the same specific behaviour or action of that character.
-     Passes: both about whether Victor's reaction to the creature was
-     justified (same action, opposing verdicts possible).
-     Fails: one about Victor's language, one about Victor's emotional
-     state — different aspects, not the same behaviour.
-YES → Gate 3   |   NO → UNMATCHED
-
-GATE 3 — Meaningful comparison
-Formulate: "Is it true that [A's claim]?"
-Would B's claim answer YES or NO?
-YES or NO → MATCHED   |   Irrelevant → UNMATCHED
-
-Each sub-claim can only be matched once.
-Any B sub-claim not claimed by a matched A sub-claim → UNMATCHED.
+Match each A sub-claim to the best B candidate.
+Two sub-claims match if they respond to the same passage phrase or the same
+specific moment — even if worded differently.
+If no genuine match exists, mark UNMATCHED.
+Each sub-claim matched at most once. Unclaimed B sub-claims → UNMATCHED.
 
 ════════════════════════════════════════════════════════════
 STEP 2 — SCORE EACH MATCHED PAIR
 ════════════════════════════════════════════════════════════
 
-For each matched pair, answer 5 Think questions then 5 Feel questions.
-Each YES or NO maps to 1R or 1C as specified.
-score = points / 5  (D = 0.0 for matched pairs)
+For each matched pair answer 10 booleans — 5 THINK then 5 FEEL.
 
-THINK QUESTIONS:
-  Q1. Same subject? Always YES for matched pairs → 1R
-  Q2. Positions same direction? YES=1R  NO=1C
-  Q3. Interpretive lenses compatible? YES=1R  NO=1C
-  Q4. Conclusions mutually exclusive? YES=1C  NO=1R
-  Q5. Would A agree with B's conclusion? YES=1R  NO=1C
+THINK — T1. Same subject (always true) | T2. Positions same direction? |
+  T3. Lenses compatible? | T4. Mutually exclusive conclusions? | T5. Would A agree with B?
 
-FEEL QUESTIONS:
-  Q1. Same emotional subject? Always YES for matched pairs → 1R
-  Q2. Same emotional mode TYPE? Compare the assigned modes —
-      same label → YES (1R)  |  different labels → NO (1C)
-  Q3. Same specific trigger? YES=1R  NO=1C
-  Q4. Same emotional experience? YES=1R  NO=1C
-  Q5. Would A recognise B's response as valid? YES=1R  NO=1C
+FEEL  — F1. Same emotional subject (always true) | F2. Same mode label? |
+  F3. Same trigger? | F4. Same experience? | F5. Would A recognise B's response as valid?
 
-For UNMATCHED sub-claims:
-  think: R=0.0  C=0.0  D=1.0
-  feel:  R=0.0  C=0.0  D=1.0
 
 ════════════════════════════════════════════════════════════
-GATE CONFIDENCE — assign for every matched pair
+UNMATCHED SUB-CLAIMS
 ════════════════════════════════════════════════════════════
 
-You must assign gate_confidence for every matched pair.
-  1.00 = both gates passed clearly
-  0.75 = one gate required interpretation
-  0.50 = borderline match
-  If zero matched pairs → omit gate_confidence entirely.
+B engages the same subject but not the same specific phrase or moment → divergence: true
+B has nothing on this subject                                         → divergence: false
 
 ════════════════════════════════════════════════════════════
-OUTPUT — return ONLY this JSON, no preamble, no markdown fences
+OUTPUT — raw JSON only, no markdown, no preamble
 ════════════════════════════════════════════════════════════
 
 {
-  "passage_id": "<passage identifier>",
+  "passage_id": "<id>",
   "matched_pairs": [
     {
-      "a_id": "<sub-claim id from A>",
-      "b_id": "<sub-claim id from B>",
-      "weight_a": <float>,
-      "weight_b": <float>,
-      "gate_confidence": <1.00|0.75|0.50>,
-      "think": {"R": <float>, "C": <float>, "D": 0.0},
-      "feel":  {"R": <float>, "C": <float>, "D": 0.0}
+      "a_id": "<id>", "b_id": "<id>",
+      "weight_a": <float>, "weight_b": <float>,
+      "gate_confidence": 1.0 or 0.5,
+      "think_q": [<bool>, <bool>, <bool>, <bool>, <bool>],
+      "feel_q":  [<bool>, <bool>, <bool>, <bool>, <bool>]
     }
   ],
-  "unmatched_a": ["<sub-claim id>"],
-  "unmatched_b": ["<sub-claim id>"]
+  "unmatched_a": [{"id": "<id>", "divergence": <bool>],
+  "unmatched_b": [{"id": "<id>", "divergence": <bool>],
+  "think_rationale": "<1-2 sentences>",
+  "feel_rationale": "<1-2 sentences>"
 }
-""")
+"""
 
 _SCORER_REQUIRED_KEYS = {"matched_pairs", "unmatched_a", "unmatched_b"}
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
+def _get_existing_scoring(user_a_id: str, user_b_id: str, passage_id: str,book_id: str) -> dict | None:
+    data = _read_json_file(SCORING_FILE, []) or []
+    match = next(
+        (d for d in data
+         if d["passage_id"] == passage_id and d["book_id"] == book_id
+         and (
+             (d["user_a_id"] == user_a_id and d["user_b_id"] == user_b_id)
+             or
+             (d["user_a_id"] == user_b_id and d["user_b_id"] == user_a_id)
+         )),
+        None
+    )
+    return match["scoring"] if match else None
 
 def _get_or_run_decomposition(user_id: str, passage_id: str, book_id: str, moment_text: str) -> dict:
     """
@@ -249,20 +211,31 @@ def run_compatibility_agent(user_a_id: str,
         return results
         
     # ── Score ─────────────────────────────────────────────────────────────────
-    prompt  = _build_scorer_prompt(decomp_a, decomp_b)
-    scoring = _call_scorer(prompt)
-    _save_scoring(user_a_id, user_b_id, passage_id, scoring)
+    scoring = _get_existing_scoring(user_a_id, user_b_id, passage_id,book_id)
+    if scoring:
+        print(f"[CompatAgent] using cached scoring for {user_a_id} × {user_b_id} / {passage_id}")
+    else:
+        prompt  = _build_scorer_prompt(decomp_a, decomp_b)
+        scoring = _call_scorer(prompt)
+        _save_scoring(user_a_id, user_b_id, passage_id, scoring,book_id)
 
     if "error" in scoring:
         return {"error": scoring["error"],
                 "user_a": user_a_id, "user_b": user_b_id}
 
     # ── Aggregate (pure Python) ───────────────────────────────────────────────
-    # wrap the two separate decompositions into the shape aggregate() expects
-    combined_decomp = {
-        "reader_a": decomp_a,
-        "reader_b": decomp_b,
-    }
+    # aggregator expects: aggregate(decomp, scoring)
+    #   decomp  = {"reader_a": <decomp_a>, "reader_b": <decomp_b>}
+    #   scoring = {"matched_pairs": [...], "unmatched_a": [...], "unmatched_b": [...], "passage_id": ...}
+    combined_decomp = {"reader_a": decomp_a, "reader_b": decomp_b}
+    scoring.setdefault("passage_id", passage_id)
+    # Normalize unmatched lists — scorer returns [{"id": "1", ...}], aggregator expects ["1", ...]
+    scoring["unmatched_a"] = [
+        u["id"] if isinstance(u, dict) else u for u in scoring.get("unmatched_a", [])
+    ]
+    scoring["unmatched_b"] = [
+        u["id"] if isinstance(u, dict) else u for u in scoring.get("unmatched_b", [])
+    ]
     result = aggregate(combined_decomp, scoring)
     print(f"[CompatAgent] confidence={result.get('confidence', 0.0)}")
 
@@ -283,6 +256,8 @@ def run_compatibility_agent(user_a_id: str,
         "dominant_feel":   result.get("dominant_feel"),
         "verdict":         result.get("verdict"),
         "confidence":      result.get("confidence"),
+        "think_rationale": result.get("think_rationale"),
+        "feel_rationale":  result.get("feel_rationale"),
         "timestamp":       result["timestamp"],
     })
 
@@ -291,8 +266,7 @@ def run_compatibility_agent(user_a_id: str,
         f"dominant_feel={result.get('dominant_feel')} "
         f"confidence={result.get('confidence')} "
         f"for {user_a_id} × {user_b_id}"
-    )
-    
+    ) 
     return result
 
 
@@ -326,62 +300,11 @@ def _get_existing_compat_run(user_a_id: str,
 
 # ── Batch runner ──────────────────────────────────────────────────────────────
 
-def run_compatibility_for_all(user_a_id: str,
-                               book_id: str,
-                               passage_id: str,
-                               moments_map: dict[str, dict]) -> list[dict]:
-    moment_a    = moments_map.get(user_a_id)
-    other_users = [uid for uid in moments_map if uid != user_a_id]
-
-    if not moment_a:
-        print(f"[main] no moment provided for anchor user {user_a_id}")
-        return []
-    if not other_users:
-        print(f"[main] no other users found in moments_map for book_id={book_id}")
-        return []
-
-    print(f"[main] found {len(other_users)} other readers of {book_id}")
-
-    results = []
-    for user_b_id in other_users:
-        moment_b = moments_map.get(user_b_id)
-        if not moment_b:
-            print(f"  {user_b_id} — skipped (no moment provided)")
-            continue
-
-        existing = _get_existing_compat_run(user_a_id, user_b_id, book_id,passage_id)
-        if existing:
-            route = route_compatibility_result(existing)
-            existing["route"] = route
-            print(f"  {user_b_id} [cached] verdict={existing.get('verdict')} "
-                  f"confidence={existing.get('confidence')}")
-            if route != "discard":
-                results.append(existing)
-            continue
-
-        result        = run_compatibility_agent(user_a_id, user_b_id, book_id, moment_a, moment_b)
-        route         = route_compatibility_result(result)
-        result["route"] = route
-
-        print(f"  {user_b_id} — dominant_think={result.get('dominant_think')} "
-              f"dominant_feel={result.get('dominant_feel')} "
-              f"confidence={result.get('confidence')} route={route}")
-
-        if route != "discard":
-            results.append(result)
-
-    results.sort(key=lambda r: r.get("confidence", 0.0), reverse=True)
-    print(f"\n── Match pool for {user_a_id}: {len(results)} / {len(other_users)} ──")
-
-    _save_compatibility_results(user_a_id, book_id, results)
-    return results
-
-
 COMPAT_RESULTS_FILE = "data/processed/compatibility_results.json"
 SCORING_FILE        = "data/processed/scoring_runs.json"
 
 
-def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict) -> None:
+def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict, book_id: str) -> None:
     """Upsert raw scorer output keyed by user_a + user_b + passage_id."""
     data = _read_json_file(SCORING_FILE,[]) or []
     key  = (user_a_id, user_b_id, passage_id)
@@ -392,6 +315,7 @@ def _save_scoring(user_a_id: str, user_b_id: str, passage_id: str, scoring: dict
     data.append({
         "user_a_id":  user_a_id,
         "user_b_id":  user_b_id,
+        "book_id":    book_id,
         "passage_id": passage_id,
         "timestamp":  datetime.utcnow().isoformat(),
         "scoring":    scoring,
@@ -421,7 +345,7 @@ def _save_compatibility_results(user_a_id: str, book_id: str, results: list[dict
 # ── Entrypoint ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    with open("interpretations_10_users.json") as f:
+    with open("interpretations_train.json") as f:
         moments = json.load(f)
 
     PASSAGE_IDS=['passage_1','passage_2','passage_3']
