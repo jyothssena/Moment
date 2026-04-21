@@ -1,0 +1,982 @@
+[
+    {
+        "key":  "/works/OL53908W",
+        "title":  "Adventures of Huckleberry Finn",
+        "author":  "Mark Twain",
+        "cover_id":  8157718,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL9170454W",
+        "title":  "Hamlet",
+        "author":  "William Shakespeare",
+        "cover_id":  8281954,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL8193478W",
+        "title":  "Oliver Twist",
+        "author":  "Charles Dickens",
+        "cover_id":  13300802,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL450063W",
+        "title":  "Frankenstein or The Modern Prometheus",
+        "author":  "Mary Shelley",
+        "cover_id":  12356249,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL66562W",
+        "title":  "Sense and Sensibility",
+        "author":  "Jane Austen",
+        "cover_id":  9278292,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL8193465W",
+        "title":  "A Tale of Two Cities",
+        "author":  "Charles Dickens",
+        "cover_id":  13301713,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL24034W",
+        "title":  "Treasure Island",
+        "author":  "Robert Louis Stevenson",
+        "cover_id":  13859660,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL29983W",
+        "title":  "Little Women",
+        "author":  "Louisa May Alcott",
+        "cover_id":  8775559,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL258902W",
+        "title":  "Macbeth",
+        "author":  "William Shakespeare",
+        "cover_id":  872432,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL20600W",
+        "title":  "Gulliver\u0027s Travels",
+        "author":  "Jonathan Swift",
+        "cover_id":  12717083,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL14942956W",
+        "title":  "The Call of the Wild",
+        "author":  "Jack London",
+        "cover_id":  12393037,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL259026W",
+        "title":  "King Lear",
+        "author":  "William Shakespeare",
+        "cover_id":  7420452,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL69612W",
+        "title":  "The Secret Garden",
+        "author":  "Frances Hodgson Burnett",
+        "cover_id":  12622062,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL503666W",
+        "title":  "Don Quijote de la Mancha",
+        "author":  "Miguel de Cervantes Saavedra",
+        "cover_id":  14428305,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL259010W",
+        "title":  "A Midsummer Night\u0027s Dream",
+        "author":  "William Shakespeare",
+        "cover_id":  7205924,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL1089297W",
+        "title":  "The Prince",
+        "author":  "Niccolò Machiavelli",
+        "cover_id":  12726168,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL93082W",
+        "title":  "La Divina Commedia",
+        "author":  "Dante Alighieri",
+        "cover_id":  11621024,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL267096W",
+        "title":  "Анна �?а�?енина",
+        "author":  "�?ев Толс�?ой",
+        "cover_id":  2560652,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL66544W",
+        "title":  "Persuasion",
+        "author":  "Jane Austen",
+        "cover_id":  12824691,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362702W",
+        "title":  "Julius Caesar",
+        "author":  "William Shakespeare",
+        "cover_id":  7901303,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL468431W",
+        "title":  "The Great Gatsby",
+        "author":  "F. Scott Fitzgerald",
+        "cover_id":  10590366,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL1095427W",
+        "title":  "Jane Eyre",
+        "author":  "Charlotte Bronte�?",
+        "cover_id":  8235363,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL52267W",
+        "title":  "The Time Machine",
+        "author":  "H. G. Wells",
+        "cover_id":  9009316,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL102749W",
+        "title":  "Moby Dick",
+        "author":  "Herman Melville",
+        "cover_id":  10544254,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL17448W",
+        "title":  "King Solomon\u0027s Mines",
+        "author":  "H. Rider Haggard",
+        "cover_id":  8665393,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL61981W",
+        "title":  "Ἰλιά�?",
+        "author":  "�?μηρο�?",
+        "cover_id":  7083790,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL100672W",
+        "title":  "Candide",
+        "author":  "Voltaire",
+        "cover_id":  12736044,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL61982W",
+        "title":  "�?δύ�?�?εια",
+        "author":  "�?μηρο�?",
+        "cover_id":  9045853,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL63985W",
+        "title":  "The Legend of Sleepy Hollow",
+        "author":  "Washington Irving",
+        "cover_id":  8243083,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL86320W",
+        "title":  "Dubliners",
+        "author":  "James Joyce",
+        "cover_id":  8216412,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL19842W",
+        "title":  "Captains Courageous",
+        "author":  "Rudyard Kipling",
+        "cover_id":  12819857,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362427W",
+        "title":  "Romeo and Juliet",
+        "author":  "William Shakespeare",
+        "cover_id":  8257991,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL176092W",
+        "title":  "The Moonstone",
+        "author":  "Wilkie Collins",
+        "cover_id":  8237041,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362695W",
+        "title":  "Antony and Cleopatra",
+        "author":  "William Shakespeare",
+        "cover_id":  8222096,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL19908W",
+        "title":  "Kim",
+        "author":  "Rudyard Kipling",
+        "cover_id":  1053011,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL53919W",
+        "title":  "The Adventures of Tom Sawyer",
+        "author":  "Mark Twain",
+        "cover_id":  12043351,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL8662242W",
+        "title":  "David Copperfield",
+        "author":  "Charles Dickens",
+        "cover_id":  1048892,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362665W",
+        "title":  "King Richard II",
+        "author":  "William Shakespeare",
+        "cover_id":  9069548,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL12791W",
+        "title":  "My Ántonia",
+        "author":  "Willa Cather",
+        "cover_id":  8369013,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL14869167W",
+        "title":  "The Old Curiosity Shop",
+        "author":  "Charles Dickens",
+        "cover_id":  13119794,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL258850W",
+        "title":  "Othello",
+        "author":  "William Shakespeare",
+        "cover_id":  7165018,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL54031W",
+        "title":  "A Connecticut Yankee in King Arthur\u0027s Court",
+        "author":  "Mark Twain",
+        "cover_id":  9168732,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL498463W",
+        "title":  "Der Proce�?",
+        "author":  "Franz Kafka",
+        "cover_id":  997423,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362166W",
+        "title":  "Coriolanus",
+        "author":  "William Shakespeare",
+        "cover_id":  8222112,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL86343W",
+        "title":  "A Portrait of the Artist as a Young Man",
+        "author":  "James Joyce",
+        "cover_id":  9328410,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362684W",
+        "title":  "Richard III",
+        "author":  "William Shakespeare",
+        "cover_id":  9020720,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL44927W",
+        "title":  "Tess of the d\u0027Urbervilles",
+        "author":  "Thomas Hardy",
+        "cover_id":  13109386,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL85892W",
+        "title":  "Dracula",
+        "author":  "Bram Stoker",
+        "cover_id":  12216503,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL485504W",
+        "title":  "Riders of the Purple Sage",
+        "author":  "Zane Grey",
+        "cover_id":  872066,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL7180368W",
+        "title":  "Decamerone",
+        "author":  "Giovanni Boccaccio",
+        "cover_id":  6073528,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL152161W",
+        "title":  "Uncle Tom\u0027s Cabin",
+        "author":  "Harriet Beecher Stowe",
+        "cover_id":  12728198,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL8193406W",
+        "title":  "The Mayor of Casterbridge",
+        "author":  "Thomas Hardy",
+        "cover_id":  1260617,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL114967W",
+        "title":  "The Jungle",
+        "author":  "Upton Sinclair",
+        "cover_id":  8231790,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL176045W",
+        "title":  "The Woman in White",
+        "author":  "Wilkie Collins",
+        "cover_id":  4684227,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL267171W",
+        "title":  "War and Peace",
+        "author":  "�?ев Толс�?ой",
+        "cover_id":  12621906,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL20844W",
+        "title":  "The Red Badge of Courage",
+        "author":  "Stephen Crane",
+        "cover_id":  8236915,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL30053009W",
+        "title":  "Du côté de chez Swann",
+        "author":  "Marcel Proust",
+        "cover_id":  11967344,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL361466W",
+        "title":  "King Henry V",
+        "author":  "William Shakespeare",
+        "cover_id":  7420215,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL245401W",
+        "title":  "The Prisoner of Zenda",
+        "author":  "Anthony Hope",
+        "cover_id":  105814,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL407476W",
+        "title":  "The Story of the Amulet",
+        "author":  "Edith Nesbit",
+        "cover_id":  13241470,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL455512W",
+        "title":  "The Blithedale Romance",
+        "author":  "Nathaniel Hawthorne",
+        "cover_id":  8245179,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL260101W",
+        "title":  "The Tenant of Wildfell Hall",
+        "author":  "Anne Brontë",
+        "cover_id":  1023552,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL733285W",
+        "title":  "La chartreuse de Parme",
+        "author":  "Stendhal",
+        "cover_id":  104382,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL38663W",
+        "title":  "Heart of Darkness",
+        "author":  "Joseph Conrad",
+        "cover_id":  12307847,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL76482W",
+        "title":  "Heretics",
+        "author":  "Gilbert Keith Chesterton",
+        "cover_id":  1754959,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL151411W",
+        "title":  "Alice\u0027s Adventures in Wonderland / Through the Looking Glass",
+        "author":  "Lewis Carroll",
+        "cover_id":  8595966,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL2772007W",
+        "title":  "The Yellow Wallpaper",
+        "author":  "Charlotte Perkins Gilman",
+        "cover_id":  652029,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL1063588W",
+        "title":  "Les Misérables",
+        "author":  "Victor Hugo",
+        "cover_id":  12721865,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL39396W",
+        "title":  "To the Lighthouse",
+        "author":  "Virginia Woolf",
+        "cover_id":  8231846,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL76501W",
+        "title":  "Greenmantle",
+        "author":  "John Buchan",
+        "cover_id":  93023,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL1095403W",
+        "title":  "Villette, a novel",
+        "author":  "Charlotte Bronte�?",
+        "cover_id":  5737854,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL17761452W",
+        "title":  "Little men",
+        "author":  "Louisa May Alcott",
+        "cover_id":  8043576,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL81180W",
+        "title":  "Lady Chatterley\u0027s Lover",
+        "author":  "D. H. Lawrence",
+        "cover_id":  12983362,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL17465W",
+        "title":  "Allan Quatermain",
+        "author":  "H. Rider Haggard",
+        "cover_id":  830243,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL468488W",
+        "title":  "This Side of Paradise",
+        "author":  "F. Scott Fitzgerald",
+        "cover_id":  8243609,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL15292640W",
+        "title":  "Metamorphoses",
+        "author":  "Ovid",
+        "cover_id":  7212118,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL362697W",
+        "title":  "Henry IV, Part 2",
+        "author":  "William Shakespeare",
+        "cover_id":  7339581,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL8127201W",
+        "title":  "The King in Yellow",
+        "author":  "Robert W. Chambers",
+        "cover_id":  4752788,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL39349W",
+        "title":  "Mrs. Dalloway",
+        "author":  "Virginia Woolf",
+        "cover_id":  6397580,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL1103093W",
+        "title":  "Cranford",
+        "author":  "Elizabeth Cleghorn Gaskell",
+        "cover_id":  5188445,
+        "subject":  "literature"
+    },
+    {
+        "key":  "/works/OL66554W",
+        "title":  "Pride and Prejudice",
+        "author":  "Jane Austen",
+        "cover_id":  14348537,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL138052W",
+        "title":  "Alice\u0027s Adventures in Wonderland",
+        "author":  "Lewis Carroll",
+        "cover_id":  10527843,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL32466W",
+        "title":  "A Christmas Carol",
+        "author":  "Charles Dickens",
+        "cover_id":  12875748,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL8193416W",
+        "title":  "The Picture of Dorian Gray",
+        "author":  "Oscar Wilde",
+        "cover_id":  14314858,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL21177W",
+        "title":  "Wuthering Heights",
+        "author":  "Emily Bronte�?",
+        "cover_id":  12818862,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL45089W",
+        "title":  "Robinson Crusoe",
+        "author":  "Daniel Defoe",
+        "cover_id":  368541,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL455305W",
+        "title":  "The Scarlet Letter",
+        "author":  "Nathaniel Hawthorne",
+        "cover_id":  5654516,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL66513W",
+        "title":  "Emma",
+        "author":  "Jane Austen",
+        "cover_id":  9278312,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL18417W",
+        "title":  "The Wonderful Wizard of Oz",
+        "author":  "L. Frank Baum",
+        "cover_id":  552443,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL893707W",
+        "title":  "Madame Bovary",
+        "author":  "Gustave Flaubert",
+        "cover_id":  12993424,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL244537W",
+        "title":  "The Art of War",
+        "author":  "�?武",
+        "cover_id":  4849549,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL8721462W",
+        "title":  "Great Expectations",
+        "author":  "Charles Dickens",
+        "cover_id":  13322313,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL262496W",
+        "title":  "A Study in Scarlet",
+        "author":  "Arthur Conan Doyle",
+        "cover_id":  13405534,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL151406W",
+        "title":  "Through the Looking-Glass",
+        "author":  "Lewis Carroll",
+        "cover_id":  11272464,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL28570037W",
+        "title":  "The Wind in the Willows",
+        "author":  "Kenneth Grahame",
+        "cover_id":  13335427,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL262454W",
+        "title":  "The Hound of the Baskervilles",
+        "author":  "Arthur Conan Doyle",
+        "cover_id":  8063264,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL77746W",
+        "title":  "Anne of Green Gables",
+        "author":  "Lucy Maud Montgomery",
+        "cover_id":  14641084,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL166894W",
+        "title":  "�?�?ес�?�?пление и наказание",
+        "author":  "Ф�?до�? �?и�\u0085айлови�? �?ос�?оевский",
+        "cover_id":  9411873,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL55649W",
+        "title":  "Walden",
+        "author":  "Henry David Thoreau",
+        "cover_id":  11248037,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL1793164W",
+        "title":  "Three Men in a Boat (to say nothing of the dog)",
+        "author":  "Jerome Klapka Jérôme",
+        "cover_id":  8243006,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL262421W",
+        "title":  "The Adventures of Sherlock Holmes [12 stories]",
+        "author":  "Arthur Conan Doyle",
+        "cover_id":  6717853,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL45139W",
+        "title":  "Moll Flanders",
+        "author":  "Daniel Defoe",
+        "cover_id":  12997559,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL66530W",
+        "title":  "Mansfield Park",
+        "author":  "Jane Austen",
+        "cover_id":  14618737,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL76487W",
+        "title":  "The Man Who Was Thursday",
+        "author":  "Gilbert Keith Chesterton",
+        "cover_id":  8242857,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL36861W",
+        "title":  "Les Trois Mousquetaires",
+        "author":  "Alexandre Dumas",
+        "cover_id":  11929973,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL472715W",
+        "title":  "The Mysterious Affair at Styles",
+        "author":  "Agatha Christie",
+        "cover_id":  13699667,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL8193387W",
+        "title":  "Hard Times",
+        "author":  "Charles Dickens",
+        "cover_id":  8236916,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL66534W",
+        "title":  "Northanger Abbey",
+        "author":  "Jane Austen",
+        "cover_id":  12567961,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL98501W",
+        "title":  "Ethan Frome",
+        "author":  "Edith Wharton",
+        "cover_id":  8303480,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL99509W",
+        "title":  "The Railway Children",
+        "author":  "Edith Nesbit",
+        "cover_id":  13241123,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL262438W",
+        "title":  "The Sign of Four",
+        "author":  "Arthur Conan Doyle",
+        "cover_id":  9247987,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL498556W",
+        "title":  "Metamorphosis",
+        "author":  "Franz Kafka",
+        "cover_id":  12820198,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL99499W",
+        "title":  "Five Children and It",
+        "author":  "Edith Nesbit",
+        "cover_id":  28174,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL76524W",
+        "title":  "The Thirty-Nine Steps",
+        "author":  "John Buchan",
+        "cover_id":  93020,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL77958W",
+        "title":  "The Last of the Mohicans",
+        "author":  "James Fenimore Cooper",
+        "cover_id":  8236937,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL76341W",
+        "title":  "The Innocence of Father Brown (Father Brown Mystery)",
+        "author":  "Gilbert Keith Chesterton",
+        "cover_id":  94081,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL21025633W",
+        "title":  "�?аписки из�? подпол�?я",
+        "author":  "Ф�?до�? �?и�\u0085айлови�? �?ос�?оевский",
+        "cover_id":  10445973,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL77764W",
+        "title":  "Anne\u0027s House of Dreams",
+        "author":  "Lucy Maud Montgomery",
+        "cover_id":  14640440,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL258758W",
+        "title":  "The Merchant of Venice",
+        "author":  "William Shakespeare",
+        "cover_id":  7182819,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL77744W",
+        "title":  "Anne of Avonlea",
+        "author":  "Lucy Maud Montgomery",
+        "cover_id":  14638062,
+        "subject":  "fiction"
+    },
+    {
+        "key":  "/works/OL53994W",
+        "title":  "The Prince and the Pauper",
+        "author":  "Mark Twain",
+        "cover_id":  8221267,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL36287W",
+        "title":  "Le Comte de Monte Cristo",
+        "author":  "Alexandre Dumas",
+        "cover_id":  14566393,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL88813W",
+        "title":  "A Room with a View",
+        "author":  "E. M. Forster",
+        "cover_id":  1748132,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL12795W",
+        "title":  "O Pioneers!",
+        "author":  "Willa Cather",
+        "cover_id":  8242999,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL86318W",
+        "title":  "Ulysses",
+        "author":  "James Joyce",
+        "cover_id":  13136548,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL1253285W",
+        "title":  "The Scarlet Pimpernel",
+        "author":  "Emma Orczy",
+        "cover_id":  479102,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL118388W",
+        "title":  "Flatland",
+        "author":  "Edwin Abbott Abbott",
+        "cover_id":  10069547,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL262452W",
+        "title":  "His Last Bow [8 stories]",
+        "author":  "Arthur Conan Doyle",
+        "cover_id":  8243267,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL1095397W",
+        "title":  "Shirley",
+        "author":  "Charlotte Bronte�?",
+        "cover_id":  11024634,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL17453W",
+        "title":  "She",
+        "author":  "H. Rider Haggard",
+        "cover_id":  295537,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL77950W",
+        "title":  "The deerslayer",
+        "author":  "James Fenimore Cooper",
+        "cover_id":  8237593,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL88881W",
+        "title":  "Howards End",
+        "author":  "E. M. Forster",
+        "cover_id":  8235207,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL863808W",
+        "title":  "Ivanhoe",
+        "author":  "Sir Walter Scott",
+        "cover_id":  314235,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL63871W",
+        "title":  "A history of New York",
+        "author":  "Washington Irving",
+        "cover_id":  1991009,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL455288W",
+        "title":  "The House of Seven Gables Readalong",
+        "author":  "Nathaniel Hawthorne",
+        "cover_id":  10956643,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL503424W",
+        "title":  "Quo Vadis? Powieść z czasów Nerona",
+        "author":  "Henryk Sienkiewicz",
+        "cover_id":  833096,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL25649539W",
+        "title":  "The Red Badge of Courage",
+        "author":  "Stephen Crane",
+        "cover_id":  12044954,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL166925W",
+        "title":  "�?дио�?",
+        "author":  "Ф�?до�? �?и�\u0085айлови�? �?ос�?оевский",
+        "cover_id":  11226648,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL276365W",
+        "title":  "The Portrait of a Lady",
+        "author":  "Henry James",
+        "cover_id":  3352367,
+        "subject":  "historical_fiction"
+    },
+    {
+        "key":  "/works/OL658250W",
+        "title":  "Metamorphoses",
+        "author":  "Lucius Apuleius",
+        "cover_id":  6596872,
+        "subject":  "historical_fiction"
+    }
+]
