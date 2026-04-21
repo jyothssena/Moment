@@ -1,7 +1,5 @@
 # Momento — Full Project Handoff
 
-**Read this before starting a new chat. Contains everything needed to continue.**
-
 ---
 
 ## Active Folders (Mac)
